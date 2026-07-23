@@ -6,35 +6,46 @@
   <title>技術ニュースダイジェスト 2026-07-23</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #12161c;
-      --ink-soft: #2a3340;
-      --muted: #5c6778;
+      --ink: #0b0f14;
+      --ink-soft: #1c2430;
+      --muted: #3a4556;
       --paper: #f2f4f7;
-      --sheet: #fbfcfd;
-      --line: rgba(18, 22, 28, 0.1);
+      --sheet: #ffffff;
+      --line: rgba(18, 22, 28, 0.12);
       --mast: #0e141d;
       --mast-2: #182231;
       --signal: #d6453d;
       --signal-deep: #a52f29;
-      --steel: #3d7ea6;
-      --warn: #9a5b14;
+      --steel: #1f6f9f;
+      --warn: #8a4f0f;
+      --body: 1.0625rem;
     }
 
     * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
 
     body {
       margin: 0;
       color: var(--ink);
-      font-family: "Zen Kaku Gothic New", sans-serif;
-      line-height: 1.75;
+      font-family: "BIZ UDPGothic", "Noto Sans JP", sans-serif;
+      font-weight: 400;
+      font-size: var(--body);
+      line-height: 1.85;
+      letter-spacing: 0.02em;
+      font-feature-settings: "palt" 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       background:
-        radial-gradient(900px 420px at 85% 8%, rgba(61, 126, 166, 0.12), transparent 55%),
-        radial-gradient(700px 380px at 0% 30%, rgba(214, 69, 61, 0.07), transparent 50%),
+        radial-gradient(900px 420px at 85% 8%, rgba(61, 126, 166, 0.1), transparent 55%),
+        radial-gradient(700px 380px at 0% 30%, rgba(214, 69, 61, 0.05), transparent 50%),
         linear-gradient(180deg, #e8ecf1 0%, var(--paper) 28%, #eef1f5 100%);
       min-height: 100vh;
     }
@@ -44,7 +55,7 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.35;
+      opacity: 0.12;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
       z-index: 0;
     }
@@ -76,23 +87,24 @@
     .mast-inner {
       position: relative;
       z-index: 1;
-      width: min(980px, calc(100% - 2rem));
+      width: min(980px, calc(100% - 1.5rem));
       margin: 0 auto;
-      padding: 1.35rem 0 2.6rem;
+      padding: 1.2rem 0 2.4rem;
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
     }
 
     .edition-bar {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 0.5rem 1.25rem;
+      gap: 0.55rem 1rem;
       align-items: center;
-      padding-bottom: 1rem;
+      padding-bottom: 0.95rem;
       border-bottom: 1px solid rgba(244, 246, 248, 0.16);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(244, 246, 248, 0.72);
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      color: rgba(255, 255, 255, 0.82);
       animation: rise 0.6s ease both;
     }
 
@@ -100,7 +112,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      color: #ffd7d4;
+      color: #ffe3e0;
       font-weight: 700;
     }
 
@@ -111,86 +123,97 @@
       background: var(--signal);
       box-shadow: 0 0 0 0 rgba(214, 69, 61, 0.7);
       animation: pulse 1.8s ease infinite;
+      flex-shrink: 0;
     }
 
     .brand {
-      margin: 1.35rem 0 0.55rem;
-      font-family: "Shippori Mincho", serif;
-      font-size: clamp(2.4rem, 7vw, 4.4rem);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: 0.04em;
+      margin: 1.2rem 0 0.65rem;
+      font-family: "Noto Sans JP", "BIZ UDPGothic", sans-serif;
+      font-size: clamp(1.85rem, 8vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
       animation: rise 0.7s ease 0.05s both;
     }
 
     .brand span {
       display: block;
-      font-size: 0.28em;
-      font-family: "Zen Kaku Gothic New", sans-serif;
-      font-weight: 500;
-      letter-spacing: 0.28em;
-      color: rgba(244, 246, 248, 0.62);
-      margin-bottom: 0.55rem;
+      font-size: clamp(0.72rem, 2.8vw, 0.9rem);
+      font-family: "BIZ UDPGothic", "Noto Sans JP", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 0.45rem;
     }
 
     .lede {
       margin: 0;
-      max-width: 34rem;
-      font-size: 1.02rem;
-      color: rgba(244, 246, 248, 0.82);
+      max-width: 36rem;
+      font-size: clamp(0.98rem, 3.6vw, 1.08rem);
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
       animation: rise 0.75s ease 0.1s both;
     }
 
     .wrap {
       position: relative;
       z-index: 1;
-      width: min(980px, calc(100% - 2rem));
+      width: min(980px, calc(100% - 1.5rem));
       margin: 0 auto;
-      padding: 0 0 4rem;
+      padding: 0 0 calc(3.5rem + env(safe-area-inset-bottom));
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
     }
 
     .briefing {
-      margin-top: -1.6rem;
+      margin-top: -1.35rem;
       background: var(--sheet);
       border: 1px solid var(--line);
-      box-shadow: 0 18px 40px rgba(14, 20, 29, 0.08);
-      padding: 1.25rem 1.35rem 1.35rem;
+      box-shadow: 0 14px 34px rgba(14, 20, 29, 0.08);
+      padding: 1.15rem 1.15rem 1.25rem;
       animation: rise 0.8s ease 0.15s both;
     }
 
     .briefing .kicker {
-      margin: 0 0 0.45rem;
-      font-size: 0.75rem;
+      margin: 0 0 0.5rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.08em;
       color: var(--signal-deep);
     }
 
     .briefing p {
       margin: 0;
       color: var(--ink-soft);
-      font-size: 0.98rem;
+      font-size: 1rem;
+      line-height: 1.9;
+      font-weight: 400;
     }
 
     .toc {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 0.55rem;
-      margin: 1.5rem 0 2.4rem;
+      margin: 1.35rem 0 2.2rem;
       animation: rise 0.85s ease 0.2s both;
     }
 
     .toc a {
       text-decoration: none;
       color: var(--ink);
-      background: rgba(251, 252, 253, 0.9);
+      background: var(--sheet);
       border: 1px solid var(--line);
       padding: 0.85rem 0.7rem;
-      min-height: 4.6rem;
+      min-height: 4.5rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 0.55rem;
       transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .toc a:hover,
@@ -202,16 +225,18 @@
     }
 
     .toc .num {
-      font-family: "Shippori Mincho", serif;
-      font-size: 1.15rem;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 900;
       color: var(--signal);
       line-height: 1;
     }
 
     .toc .label {
-      font-size: 0.86rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      line-height: 1.35;
+      line-height: 1.4;
+      letter-spacing: 0.02em;
     }
 
     section.theme {
@@ -229,33 +254,37 @@
     .theme-head {
       display: grid;
       grid-template-columns: auto 1fr auto;
-      gap: 0.85rem;
+      gap: 0.7rem 0.85rem;
       align-items: end;
-      margin-bottom: 1.1rem;
+      margin-bottom: 1rem;
       padding-bottom: 0.7rem;
       border-bottom: 3px solid var(--ink);
     }
 
     .theme-head .sec-no {
-      font-family: "Shippori Mincho", serif;
-      font-size: 2.2rem;
-      line-height: 0.85;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: clamp(1.7rem, 6vw, 2.1rem);
+      font-weight: 900;
+      line-height: 0.9;
       color: var(--signal);
     }
 
     .theme-head h2 {
       margin: 0;
-      font-family: "Shippori Mincho", serif;
-      font-size: clamp(1.45rem, 3vw, 1.9rem);
+      font-family: "Noto Serif JP", "Noto Sans JP", serif;
+      font-size: clamp(1.25rem, 4.5vw, 1.75rem);
       font-weight: 700;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
+      line-height: 1.35;
+      color: var(--ink);
     }
 
     .count {
       font-size: 0.78rem;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.04em;
       color: var(--muted);
-      padding-bottom: 0.25rem;
+      padding-bottom: 0.2rem;
+      font-weight: 700;
     }
 
     .deck {
@@ -265,8 +294,8 @@
 
     article.item {
       display: grid;
-      grid-template-columns: 3.2rem 1fr;
-      gap: 0.85rem 1rem;
+      grid-template-columns: 2.8rem 1fr;
+      gap: 0.65rem 0.85rem;
       padding: 1.15rem 0;
       border-bottom: 1px solid var(--line);
       transition: background 0.2s ease;
@@ -279,70 +308,76 @@
     }
 
     article.item.lead {
-      grid-template-columns: 3.2rem 1fr;
-      padding: 1.35rem 1rem 1.45rem;
-      margin: 0 0 0.35rem;
+      grid-template-columns: 2.8rem 1fr;
+      padding: 1.2rem 0.9rem 1.3rem;
+      margin: 0 0 0.4rem;
       background:
-        linear-gradient(135deg, rgba(14, 20, 29, 0.04), rgba(61, 126, 166, 0.08)),
+        linear-gradient(135deg, rgba(14, 20, 29, 0.03), rgba(61, 126, 166, 0.06)),
         var(--sheet);
       border: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
     article.item.lead h3 {
-      font-family: "Shippori Mincho", serif;
-      font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+      font-family: "Noto Serif JP", "Noto Sans JP", serif;
+      font-size: clamp(1.12rem, 4vw, 1.38rem);
       font-weight: 700;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.02em;
+      line-height: 1.55;
     }
 
     .rank {
-      font-family: "Shippori Mincho", serif;
-      font-size: 1.35rem;
-      font-weight: 700;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
       color: var(--signal);
       line-height: 1.1;
-      padding-top: 0.15rem;
+      padding-top: 0.1rem;
     }
 
     .rank small {
       display: block;
-      margin-top: 0.15rem;
-      font-family: "Zen Kaku Gothic New", sans-serif;
-      font-size: 0.62rem;
-      letter-spacing: 0.08em;
+      margin-top: 0.2rem;
+      font-family: "BIZ UDPGothic", "Noto Sans JP", sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
       color: var(--muted);
-      font-weight: 500;
+      font-weight: 700;
     }
 
     article.item h3 {
-      margin: 0 0 0.4rem;
-      font-size: 1.06rem;
+      margin: 0 0 0.45rem;
+      font-size: clamp(1.02rem, 3.6vw, 1.1rem);
       font-weight: 700;
-      line-height: 1.45;
+      line-height: 1.55;
+      letter-spacing: 0.02em;
       color: var(--ink);
+      word-break: break-word;
     }
 
     article.item p {
-      margin: 0 0 0.5rem;
+      margin: 0 0 0.55rem;
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: clamp(0.95rem, 3.4vw, 1rem);
+      line-height: 1.85;
     }
 
     .source {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.35rem 0.7rem;
+      gap: 0.45rem 0.85rem;
       align-items: center;
     }
 
     .source a {
       color: var(--steel);
-      font-size: 0.84rem;
+      font-size: 0.9rem;
       font-weight: 700;
       text-decoration: none;
-      border-bottom: 1px solid rgba(61, 126, 166, 0.35);
+      border-bottom: 1px solid rgba(31, 111, 159, 0.35);
+      padding: 0.15rem 0;
       transition: color 0.15s ease, border-color 0.15s ease;
+      line-height: 1.4;
     }
 
     .source a:hover {
@@ -351,20 +386,23 @@
     }
 
     .note {
-      margin: 0 0 0.85rem;
-      padding: 0.85rem 1rem;
+      margin: 0 0 0.9rem;
+      padding: 0.9rem 0.95rem;
       background: rgba(154, 91, 20, 0.08);
       border-left: 3px solid var(--warn);
-      color: #6e430f;
-      font-size: 0.9rem;
+      color: #6a3f0c;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      font-weight: 400;
     }
 
     footer {
       margin-top: 1rem;
-      padding: 1.4rem 0 0.5rem;
+      padding: 1.35rem 0 0.5rem;
       border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: 0.84rem;
+      font-size: 0.88rem;
+      line-height: 1.75;
     }
 
     @keyframes rise {
@@ -387,18 +425,98 @@
       * { animation: none !important; transition: none !important; }
     }
 
-    @media (max-width: 800px) {
-      .toc { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (max-width: 860px) {
+      .toc {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .toc a:last-child {
+        grid-column: 1 / -1;
+      }
     }
 
     @media (max-width: 640px) {
+      :root { --body: 1.0625rem; }
+
       .mast-inner,
-      .wrap { width: min(100% - 1.25rem, 980px); }
-      .theme-head { grid-template-columns: auto 1fr; }
-      .count { grid-column: 2; padding-bottom: 0; }
+      .wrap {
+        width: min(100% - 1.15rem, 980px);
+      }
+
+      .mast-inner {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+      }
+
+      .edition-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+        font-size: 0.78rem;
+      }
+
+      .brand {
+        margin-top: 1rem;
+        font-size: clamp(1.7rem, 9vw, 2.35rem);
+      }
+
+      .briefing {
+        margin-top: -1.1rem;
+        padding: 1rem 0.95rem 1.1rem;
+      }
+
+      .toc {
+        margin: 1.1rem 0 1.75rem;
+        gap: 0.45rem;
+      }
+
+      .toc a {
+        min-height: 4.1rem;
+        padding: 0.8rem 0.75rem;
+      }
+
+      .theme-head {
+        grid-template-columns: auto 1fr;
+        gap: 0.35rem 0.7rem;
+      }
+
+      .count {
+        grid-column: 2;
+        padding-bottom: 0;
+      }
+
       article.item,
-      article.item.lead { grid-template-columns: 2.4rem 1fr; padding-left: 0.15rem; padding-right: 0.15rem; }
-      article.item.lead { padding: 1rem 0.7rem; }
+      article.item.lead {
+        grid-template-columns: 2.35rem 1fr;
+        gap: 0.45rem 0.65rem;
+      }
+
+      article.item {
+        padding: 1.05rem 0;
+      }
+
+      article.item.lead {
+        padding: 1rem 0.7rem 1.1rem;
+      }
+
+      .rank { font-size: 1.08rem; }
+
+      .source a {
+        font-size: 0.88rem;
+        min-height: 1.5rem;
+        display: inline-flex;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .toc {
+        grid-template-columns: 1fr;
+      }
+
+      .toc a:last-child {
+        grid-column: auto;
+      }
     }
   </style>
 </head>
