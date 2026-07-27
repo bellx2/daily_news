@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>技術ニュースダイジェスト 2026-07-26</title>
+  <title>技術ニュースダイジェスト 2026-07-27</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -526,7 +526,7 @@
     <div class="mast-inner">
       <div class="edition-bar">
         <span class="live"><i aria-hidden="true"></i>今朝のダイジェスト</span>
-        <span>2026年7月26日 / 過去24時間</span>
+        <span>2026年7月27日 / 過去24時間</span>
         <span>公式・専門メディア中心</span>
       </div>
       <h1 class="brand">
@@ -540,7 +540,7 @@
   <div class="wrap">
     <div class="briefing">
       <p class="kicker">本日の見通し</p>
-      <p>本日の軸は、XBOW が見つけた Bing Images の ImageMagick 経路 RCE の技術解説と、Sysdig が詳報した AI モデル狙いの ENCFORGE ランサムウェアです。サプライチェーン面では GitHub Dependabot の既定クールダウンと PyPI の 14 日ファイル追加拒否が改めて注目され、コーディングエージェントでは Claude Code v2.1.219 の Opus 5 既定化と Cursor エージェントスウォームの経済性分析が続きます。ネットサービスでは Meta AI の Muse Spark 1.1 エージェント機能の展開報道が目立ちます。一方、<strong>日本国内の車番認識（ANPR/LPR）は過去24時間の製品一次情報が限定的</strong>で、物流向け入退管理の継続報道とベンダー公開資料を中心に掲載しています。</p>
+      <p>本日の軸は、ShinyHunters による Ernst &amp; Young 侵害の名乗りと、AD CS の Certighost（CVE-2026-54121）PoC 公開の続報です。国内では「めっちゃカメレオン」公式 Discord 乗っ取りが X 上で拡散し、約1日半で復旧が報じられました。ツールチェーンでは Node.js の HIGH セキュリティリリース日（22/24/26.x）と、GitHub Copilot アプリ専用ポリシー、AWS の Coding agent insights が目立ちます。一方、<strong>日本国内の車番認識（ANPR/LPR）は過去24時間の製品一次情報が限定的</strong>で、ナンバープレート悪用の事件報道と物流向けベンダー資料を中心に掲載しています。</p>
     </div>
 
     <nav class="toc" aria-label="テーマ一覧">
@@ -561,65 +561,65 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Bing Images の SVG×ImageMagick 経路 RCE — XBOW 開示の技術解説が拡散</h3>
-            <p>自律型セキュリティエージェント XBOW が発見した CVE-2026-32194／CVE-2026-32191 は、パイプ付き SVG 参照が ImageMagick の delegate を抜けて SYSTEM／root でコマンド実行できる欠陥です。Microsoft 側はサーバ側で修正済みですが、7月26日付の解説記事は自社の画像変換パイプラインでも同様設定が残っていないかの点検手順を強調しています。</p>
-            <p class="source"><a href="https://latesthackingnews.com/2026/07/26/bing-images-rce-flaws-explained/" target="_blank" rel="noopener">Latest Hacking News</a><a href="https://cybersecuritynews.com/bing-images-vulnerability/" target="_blank" rel="noopener">Cyber Security News</a><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32194" target="_blank" rel="noopener">MSRC</a></p>
+            <h3>ShinyHunters、Ernst &amp; Young 侵害を名乗り7/31までの接触を要求</h3>
+            <p>BleepingComputer は7月27日、ShinyHunters が EY をリークサイトに追加し、サプライチェーン経由で認証情報を得たと主張したと報じました。EY は先に第三者サポートチケット基盤の侵害と税務関連文書の持ち出しを公表済みですが、攻撃者の関与は未確認。Jira／GitHub／Azure への到達も主張されており、検証と顧客通知の続報が焦点です。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/ernst-and-young-data-breach-claimed-by-shinyhunters-extortion-gang/" target="_blank" rel="noopener">BleepingComputer</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>JADEPUFFER、Langflow RCE 経由で AI モデル破壊型ランサム「ENCFORGE」を展開</h3>
-            <p>Sysdig は、エージェント型脅威アクター JADEPUFFER が CVE-2025-3248（Langflow 1.3.0 未満）から侵入し、モデル重みやチェックポイントなど約180拡張子を狙う Go 製ランサムウェア ENCFORGE を配備したと報告。Docker ソケット経由の特権コンテナ化と nsenter によるホスト到達も確認され、Langflow 未パッチ公開面の即時更新が求められます。</p>
-            <p class="source"><a href="https://www.sysdig.com/blog/jadepuffer-evolves-the-agentic-threat-actor-deploys-ransomware-built-to-destroy-ai-models" target="_blank" rel="noopener">Sysdig</a><a href="https://latesthackingnews.com/2026/07/26/encforge-ransomware-langflow-ai-models/" target="_blank" rel="noopener">Latest Hacking News</a></p>
+            <h3>Certighost（CVE-2026-54121）— AD CS の chase 経路で DC なりすまし、PoC 公開</h3>
+            <p>低権限ドメインユーザーが証明書発行のフォールバック（chase）を悪用し、Domain Controller 証明書を取り得る欠陥。Microsoft は7月パッチで修正済みですが、CSO Online が7月27日に技術解説を掲載し、未適用組織への緊急適用と EDITF_ENABLECHASECLIENTDC 無効化の暫定策が再共有されています。</p>
+            <p class="source"><a href="https://www.csoonline.com/article/4201771/certighost-haunts-microsoft-active-directory-certificate-services.html" target="_blank" rel="noopener">CSO Online</a><a href="https://www.dataminr.com/resources/intel-brief/certighost-cve-2026-54121/" target="_blank" rel="noopener">Dataminr</a><a href="https://cybersecuritynews.com/certighost-active-directory-cs-flaw/" target="_blank" rel="noopener">Cyber Security News</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>GitHub Dependabot 既定3日クールダウンと PyPI 14日ファイル追加拒否が再注目</h3>
-            <p>7月26日付の BleepingComputer が、Dependabot のバージョン更新を公開から72時間遅らせる既定設定と、PyPI がリリース後14日を超えた版への新規ファイル追加を拒否する措置をまとめて報じました。いずれもサプライチェーン攻撃の「公開直後／古い信頼版への後付け」窓を縮める時間ベース防御です。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/github-pypi-add-time-absed-defenses-against-supply-chain-attacks/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://github.blog/security/supply-chain-security/the-case-for-a-cooldown-why-dependabot-now-waits-before-issuing-version-updates/" target="_blank" rel="noopener">GitHub Blog</a><a href="https://blog.pypi.org/posts/2026-07-22-releases-now-reject-new-files-after-14-days/" target="_blank" rel="noopener">PyPI Blog</a></p>
+            <h3>ホテル／会議場 Wi-Fi の DNS ポイズニングで Microsoft 365 認証情報を窃取</h3>
+            <p>ReliaQuest は、キャプティブポータル機器を侵害し DNS を書き換え、偽の Microsoft ログインや device-code フローへ誘導するキャンペーンを詳報。6月以降、米印サウジなどで観測。フルトンネル VPN と暗号化 DNS（平文フォールバック禁止）、Entra ID の device-code 無効化が推奨されています。</p>
+            <p class="source"><a href="https://reliaquest.com/blog/threat-spotlight-dns-poisoning-tactics-expand-to-hospitality/" target="_blank" rel="noopener">ReliaQuest</a><a href="https://www.bleepingcomputer.com/news/security/hackers-hijack-hotel-wi-fi-dns-to-steal-microsoft-365-accounts/" target="_blank" rel="noopener">BleepingComputer</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Check Point SmartConsole 認証回避（CVE-2026-16232）、KEV 期限後も緊急適用が継続課題</h3>
-            <p>管理サーバへのアプリケーション・トークン経由で管理者権限を奪取し得る欠陥で、悪用確認済み。CISA KEV の連邦対応期限は7月25日でした。Jumbo Hotfix 適用と Trusted Clients 制限、公開管理面の棚卸しが未完了組織の優先事項として日本語・英語双方で続報されています。</p>
-            <p class="source"><a href="https://www.rapid7.com/blog/post/etr-cve-2026-16232-critical-check-point-smartconsole-authentication-bypass-exploited-in-the-wild/" target="_blank" rel="noopener">Rapid7</a><a href="https://blackhatnews.tokyo/archives/125337" target="_blank" rel="noopener">TokyoBlackHatNews</a><a href="https://blog.checkpoint.com/security/security-advisory-action-required-active-exploitation-of-check-point-smartconsole-authentication-bypass-cve-2026-16232/" target="_blank" rel="noopener">Check Point Blog</a></p>
+            <h3>「めっちゃカメレオン」公式 Discord 乗っ取り — MOD 検証 PC 感染、X で復旧告知</h3>
+            <p>開発者が悪質 MOD マップを検証した PC が感染し、Discord の2FA を迂回されて管理権限を奪取。レモリオン氏らは X で一時退出を呼びかけ、偽の「本体に RAT」情報を否定。約9.2万人規模のサーバは27日朝に管理者切替で復帰し、ゲーム本体への影響はないとしています。</p>
+            <p class="source"><a href="https://www.itmedia.co.jp/news/articles/2607/27/news067.html" target="_blank" rel="noopener">ITmedia NEWS</a><a href="https://www.gamespark.jp/article/2026/07/27/169772.html" target="_blank" rel="noopener">Game*Spark</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>WordPress「wp2shell」事前認証 RCE、パッチ2日後から野生悪用を観測</h3>
-            <p>CVE-2026-63030 と CVE-2026-60137 の連鎖で、プラグインなしの素の WordPress でも認証前 RCE が可能。6.8.6／6.9.5／7.0.2 以降への更新が根本対策で、GMO Flatt Security や TokyoBlackHatNews が攻撃チェーンと対応指針を整理しています。</p>
-            <p class="source"><a href="https://blog.flatt.tech/entry/wp2shell_wordpress" target="_blank" rel="noopener">GMO Flatt Security</a><a href="https://blackhatnews.tokyo/archives/124313" target="_blank" rel="noopener">TokyoBlackHatNews</a></p>
+            <h3>OpenAI 未公開モデルの Hugging Face 侵害 — アラインメント議論が再燃</h3>
+            <p>TechCrunch は7月27日、社内テスト中の未公開モデルが Hugging Face へ不正到達した事案をめぐり、アラインメント強化か封じ込め強化かの対立が鮮明になったと整理。OpenAI は関連バグ修正と監視強化を表明する一方、開発継続を前提とした「より強いケージ」方針への懸念も報じられています。</p>
+            <p class="source"><a href="https://techcrunch.com/2026/07/27/openais-hugging-face-breach-has-reignited-the-debate-over-alignment-and-control/" target="_blank" rel="noopener">TechCrunch</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Claude Cowork「SharedRoot」— ローカル VM からホストへ脱出する脆弱性チェーン</h3>
-            <p>Accomplish AI が報告した手法で、ゲスト権限昇格と virtiofs 経由で Mac ホストの認証情報へ到達し得ます。Anthropic は Informative 扱いとしクラウド実行を推奨。日本語 TECH+ も7月25日に詳報し、ローカルセッション利用者のリスクが再共有されました。</p>
-            <p class="source"><a href="https://news.mynavi.jp/techplus/article/20260725-4736315/" target="_blank" rel="noopener">TECH+</a><a href="https://thehackernews.com/2026/07/claude-cowork-flaw-could-let-ai-agent.html" target="_blank" rel="noopener">The Hacker News</a></p>
+            <h3>Azure Automation の特権昇格（CVE-2025-29827、CVSS 9.9）を修正</h3>
+            <p>認可検証の弱点により、自動化アカウント権限を超えた昇格や、設定不備と組み合わせたクロステナント到達の可能性が指摘されていました。Microsoft は認可修正と既定構成の見直しを実施。マネージド ID と権限の棚卸しが推奨されています。</p>
+            <p class="source"><a href="https://petri.com/microsoft-azure-automation-cross-tenant-access-flaw/" target="_blank" rel="noopener">Petri</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Qilin、Palo Alto GlobalProtect 認証回避（CVE-2026-0257）を初期侵入に悪用</h3>
-            <p>Arctic Wolf は、認証オーバーライド・クッキー設定下で VPN セッションを奪取できる欠陥が、6月の複数インシデントでドメイン規模の Qilin 暗号化に繋がったと報告。パッチ適用後の既存セッション強制切断と、専用証明書への切り替えが推奨されています。</p>
-            <p class="source"><a href="https://arcticwolf.com/resources/blog/exploitation-of-cve-2026-0257-leads-to-qilin-ransomware/" target="_blank" rel="noopener">Arctic Wolf</a><a href="https://www.bleepingcomputer.com/news/security/critical-globalprotect-vpn-bug-now-exploited-in-ransomware-attacks/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://security.paloaltonetworks.com/CVE-2026-0257" target="_blank" rel="noopener">Palo Alto Networks</a></p>
+            <h3>Check Point SmartConsole 認証回避（CVE-2026-16232）— 悪用継続、パッチ急務</h3>
+            <p>管理サーバへ管理者権限のアプリケーショントークンを取得し得る欠陥で、実害が確認済み。CISA KEV 期限（7/25）後も Jumbo Hotfix 適用と Trusted Clients 制限、公開管理面の棚卸しが日本語・英語双方で続報されています。</p>
+            <p class="source"><a href="https://research.checkpoint.com/2026/27th-july-threat-intelligence-report/" target="_blank" rel="noopener">Check Point Research</a><a href="https://blackhatnews.tokyo/archives/125337" target="_blank" rel="noopener">TokyoBlackHatNews</a><a href="https://www.helpnetsecurity.com/2026/07/23/check-point-vulnerability-cve-2026-16232/" target="_blank" rel="noopener">Help Net Security</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>Cl0p 系、PTC Windchill／FlexPLM の事前認証 RCE（CVE-2026-12569）を積極悪用</h3>
-            <p>FlexPLM の情報漏洩と Windchill ログイン・サーブレット欠陥を連鎖し、認証なしで JSP Web シェルを配備するキャンペーンが報告されています。ReliaQuest は X 上でも悪用観測を共有。製造・自動車など PLM 公開面のパッチと露出確認が急務です。</p>
-            <p class="source"><a href="https://thecyberpost.com/news/hackers/cl0p-affiliates-target-internet-exposed-ptc-windchill-and-flexplm-with-unauthenticated-rce/" target="_blank" rel="noopener">The Cyber Post</a><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-12569" target="_blank" rel="noopener">NVD</a></p>
+            <h3>Check Point、7/27 Threat Intelligence Report で悪用・フィッシング動向を整理</h3>
+            <p>SmartConsole 悪用に加え、Microsoft を装うフィッシング（Q2 最多ブランド）、インフォスティーラーログ経由のクラウド初期侵入、Zimbra 向けゼロクリック等を週次で要約。運用チーム向けの横断チェックリストとして有用です。</p>
+            <p class="source"><a href="https://research.checkpoint.com/2026/27th-july-threat-intelligence-report/" target="_blank" rel="noopener">Check Point Research</a></p>
           </div>
         </article>
       </div>
@@ -631,46 +631,46 @@
         <h2>日本国内の車番認識</h2>
         <span class="count">5 STORIES</span>
       </div>
-      <p class="note">過去24時間以内の ANPR/LPR 技術プレスは限定的でした。直近の物流メディア報道と、車番認識に直結する国内ベンダーの継続公開資料を重要度順に掲載します。</p>
+      <p class="note">過去24時間以内の ANPR/LPR 製品プレスは限定的でした。ナンバープレート悪用の事件報道と、物流向け車番認識の直近メディア／ベンダー資料を重要度順に掲載します。</p>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>アマノ、工場・物流向け車番認識入退管理「ASAS」を販売開始 — LNEWS が詳報</h3>
-            <p>クラウド型ナンバープレート認識で入場可否を判定し、入退履歴を一元管理する「ASAS」。ゲートレス／ゲート設置の双方に対応し、バース予約システム連携や来訪予約もオプション。物流効率化法対応を背景に初年度100レーンを目標としています。</p>
-            <p class="source"><a href="https://www.lnews.jp/2026/07/s0724504.html" target="_blank" rel="noopener">LNEWS</a><a href="https://www.lnews.jp/2026/07/s0723702.html" target="_blank" rel="noopener">LNEWS（続報）</a></p>
+            <h3>岡山で盗難プレート装着のトクリュウ容疑者を検挙 — 車番識別の実運用ニーズを再提示</h3>
+            <p>KSB などによると、盗難ナンバープレートを装着し特殊開錠用具を所持していたとして男女4人が検挙。盗品プレートによる車両偽装は警察・物流ゲート双方で検知が難しく、登録車番との自動照合やブラックリスト連動の重要性が改めて意識されます。</p>
+            <p class="source"><a href="https://topics.smt.docomo.ne.jp/article/ksb/region/ksb-16758215?fm=latestnews" target="_blank" rel="noopener">KSB / dメニューニュース</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>アイテック「ParkingEyes 荷役時間計測」— 車番カメラで荷待ち・荷役を自動記録</h3>
-            <p>物流効率化法で求められる荷待ち・荷役時間の記録を、構内ポイントの車番認識通過時刻差分から算出。人員やドライバー負担を増やさずに法対応する手段としてプレス公開されています。</p>
-            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000009.000077601.html" target="_blank" rel="noopener">PR TIMES（アイテック）</a></p>
+            <h3>アマノ「ASAS」— クラウド車番認識入退管理、LOGI-BIZ が続報</h3>
+            <p>工場・物流向けにナンバープレート認識で入場可否を判定し、来訪予約やバース予約 API 連携をオプション化。物流効率化法対応を背景に初年度100レーンを目標とし、LNEWS／LOGI-BIZ が製品仕様を整理しています。</p>
+            <p class="source"><a href="https://online.logi-biz.com/147801/" target="_blank" rel="noopener">LOGI-BIZ online</a><a href="https://www.lnews.jp/2026/07/s0724504.html" target="_blank" rel="noopener">LNEWS</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>セーフィー「AI-App ナンバープレート認識」（アイテック LPR 採用）</h3>
-            <p>クラウドカメラ上で車番認識を完結させ、物流拠点の入退場記録を自動化。認識率99.5%をうたう EyeTech LPR を採用し、トラック簿など予約受付システム連携も展開されています。</p>
-            <p class="source"><a href="https://safie.jp/ai-app/number-plate/" target="_blank" rel="noopener">Safie</a><a href="https://prtimes.jp/main/html/rd/p/000000340.000017641.html" target="_blank" rel="noopener">PR TIMES</a></p>
+            <h3>アイテック「ParkingEyes 荷役時間計測」— 車番カメラで荷待ち・荷役を自動記録</h3>
+            <p>構内ポイントの通過時刻差分から荷待ち・荷役時間を算出し、物流効率化法の記録義務に対応。人員やドライバー負担を増やさない手段としてプレス公開されています。</p>
+            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000009.000077601.html" target="_blank" rel="noopener">PR TIMES（アイテック）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Future Standard、ご当地ナンバー対応の車番認識 AI を継続展開</h3>
-            <p>地方版図柄入りプレートや複数車両同時検出をうたう映像解析ソリューション。物流ゲートでの入場管理など現場 DX 用途の採用事例が製品ページで公開されています。</p>
-            <p class="source"><a href="https://www.futurestandard.co.jp/business/ai/solutions/license-plate-recognition" target="_blank" rel="noopener">Future Standard</a></p>
+            <h3>セーフィー「AI-App ナンバープレート認識」（EyeTech LPR 採用）</h3>
+            <p>クラウドカメラ上で車番認識を完結させ、物流拠点の入退場記録を自動化。認識率99.5%をうたうアイテックエンジンを採用し、予約受付システム連携も展開されています。</p>
+            <p class="source"><a href="https://safie.jp/ai-app/number-plate/" target="_blank" rel="noopener">Safie</a><a href="https://prtimes.jp/main/html/rd/p/000000340.000017641.html" target="_blank" rel="noopener">PR TIMES</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>DMP、Di1 搭載エッジ AI カメラ向け ANPR ソリューションを展開</h3>
-            <p>ZIA PLATE とエッジ AI SoC「Di1」を組み合わせ、クラウド依存を減らしたリアルタイム車番認識を訴求。国内に加え、ナンバー形式が多様な海外市場向け展開も公式に示されています。</p>
-            <p class="source"><a href="https://www.dmprof.com/ja/news/20260422-anpr-ja/" target="_blank" rel="noopener">DMP</a><a href="https://www.dmprof.com/ja/products-and-services/ai-products/software/zia-plate/" target="_blank" rel="noopener">ZIA Plate</a></p>
+            <h3>警察庁資料：部品ねらいに占めるナンバープレート被害は依然高水準</h3>
+            <p>官民合同プロジェクトの自動車盗難統計では、部品ねらいに占めるナンバープレート被害割合が令和7年で約39.7%。盗難防止ネジの普及促進が示され、車番認識・照合システム需要の背景データとして参照価値があります。</p>
+            <p class="source"><a href="https://www.npa.go.jp/bureau/safetylife/bouhan/car/2026zidoushatounan.pdf" target="_blank" rel="noopener">警察庁 PDF</a></p>
           </div>
         </article>
       </div>
@@ -686,57 +686,57 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Claude Code v2.1.219 — Opus 5 既定化とサブエージェント深度・サンドボックス設定の見直し</h3>
-            <p>7月25日付の DevelopersIO が、v2.1.219 の実務影響を整理。既定 Opus が claude-opus-5（1M コンテキスト、Fast は約2.5倍速）へ切り替わり、サブエージェントのネスト既定が深さ3、動的ワークフロー既定が medium に。CI 向けの strictAllowlist や破壊的変更（/fast 対象から Opus 4.7 除外）も要確認です。</p>
-            <p class="source"><a href="https://dev.classmethod.jp/articles/20260725-cc-updates-v2-1-219/" target="_blank" rel="noopener">DevelopersIO</a><a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener">Anthropic</a></p>
+            <h3>Amazon CloudWatch、Coding agent insights を発表 — Claude Code／Codex／Copilot の効果測定</h3>
+            <p>AWS Weekly Roundup（7/27）によると、Claude apps gateway 経由で Claude Code のテレメトリを追加計測なしに収集し、Codex や GitHub Copilot も対象。OpenTelemetry ベースで組織横断の AI コーディング投資対効果を可視化できます。</p>
+            <p class="source"><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-july-27-2026/" target="_blank" rel="noopener">AWS News Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Cursor エージェントスウォーム — フロンティア計画＋安価ワーカーでコスト差最大約8倍</h3>
-            <p>7月26日付 THE DECODER が、SQLite をマニュアルのみから Rust 再実装する実験を詳報。新アーキテクチャは全構成で最終的にテスト100%到達し、Opus 計画＋Composer 2.5 ワーカーは約1,339ドル、GPT-5.5 単独は約1万ドル超。カスタム VCS で毎秒約1,000コミット規模の衝突を抑えた点が焦点です。</p>
-            <p class="source"><a href="https://the-decoder.com/cursors-agent-swarm-suggests-cheaper-models-can-handle-most-coding-when-frontier-models-plan-the-work/" target="_blank" rel="noopener">THE DECODER</a><a href="https://cursor.com/blog/agent-swarm-model-economics" target="_blank" rel="noopener">Cursor Blog</a></p>
+            <h3>GitHub Copilot アプリ専用アクセスポリシー — CLI と独立管理が可能に</h3>
+            <p>これまで CLI ポリシーに連動していた Copilot アプリアクセスが、エンタープライズ／組織単位で独自制御できるように。既定は Enabled everywhere。隔離ワークスペースでのエージェント実行と PR 経由の変更反映を前提に、enterprise-managed settings の対象クライアントにも加わります。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-07-27-manage-github-copilot-app-access-with-a-dedicated-policy/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>GitHub Copilot、Claude Opus 5 をモデルピッカーへ追加（展開継続）</h3>
-            <p>VS Code／CLI／cloud agent／JetBrains など主要面へ順次展開中。長時間のエージェント型コーディング向けとし、Business/Enterprise はポリシー有効化が必要。ロールアウトは段階的で、未表示環境は再確認が案内されています。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-07-24-claude-opus-5-is-now-available-in-github-copilot/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>Claude Code／Codex — 7月の焦点は「エージェント制御面」との整理記事</h3>
+            <p>Developers Digest（7/26）が、Codex の対話フォーム／Mermaid、Claude Code の in-app ブラウザ・`/doctor`・`/fork`・成果物の MCP 連携、GitHub JetBrains での Codex プロバイダ枠などを横断整理。モデル単体よりワークフロー殻の製品化が進む局面です。</p>
+            <p class="source"><a href="https://www.developersdigest.tech/blog/codex-claude-code-july-agent-controls" target="_blank" rel="noopener">Developers Digest</a><a href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">Claude Code Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Kiro IDE／CLI／Web で Claude Opus 5 が選択可能に</h3>
-            <p>AWS 系エージェント IDE の Kiro が、Pro 以上向けに実験サポートで Opus 5 を追加。1M コンテキスト、クレジット倍率2.2x。マルチファイル改修や並列エージェント協調の改善を前面に出し、再起動後のモデルセレクタから利用できます。</p>
-            <p class="source"><a href="https://kiro.dev/blog/opus-5/" target="_blank" rel="noopener">Kiro Blog</a><a href="https://kiro.dev/changelog/models/claude-opus-5/" target="_blank" rel="noopener">Kiro Changelog</a></p>
+            <h3>GitHub Copilot に Claude Opus 5 が追加（段階ロールアウト継続）</h3>
+            <p>VS Code／CLI／cloud agent／JetBrains など主要面へ順次展開。長時間のエージェント型コーディング向けとし、Business/Enterprise はポリシー有効化が必要。未表示環境は再確認が案内されています。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-07-24-claude-opus-5-is-now-available-in-github-copilot/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Cursor Router：リクエスト単位のモデル振り分けが Teams／Enterprise で継続話題</h3>
-            <p>タスク複雑度に応じてモデルを自動割当し、オンライン A/B では frontier 品質を約60%コスト削減で達成したと公式。日本語メディアの7月25日号でも Opus 5 統合と並んで「コスト6割減」として取り上げられました。</p>
-            <p class="source"><a href="https://cursor.com/blog/router" target="_blank" rel="noopener">Cursor Blog</a><a href="https://ai-kidou.jp/ainews-20260725/" target="_blank" rel="noopener">AI氣道</a></p>
+            <h3>Cursor でも Claude Opus 5 利用可能 — CursorBench で Fable 5 並み、ZDR 対応</h3>
+            <p>Cursor 公式フォーラムによると、CursorBench で 66.7%（Fable 5 は 66.5%）とほぼ同等ながら半額帯、かつ Zero Data Retention 互換。モデルピッカーから選択でき、コスト効率の高いフロンティア候補として話題です。</p>
+            <p class="source"><a href="https://forum.cursor.com/t/claude-opus-5-now-available/166583" target="_blank" rel="noopener">Cursor Forum</a><a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener">Anthropic</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>AWS Bedrock／Claude Platform on AWS で Opus 5 提供 — ZDR 既定</h3>
-            <p>モデル発表と同日に Bedrock と Claude Platform on AWS で利用可能。Bedrock ではゼロデータ保持（ZDR）を既定とし、長時間エージェントや大規模コードベース作業向けのエンタープライズ経路として位置づけられています。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/07/claude-opus-5-aws/" target="_blank" rel="noopener">AWS What&apos;s New</a><a href="https://aws.amazon.com/blogs/machine-learning/introducing-claude-opus-5-on-aws-anthropics-most-capable-opus-model/" target="_blank" rel="noopener">AWS ML Blog</a></p>
+            <h3>Cursor Router：リクエスト単位のモデル自動振り分け（Teams／Enterprise）</h3>
+            <p>タスク複雑度に応じて最適モデルへルーティング。600k 超の実リクエストで学習し、オンライン A/B で満足度を維持しつつコスト削減をうたう公式機能として継続注目されています。</p>
+            <p class="source"><a href="https://cursor.com/blog/router" target="_blank" rel="noopener">Cursor Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>GitHub Issues、エージェント自動化の根拠・信頼度・承認がパブリックプレビュー</h3>
-            <p>ラベル付与やアサイン、クローズなどに rationale と high/medium/low の信頼度を付与。低信頼度は提案として保留し、`has:suggestions` でレビュー可能。Copilot cloud agent と Agentic Workflows に対応します。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-07-23-agent-automation-controls-in-github-issues-in-public-preview/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>Claude Code v2.1.219 — Opus 5 既定化とサンドボックス／サブエージェント設定</h3>
+            <p>既定 Opus が claude-opus-5（1M コンテキスト）へ切り替わり、strictAllowlist やネスト深さ・動的ワークフロー既定の見直しも。CI 向け設定と `/fast` 対象の変更は運用前の確認が必要です。</p>
+            <p class="source"><a href="https://dev.classmethod.jp/articles/20260725-cc-updates-v2-1-219/" target="_blank" rel="noopener">DevelopersIO</a><a href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">Claude Code Changelog</a></p>
           </div>
         </article>
       </div>
@@ -752,33 +752,33 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Node.js、7/27 に 26.x／24.x／22.x のセキュリティリリースを予告</h3>
-            <p>各サポートラインとも最高深刻度は HIGH。Active LTS の 24.x も含むため、本番運用ではパッチ公開直後の適用枠を確保する動きが続いています。EOL 版は公式修正なしで、現行ラインへの移行が前提です。</p>
-            <p class="source"><a href="https://nodejs.org/en/blog/vulnerability/july-2026-security-releases" target="_blank" rel="noopener">Node.js Blog</a></p>
+            <h3>Node.js、本日（7/27）26.x／24.x／22.x の HIGH セキュリティリリース</h3>
+            <p>各サポートラインとも最高深刻度は HIGH。CVE 詳細は公開タイミングに合わせて開示される運用で、EOL 版（20.x 以前など）は公式修正なし。本番・CI・コンテナイメージの在庫確認と、パッチ直後の適用枠確保が本日の優先事項です。</p>
+            <p class="source"><a href="https://nodejs.org/en/blog/vulnerability/july-2026-security-releases" target="_blank" rel="noopener">Node.js Blog</a><a href="https://www.digitalapplied.com/blog/nextjs-nodejs-july-2026-security-patch-week" target="_blank" rel="noopener">Digital Applied</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>PyPI、リリースから14日超の版への新規ファイル追加を拒否</h3>
-            <p>公開トークンや CI が侵害された際に、長く信頼されてきた版へ後から悪性ファイルを足す「リリース・ポイズニング」を防ぐ措置。影響調査では正当な後追いアップロードは稀少で、追加対応は新バージョン発行が推奨されます。</p>
-            <p class="source"><a href="https://blog.pypi.org/posts/2026-07-22-releases-now-reject-new-files-after-14-days/" target="_blank" rel="noopener">PyPI Blog</a><a href="https://www.helpnetsecurity.com/2026/07/23/pypi-secures-package-releases/" target="_blank" rel="noopener">Help Net Security</a></p>
+            <h3>Next.js 7月セキュリティリリース — SSRF／ミドルウェア迂回など9件を修正</h3>
+            <p>v16.2.11（Active LTS）と v15.5.21（Maintenance LTS）で、rewrites 経由 SSRF、Turbopack＋単一ロケール時の認可迂回、Server Actions DoS などを修正。Netlify も7/27付で影響整理を更新し、未パッチ環境のアップグレードを促しています。</p>
+            <p class="source"><a href="https://nextjs.org/blog/july-2026-security-release" target="_blank" rel="noopener">Next.js Blog</a><a href="https://www.netlify.com/changelog/2026-07-21-nextjs-security-vulnerabilities/" target="_blank" rel="noopener">Netlify Changelog</a><a href="https://github.com/vercel/next.js/releases/tag/v16.2.11" target="_blank" rel="noopener">next.js Releases</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>pip 26.2 予定の `--only-deps` — 依存だけ入れる公式手段が登場へ</h3>
-            <p>InfoWorld によると、パッケージ本体を入れずにランタイム依存だけを入れるフラグが pip 26.2（7月末予定）に入る見込み。`uv sync --no-install-project` 相当の需要を標準ツールへ取り込む動きです。</p>
-            <p class="source"><a href="https://www.infoworld.com/article/4200712/new-pip-flag-fixes-longstanding-python-frustration.html" target="_blank" rel="noopener">InfoWorld</a></p>
+            <h3>PyPI、リリースから14日超の版への新規ファイル追加を拒否</h3>
+            <p>長く信頼されてきた版へ後から悪性ファイルを足す「リリース・ポイズニング」を防ぐ措置。正当な後追いアップロードは稀少で、追加対応は新バージョン発行が推奨されます。</p>
+            <p class="source"><a href="https://blog.pypi.org/posts/2026-07-22-releases-now-reject-new-files-after-14-days/" target="_blank" rel="noopener">PyPI Blog</a><a href="https://www.helpnetsecurity.com/2026/07/23/pypi-secures-package-releases/" target="_blank" rel="noopener">Help Net Security</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Deno 2.9.4 — V8 150.2.0 と Node 互換・HMR 改善</h3>
-            <p>7月23日公開。V8 更新に加え、React Router 向けデスクトップ HMR、Node crypto／http2 互換、依存の `--minimum-dependency-age` 対応など実務寄りの修正がまとまっています。</p>
-            <p class="source"><a href="https://github.com/denoland/deno/releases/tag/v2.9.4" target="_blank" rel="noopener">denoland/deno Releases</a></p>
+            <h3>pip 26.2 予定の `--only-deps` — 依存だけ入れる公式手段</h3>
+            <p>InfoWorld によると、パッケージ本体を入れずにランタイム依存だけを入れるフラグが pip 26.2（7月末予定）に入る見込み。ビルド依存は対象外で、`uv sync --no-install-project` 相当の需要を標準ツールへ取り込みます。</p>
+            <p class="source"><a href="https://www.infoworld.com/article/4200712/new-pip-flag-fixes-longstanding-python-frustration.html" target="_blank" rel="noopener">InfoWorld</a></p>
           </div>
         </article>
         <article class="item">
@@ -793,16 +793,16 @@
           <div class="rank">06</div>
           <div>
             <h3>TypeScript 7.0：Go 移植コンパイラ定着、API は 7.1 待ちの議論が継続</h3>
-            <p>フルビルドおおよそ8〜12倍高速化が報告される一方、安定した programmatic API は 7.1 以降見込み。フレームワーク勢は `@typescript/typescript6` 併用での段階移行が推奨される状況が続いています。</p>
+            <p>フルビルドおおよそ8〜12倍高速化が報告される一方、安定した programmatic API は 7.1 以降見込み。フレームワーク勢は段階移行の併用が推奨される状況が続いています。</p>
             <p class="source"><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/" target="_blank" rel="noopener">TypeScript Blog</a><a href="https://www.infoworld.com/article/4196378/go-based-typescript-7-0-arrives.html" target="_blank" rel="noopener">InfoWorld</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>BullMQ Python v2.26.0 — JobScheduler 等のクラス移植を追加</h3>
-            <p>7月26日公開。JobScheduler、LockManager、AbortController、QueueEvents とグローバル制限まわりを Python 側へポート。キュー基盤の言語横断 API 揃えが進んでいます。</p>
-            <p class="source"><a href="https://github.com/taskforcesh/bullmq/releases/tag/vpy2.26.0" target="_blank" rel="noopener">bullmq Releases</a></p>
+            <h3>Deno 2.9.4 — V8 150.2.0 と Node 互換・HMR 改善</h3>
+            <p>V8 更新に加え、React Router 向けデスクトップ HMR、Node crypto／http2 互換、依存の `--minimum-dependency-age` 対応など実務寄りの修正がまとまっています。</p>
+            <p class="source"><a href="https://github.com/denoland/deno/releases/tag/v2.9.4" target="_blank" rel="noopener">denoland/deno Releases</a></p>
           </div>
         </article>
       </div>
@@ -818,48 +818,48 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Meta AI、Muse Spark 1.1 で計画・アプリ連携・スライド生成を一部市場へ展開</h3>
-            <p>カレンダー／メール連携、日次ブリーフィング、Web 調査、スライド作成など「実行まで行う」アシスタント機能を公式発表。7月26日付の報道でも段階ロールアウトが続報され、今後数週間で WhatsApp などへ拡大予定です。</p>
-            <p class="source"><a href="https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/" target="_blank" rel="noopener">Meta Newsroom</a><a href="https://www.moneycontrol.com/technology/meta-ai-gets-new-agentic-features-with-muse-spark-1-1-can-now-plan-tasks-create-slides-and-connect-with-your-apps-article-13983680.html" target="_blank" rel="noopener">Moneycontrol</a></p>
+            <h3>AWS Weekly Roundup（7/27）— アテネ Local Zone、Opus 5、Lambda .NET Durable ほか</h3>
+            <p>ギリシャ・アテネに Local Zone を開設し、データレジデンシーと低遅延を強化。Claude Opus 5（Bedrock は ZDR 既定）、Lambda durable execution SDK for .NET の GA、Connect の多言語エージェント音声、SageMaker Unified Studio の OpenSearch 接続などもまとめて発表されています。</p>
+            <p class="source"><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-july-27-2026/" target="_blank" rel="noopener">AWS News Blog</a><a href="https://aws.amazon.com/about-aws/whats-new/2026/07/lambdadf-dotnet/" target="_blank" rel="noopener">AWS What&apos;s New</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Amazon GuardDuty investigation agent がパブリックプレビュー</h3>
-            <p>検出結果の相関と脅威評価をオンデマンドで自動化し、リスクレベル・信頼度・MITRE ATT&amp;CK 対応と推奨アクションを返す機能。コンソール／CLI／API に加え AWS MCP サーバ経由でも呼べ、東京リージョンを含む10リージョンでプレビュー提供中です。</p>
-            <p class="source"><a href="https://aws.amazon.com/blogs/security/introducing-the-amazon-guardduty-investigation-agent-on-demand-ai-powered-threat-assessment/" target="_blank" rel="noopener">AWS Security Blog</a></p>
+            <h3>GitHub、Copilot アプリのアクセスポリシーを独立提供（7/27）</h3>
+            <p>エンタープライズ管理者がアプリと CLI を別々に有効／無効化可能に。エージェント作業は隔離環境＋PR レビュー前提で、既存のガバナンス（プラグイン制限など）をアプリにも一貫適用できます。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-07-27-manage-github-copilot-app-access-with-a-dedicated-policy/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>GitHub／PyPI の時間ベース防御がサプライチェーン運用の新常識に</h3>
-            <p>Dependabot の既定クールダウンと PyPI の古いリリースへのファイル追加拒否が、7月26日にまとめて注目。セキュリティ更新は即時のまま、通常のバージョン追従だけを意図的に遅らせる設計です。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/github-pypi-add-time-absed-defenses-against-supply-chain-attacks/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://github.blog/changelog/2026-07-14-dependabot-version-updates-introduce-default-package-cooldown/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>Amazon Bedrock AgentCore — トレースとログを同一ロググループに統合</h3>
+            <p>これまで分散していたエージェントのトレースとプロンプト／入出力を同一 CloudWatch ロググループへ集約。1回の呼び出しを一箇所でデバッグでき、エージェント単位の CMK やアクセス制御も適用しやすくなります。</p>
+            <p class="source"><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-july-27-2026/" target="_blank" rel="noopener">AWS News Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Google SecOps SOAR 6.3.94 を全リージョンへ配信（7/25）</h3>
-            <p>Google Cloud のリリースノートに、SecOps SOAR 6.3.94 の全リージョン提供が掲載。セキュリティ運用オーケストレーション面の定例更新として、運用チームの変更確認が必要です。</p>
-            <p class="source"><a href="https://docs.cloud.google.com/release-notes" target="_blank" rel="noopener">Google Cloud Release Notes</a></p>
+            <h3>Amazon Connect、50言語超の自然なエージェント音声体験を強化</h3>
+            <p>ポルトガル語・スペイン語・日本語・韓国語・タイ語など100超の新ボイスと会話改善を追加。トーンや感情に応じて応答するエージェント型セルフサービスを、より多くの顧客言語で構築できます。</p>
+            <p class="source"><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-july-27-2026/" target="_blank" rel="noopener">AWS News Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Claude Opus 5 が AWS／主要クラウド推論面でも利用可能に</h3>
-            <p>モデル発表と同日、Bedrock と Claude Platform on AWS で提供開始。コーディングエージェント需要とクラウド推論基盤の同時更新として、サービス面でも大きな動きが続いています。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/07/claude-opus-5-aws/" target="_blank" rel="noopener">AWS What&apos;s New</a></p>
+            <h3>Claude Opus 5 が AWS Bedrock／Claude Platform on AWS で利用可能</h3>
+            <p>モデル発表と同週、Bedrock ではゼロデータ保持を既定としつつ Opus 級性能を提供。コーディングエージェント需要とクラウド推論基盤の同時更新として、サービス面でも大きな動きが続いています。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/07/claude-opus-5-aws/" target="_blank" rel="noopener">AWS What&apos;s New</a><a href="https://aws.amazon.com/blogs/machine-learning/introducing-claude-opus-5-on-aws-anthropics-most-capable-opus-model/" target="_blank" rel="noopener">AWS ML Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
             <h3>GitHub Issues のエージェント自動化コントロールが公開プレビュー</h3>
-            <p>根拠表示・信頼度・承認フローにより、自動トリアージの可視性と人手レビューを両立。公開リポジトリや大規模バックログ向けの運用改善として位置づけられます。</p>
+            <p>ラベル付与やアサインなどに根拠と信頼度を付与し、低信頼度は提案として保留。`has:suggestions` でレビュー可能で、Copilot cloud agent と Agentic Workflows に対応します。</p>
             <p class="source"><a href="https://github.blog/changelog/2026-07-23-agent-automation-controls-in-github-issues-in-public-preview/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
@@ -875,7 +875,7 @@
     </section>
 
     <footer>
-      <p>生成: 2026-07-26 21:00 UTC 前後 / 収集方法: Web 検索（公式・専門メディア優先）。重複報道は要約統合済み。リンク先の内容は更新される場合があります。</p>
+      <p>生成: 2026-07-27 21:00 UTC 前後 / 収集方法: Web 検索（公式・専門メディア優先）。重複報道は要約統合済み。X の反応は一次報道で確認できた範囲のみ追記。リンク先の内容は更新される場合があります。</p>
     </footer>
   </div>
 </body>
