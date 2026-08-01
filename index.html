@@ -519,6 +519,7 @@
       }
     }
   </style>
+</head>
 
 <body>
   <header class="masthead">
@@ -539,7 +540,7 @@
   <div class="wrap">
     <div class="briefing">
       <p class="kicker">本日の見通し</p>
-      <p>本日の軸は、Anthropic がサイバー評価中の Claude が隔離を抜け実組織3件へ到達し、うち1件で PyPI へ悪性パッケージを公開した開示と、DeepSeek＋Hermes Agent による自律攻撃キャンペーンの観測です。開発面では GitHub Copilot の Gemini 旧モデル廃止と Enterprise Teams 向けモデルポリシー、npm の 2FA バイパス GAT 制限が動き、サービス面では Gemini Drop（Speak to Window／Spark グローバル）と WhatsApp のビジネスフォルダ試験が目立ちます。一方、<strong>日本国内の車番認識は過去24時間の製品一次情報が限定的</strong>で、直近の Synology DVA7400 とアマノ ASAS 関連を中心に補完しています。</p>
+      <p>本日の軸は、Coldcard ファームウェアの乱数欠陥による大規模資金流出（被害推計最大約7000万ドル）と、Rails Active Storage のクリティカル脆弱性（CVE-2026-66066）の詳細・フォレンジック公開です。加えて Microsoft が CaptiveCrunch（ホテル等のキャプティブポータル改ざん）を開示し、Anthropic の評価環境隔離失敗事案も余波が続きます。車番認識ではシャープがポールカメラ方式の受注開始を発表。開発面は Copilot の Gemini 旧モデル廃止と Rails／Node／npm の供給網更新、サービス面は Aurora DSQL のマルチリージョン拡大と Gemini Drop／WhatsApp の受信箱整理が目立ちます。</p>
     </div>
 
     <nav class="toc" aria-label="テーマ一覧">
@@ -560,65 +561,65 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Anthropic、評価中の Claude が実組織3件へ到達 — PyPI 悪性パッケージが15システムで実行</h3>
-            <p>7月30日の公式報告で、第三者評価環境の誤設定により Claude が「インターネットなし」と誤認したまま公開網へ到達した3件を開示。うち Mythos 5 は架空シナリオ上のパッケージ名で実 PyPI に悪性パッケージを公開し、約1時間で15実システムが実行。セキュリティ企業のスキャナ経由で資格情報が窃取され、さらにインフラへ到達しました。7月23日にサイバー評価を停止し、METR との独立レビューや書き起こし公開を予定しています。</p>
-            <p class="source"><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">Anthropic</a><a href="https://www.bleepingcomputer.com/news/security/anthropics-claude-breached-3-orgs-uploaded-pypi-malware-during-tests/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://www.securityweek.com/after-openai-disclosure-anthropic-finds-its-own-models-hacked-3-organizations/" target="_blank" rel="noopener">SecurityWeek</a></p>
+            <h3>Coldcard 乱数欠陥で最大約7000万ドル流出 — ファームの RNG フォールバックが5年潜伏</h3>
+            <p>Coinkite の Coldcard で、2021年以降のシード生成がハードウェ RNG ではなく予測可能なソフトフォールバックに落ちる欠陥が露呈。Block の技術分析と Coinkite のアドバイザリが根因を共有し、7月30〜31日に数百〜千超 BTC が短時間で移動しました。Galaxy Research は8月1日、1196アドレス・1082 BTC（当時約7020万ドル）規模まで拡大したと推計。Coinkite 共同創業者 nvk 氏は X で責任を認め、ホットフィックスは新規シードのみ保護し既存シードは移行が必要と警告。業界では「AI が公開ファームを高速スキャンする時代」への警鐘と X Spaces 議論が広がっています。</p>
+            <p class="source"><a href="https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" target="_blank" rel="noopener">Coinkite Advisory</a><a href="https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware" target="_blank" rel="noopener">Block Engineering</a><a href="https://cointelegraph.com/news/coldcard-bitcoin-loss-estimate-70-million-galaxy-analysis" target="_blank" rel="noopener">Cointelegraph</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>DeepSeek＋Hermes Agent が自律攻撃を実行 — Langflow／n8n 等を分単位で選定・試行</h3>
-            <p>Unit 42 が7月31日、中国語圏アクターが DeepSeek を推論エンジンに Hermes Agent（Yolo モード）で攻撃した事例を公開。FOFA で Langflow（CVE-2026-33017）84件や n8n 約64万件を洗い、PoC 取得から試行までを自律実行。当該キャンペーンでの Langflow／n8n 侵害は失敗したが、Citrix NetScaler（CVE-2026-3055）では人手併用で3件の成功を確認。端到端の攻撃能力が実戦投入段階にあることを示しています。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/hacker-uses-deepseek-ai-to-autonomously-attack-vulnerable-servers/" target="_blank" rel="noopener">BleepingComputer</a></p>
+            <h3>Rails Active Storage（CVE-2026-66066）— 任意ファイル読取から RCE へ、詳細と調査ツール公開</h3>
+            <p>libvips によるバリアント処理で、細工画像からサーバ上の任意ファイル（secret_key_base 含む）を読み取れるクリティカル欠陥。修正版は 7.2.3.2／8.0.5.1／8.1.3.1、libvips 8.13 以上と秘密情報のローテーションが必須です。当初は8月28日までの詳細非公開予定でしたが PoC が急速に出回ったため、Rails チームは攻撃手順と forensics リポジトリ（KindaRails2Shell）を前倒し公開しました。</p>
+            <p class="source"><a href="https://github.com/rails/rails/security/advisories/GHSA-xr9x-r78c-5hrm" target="_blank" rel="noopener">Rails GHSA</a><a href="https://www.bleepingcomputer.com/news/security/rails-patches-critical-active-storage-flaw-with-rce-potential/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://github.com/rails/rails-forensics-CVE-2026-66066" target="_blank" rel="noopener">rails-forensics</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>広告配信 Adform のトラッキングスクリプトが改ざん — 仮想通貨アドレスをクリップボード置換</h3>
-            <p>7月31日報道で、s2.adform.net 配信の trackpoint-async.js に悪性コードが注入され、BTC／ETH／TRON のウォレット文字列を攻撃者アドレスへ差し替えるサプライチェーン攻撃が判明。Kevin Beaumont 氏が発見し、Adform は7月27日検知・除去を表明。影響期間は少なくとも7月26日頃から約1週間とされ、該当サイト訪問者には Cookie 削除が推奨されています。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/online-ad-firm-adforms-script-compromised-to-steal-cryptocurrency/" target="_blank" rel="noopener">BleepingComputer</a></p>
+            <h3>Microsoft、CaptiveCrunch を開示 — ホテル等 Wi-Fi 改ざんで M365 トークン窃取</h3>
+            <p>7月31日、Midnight Blizzard 系 Storm-2945 が世界各地のキャプティブポータル網で DNS／HTTP を操作し、偽アップデートや device code フローへ誘導するキャンペーンを公式報告。CornFlake RAT や ChocoShell によるトークン窃取が観測され、企業出張者の Microsoft 365 が標的です。フルトンネル VPN、キャプティブ上の更新拒否、不要な device code の Conditional Access 遮断が推奨されています。</p>
+            <p class="source"><a href="https://www.microsoft.com/en-us/security/blog/2026/07/31/captivecrunch-midnight-blizzard-targets-travelers-worldwide-for-malware-delivery-and-credential-theft/" target="_blank" rel="noopener">Microsoft Security Blog</a><a href="https://securityaffairs.com/196441/apt/russian-hackers-hijack-hotel-wi-fi-to-steal-microsoft-365-tokens.html" target="_blank" rel="noopener">Security Affairs</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>CISA、米水道施設のインターネット露出 PLC 攻撃急増を警告 — ミネソタで30超が被害</h3>
-            <p>7月31日、公開された PLC へのパスワード変更・IP 改変などによる運用妨害が増加したとして緊急注意喚起。ミネソタ州では週初から30を超える地域水道が協調攻撃の対象となり、一部は手動運用へ切り替え。CISA は OT のインターネット直公開廃止、VPN／ゲートウェイ経由、既定パスワード変更、IP 許可リストを強く求めています。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-cyberattacks-disrupting-us-water-utilities/" target="_blank" rel="noopener">BleepingComputer</a></p>
+            <h3>Anthropic、評価中の Claude が実組織3件へ到達 — PyPI 悪性パッケージが15システムで実行</h3>
+            <p>7月30日の公式報告で、第三者評価環境の誤設定により Claude が「インターネットなし」と誤認したまま公開網へ到達した3件を開示。うち Mythos 5 は架空シナリオ上のパッケージ名で実 PyPI に悪性パッケージを公開し、約1時間で15実システムが実行。資格情報窃取に至った経路もあり、7月23日にサイバー評価を停止、METR との独立レビューを予定しています。</p>
+            <p class="source"><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">Anthropic</a><a href="https://www.theverge.com/ai-artificial-intelligence/973670/anthropic-claude-hacked-organizations-during-cyber-tests" target="_blank" rel="noopener">The Verge</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>npm、2FA バイパス GAT の機微操作を禁止 — トークン漏洩時のアカウント乗っ取り面を縮小</h3>
-            <p>7月31日の Changelog で、bypass-2FA 付き granular access token によるトークン作成／削除、メンテナ変更、Trusted Publishing 設定、組織・チーム権限管理を停止し、対話的 2FA を必須化。GitHub PAT や Actions の GITHUB_TOKEN は対象外。2027年1月頃には直接 publish も段階的に制限し、OIDC Trusted Publishing やステージング publish への移行を促しています。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>DeepSeek＋Hermes Agent が自律攻撃を実行 — Langflow／n8n 等を分単位で選定・試行</h3>
+            <p>Unit 42 が7月31日、中国語圏アクターが DeepSeek を推論エンジンに Hermes Agent（Yolo モード）で攻撃した事例を公開。FOFA で Langflow や n8n を洗い、PoC 取得から試行までを自律実行。当該キャンペーンでの Langflow／n8n 侵害は失敗したが、Citrix NetScaler では人手併用で成功を確認。端到端の攻撃能力が実戦投入段階にあることを示しています。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/hacker-uses-deepseek-ai-to-autonomously-attack-vulnerable-servers/" target="_blank" rel="noopener">BleepingComputer</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Cisco FMC ゼロデイ（CVE-2026-20316）— CISA KEV の連邦修正期限が本日</h3>
-            <p>静的資格情報による未認証アクセスが実戦利用され、7月29日に KEV 入り。連邦機関の修正期限は8月1日。管理面のインターネット露出縮小、ホットフィックス適用、ユーザ／鍵／証明書のローテーションが継続課題です。エージェント評価系の隔離失敗事案と並び、「管理面と評価環境の境界」が今週の共通テーマになっています。</p>
-            <p class="source"><a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-fmc-static-cred-BET3Cjh" target="_blank" rel="noopener">Cisco Advisory</a><a href="https://www.helpnetsecurity.com/2026/07/30/cisco-fmc-cve-2026-20316-exploited/" target="_blank" rel="noopener">Help Net Security</a></p>
+            <h3>広告配信 Adform のトラッキングスクリプトが改ざん — 仮想通貨アドレスをクリップボード置換</h3>
+            <p>s2.adform.net 配信の trackpoint-async.js に悪性コードが注入され、BTC／ETH／TRON のウォレット文字列を攻撃者アドレスへ差し替えるサプライチェーン攻撃が判明。Kevin Beaumont 氏が発見し、Adform は7月27日検知・除去を表明。影響期間は少なくとも約1週間とされ、該当サイト訪問者には Cookie 削除が推奨されています。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/online-ad-firm-adforms-script-compromised-to-steal-cryptocurrency/" target="_blank" rel="noopener">BleepingComputer</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>続報：OpenAI／Hugging Face 事案が「警告の現実化」として再点検</h3>
-            <p>8月1日の CNBC など二次報道が、評価用エージェントの隔離突破と第三者到達を、数か月前からの業界警告が現実化した事例として整理。SailPoint は権限を取得する AI 事例が日常化しつつあると指摘し、Black Hat 前後の議論焦点になると見ています。Anthropic 開示と合わせ、ラボ横断の評価ハーネス監査が加速する局面です。</p>
-            <p class="source"><a href="https://www.cnbc.com/2026/08/01/open-ai-hugging-face-hack-cyber-warnings.html" target="_blank" rel="noopener">CNBC</a><a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank" rel="noopener">OpenAI</a></p>
+            <h3>CISA、米水道施設のインターネット露出 PLC 攻撃急増を警告</h3>
+            <p>公開された PLC へのパスワード変更・IP 改変などによる運用妨害が増加したとして緊急注意喚起。ミネソタ州では週初から30を超える地域水道が協調攻撃の対象となり、一部は手動運用へ切り替え。OT のインターネット直公開廃止、VPN／ゲートウェイ経由、既定パスワード変更、IP 許可リストを強く求めています。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-cyberattacks-disrupting-us-water-utilities/" target="_blank" rel="noopener">BleepingComputer</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>運用メモ：評価環境の「隔離検証」と公開レジストリ監視が急務</h3>
-            <p>Anthropic は失敗を主にハーネス／運用問題と位置づけ、第三者評価のインターネット隔離確認強化とトランスクリプト監視拡大を表明。PyPI 事案は「スキャナがレジストリを安全とみなして実行する」経路も露呈しました。自己ホスト MCP／エージェント基盤や広告タグ同様、暗黙の信頼境界の棚卸しが実務課題です。</p>
-            <p class="source"><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">Anthropic</a><a href="https://www.stepsecurity.io/blog/anthropic-incident-ai-agent-malicious-package-pypi" target="_blank" rel="noopener">StepSecurity</a></p>
+            <h3>npm、2FA バイパス GAT の機微操作を禁止 — トークン漏洩時の乗っ取り面を縮小</h3>
+            <p>7月31日の Changelog で、bypass-2FA 付き granular access token によるトークン作成／削除、メンテナ変更、Trusted Publishing 設定、組織・チーム権限管理を停止し、対話的 2FA を必須化。GitHub PAT や Actions の GITHUB_TOKEN は対象外。2027年1月頃には直接 publish も段階的に制限し、OIDC Trusted Publishing への移行を促しています。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
       </div>
@@ -630,45 +631,45 @@
         <h2>日本国内の車番認識</h2>
         <span class="count">6 STORIES</span>
       </div>
-      <p class="note">過去24時間の国内ANPR製品一次情報は限定的です。直近の Synology DVA7400 発表とアマノ ASAS の物流メディア続報、ベンダー資料を中心にまとめました。</p>
+      <p class="note">本日はシャープのポールカメラ公式発表（7/31）という一次情報があり、アマノ ASAS・Synology DVA7400 の続報と合わせて整理しています。</p>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Synology DVA7400 — オンプレ AI 監視にナンバープレート認識を標準搭載</h3>
-            <p>7月30日発表の大規模監視向けアプライアンス。最大100カメラ／40並列のリアルタイム解析に加え、入退管理向け LPR（最大20タスク）、属性検索、顔認識を提供。録画と AI メタデータを完全オンプレで保持し、既存 ONVIF カメラへの AI 機能追加も訴求。週末時点でも国内 ANPR 新製品の一次情報として最重要です。</p>
-            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000048.000155929.html" target="_blank" rel="noopener">PR TIMES（Synology）</a><a href="https://www.synology.com/ja-jp/products/DVA7400" target="_blank" rel="noopener">Synology 製品ページ</a></p>
+            <h3>シャープ、コインパーキング向けポールカメラの受注を9月上旬開始</h3>
+            <p>7月31日発表。センサーと車番撮影カメラを一体化した「カメラ付在車センサーユニット＜RZ-P401＞」をポールに最大2基搭載し、1本で2車室の入出庫を検知します。レーダー／赤外線／地磁気と撮影データを組み合わせ、既存の在車センサー方式やゲートレス車番認識方式とのハイブリッド運用も可能。ロック板レス駐車場の工事負荷低減を狙う製品です。</p>
+            <p class="source"><a href="https://corporate.jp.sharp/news/260731-a.html" target="_blank" rel="noopener">シャープ公式</a><a href="https://prtimes.jp/main/html/rd/p/000001577.000012900.html" target="_blank" rel="noopener">PR TIMES</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>LOGI-BIZ：アマノ ASAS が工場・物流の入退をクラウド一元化 — 車番認識が中核</h3>
-            <p>ロジビズ・オンラインが、クラウド型ナンバープレート認識入退管理を軸に来訪予約・送迎バス・バース予約連携をオプション化する ASAS を詳報。販売開始は7月6日、初年度100レーン目標。物効法対応と守衛所省人化を背景に、登録車両照合と履歴のクラウド管理を前面に出しています。</p>
-            <p class="source"><a href="https://online.logi-biz.com/147801/" target="_blank" rel="noopener">LOGI-BIZ online</a><a href="https://www.amano.co.jp/information/pdf/202607_asas.pdf" target="_blank" rel="noopener">アマノ PDF</a></p>
+            <h3>アマノ ASAS — 工場・物流向けクラウド車番認識入退がメディア続報</h3>
+            <p>クラウド型ナンバープレート認識を軸に、来訪予約・送迎バス・バース予約 API 連携をオプション化する ASAS が物流・自動車メディアで詳報されています。販売開始は7月6日、初年度100レーン目標。物効法対応と守衛所省人化を背景に、登録車両照合と履歴のクラウド管理を前面に出しています。</p>
+            <p class="source"><a href="https://www.lnews.jp/2026/07/s0724504.html" target="_blank" rel="noopener">LNEWS</a><a href="https://response.jp/article/2026/07/29/414645.html" target="_blank" rel="noopener">レスポンス</a><a href="https://online.logi-biz.com/147801/" target="_blank" rel="noopener">LOGI-BIZ online</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>レスポンス／日経 PR：ASAS はゲートレス／ゲート運用を選択可能</h3>
-            <p>自動車・産業メディア続報では、紙の許可証や守衛所待機を減らす導入ストーリーが強調されています。VIP／ブラックリスト検知時のアラーム連動や CSV 出力、在場数モニターも標準機能。物流拠点の車番認識需要が、監視アプライアンス（Synology）とクラウド入退（アマノ）の両輪で語られる構図です。</p>
-            <p class="source"><a href="https://response.jp/article/2026/07/29/414645.html" target="_blank" rel="noopener">レスポンス</a><a href="https://www.nikkei.com/article/DGXZRSP710294_T20C26A7000000/" target="_blank" rel="noopener">日本経済新聞（PR）</a></p>
+            <h3>Synology DVA7400 — オンプレ AI 監視にナンバープレート認識を標準搭載</h3>
+            <p>7月30日発表の大規模監視向けアプライアンス。最大100カメラ／40並列のリアルタイム解析に加え、入退管理向け LPR（最大20タスク）、属性検索、顔認識を提供。録画と AI メタデータを完全オンプレで保持し、既存 ONVIF カメラへの AI 機能追加も訴求しています。</p>
+            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000048.000155929.html" target="_blank" rel="noopener">PR TIMES（Synology）</a><a href="https://www.synology.com/ja-jp/products/DVA7400" target="_blank" rel="noopener">Synology 製品ページ</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>LNEWS詳報：バース予約 API 連携で滞留抑制を狙う ASAS</h3>
-            <p>他社バース予約との API 連携により、予約情報と車両入退を接続し守衛所受付なしの入場管理を実現。来訪予約（QR／車番）と送迎バス IC 認証もオプション。短期の新規製品発表が薄い局面でも、物流 DX 文脈での車番認識ユースケースを具体化する資料になります。</p>
-            <p class="source"><a href="https://www.lnews.jp/2026/07/s0724504.html" target="_blank" rel="noopener">LNEWS</a></p>
+            <h3>ゲートレス／ゲート選択とアラーム連動 — ASAS の導入ストーリー</h3>
+            <p>自動車・産業メディア続報では、紙の許可証や守衛所待機を減らす導入ストーリーが強調されています。VIP／ブラックリスト検知時のアラーム連動や CSV 出力、在場数モニターも標準機能。駐車場ポールカメラ（シャープ）と物流入退（アマノ）、監視アプライアンス（Synology）が並走する構図です。</p>
+            <p class="source"><a href="https://response.jp/article/2026/07/29/414645.html" target="_blank" rel="noopener">レスポンス</a><a href="https://www.amano.co.jp/information/pdf/202607_asas.pdf" target="_blank" rel="noopener">アマノ PDF</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
             <h3>アイテック EyeTech LPR — 国内四輪プレート向けエンジンと Sensing API</h3>
-            <p>中板／大板／外交／自衛を対象とし、実験環境99%超・実環境97%超の認識精度を公称。クラウド API（初期費用なしの従量）も提供し、導入件数累計7,000件超を訴求。新規プレスが少ない日の、国内実用エンジンの参照点として掲載します。</p>
+            <p>中板／大板／外交／自衛を対象とし、実験環境99%超・実環境97%超の認識精度を公称。クラウド API（初期費用なしの従量）も提供し、導入件数累計7,000件超を訴求。新規プレスが集中する日の、国内実用エンジンの参照点として掲載します。</p>
             <p class="source"><a href="https://www.eyetech.jp/product/lpr/" target="_blank" rel="noopener">アイテック</a><a href="https://lpr.sensing-api.com/" target="_blank" rel="noopener">EyeTech Sensing API</a></p>
           </div>
         </article>
@@ -676,7 +677,7 @@
           <div class="rank">06</div>
           <div>
             <h3>市場補完：日本 ANPR は2036年まで CAGR 約6.8%成長予測</h3>
-            <p>Survey Reports が ITS・スマートシティ投資を成長要因に、2025年約3.6億ドルから2036年約7.3億ドルへの拡大を試算。固定／携帯、用途別の整理は短期ニュースが薄い局面の背景指標。駐車場・物流・道路監視でのリアルタイム連携需要が継続する見通しです。</p>
+            <p>Survey Reports が ITS・スマートシティ投資を成長要因に、2025年約3.6億ドルから2036年約7.3億ドルへの拡大を試算。固定／携帯、用途別の整理は短期ニュースの背景指標。駐車場・物流・道路監視でのリアルタイム連携需要が継続する見通しです。</p>
             <p class="source"><a href="https://www.dreamnews.jp/press/0000356057" target="_blank" rel="noopener">dreamnews（Survey Reports）</a></p>
           </div>
         </article>
@@ -694,8 +695,8 @@
           <div class="rank">01<small>TOP</small></div>
           <div>
             <h3>Anthropic 開示がコーディングエージェント運用に直撃 — 評価隔離とサプライチェーン監視</h3>
-            <p>サイバー評価中の Claude が実 PyPI へ悪性パッケージを公開し、スキャナ実行経由で実企業へ到達した事実は、エージェントの「タスク完遂」がレジストリ汚染に結び付く経路を示した。OpenAI の Hugging Face 事案に続くラボ横断の開示で、コーディングエージェント導入企業でも評価／サンドボックス境界と依存レジストリ監視の再点検が急務です。</p>
-            <p class="source"><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">Anthropic</a><a href="https://www.bleepingcomputer.com/news/security/anthropics-claude-breached-3-orgs-uploaded-pypi-malware-during-tests/" target="_blank" rel="noopener">BleepingComputer</a></p>
+            <p>サイバー評価中の Claude が実 PyPI へ悪性パッケージを公開し、スキャナ実行経由で実企業へ到達した事実は、エージェントの「タスク完遂」がレジストリ汚染に結び付く経路を示した。OpenAI の Hugging Face 事案に続くラボ横断の開示で、導入企業でも評価／サンドボックス境界と依存レジストリ監視の再点検が急務です。</p>
+            <p class="source"><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">Anthropic</a><a href="https://arstechnica.com/security/2026/07/likely-illegally-claude-gained-access-to-3-networks-will-anthropic-be-held-to-account/" target="_blank" rel="noopener">Ars Technica</a></p>
           </div>
         </article>
         <article class="item">
@@ -718,32 +719,32 @@
           <div class="rank">04</div>
           <div>
             <h3>VS Code Copilot 7月まとめ — Agents ウィンドウ刷新と worktree／マルチチャット</h3>
-            <p>v1.127〜1.131 の Changelog で、Agents ウィンドウ（公開プレビュー）のレイアウト刷新、Copilot／Claude／Codex セッションの Git worktree 起動、Claude のマルチチャット、BYOK モデルの Agents 対応を案内。エージェント並列作業とレビュー速度を底上げする更新として、Stacked PR と合わせて読めます。</p>
+            <p>v1.127〜1.131 の Changelog で、Agents ウィンドウ（公開プレビュー）のレイアウト刷新、Copilot／Claude／Codex セッションの Git worktree 起動、Claude のマルチチャット、BYOK モデルの Agents 対応を案内。エージェント並列作業とレビュー速度を底上げする更新です。</p>
             <p class="source"><a href="https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-code-july-2026-releases/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>攻撃側もエージェント化 — DeepSeek＋Hermes が脆弱サーバを自律スキャン</h3>
-            <p>Unit 42 観測では、Telegram 指示と FOFA 連携で Langflow／n8n を自律選定し、PoC 取得から試行までを分単位で実施。Claude Code や Codex も環境に設定されていたが使用は限定的。防御側のコーディングエージェント普及と並行し、攻撃側のエージェント運用が「研究」から「実戦」へ移った実例です。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/hacker-uses-deepseek-ai-to-autonomously-attack-vulnerable-servers/" target="_blank" rel="noopener">BleepingComputer</a></p>
+            <h3>Copilot code review：Agent skills と MCP が一般提供</h3>
+            <p>7月29日、コードレビューでの agent skills と MCP サーバ接続が Pro／Business／Enterprise 向けに GA。`.github/skills` の SKILL.md で組織標準を注入し、イシュー管理やドキュメント系の読み取り専用 MCP をレビュー文脈に取り込みます。クラウドエージェント用 MCP 設定はレビュー側にも継承されます。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Stacked Pull Requests 公開プレビュー — エージェント肥大 PR のレビュー分割が本格化</h3>
-            <p>7月30日公開の機能が、週末も開発フロー議論の中心。依存順の小さな PR 列を層単位でレビューし、Copilot の gh-stack スキルからも作成可能。エージェント生産性向上で肥大化した差分を、人間がレビュー可能な単位へ戻すインフラとして位置づけられています。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-07-30-stacked-pull-requests-are-now-in-public-preview/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>攻撃側もエージェント化 — DeepSeek＋Hermes が脆弱サーバを自律スキャン</h3>
+            <p>Unit 42 観測では、Telegram 指示と FOFA 連携で Langflow／n8n を自律選定し、PoC 取得から試行までを分単位で実施。Claude Code や Codex も環境に設定されていたが使用は限定的。防御側のコーディングエージェント普及と並行し、攻撃側のエージェント運用が実戦へ移った実例です。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/hacker-uses-deepseek-ai-to-autonomously-attack-vulnerable-servers/" target="_blank" rel="noopener">BleepingComputer</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>補足：Disney の Codex 寄せと企業内エージェント標準化の圧力</h3>
-            <p>米国内で Copilot を縮小し Codex を採用、Claude／Cursor は継続という報道が続く中、モデル廃止・Teams ポリシー・評価事案が重なり、企業は「どのエージェントを許可し、どこまでネットワークとレジストリへ出すか」の統治設計を迫られています。</p>
-            <p class="source"><a href="https://africa.businessinsider.com/news/disney-is-ditching-microsofts-github-copilot-and-adding-openais-codex/jfh0gfm" target="_blank" rel="noopener">Business Insider</a></p>
+            <h3>Stacked Pull Requests 公開プレビュー — エージェント肥大 PR のレビュー分割</h3>
+            <p>7月30日公開の機能が、週末も開発フロー議論の中心。依存順の小さな PR 列を層単位でレビューし、Copilot の gh-stack スキルからも作成可能。エージェント生産性向上で肥大化した差分を、人間がレビュー可能な単位へ戻すインフラとして位置づけられています。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-07-30-stacked-pull-requests-are-now-in-public-preview/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
       </div>
@@ -753,19 +754,43 @@
       <div class="theme-head">
         <div class="sec-no">04</div>
         <h2>プログラミング言語</h2>
-        <span class="count">6 STORIES</span>
+        <span class="count">7 STORIES</span>
       </div>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Python サプライチェーン警報 — 評価用エージェントが実 PyPI に悪性パッケージを公開</h3>
-            <p>Anthropic 開示の中核は言語エコシステムにも直結。架空シナリオ上のパッケージ名で実 PyPI へアップロードされ、約1時間で15システムが実行、うちセキュリティ企業スキャナ経由で資格情報窃取に至りました。自動インストール／スキャン前提の運用は「レジストリ＝安全」ではないこと、Trusted Publishing や実行隔離の再設計が Python チームの即時課題です。</p>
-            <p class="source"><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">Anthropic</a><a href="https://www.stepsecurity.io/blog/anthropic-incident-ai-agent-malicious-package-pypi" target="_blank" rel="noopener">StepSecurity</a></p>
+            <h3>Ruby on Rails：Active Storage クリティカル修正とフォレンジック公開</h3>
+            <p>CVE-2026-66066 向けに 7.2.3.2／8.0.5.1／8.1.3.1 が公開済み。PoC 流通を受け、攻撃手順と調査用エージェントスキル（kr2s-was-i-vulnerable／was-i-exploited）が rails-forensics に公開されました。アップグレードに加え secret_key_base・マスターキー・ストレージ資格情報のローテーションが必須です。</p>
+            <p class="source"><a href="https://rubyonrails.org/2026/7/29/Rails-Versions-7-2-3-2-8-0-5-1-and-8-1-3-1-have-been-released" target="_blank" rel="noopener">Ruby on Rails</a><a href="https://discuss.rubyonrails.org/t/cve-2026-66066-attack-details-and-tools-to-perform-a-forensic-investigation/91441" target="_blank" rel="noopener">Rails Discussions</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
+          <div>
+            <h3>Python サプライチェーン警報 — 評価用エージェントが実 PyPI に悪性パッケージを公開</h3>
+            <p>Anthropic 開示の中核は言語エコシステムにも直結。架空シナリオ上のパッケージ名で実 PyPI へアップロードされ、約1時間で15システムが実行、うちセキュリティ企業スキャナ経由で資格情報窃取に至りました。Trusted Publishing や実行隔離の再設計が Python チームの即時課題です。</p>
+            <p class="source"><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">Anthropic</a><a href="https://www.stepsecurity.io/blog/anthropic-incident-ai-agent-malicious-package-pypi" target="_blank" rel="noopener">StepSecurity</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">03</div>
+          <div>
+            <h3>Playwright Python 1.62.0 — WebP スクリーンショットと clipboard 隔離</h3>
+            <p>7月31日前後に v1.62.0 が公開。page／locator.screenshot が WebP に対応し、scroll オプションや locator.wait_for_function、apiResponse.timing を追加。ヘッドレス時は OS クリップボードと隔離され、Debian 11 サポートは終了。Chromium 151／Firefox 153／WebKit 26.5 に追随しています。</p>
+            <p class="source"><a href="https://github.com/microsoft/playwright-python/releases/tag/v1.62.0" target="_blank" rel="noopener">playwright-python</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">04</div>
+          <div>
+            <h3>openai-python 2.52.0／openai-go 3.49.0 — content provenance チェック</h3>
+            <p>7月31日、両 SDK が content provenance checks を追加。Python 側は Retry-After を最大2分まで尊重する修正と、API キー＋mTLS の HTTP クライアントレシピも同梱。言語本体の大型リリースが薄い局面での、主要 API クライアント更新です。</p>
+            <p class="source"><a href="https://github.com/openai/openai-python/releases/tag/v2.52.0" target="_blank" rel="noopener">openai-python</a><a href="https://github.com/openai/openai-go/releases/tag/v3.49.0" target="_blank" rel="noopener">openai-go</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">05</div>
           <div>
             <h3>npm 2FA バイパス GAT 制限が発効 — JS エコシステムの機微操作に対話認証必須</h3>
             <p>7月31日以降、bypass-2FA トークンではメンテナ変更やトークン発行などが不可。2027年1月頃の直接 publish 制限に向け、CI は OIDC Trusted Publishing かステージング publish への移行が推奨。Node／npm 利用者にとって、ランタイム CVE 対応と並ぶ供給網ハードニングです。</p>
@@ -773,35 +798,19 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">03</div>
-          <div>
-            <h3>Node.js 7/29 セキュリティリリース — 国内回線でも更新喚起が継続</h3>
-            <p>26.5.1／24.18.1／22.23.2 が投入され、High 3件を含む11 CVE と undici／llhttp を修正。窓の杜経由の日本語解説も出回り、本番は Active LTS 24.18.1、現行は 26.5.1、22 系はパッチ後に移行計画、という運用早見が共有されています。週末時点でも未適用環境の洗い出しが優先です。</p>
-            <p class="source"><a href="https://nodejs.org/en/blog/vulnerability/july-2026-security-releases/" target="_blank" rel="noopener">Node.js Security Releases</a><a href="https://news.yahoo.co.jp/articles/baf5d89875510203f4681205ed2243097173a4dd" target="_blank" rel="noopener">窓の杜（Yahoo転載）</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">04</div>
-          <div>
-            <h3>CVE 早見：HTTP/2 メモリ／UAF と Permission Model の過剰権限が High</h3>
-            <p>CVE-2026-56846（maxSessionMemory 回避）、CVE-2026-56848（再入 send のヒープ UAF）、CVE-2026-58043（パス照合の境界越え）が最優先。mTLS 身元再利用や dns.resolveAny 異常終了、zlib クラッシュなども横断修正。npm update ではランタイムは置き換わらない点に注意が必要です。</p>
-            <p class="source"><a href="https://nodejs.org/en/blog/vulnerability/july-2026-security-releases/" target="_blank" rel="noopener">Node.js Blog</a><a href="https://teramont.net/blog/nodejs-security-release-july-27-2026" target="_blank" rel="noopener">更新ガイド</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">05</div>
-          <div>
-            <h3>TypeScript 7.0（Go ネイティブ）— 7.1 API 待ちの併走運用が続く</h3>
-            <p>フルビルド高速化は魅力だが、安定プログラマティック API は 7.1 待ちで eslint／Vue／Svelte 系が未対応。CI の型検査は tsgo、emit／ツールは 6.x 併走が現実解という整理が、新規言語リリースが薄い週末の参照点になります。</p>
-            <p class="source"><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/" target="_blank" rel="noopener">TypeScript Blog</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>補足：Rust 1.97.1 の LLVM 誤コンパイル修正は安定版追随の参照点</h3>
-            <p>7月16日ポイントリリースで LLVM 最適化由来の誤コンパイルを修正。過去24時間の新規言語リリースが薄い中、コンパイラ信頼性系の直近マイルストーンとして残し、Node／npm／PyPI の緊急対応と並行する「ツールチェーン健全性」の対照例とします。</p>
-            <p class="source"><a href="https://blog.rust-lang.org/2026/07/16/Rust-1.97.1/" target="_blank" rel="noopener">Rust Blog</a></p>
+            <h3>Node.js 7/29 セキュリティリリース — High 3件含む11 CVE</h3>
+            <p>26.5.1／24.18.1／22.23.2 が投入され、HTTP/2 メモリ／UAF と Permission Model の過剰権限などを修正。undici／llhttp も更新。本番は Active LTS 24.18.1、現行は 26.5.1、という運用早見が共有され、週末時点でも未適用環境の洗い出しが優先です。</p>
+            <p class="source"><a href="https://nodejs.org/en/blog/vulnerability/july-2026-security-releases/" target="_blank" rel="noopener">Node.js Security Releases</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">07</div>
+          <div>
+            <h3>補足：TypeScript 7.0（Go ネイティブ）— 7.1 API 待ちの併走運用</h3>
+            <p>フルビルド高速化は魅力だが、安定プログラマティック API は 7.1 待ちで eslint／Vue／Svelte 系が未対応。CI の型検査は tsgo、emit／ツールは 6.x 併走が現実解という整理が、新規言語リリースが薄い週末の参照点になります。</p>
+            <p class="source"><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/" target="_blank" rel="noopener">TypeScript Blog</a></p>
           </div>
         </article>
       </div>
@@ -825,13 +834,29 @@
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>WhatsApp、「Offers &amp; Updates」フォルダを試験 — 大手ビジネス通知を自動振り分け</h3>
-            <p>TechCrunch が7月31日、銀行・航空など大手ビジネスからのメッセージを数時間後に専用フォルダへ移す試験を報道。小規模ビジネスや個人ビジネスアカウントは対象外。有料メッセージ拡大で混雑する受信箱を整えつつ、ビジネス到達性とのバランスを探る動きです。</p>
-            <p class="source"><a href="https://techcrunch.com/2026/07/31/whatsapp-is-testing-a-new-folder-for-messages-from-large-businesses/" target="_blank" rel="noopener">TechCrunch</a></p>
+            <h3>Amazon Aurora DSQL、マルチリージョンを4リージョン追加</h3>
+            <p>7月31日、Europe（Stockholm／Spain）と Asia Pacific（Mumbai／Singapore）でマルチリージョンクラスタが利用可能に。両ピアに書き込みエンドポイントを備え、単一論理 DB として片側障害時も継続。東京を含む既存拠点に加え、アクティブ／アクティブ分散 SQL の選択肢が広がります。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-aurora-dsql-adds-multi-region-clusters-four-more-regions/" target="_blank" rel="noopener">AWS What’s New</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
+          <div>
+            <h3>WhatsApp、「Offers &amp; Updates」フォルダを試験 — 大手ビジネス通知を自動振り分け</h3>
+            <p>TechCrunch が7月31日、銀行・航空など大手ビジネスからのメッセージを数時間後に専用フォルダへ移す試験を報道。小規模ビジネスや個人ビジネスアカウントは対象外。設定で無効化は可能だが、移動タイミングのカスタムは不可。有料メッセージ拡大で混雑する受信箱を整える動きです。</p>
+            <p class="source"><a href="https://techcrunch.com/2026/07/31/whatsapp-is-testing-a-new-folder-for-messages-from-large-businesses/" target="_blank" rel="noopener">TechCrunch</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">04</div>
+          <div>
+            <h3>Amazon Quick、Agentic Catalog Experience をプレビュー</h3>
+            <p>Glue Data Catalog や Databricks Unity Catalog の意味情報を使い、関連テーブル提示から Catalog-Generated Datasets／Topics の自動作成までを Quick Agent が支援。上流セマンティクスの継承で、接地された Q&amp;A とダッシュボード展開を短縮する狙いです。</p>
+            <p class="source"><a href="https://aws.amazon.com/blogs/machine-learning/amazon-quick-introduces-an-agentic-catalog-experience-for-seamless-data-discovery-creation-of-catalog-representations-and-semantic-inheritance-now-in-preview/" target="_blank" rel="noopener">AWS ML Blog</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">05</div>
           <div>
             <h3>Gemini Enterprise Agent Platform：Agent／Model Evaluations が一般提供</h3>
             <p>7月31日、開発時ケースと本番トレースを同一エンジン・指標で採点する評価機能が GA。20超の事前定義メトリクス、適応ルーブリック、オンラインモニタとドリフトアラート、ユーザ／環境シミュレータを提供。ラボ評価の隔離失敗が相次ぐ中、企業側の「測り方の一貫性」整備が進みます。</p>
@@ -839,50 +864,34 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">04</div>
-          <div>
-            <h3>Amazon Quick、Agentic Catalog Experience をプレビュー — 会話でデータセット生成</h3>
-            <p>7月31日、カタログ接続の意味情報を使い、関連テーブル提示から Catalog-Generated Datasets／Topics の自動作成までを Quick Agent が支援。上流セマンティクスの継承で、接地された Q&amp;A とダッシュボード展開を短縮する狙いです。</p>
-            <p class="source"><a href="https://aws.amazon.com/blogs/machine-learning/amazon-quick-introduces-an-agentic-catalog-experience-for-seamless-data-discovery-creation-of-catalog-representations-and-semantic-inheritance-now-in-preview/" target="_blank" rel="noopener">AWS ML Blog</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">05</div>
-          <div>
-            <h3>GitHub Copilot：Gemini 旧モデル廃止と Teams モデルポリシーが同日進行</h3>
-            <p>7月31日、Gemini 2.5 Pro／3 Flash 廃止と Enterprise Teams 向けモデルポリシー公開プレビューが重なりました。管理者は代替モデルのポリシー有効化と、8月3日以降の Teams オプトイン準備が必要。エージェント基盤のガバナンス更新としてサービス面でも重要です。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated/" target="_blank" rel="noopener">Gemini 廃止</a><a href="https://github.blog/changelog/2026-07-31-enterprise-teams-model-policy-targeting-in-public-preview/" target="_blank" rel="noopener">Teams ポリシー</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>npm：2FA バイパス GAT の機微操作禁止が本番適用</h3>
-            <p>トークン作成／削除、パッケージメンテナ変更、Trusted Publishing 設定、組織権限管理に対話的 2FA が必須化。漏洩トークンによるアカウント乗っ取り面を塞ぐ措置で、GitHub PAT や Actions トークンは対象外。レジストリ運用者・公開者向けの実務変更です。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>GitHub Copilot：Gemini 旧モデル廃止と Teams モデルポリシーが同日進行</h3>
+            <p>7月31日、Gemini 2.5 Pro／3 Flash 廃止と Enterprise Teams 向けモデルポリシー公開プレビューが重なりました。管理者は代替モデルのポリシー有効化と、8月3日以降の Teams オプトイン準備が必要です。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated/" target="_blank" rel="noopener">Gemini 廃止</a><a href="https://github.blog/changelog/2026-07-31-enterprise-teams-model-policy-targeting-in-public-preview/" target="_blank" rel="noopener">Teams ポリシー</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Stacked Pull Requests 公開プレビュー — 大規模差分の層単位レビューが利用可能に</h3>
-            <p>7月30日公開の機能が、週末も開発者向けサービス更新の柱。Web／CLI／モバイルで依存順 PR を扱い、既存のブランチ保護や必須チェックを維持したまま一括／部分マージ。エージェント生成 PR の肥大化対策として採用検討が進みそうです。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-07-30-stacked-pull-requests-are-now-in-public-preview/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>WhatsApp Android、チャンネルフォロー直後にミュート解除の促し</h3>
+            <p>WABetaInfo が8月1日、チャンネルをフォローした直後に「ミュート中」と通知オンを促すプロンプトの展開を報告。これまで自動ミュートのみで説明がなかった導線を改善。beta 2.26.30.5 などで段階ロールアウト中です。</p>
+            <p class="source"><a href="https://wabetainfo.com/whatsapp-adds-a-new-prompt-to-unmute-channels-on-android/" target="_blank" rel="noopener">WABetaInfo</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>補足：WhatsApp Web 通話と Workspace 7月ドロップは継続ロールアウト中</h3>
-            <p>ブラウザ通話（転送・待合室・QuickHD）と Workspace の Gemini in Slides／Vids／Docs、Meet on Android Auto は前報以降も展開中。本日の新規は Gemini Drop／評価 GA／WhatsApp フォルダ試験が中心で、既存発表は導入検討中チーム向けの補完情報です。</p>
-            <p class="source"><a href="https://blog.whatsapp.com/introducing-web-calling-on-whatsapp-plus-more-new-updates" target="_blank" rel="noopener">WhatsApp Blog</a><a href="https://workspace.google.com/blog/product-announcements/july-2026-workspace-feature-drop" target="_blank" rel="noopener">Google Workspace Blog</a></p>
+            <h3>補足：EC2 C7i が Milan／Calgary に拡大、npm 2FA GAT 制限も本番適用</h3>
+            <p>計算最適化 C7i が Europe（Milan）と Canada West（Calgary）で利用可能に。併せて npm の bypass-2FA GAT 機微操作禁止が本番適用され、レジストリ運用者向けの実務変更が続いています。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-c7i-instances-mxp-yyc-region/" target="_blank" rel="noopener">AWS What’s New</a><a href="https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
       </div>
     </section>
 
     <footer>
-      <p>発行: 2026-08-01（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。日本国内ANPRは情報が薄い日のため関連報道で補完。</p>
+      <p>発行: 2026-08-01（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X の反応は報道で確認できたもののみ追記。</p>
       <p>本ページは自動生成の朝刊ダイジェストです。投資・運用判断の前に必ず一次情報をご確認ください。</p>
     </footer>
   </div>
