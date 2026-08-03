@@ -540,7 +540,7 @@
   <div class="wrap">
     <div class="briefing">
       <p class="kicker">本日の見通し</p>
-      <p>本日の軸は、Coldcard 乱数欠陥の BleepingComputer 詳細報道（被害推計約8860万ドル）と、8月2日公開の FreeRDP クリップボードヒープオーバーフロー（CVE-2026-68579／CVSS 9.6）、Check Point SmartConsole の PoC 公開・実攻撃継続です。車番認識はシャープ RZ-P401 の続報が中心で、新規一次情報は限定的。開発面は GitHub Enterprise Teams モデルポリシーのオプトイン当日（8/3）、Default model enablement（8/26発効）準備。言語面は Node.js の型ストリッピング運用メモと Go 1.27／Rails 7.2 EOL 接近。サービス面は AWS Skill Builder の無料マイクロクレデンシャルと Managed Microsoft AD 昇格が目立ちます。</p>
+      <p>本日の軸は、N-able N-central の認証バイパス（CVE-2026-18577）実攻撃と緊急ホットフィックス、Rails Active Storage の KindaRails2Shell（CVE-2026-66066）に対する Rapid7 の詳細解析、Cursor の Google Workspace プラグイン当日公開です。車番認識はアーキット「AIダンプキーパー」の NETIS 活用促進技術認定（8/3）が新着で、純ANPRの新規一次情報は依然少なめ。言語面は Go 1.27 正式前の RC 確認と Python 3.15 RC1（8/4）直前、サービス面は AWS 週次（Bedrock GPT 値下げ／Interconnect OCI GA 等）が中心です。</p>
     </div>
 
     <nav class="toc" aria-label="テーマ一覧">
@@ -561,65 +561,65 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Coldcard RNG 欠陥 — BleepingComputer が約8860万ドル流出を詳報、攻撃は継続</h3>
-            <p>8月2日の BleepingComputer 報道では、Galaxy Research が三波合計 1367 BTC（約8860万ドル）・4585アドレスを確認したと整理。Block 解析では ngu.random が STM32 ハードウェア RNG ではなく MicroPython の決定的 Yasmarang フォールバックに落ちる統合ミスが根因で、オフラインシード探索が可能になります。初波は同一 30 sat/vB・お釣りなしの自動掃討痕跡があり、Coinkite 修正ファームは新規シードのみ保護。既存シードは新シード生成と資金移行が必須です。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/coldcard-wallet-rng-flaw-likely-linked-to-88-million-bitcoin-theft/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://decrypt.co/374817/coldcard-bitcoin-exploit-88-million-attackers-draining-wallets" target="_blank" rel="noopener">Decrypt</a><a href="https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware" target="_blank" rel="noopener">Block Engineering</a><a href="https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" target="_blank" rel="noopener">Coinkite</a></p>
+            <h3>N-able N-central CVE-2026-18577 — 不完全パッチを突く認証バイパス、実攻撃確認</h3>
+            <p>8月2日、N-able は RMM 製品 N-central で CVE-2026-18556 の修正漏れ経路（CVE-2026-18577）を開示し、2026.3.1.7 ホットフィックスを緊急配布。未認証で管理者権限を取得し、Take Control 経由で管理エンドポイントへ横展開、Cloudflare トンネルで永続化する手口が確認されています。Huntress は8月3日時点でも多くの環境が未更新だと警告し、クラウド側でもパッチ適用遅れを指摘。影響はオンプレ／ホスト双方です。</p>
+            <p class="source"><a href="https://www.n-able.com/blog/n-central-security-update-august-2-2026" target="_blank" rel="noopener">N-able</a><a href="https://status.n-able.com/2026/08/02/n-central-2026-3-hotfix-1-mitigation-for-cve-2026-18577/" target="_blank" rel="noopener">N-able Status</a><a href="https://www.huntress.com/blog/n-able-vulnerability-exploitation" target="_blank" rel="noopener">Huntress</a><a href="https://www.securityweek.com/n-able-patches-vulnerability-exploited-to-hack-n-central-servers/" target="_blank" rel="noopener">SecurityWeek</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>FreeRDP CVE-2026-68579 — クリップボード経由のヒープオーバーフロー（CVSS 9.6）</h3>
-            <p>8月2日公開の CVE では、Windows クライアントの CliprdrStream_Read がサーバ提示長をそのままコピーし、OLE 貼り付け先（explorer.exe 等）のヒープを破壊し得ます。悪性／侵害済み RDP サーバが過大な CB_FILECONTENTS_RESPONSE を返す経路で、影響は 3.29.0 以前。修正は 3.30.0 以降への更新で、リモート貼り付けを使う端末の即時アップグレードが推奨されます。</p>
-            <p class="source"><a href="https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-m37j-jcr2-8gcc" target="_blank" rel="noopener">FreeRDP GHSA</a><a href="https://www.thehackerwire.com/freerdp-heap-buffer-overflow-via-malicious-rdp-server-clipboard/" target="_blank" rel="noopener">TheHackerWire</a></p>
+            <h3>Rails CVE-2026-66066（KindaRails2Shell）— Rapid7 が RCE 連鎖の技術解析を公開</h3>
+            <p>Active Storage が libvips の未ファズローダを既定で許可し、細工アップロードから任意ファイル読取・秘密情報漏えい、さらには RCE に至る欠陥。修正は 7.2.3.2／8.0.5.1／8.1.3.1 と libvips 8.13 以上、secret_key_base 等のローテーションが必須です。8月3日、Rapid7 Labs がルートコーズ解析と Metasploit モジュールを公開し、PoC 流通後の緊急対応を再督促しています。</p>
+            <p class="source"><a href="https://www.rapid7.com/blog/post/etr-kindarails2shell-cve-2026-66066-critical-arbitrary-file-read-and-possible-remote-code-execution-in-ruby-on-rails/" target="_blank" rel="noopener">Rapid7</a><a href="https://www.helpnetsecurity.com/2026/08/03/kindarails2shell-cve-2026-66066-vulnerability/" target="_blank" rel="noopener">Help Net Security</a><a href="https://discuss.rubyonrails.org/t/cve-2026-66066-possible-arbitrary-file-read-and-remote-code-execution-in-active-storage-variant-processing/91432" target="_blank" rel="noopener">Rails Discussions</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Check Point SmartConsole 認証バイパス — 実攻撃継続、Rapid7 系 PoC が公開</h3>
-            <p>CVE-2026-16232（CVSS 9.3）は Security Management／Multi-Domain Management で未認証の管理者トークン取得を許し、Check Point と CISA が実悪用を確認。8月2日の整理では検証用 PoC が流通し、Trusted Clients 未制限かつ管理面がインターネット到達可能な構成が危険域です。R81.20 Take 158／R82 Take 118／R82.10 Take 36 以降の Jumbo Hotfix 適用が急務です。</p>
-            <p class="source"><a href="https://latesthackingnews.com/2026/08/02/smartconsole-authentication-bypass/" target="_blank" rel="noopener">Latest Hacking News</a><a href="https://support.checkpoint.com/results/sk/sk185169/" target="_blank" rel="noopener">Check Point SK185169</a></p>
+            <h3>N-central 攻撃の IOC — Cloudflared／偽 svchost、VPN 由来 IP 群</h3>
+            <p>公式は攻撃 IP（Mullvad／Nord 関連を含む）と、エンドポイント上の「svchost.exe」痕跡・Cloudflared サービス登録を点検指標として提示。N-able は検出用サービステンプレートも公開しましたが、クリーンでも侵害否定にはならないと明記。MSP 経由の顧客環境まで含むログ確認が急務です。</p>
+            <p class="source"><a href="https://www.helpnetsecurity.com/2026/08/03/cve-2026-18577-n-able-n-central-vulnerability/" target="_blank" rel="noopener">Help Net Security</a><a href="https://www.govinfosecurity.com/n-able-flaw-exposes-msps-to-worst-case-scenario-a-32397" target="_blank" rel="noopener">GovInfoSecurity</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>PipeWire CVE-2026-5674 — Flatpak 音声ソケットからサンドボックス脱出（CVSS 8.8）</h3>
-            <p>8月2日の技術解説では、PulseAudio 互換層の cookie 未検証・モジュール読込既定オン・無制限 dlopen が連鎖し、`--socket=pulseaudio` だけでホスト側コード実行に至ると整理。Claude Code による調査パイプラインで発見され、Red Hat は RHEL 10 向け RHSA-2026:47083（pipewire-1.4.11）を7月28日に配布。デスクトップ／VDI の PipeWire 更新と Flatpak 権限棚卸しが優先です。</p>
-            <p class="source"><a href="https://latesthackingnews.com/2026/08/02/pipewire-sandbox-escape-cve-2026-5674/" target="_blank" rel="noopener">Latest Hacking News</a><a href="https://embracethered.com/blog/posts/2026/pipewire-flatpak-linux-sandbox-escape-cve-2026-5674/" target="_blank" rel="noopener">Embrace The Red</a></p>
+            <h3>FreeRDP CVE-2026-68579 — クリップボード経由ヒープオーバーフロー（CVSS 9.6）</h3>
+            <p>8月2日公開。Windows クライアントの CliprdrStream_Read がサーバ提示長をそのままコピーし、OLE 貼り付け先のヒープを破壊し得ます。悪性／侵害済み RDP サーバが過大な CB_FILECONTENTS_RESPONSE を返す経路で、影響は 3.29.0 以前。修正は 3.30.0 以降です。</p>
+            <p class="source"><a href="https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-m37j-jcr2-8gcc" target="_blank" rel="noopener">FreeRDP GHSA</a><a href="https://www.thehackerwire.com/freerdp-heap-buffer-overflow-via-malicious-rdp-server-clipboard/" target="_blank" rel="noopener">TheHackerWire</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Cisco Secure FMC 静的認証情報（CVE-2026-20316）— 連邦期限後もパッチ確認が継続</h3>
-            <p>低権限の埋め込み資格情報で管理面へログインし、他脆弱性と連鎖して昇格し得る問題。CISA KEV の連邦修正期限は8月1日で、期限後も未適用 FMC の洗い出しが続いています。回避策はなくブランチ別ホットフィックスのみ。IOC（license.tmp／package_info.pl 痕跡）確認後、疑わしい場合は TAC 連絡と資格情報・鍵・証明書の一括ローテーションが必要です。</p>
-            <p class="source"><a href="https://www.cisco.com/c/en/us/support/docs/csa/cisco-sa-fmc-static-cred-BET3Cjh.html" target="_blank" rel="noopener">Cisco Advisory</a><a href="https://www.helpnetsecurity.com/2026/07/30/cisco-fmc-cve-2026-20316-exploited/" target="_blank" rel="noopener">Help Net Security</a></p>
+            <h3>Coldcard RNG 欠陥 — 被害推計約8860万ドル、攻撃継続の詳細報道</h3>
+            <p>BleepingComputer／Decrypt は Galaxy Research 集計で三波合計約1367 BTC・4585アドレスを整理。Block 解析ではハードウェア RNG ではなく決定的フォールバックに落ちる統合ミスが根因とされ、既存シードは新シード生成と資金移行が必須。オフラインウォレットでも供給網・実装検証が問われる事例です。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/coldcard-wallet-rng-flaw-likely-linked-to-88-million-bitcoin-theft/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware" target="_blank" rel="noopener">Block Engineering</a><a href="https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/" target="_blank" rel="noopener">Coinkite</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Rails CVE-2026-66066 — KindaRails2Shell、秘密情報ローテーションが必須</h3>
-            <p>Active Storage／libvips 経路の任意ファイル読取からセッション偽造・RCE に至る欠陥で、修正版は 7.2.3.2／8.0.5.1／8.1.3.1。PoC 流通を受け詳細開示が前倒しされ、Akamai／Rapid7 が防御と技術解析を展開。パッチ適用に加え secret_key_base 等のローテーションと libvips 8.13 以上が運用必須です。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/rails-patches-critical-active-storage-flaw-with-rce-potential/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://github.com/rails/rails/security/advisories/GHSA-xr9x-r78c-5hrm" target="_blank" rel="noopener">Rails GHSA</a></p>
+            <h3>Check Point SmartConsole 認証バイパス — 実攻撃継続、PoC 流通</h3>
+            <p>CVE-2026-16232（CVSS 9.3）は Security Management／Multi-Domain Management で未認証の管理者トークン取得を許し、Check Point と CISA が実悪用を確認。Trusted Clients 未制限かつ管理面がインターネット到達可能な構成が危険域で、指定 Jumbo Hotfix 適用が急務です。</p>
+            <p class="source"><a href="https://latesthackingnews.com/2026/08/02/smartconsole-authentication-bypass/" target="_blank" rel="noopener">Latest Hacking News</a><a href="https://support.checkpoint.com/results/sk/sk185169/" target="_blank" rel="noopener">Check Point SK185169</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Amazon、北朝鮮系 npm サプライチェーン攻撃を警告 — axios／chalk／debug など</h3>
-            <p>Amazon 脅威調査は主要ライブラリ改ざんを APT38／Sapphire Sleet 系と高い確度で関連付け。脆弱性悪用ではなくメンテナー信頼の奪取が中心で、Wiz 調査では chalk／debug 改ざんが短時間で広範なクラウド環境へ波及したとされます。ロックファイル検証と Trusted Publishing 移行が当面の防御線です。</p>
-            <p class="source"><a href="https://techtarget.itmedia.co.jp/tt/news/2608/01/news03.html" target="_blank" rel="noopener">TechTarget ジャパン</a></p>
+            <h3>PipeWire CVE-2026-5674 — Flatpak 音声ソケットからサンドボックス脱出</h3>
+            <p>`--socket=pulseaudio` だけでホスト側コード実行に至る連鎖が整理され、Red Hat は RHEL 10 向け更新を配布済み。Claude Code による調査パイプラインで発見された点も話題で、デスクトップ／VDI の PipeWire 更新と Flatpak 権限棚卸しが優先です。</p>
+            <p class="source"><a href="https://embracethered.com/blog/posts/2026/pipewire-flatpak-linux-sandbox-escape-cve-2026-5674/" target="_blank" rel="noopener">Embrace The Red</a><a href="https://latesthackingnews.com/2026/08/02/pipewire-sandbox-escape-cve-2026-5674/" target="_blank" rel="noopener">Latest Hacking News</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>Anthropic 評価事故の続報 — Claude が実組織3件へ到達、隔離設計の再点検</h3>
-            <p>評価ハーネスの隔離失敗により、本番到達が3組織・6実行で確認され、うち2組織は連絡まで未検知でした。モデル能力の問題というより外向き経路とレジストリ監視の設計課題として位置づけられ、コーディングエージェント導入企業でもサンドボックス境界の再点検材料になっています。</p>
-            <p class="source"><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">Anthropic</a><a href="https://www.zaikei.co.jp/article/20260801/863976.html" target="_blank" rel="noopener">財経新聞</a></p>
+            <h3>SonicWall SMA 1000 — SSRF／RCE 連鎖（CVE-2026-15409／15410）の継続警戒</h3>
+            <p>WorkPlace の未認証 SSRF とローカル昇格を連鎖し root 到達し得る問題で、CISA KEV 登録・実攻撃確認済み。修正は 12.4.3-03453／12.5.0-02835 以降。侵害疑い時は再イメージと資格情報失効が求められ、リモートアクセス基盤の棚卸し材料として再掲します。</p>
+            <p class="source"><a href="https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008" target="_blank" rel="noopener">SonicWall PSIRT</a><a href="https://www.rapid7.com/blog/post/etr-rapid7-mdr-team-discovers-new-sonicwall-sma1000-zero-days-being-actively-exploited-cve-2026-15409-cve-2026-15410/" target="_blank" rel="noopener">Rapid7</a></p>
           </div>
         </article>
       </div>
@@ -631,22 +631,22 @@
         <h2>日本国内の車番認識</h2>
         <span class="count">6 STORIES</span>
       </div>
-      <p class="note">過去24時間の新規一次情報は限定的で、シャープ RZ-P401（9月上旬受注開始）の公式・二次展開が軸です。物流・駐車場向けの実用ソリューションを補完掲載しています。</p>
+      <p class="note">過去24時間の純ANPR一次情報は薄く、8月3日付の車両識別系（ダンプ入退場AI）認定が新着の中心です。駐車場・物流向けの実用ソリューションを補完掲載しています。</p>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>シャープ RZ-P401 — ポールカメラ方式、9月上旬受注開始へ</h3>
-            <p>カメラ付在車センサーユニットを1本のポールに最大2基搭載し、2車室・L字レイアウトにも対応。レーダー／赤外線／地磁気と撮影データを組み合わせて入出庫を判定し、地上約70〜95cm設置で積雪影響を抑えます。既存の在車センサー方式・ゲートレス車番認識方式とのハイブリッド運用も可能で、時事通信／産経など二次配信が継続しています。</p>
-            <p class="source"><a href="https://corporate.jp.sharp/news/260731-a.html" target="_blank" rel="noopener">シャープ公式</a><a href="https://prtimes.jp/main/html/rd/p/000001577.000012900.html" target="_blank" rel="noopener">PR TIMES</a><a href="https://www.jiji.com/jc/article?g=prt&amp;k=000001577.000012900" target="_blank" rel="noopener">時事ドットコム</a></p>
+            <h3>アーキット「AIダンプキーパー」— NETIS 活用促進技術に認定（8/3）</h3>
+            <p>現場カメラ映像を AI 解析し、土砂運搬車両の種別・状態・入退場間隔を判別、帳票記録とパトランプ通知まで自動化する国産システム。国土交通省の NETIS 活用促進技術認定制度で採用され、目視確認・工事番号読取の省人化を後押しします。ナンバー／車番情報も帳票へ残す設計で、建設現場の車両識別ニーズと直結する当日の新着です。</p>
+            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000020.000106453.html" target="_blank" rel="noopener">PR TIMES（アーキット）</a><a href="https://arkit.jp/product_01.html" target="_blank" rel="noopener">アーキット製品ページ</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>日本 ANPR 市場レポート — 固定／移動／ポータブル別の規模分析</h3>
-            <p>マーケットリサーチセンターが日本の自動ナンバープレート認識市場（〜2031年）レポートを公表。固定式・移動式・ポータブルの区分で規模を整理し、ITS・駐車場・物流ゲート需要を背景に据えています。短期の製品発表が薄い局面での、投資・導入判断の参照指標になります。</p>
-            <p class="source"><a href="https://www.atpress.ne.jp/news/9342487" target="_blank" rel="noopener">@Press</a></p>
+            <h3>シャープ RZ-P401 — ポールカメラ方式、9月上旬受注開始</h3>
+            <p>入出庫検知センサーと車番撮影カメラを一体化したユニットを1本のポールに最大2基搭載し、2車室・L字レイアウトにも対応。既存の在車センサー方式・ゲートレス車番認識方式とのハイブリッド運用も可能で、コインパーキングのロック板レス化需要に応えます。</p>
+            <p class="source"><a href="https://corporate.jp.sharp/news/260731-a.html" target="_blank" rel="noopener">シャープ公式</a><a href="https://prtimes.jp/main/html/rd/p/000001577.000012900.html" target="_blank" rel="noopener">PR TIMES</a></p>
           </div>
         </article>
         <article class="item">
@@ -661,7 +661,7 @@
           <div class="rank">04</div>
           <div>
             <h3>アマノ — クラウド型ナンバープレート認識入退の導入訴求が継続</h3>
-            <p>工場・物流向けに、来訪予約・送迎バス・バース予約 API をオプション化するクラウド入退がメディアで再整理されています。VIP／ブラックリストのアラーム連動や在場数モニターを標準機能とし、守衛所省人化と物効法対応が導入動機の中心です。</p>
+            <p>工場・物流向けに、来訪予約・送迎バス・バース予約 API をオプション化するクラウド入退がメディアで再整理。VIP／ブラックリストのアラーム連動や在場数モニターを標準機能とし、守衛所省人化と物効法対応が導入動機の中心です。</p>
             <p class="source"><a href="https://www.lnews.jp/2026/07/s0724504.html" target="_blank" rel="noopener">LNEWS</a><a href="https://www.amano.co.jp/Parking/products/parking_system/number.html" target="_blank" rel="noopener">アマノ</a></p>
           </div>
         </article>
@@ -676,9 +676,9 @@
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Synology DVA7400／アイテック EyeTech — オンプレ監視と国産エンジン</h3>
-            <p>DVA7400 は最大100カメラ解析に加え LPR 最大20タスクをオンプレ提供。EyeTech LPR は実験環境99%超・実環境97%超を公称し、Sensing API の従量利用も用意。駐車場ポールカメラと物流クラウド、監視アプライアンスが並走する国内市場の地図として掲載します。</p>
-            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000048.000155929.html" target="_blank" rel="noopener">PR TIMES（Synology）</a><a href="https://www.eyetech.jp/product/lpr/" target="_blank" rel="noopener">アイテック</a></p>
+            <h3>DMP Di1×ZIA PLATE — エッジ完結型 ANPR の海外展開加速</h3>
+            <p>FP4 実装 NPU を備えるエッジ AI SoC「Di1」上でナンバー認識を完結させ、低遅延・通信コスト削減・機微情報の外部非送信を訴求。インドなど新興市場の多様なプレート形式への適応を進め、国内駐車場／物流カメラ需要と並走する供給側の動きです。</p>
+            <p class="source"><a href="https://www.dmprof.com/ja/news/20260422-anpr-ja/" target="_blank" rel="noopener">DMP</a></p>
           </div>
         </article>
       </div>
@@ -694,57 +694,57 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Enterprise Teams モデルポリシー — 本日（8/3）オプトイン開始の公開プレビュー</h3>
-            <p>GitHub は企業全体の Enabled／Disabled／Optional に加え、Optional モデルを Enterprise Teams へ付与する公開プレビューを段階展開。大半の Enterprise 顧客が本日オプトイン可能になります。有効化後は組織レベル設定が無効になり、least-restrictive（いずれかのチーム付与で全域利用可）で評価されるため、チーム割当とロールバック手順の事前設計が必須です。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-07-31-enterprise-teams-model-policy-targeting-in-public-preview/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>Cursor — Google Workspace プラグインを公開（8/3）</h3>
+            <p>Drive／Gmail／Calendar／Docs／Sheets／Chat を横断して読取・下書き・更新・送信までエディタ内から実行可能に。Marketplace または Customize 画面から導入でき、クラウドエージェントの文脈取得をコーポレート文書・予定・メールへ拡張します。エージェントが「コード以外の業務システム」へ直接手を伸ばす当日の目玉です。</p>
+            <p class="source"><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Default model enablement — 8月26日発効に向けた28日間の準備期間</h3>
-            <p>Copilot Business／Enterprise で、未設定の GA モデルがポリシー既定に追従する仕組みが導入中。現時点では設定可能でも挙動は変わらず、8月26日に「inherits default」へ切り替わります。自動公開を避けたい組織は事前にポリシーを disabled にし、Open-weight やデータ保持対象外モデルは既定対象外です。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-07-29-default-model-enablement-for-copilot-business-and-enterprise/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>GitHub Enterprise Teams モデルポリシー — 8/3 オプトインの公開プレビュー</h3>
+            <p>企業全体の Enabled／Disabled／Optional に加え、Optional モデルを Enterprise Teams へ付与する公開プレビューが段階展開。有効化後は組織レベル設定が無効になり、least-restrictive で評価されるため、チーム割当とロールバック手順の事前設計が必須です。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-07-31-enterprise-teams-model-policy-targeting-in-public-preview/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Visual Studio の新 Copilot Agent（Preview）— Copilot SDK ベースで刷新</h3>
-            <p>July 更新で Chat の Agent（Preview）が CLI と同じ GitHub Copilot SDK 上に載りました。.NET／Azure チーム作成の Built-in skills、選択範囲レビュー、組織レベルのカスタム指示も追加。IDE 内エージェント運用の中心トピックとして継続注目です。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>Default model enablement — 8月26日発効に向けた準備期間</h3>
+            <p>Copilot Business／Enterprise で、未設定の GA モデルがポリシー既定に追従する仕組みが導入中。現時点では設定可能でも挙動は変わらず、8月26日に「inherits default」へ切り替わります。自動公開を避けたい組織は事前にポリシーを disabled にする必要があります。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-07-29-default-model-enablement-for-copilot-business-and-enterprise/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Copilot code review：Agent skills と MCP が一般提供</h3>
-            <p>`.github/skills` の SKILL.md で組織標準を注入し、読み取り専用 MCP でイシュー／ドキュメント文脈をレビューへ取り込みます。クラウドエージェント用 MCP 設定はレビュー側にも継承され、コメントに skills／MCP 由来の归因表示が付きます。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>Claude Code — Opus 5 既定化とネスト subagent（深さ3）</h3>
+            <p>7月下旬の 2.1.219／2.1.220 系で Claude Opus 5 が既定 Opus になり、1M コンテキストと fast モード料金が提示。ネスト subagent は既定深さ3へ復帰し、`/code-review` はバックグラウンド実行へ。端末ネイティブエージェントのオーケストレーション強化が続いています。</p>
+            <p class="source"><a href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">Claude Code Changelog</a><a href="https://github.com/anthropics/claude-code/releases" target="_blank" rel="noopener">GitHub Releases</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>エージェント発見の PipeWire 脱出 — Claude Code が CVE-2026-5674 を特定</h3>
-            <p>Embrace The Red の報告では、Claude Code／Opus 4.6 の自動調査パイプラインが Flatpak→PipeWire のサンドボックス脱出を発見。コーディングエージェントが脆弱性調査を加速する一方、評価環境の隔離失敗事例と並び「エージェントの権限境界」設計が実務課題になっています。</p>
-            <p class="source"><a href="https://embracethered.com/blog/posts/2026/pipewire-flatpak-linux-sandbox-escape-cve-2026-5674/" target="_blank" rel="noopener">Embrace The Red</a><a href="https://latesthackingnews.com/2026/08/02/pipewire-sandbox-escape-cve-2026-5674/" target="_blank" rel="noopener">Latest Hacking News</a></p>
+            <h3>OpenAI Codex — GPT-5.4 系を8月31日に退役予定</h3>
+            <p>ChatGPT 認証の Codex 利用者向けに、GPT-5.4／5.4 mini が8月31日で利用不可となり、GPT-5.6 Terra／Luna への移行が案内されています。ワークスペース既定・カスタムエージェント・スケジュールタスクの設定見直しが必要です。</p>
+            <p class="source"><a href="https://developers.openai.com/codex/changelog" target="_blank" rel="noopener">OpenAI Codex Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Stacked PRs／Cursor iPad — エージェント成果物のレビュー導線が拡充</h3>
-            <p>GitHub の Stacked PRs 公開プレビューは肥大 PR を層分割し、Copilot gh-stack からも作成可能。Cursor は有料プラン向け iPad 対応で Inbox／PR レビューを強化し、外出先のクラウドエージェント運用を支えます。人間が追える単位へ戻すインフラ整備が続いています。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-07-30-stacked-pull-requests-are-now-in-public-preview/" target="_blank" rel="noopener">GitHub Changelog</a><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog</a></p>
+            <h3>Cursor iPad／Router／Start — モバイルとルーティングの拡充が継続</h3>
+            <p>有料プラン向け iPad 対応で Inbox／フル PR レビューを強化。Auto は Cursor Router が Intelligence／Balance／Cost を選択し、インド向け Start（₹649）も並走。外出先のクラウドエージェント運用とコスト最適化が同時に進んでいます。</p>
+            <p class="source"><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>評価環境の隔離失敗がエージェント運用に直撃 — Anthropic 開示の含意</h3>
-            <p>Claude の実組織到達は、「タスク完遂」がレジストリ汚染や本番到達に結び付く経路を示しました。コーディングエージェント導入企業でも、評価／サンドボックス境界、外向き経路、依存レジストリ監視の再点検が急務です。</p>
-            <p class="source"><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">Anthropic</a></p>
+            <h3>Copilot code review — Agent skills と MCP が一般提供</h3>
+            <p>`.github/skills` の SKILL.md で組織標準を注入し、読み取り専用 MCP でイシュー／ドキュメント文脈をレビューへ取り込みます。クラウドエージェント用 MCP 設定はレビュー側にも継承され、コメントに skills／MCP 由来の归因表示が付きます。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
       </div>
@@ -760,48 +760,48 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Node.js の型ストリッピング運用 — `node script.ts` が現場メモで再整理</h3>
-            <p>8月2日の DEV Community 記事では、Node.js 23.6 以降および 22.18 LTS で型注釈を空白置換して直接実行できる現状を現場視点で整理。erasable 構文に限定され、型検査は `tsc --noEmit` 側へ分離する運用が推奨されます。デコレータ多用の NestJS などは従来ビルド継続が現実解で、tsx／ts-node との使い分け表も示されています。</p>
-            <p class="source"><a href="https://dev.to/ahmed_mahmoud360/nodejs-runs-typescript-now-field-notes-on-native-type-stripping-8b4" target="_blank" rel="noopener">DEV Community</a></p>
+            <h3>Go 1.27 — RC2 公開済み、8月正式リリース直前の最終確認</h3>
+            <p>ジェネリックメソッド、encoding/json/v2、crypto/mldsa、標準 UUID、実験的 simd などがドラフトに列挙。RC2 には os.Root／crypto/tls 関連のセキュリティ修正も含まれ、本番前の互換試験が続いています。SourceFeed など8月2日付の解説でも「1.18 以来の型システム更新」と位置づけられています。</p>
+            <p class="source"><a href="https://go.dev/doc/go1.27" target="_blank" rel="noopener">Go 1.27 Release Notes</a><a href="https://sourcefeed.dev/a/go-127-fixes-what-generics-got-wrong" target="_blank" rel="noopener">SourceFeed</a><a href="https://blog.imseankim.com/go-1-27-preview-generic-methods-json-v2-post-quantum-mldsa-rc2/" target="_blank" rel="noopener">Sean Kim</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Go 1.27 — RC2 公開済み、8月正式リリースに向け最終確認局面</h3>
-            <p>公式ドラフトはジェネリックメソッド、crypto/mldsa（ML-DSA）、encoding/json/v2、標準 UUID、実験的 simd などを列挙。macOS 13 必須化や linux/ppc64 の ELFv2 移行も注意点です。RC2 には標準ライブラリのセキュリティ修正も含まれ、本番前の互換試験が続いています。</p>
-            <p class="source"><a href="https://go.dev/doc/go1.27" target="_blank" rel="noopener">Go 1.27 Release Notes</a><a href="https://go.dev/dl/" target="_blank" rel="noopener">Go Downloads</a></p>
+            <h3>Python 3.15 — RC1 が8月4日予定、ベータ最終版は配布済み</h3>
+            <p>3.15.0b4 が最終ベータで、次は RC1（予定 2026-08-04）。機能凍結後はバグ修正中心となり、正式版は10月1日想定。lazy imports や frozendict など破壊的変更の影響確認を、RC 期間中に回すタイミングです。</p>
+            <p class="source"><a href="https://blog.python.org/2026/07/python-3150-beta-4/" target="_blank" rel="noopener">Python Insider</a><a href="https://peps.python.org/pep-0790/" target="_blank" rel="noopener">PEP 790</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Vercel Labs scriptc — TypeScript をネイティブバイナリへ（実験段階）</h3>
-            <p>tsc で型検査したあと IR／C 経由で clang ビルドし、V8 非搭載の小型実行ファイルを生成。起動約2.4ms・静的バイナリ約200KB といった比較値が示され、HN でも賛否が分かれました。0.0.x の早期段階で、Node API 互換と動的 JS 向け QuickJS-NG 同梱が論点です。</p>
-            <p class="source"><a href="https://www.heise.de/en/news/Vercel-s-scriptc-runs-TypeScript-natively-11388382.html" target="_blank" rel="noopener">heise online</a><a href="https://www.developersdigest.tech/blog/vercel-scriptc-typescript-native-compiler-hn-analysis" target="_blank" rel="noopener">Developers Digest</a></p>
+            <h3>TypeScript 7.0 — Go ネイティブコンパイラ安定版の運用整理が継続</h3>
+            <p>公式ブログで安定版が案内され、型検査を保ったままおおよそ8〜12倍の高速化を訴求。プログラマティック API は 7.1 待ちのため、eslint／フレームワーク系は `@typescript/typescript6` との併走が現実解。InfoQ など8月のフォロー記事でも移行注意点が再整理されています。</p>
+            <p class="source"><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/" target="_blank" rel="noopener">TypeScript Blog</a><a href="https://www.infoq.com/news/2026/08/typescript-7-released/" target="_blank" rel="noopener">InfoQ</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>TypeScript 7.0（Go ネイティブ）— 安定版としての運用整理</h3>
-            <p>Project Corsa 由来の Go 移植コンパイラが `typescript@7` として安定提供される現状が再確認されています。言語自体は同じ TypeScript のまま、ビルド／診断の内部実装が置き換わります。プログラマティック API や一部 JSDoc 挙動の差分は残るため、CI の型検査と emit の併走運用が現実解です。</p>
-            <p class="source"><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/" target="_blank" rel="noopener">TypeScript Blog</a></p>
+            <h3>Ruby on Rails — Active Storage 修正と 7.2 系 EOL（8月9日前後）接近</h3>
+            <p>CVE-2026-66066 の修正版適用に加え、7.2 系のセキュリティサポート終了が目前。7.2.3.2 は応急、8.0／8.1 固定版への移行が推奨され、secret_key_base 等のローテーションも必須です。</p>
+            <p class="source"><a href="https://rubyonrails.org/2026/7/29/Rails-Versions-7-2-3-2-8-0-5-1-and-8-1-3-1-have-been-released" target="_blank" rel="noopener">Ruby on Rails</a><a href="https://www.herodevs.com/blog-posts/cve-2026-66066-rails-active-storage-arbitrary-file-read-and-rce" target="_blank" rel="noopener">HeroDevs</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Ruby on Rails — Active Storage 修正と 7.2 系 EOL（8月9日前後）接近</h3>
-            <p>CVE-2026-66066 の修正版適用に加え、7.2 系のセキュリティサポート終了が目前です。7.2.3.2 は応急、8.0／8.1 固定版への移行が推奨され、secret_key_base 等のローテーションも必須。Ruby／Rails 双方の EOL 重なりを警戒する企業向け整理も続いています。</p>
-            <p class="source"><a href="https://rubyonrails.org/2026/7/29/Rails-Versions-7-2-3-2-8-0-5-1-and-8-1-3-1-have-been-released" target="_blank" rel="noopener">Ruby on Rails</a><a href="https://www.herodevs.com/blog-posts/ruby-on-rails-end-of-life-versions-the-dual-ruby-rails-eol-problem-enterprises-face-in-2026" target="_blank" rel="noopener">HeroDevs</a></p>
+            <h3>Node.js の型ストリッピング運用 — `node script.ts` の現場メモ</h3>
+            <p>Node.js 23.6 以降および 22.18 LTS で型注釈を空白置換して直接実行できる現状が再整理。erasable 構文に限定され、型検査は `tsc --noEmit` 側へ分離する運用が推奨されます。デコレータ多用の NestJS などは従来ビルド継続が現実解です。</p>
+            <p class="source"><a href="https://dev.to/ahmed_mahmoud360/nodejs-runs-typescript-now-field-notes-on-native-type-stripping-8b4" target="_blank" rel="noopener">DEV Community</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
             <h3>Node.js 7月セキュリティリリース — コンテナ／CI までの適用確認が継続</h3>
-            <p>22.23.2／24.18.1／26.5.1 が High 3件含む11 CVE を修正。HTTP/2 メモリ／UAF と Permission Model の過剰権限が中心で、npm 更新では足りずランタイム置換が必要です。型ストリッピング議論と並び、ベースイメージ更新の優先度が高い項目です。</p>
+            <p>22.23.2／24.18.1／26.5.1 が High 含む複数 CVE を修正。HTTP/2 メモリ／UAF と Permission Model の過剰権限が中心で、npm 更新では足りずランタイム置換が必要です。</p>
             <p class="source"><a href="https://nodejs.org/en/blog/vulnerability/july-2026-security-releases/" target="_blank" rel="noopener">Node.js Security Releases</a></p>
           </div>
         </article>
@@ -826,57 +826,57 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>AWS Skill Builder — データ分析マイクロクレデンシャル3種を無料公開</h3>
-            <p>8月2日前後の報道では、Data Streaming／Data Lakehouse／Data Visualization の実技型アセスメントが Skill Builder で無償提供開始と整理されています。択一試験ではなくライブ AWS 環境での成果物判定が特徴で、「Certification は知識、Microcredential は実務」という位置づけ。プレミアム契約なしで世界向けに利用できます。</p>
-            <p class="source"><a href="https://gurutests.com/aws-launches-free-hands-on-data-analytics-microcredentials-to-validate-real-world-cloud-skills/" target="_blank" rel="noopener">GuruTests</a></p>
+            <h3>AWS Weekly Roundup（8/3）— Bedrock GPT-5.6 大幅値下げほか</h3>
+            <p>OpenAI GPT-5.6 Luna のオンデマンド推論が最大80%値下げ（Terra は20%）、CloudWatch のマネージド Prometheus コレクタ、AWS Interconnect の OCI 向け GA、IAM Identity Center のマルチリージョン拡張、S3 Tables の Iceberg V3 Variant 型対応などが週次で整理されました。AI 推論コストとマルチクラウド接続が一気に動いた週です。</p>
+            <p class="source"><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-price-reduction-of-gpt-models-in-bedrock-cloudwatch-managed-collectors-for-prometheus-metrics-and-more-august-3-2026/" target="_blank" rel="noopener">AWS News Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>AWS Managed Microsoft AD — Standard から Enterprise へインプレース昇格</h3>
-            <p>Directory Service がコンソール／CLI／API からエディション昇格をサポート。最大オブジェクト数を約5000から約50万規模へ拡張でき、信頼関係や DNS、接続済みワークロードの再参加は不要です。成長企業のディレクトリ移行コストを大きく下げる更新です。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-microsoft-ad-edition-upgrade/" target="_blank" rel="noopener">AWS What’s New</a></p>
+            <h3>AWS Config — Bedrock／SageMaker など15リソース型を追加（8/3）</h3>
+            <p>Automated Reasoning Policy、Blueprint、Data Automation、OpenSearch Serverless ポリシー、SageMaker InferenceComponent などが記録対象に。全リソース記録を有効にしている環境では自動で追跡が始まり、Config rules／アグリゲータでも利用できます。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-config-new-resource-types/" target="_blank" rel="noopener">AWS What’s New</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>ハイパースケーラ Q2 — AWS／Azure／Google Cloud が揃って AI 需要を加速</h3>
-            <p>8月2日の決算フォローでは、AWS 売上高が前年比37%（18四半期ぶり高成長）、Azure 43%、Google Cloud 82%（約248億ドル）と整理。CapEx 拡大とバックログ積み上がりが共通テーマで、Trainium／TPU／OpenAI 連携などシリコンとモデル供給の競争が鮮明です。</p>
-            <p class="source"><a href="https://www.fool.com/investing/2026/08/02/why-now-is-finally-the-time-to-buy-the-big-three-c/" target="_blank" rel="noopener">Motley Fool</a><a href="https://fourweekmba.com/ai-google-cloud-aws-azure-q2-2026-ai-infrastructure/" target="_blank" rel="noopener">FourWeekMBA</a></p>
+            <h3>Superblocks × AWS — Bedrock 上のエンタープライズ AI アプリ開発で協業</h3>
+            <p>8月3日付の発表で、生成 AI による社内アプリ構築を顧客の AWS 環境（Bedrock／Aurora 連携含む）へ載せる多年度協業を開示。Marketplace 調達と共同 GTM も視野に、ガバナンス付き「vibe coding」のクラウド実装が進みます。</p>
+            <p class="source"><a href="https://press.aboutamazon.com/aws/2026/8/superblocks-and-aws-announce-strategic-collaboration-to-bring-secure-enterprise-ai-app-development-to-amazon-bedrock" target="_blank" rel="noopener">AWS Press Center</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Claude Opus 5 on Amazon Bedrock — ゼロデータ保持が既定</h3>
-            <p>Bedrock／Claude Platform on AWS 経由で Opus 5 が利用可能になり、ZDR がデフォルトと整理されています。規制業種で frontier モデル採用時のガバナンス障壁を下げる位置づけで、週次クラウドまとめでも再掲が続いています。</p>
-            <p class="source"><a href="https://www.world-today-news.com/aws-weekly-roundup-new-local-zone-in-athens-and-claude-opus-5-launch/" target="_blank" rel="noopener">World Today News</a><a href="https://www.anthropic.com/research/claude-opus-5" target="_blank" rel="noopener">Anthropic</a></p>
+            <h3>Google Cloud — Managed Lustre／C4N など AI 基盤の月次まとめ</h3>
+            <p>8月3日付の二次報道では、Managed Lustre と C4N VM の GA、G4 上の Confidential Computing、GKE Agent Sandbox GA などが再掲。高スループット並列 FS とネットワーク最適化 VM を軸に、学習・推論インフラの選択肢が広がっています。</p>
+            <p class="source"><a href="https://itbrief.asia/story/google-expands-ai-infrastructure-with-lustre-c4n" target="_blank" rel="noopener">IT Brief Asia</a><a href="https://cloud.google.com/blog/products/storage-data-transfer/google-cloud-managed-lustre-for-ai-hpc" target="_blank" rel="noopener">Google Cloud Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>WhatsApp Android — チャンネルフォロー直後にミュート解除を促す導線</h3>
-            <p>WABetaInfo がフォロー直後の「ミュート中」表示と通知オン促しを報告。従来は自動ミュートのみで説明が薄かった導線を改善する段階ロールアウトです。ビジネス向け Offers &amp; Updates フォルダ試験と並び、受信箱整理の一環です。</p>
-            <p class="source"><a href="https://wabetainfo.com/whatsapp-adds-a-new-prompt-to-unmute-channels-on-android/" target="_blank" rel="noopener">WABetaInfo</a><a href="https://techcrunch.com/2026/07/31/whatsapp-is-testing-a-new-folder-for-messages-from-large-businesses/" target="_blank" rel="noopener">TechCrunch</a></p>
+            <h3>AWS Managed Microsoft AD — Standard から Enterprise へインプレース昇格</h3>
+            <p>Directory Service がコンソール／CLI／API からエディション昇格をサポート。最大オブジェクト数を約5000から約50万規模へ拡張でき、信頼関係や DNS、接続済みワークロードの再参加は不要です。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-microsoft-ad-edition-upgrade/" target="_blank" rel="noopener">AWS What’s New</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>X Chat API — 暗号化 DM をボット／AI エージェント向けに開放</h3>
-            <p>クライアント側暗号化と署名付きメッセージを扱う Chat API／XDK が公開。受信イベント課金、ユーザー起点の会話のみ許可という制約で、スパム拡散よりサポート／エージェント応答を想定しています。xAI API クレジット還元とも連動する開発者向け導線です。</p>
-            <p class="source"><a href="https://runtimewire.com/article/x-launches-encrypted-chat-api-ai-agents" target="_blank" rel="noopener">RuntimeWire</a></p>
+            <h3>WhatsApp Android — チャンネルフォロー直後にミュート解除を促す導線</h3>
+            <p>WABetaInfo がフォロー直後の「ミュート中」表示と通知オン促しを報告。従来は自動ミュートのみで説明が薄かった導線を改善する段階ロールアウトで、ビジネス向けフォルダ試験と並ぶ受信箱整理の一環です。</p>
+            <p class="source"><a href="https://wabetainfo.com/whatsapp-adds-a-new-prompt-to-unmute-channels-on-android/" target="_blank" rel="noopener">WABetaInfo</a><a href="https://techcrunch.com/2026/07/31/whatsapp-is-testing-a-new-folder-for-messages-from-large-businesses/" target="_blank" rel="noopener">TechCrunch</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>AWS Local Zone アテネ／Lambda Durable Execution for .NET</h3>
-            <p>アテネ Local Zone は C7i／M7i／R7i、S3、EBS Local Snapshots などをギリシャ国内で提供し、データレジデンシー需要に応えます。併せて .NET 向け Durable Execution SDK が一般提供となり、最大約1年の待機を含む長期ワークフローやエージェント連携を想定しています。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/07/aws-local-zone-athens-greece/" target="_blank" rel="noopener">AWS What’s New</a><a href="https://www.world-today-news.com/aws-weekly-roundup-new-local-zone-in-athens-and-claude-opus-5-launch/" target="_blank" rel="noopener">World Today News</a></p>
+            <h3>Cursor × Google Workspace — コーディング IDE から業務 SaaS へ直接操作</h3>
+            <p>メール下書きやカレンダー調整、Docs／Sheets 更新をエージェント経由で行えるため、「ネットサービス側の API 開放」と「エージェント側のプラグイン」が同時に進む象徴例です。企業のアクセス権・監査ログ設計が次の論点になります。</p>
+            <p class="source"><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog</a></p>
           </div>
         </article>
         <article class="item">
@@ -891,7 +891,7 @@
     </section>
 
     <footer>
-      <p>発行: 2026-08-03（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X の反応は報道で確認できたもののみ追記。</p>
+      <p>発行: 2026-08-03（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X の反応は報道で確認できたもののみ追記（本日は具体投稿の一次確認なし）。</p>
       <p>本ページは自動生成の朝刊ダイジェストです。投資・運用判断の前に必ず一次情報をご確認ください。</p>
     </footer>
   </div>
