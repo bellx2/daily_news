@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>技術ニュースダイジェスト 2026-08-05</title>
+  <title>技術ニュースダイジェスト 2026-08-06</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -520,13 +520,12 @@
     }
   </style>
 </head>
-
 <body>
   <header class="masthead">
     <div class="mast-inner">
       <div class="edition-bar">
         <span class="live"><i aria-hidden="true"></i>今朝のダイジェスト</span>
-        <span>2026年8月5日 / 過去24時間</span>
+        <span>2026年8月6日 / 過去24時間</span>
         <span>公式・専門メディア中心</span>
       </div>
       <h1 class="brand">
@@ -540,7 +539,7 @@
   <div class="wrap">
     <div class="briefing">
       <p class="kicker">本日の見通し</p>
-      <p>本日の軸は、npm ChainDrop の続報（Microsoft 解剖・IOC 更新）、N-able N-central（CVE-2026-18577）の公式アップデートと CISA KEV、DynamoDB ネイティブベクトル検索の GA、Claude Code 2.1.222 です。車番認識は当日の DataHax／DENNOU PARK 導入発表が中心で、純技術仕様の新規一次情報は控えめです。WhatsApp @all のミュート貫通は 8/5 続報で再燃しています。</p>
+      <p>本日の軸は、CISA が TeamCity（CVE-2026-63077）を KEV に追加した件、N-central の連邦修正期限（8/6）、Claude Code 2.1.223 の権限バイパス修正、Copilot への Kimi K3 追加、Bedrock AgentCore の時間ポリシー／レート制限です。車番認識は 8/5 の DataHax 導入発表が中心で、当日の純技術仕様プレスは少なめです。Elastic も ChainDrop（CHAINDROP）の続報を出しています。</p>
     </div>
 
     <nav class="toc" aria-label="テーマ一覧">
@@ -561,65 +560,65 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>ChainDrop — Microsoft が npm 自己増殖ワームの解剖を公開、影響は継続拡大</h3>
-            <p>8月4日、Microsoft Threat Intelligence が keyv／flat-cache 系などを含む 400 超パッケージの供給網侵害を解説。preinstall 経由の Bun ペイロードが認証情報を窃取し、盗んだ npm トークンで自己再配布する流れを整理しています。BleepingComputer や StepSecurity は影響パッケージ数がさらに増えているとし、ロックファイル監査とトークンローテーションが急務です。</p>
-            <p class="source"><a href="https://www.microsoft.com/en-us/security/blog/2026/08/04/chaindrop-supply-chain-compromise-anatomy-self-propagating-worm/" target="_blank" rel="noopener">Microsoft Security Blog</a><a href="https://www.bleepingcomputer.com/news/security/massive-chaindrop-npm-supply-chain-attack-infects-hundreds-of-packages/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://www.stepsecurity.io/blog/chaindrop-npm-worm" target="_blank" rel="noopener">StepSecurity</a></p>
+            <h3>CISA — JetBrains TeamCity（CVE-2026-63077）を KEV に追加、修正期限は8/8</h3>
+            <p>8月5日、信頼できないデータのデシリアライズにより未認証 RCE に至る TeamCity On-Premises の欠陥を Known Exploited Vulnerabilities へ追加。CVSS 9.8、エージェント・ポーリング経由で認証を迂回し得るため、ビルド基盤の侵害リスクが高いです。公式は 2025.11.7／2026.1.3 への更新、または 2017.1+ 向けパッチプラグインを推奨しています。</p>
+            <p class="source"><a href="https://www.cisa.gov/news-events/alerts/2026/08/05/cisa-adds-one-known-exploited-vulnerability-catalog" target="_blank" rel="noopener">CISA</a><a href="https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/" target="_blank" rel="noopener">JetBrains</a><a href="https://www.securityweek.com/hackers-start-exploiting-recent-jetbrains-teamcity-vulnerability/" target="_blank" rel="noopener">SecurityWeek</a><a href="https://www.rapid7.com/blog/post/etr-cve-2026-63077-critical-unauthenticated-remote-code-execution-in-jetbrains-teamcity/" target="_blank" rel="noopener">Rapid7</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>N-able N-central — CVE-2026-18577 の公式続報と CISA 3日パッチ期限</h3>
-            <p>8月4日、N-able が認証バイパス（hotfix 2026.3.1.7）の経緯と Take Control／Cloudflare トンネルによるエンドポイント横展開を公表。Huntress は実害を確認し、未パッチの露出サーバを警告。CISA は KEV に追加し、連邦機関へ 8月6日までの修正を指示したと報じられています。</p>
-            <p class="source"><a href="https://www.n-able.com/blog/n-central-security-update-august-4-2026" target="_blank" rel="noopener">N-able</a><a href="https://www.huntress.com/blog/n-able-vulnerability-exploitation" target="_blank" rel="noopener">Huntress</a><a href="https://www.theregister.com/security/2026/08/04/feds-get-3-days-to-patch-n-able-god-mode-flaw-under-active-exploit/5282894" target="_blank" rel="noopener">The Register</a></p>
+            <h3>N-able N-central — CVE-2026-18577 の連邦修正期限が本日（8/6）</h3>
+            <p>認証バイパスの不完全な初回修正を受けた続報 CVE が KEV 入りし、CISA は FCEB に本日までの対応を要求。Take Control／トンネル経由の横展開が確認されており、最新ホットフィックス適用と露出コンソールの棚卸しが急務です。</p>
+            <p class="source"><a href="https://www.n-able.com/blog/n-central-security-update-august-4-2026" target="_blank" rel="noopener">N-able</a><a href="https://www.huntress.com/blog/n-able-vulnerability-exploitation" target="_blank" rel="noopener">Huntress</a><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>中部電力 — 不正アクセスで連絡先約7.4万人分が漏えいの可能性</h3>
-            <p>8月4日公表。一部システムの資格情報悪用により、取引先・自治体など約2400人とグループ役職員ら約7万1700人の氏名・メール等が漏えいした可能性。電力供給・一般顧客情報への影響は確認されていません。</p>
-            <p class="source"><a href="https://www.chuden.co.jp/publicity/press/1218169_3273.html" target="_blank" rel="noopener">中部電力</a><a href="https://news.web.nhk/newsweb/na/nb-3000050270" target="_blank" rel="noopener">NHK</a><a href="https://internet.watch.impress.co.jp/docs/news/2130524.html" target="_blank" rel="noopener">INTERNET Watch</a></p>
+            <h3>IBM Langflow — CVE-2026-9198（CVSS 9.8）が KEV、連邦期限は8/7</h3>
+            <p>既定 API の連鎖で未認証 RCE に至る欠陥が実害確認のうえ KEV 入り。PoC 公開後に悪用が観測され、1.10.2 への更新と LANGFLOW_AUTO_LOGIN=false、API のネットワーク制限が推奨されています。</p>
+            <p class="source"><a href="https://forkast.news/critical-rce-in-ibm-langflow-triggers-cisa-emergency-deadline/" target="_blank" rel="noopener">Forkast</a><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>ChainDrop の手口 — Ethereum C2・CI/CD 秘密・AI 開発ツールへの潜伏</h3>
-            <p>解析各社は、npm／GitHub／クラウド／K8s 秘密の収集に加え、Ethereum 上の C2（EtherHiding）と公開 GitHub への暗号化持ち出しを指摘。Claude Code／VS Code／Copilot 系への設定注入による永続化も焦点で、開発端末とランナー双方の点検が必要です。</p>
-            <p class="source"><a href="https://www.stepsecurity.io/blog/chaindrop-npm-worm" target="_blank" rel="noopener">StepSecurity</a><a href="https://www.wiz.io/blog/keyv-and-cacheable-npm-supply-chain-attack" target="_blank" rel="noopener">Wiz</a><a href="https://snyk.io/blog/inside-keyv-npm-compromise-preinstall-malware-trusted-provenance-ide-hooks/" target="_blank" rel="noopener">Snyk</a></p>
+            <h3>ChainDrop — Elastic が CHAINDROP 続報、AI ツール資格情報も標的</h3>
+            <p>8月6日付の Elastic Security Labs が、keyv 系メンテナ侵害から 400 超パッケージへ広がったワームを再整理。Claude／Codex／Cursor／Gemini などのエージェント資格情報やクラウド秘密を広く収集し、盗んだ npm トークンで自己再配布する流れを示しています。</p>
+            <p class="source"><a href="https://www.elastic.co/security-labs/shai-hulud-chaindrop-npm-supply-chain" target="_blank" rel="noopener">Elastic Security Labs</a><a href="https://www.microsoft.com/en-us/security/blog/2026/08/04/chaindrop-supply-chain-compromise-anatomy-self-propagating-worm/" target="_blank" rel="noopener">Microsoft Security Blog</a><a href="https://www.stepsecurity.io/blog/chaindrop-npm-worm" target="_blank" rel="noopener">StepSecurity</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>GitHub — Code scanning default setup を設定ファイルで大規模カスタム可能に</h3>
-            <p>8月4日、リポジトリプロパティで CodeQL 設定を default setup にマージできる機能が一般提供。クエリ追加やパス除外を組織規模で適用でき、各リポジトリにワークフローを持たせず詳細制御できます。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-08-04-customize-code-scanning-default-setup-at-scale/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>Apache Tomcat — CVE-2026-34486 も KEV、クラスタ通信の改ざんリスク</h3>
+            <p>EncryptInterceptor 周りの回帰が実害確認され、CISA が Langflow／N-central と並んで優先修正対象に。未パッチのクラスタ経路では通信の読み取り・操作が問題になり得ると報じられています。</p>
+            <p class="source"><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a><a href="https://www.secnews.gr/en/725508/cisa-langflow-rce-tomcat-n-central-kev/" target="_blank" rel="noopener">SecNews</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Dependabot — PR ブランチ名を dependabot.yml でカスタム可能に（8/4）</h3>
-            <p>プレフィックス、最大長、区切り文字、テンプレートプレースホルダを設定でき、CI の命名規則や長さ制限に合わせやすくなりました。サプライチェーン運用の周辺改善として、組織ポリシーへの取り込み候補です。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-08-04-customize-dependabot-pull-request-branch-names/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>Gitea — CVE-2026-59774、未認証でサーバファイル読取／RCE の実害警戒</h3>
+            <p>公開リポジトリへの細工された Org-mode マークアップで任意ファイル読取に至る致命的パス問題。構成次第で RCE まで到達し得るとされ、v1.27.1 への更新が急がれています。</p>
+            <p class="source"><a href="https://www.rescana.com/post/active-exploitation-alert-critical-gitea-cve-2026-59774-lets-unauthenticated-attackers-read-server-files-and-gain-rce" target="_blank" rel="noopener">Rescana</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>講談社 — フィッシング起点で連絡先最大3812件が流出</h3>
-            <p>8月3日公表のフォロー。取引先偽装メールから偽ログインへ誘導され社用メールが侵害され、攻撃者は窃取連絡先へ追加フィッシングを送信。個情委報告と本人通知は完了済みです。</p>
-            <p class="source"><a href="https://www.kodansha.co.jp/notices/723" target="_blank" rel="noopener">講談社</a><a href="https://www.itmedia.co.jp/news/article/2608/03/2000000357/" target="_blank" rel="noopener">ITmedia</a></p>
+            <h3>Claude Code 2.1.223 — Bash／承認ダイアログの権限バイパスを閉塞</h3>
+            <p>コマンドの一部隠蔽、タブ／不可視 Unicode による承認画面の欺瞞、ワークフロー sandbox からの dynamic import 脱出、組織の bypassPermissions 無効化をエージェント定義が無視する穴を修正。エージェント利用者向けの同日セキュリティ更新です。</p>
+            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.223" target="_blank" rel="noopener">Claude Code Releases</a><a href="https://dev.to/ahab_indieseek/claude-code-21223-permission-bypass-regression-checklist-58n9" target="_blank" rel="noopener">DEV Community</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>補足：ショップサーブ／EPARK など国内大規模漏えいの監視継続</h3>
-            <p>Eストアーのショップサーブ第2報（最大約885万件）や、EPARKリラクの PeakManager（約3300万件規模の可能性）など、大規模 EC／予約基盤の事後対応が続いています。カード情報の扱いと MFA／パスワード変更の呼びかけが共通論点です。</p>
-            <p class="source"><a href="https://estore.jp/press/20260802/" target="_blank" rel="noopener">Eストアー</a><a href="https://www.nikkei.com/article/DGXZQOUC040MU0U6A800C2000000/" target="_blank" rel="noopener">日本経済新聞（EPARK）</a></p>
+            <h3>補足：ChainDrop の CSO／Semgrep 解析と IOC 更新が継続</h3>
+            <p>CSO Online や Semgrep は影響パッケージと Ethereum デッドドロップ C2、CI／AI ツール永続化を再確認。ロックファイル監査、トークンローテーション、メンテナアカウントの MFA 強化が共通の対応指針です。</p>
+            <p class="source"><a href="https://www.csoonline.com/article/4205276/chaindrop-credential-stealing-worm-infects-over-400-npm-packages.html" target="_blank" rel="noopener">CSO Online</a><a href="https://semgrep.dev/blog/2026/its-not-npm-ver-yet-npm-worm-chaindrop-hits-400-packages-including-jaredwray-servicetitan-ornikar-qlik-and-nebulajs" target="_blank" rel="noopener">Semgrep</a></p>
           </div>
         </article>
       </div>
@@ -631,13 +630,13 @@
         <h2>日本国内の車番認識</h2>
         <span class="count">6 STORIES</span>
       </div>
-      <p class="note">過去24時間の純ANPR一次情報は DataHax の導入発表が中心です。仕様刷新の新規プレスは控えめなため、駐車場・物流向けの実用ソリューションを補完掲載しています。</p>
+      <p class="note">過去24時間の純ANPR一次情報は DataHax の導入発表（8/5）が中心です。8/6 当日の新規仕様プレスは少なく、駐車場・物流向けの関連ソリューションで補完しています。</p>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
             <h3>DataHax — DENNOU PARK が住友不動産渋谷オフィスで2拠点目運用（8/5）</h3>
-            <p>AIカメラ駐車場「DENNOU PARK」を住友不動産所有の渋谷区内オフィスビルへ導入し、4月上旬から運用。車番認識精度99%以上を維持しつつ、フラップレス／ゲートレス／精算機なしの無人運営とキャッシュレス決済を訴求する当日の一次情報です。</p>
+            <p>AIカメラ駐車場「DENNOU PARK」を住友不動産所有の渋谷区内オフィスビルへ導入し、4月上旬から運用。車番認識でフラップレス／ゲートレス／精算機なしの無人運営とキャッシュレス決済を実現し、一般的な設備比で開設コスト半減を訴求する直近の一次情報です。</p>
             <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000065.000069896.html" target="_blank" rel="noopener">PR TIMES（DataHax）</a><a href="https://www.dennou-park.com/" target="_blank" rel="noopener">DENNOU PARK</a></p>
           </div>
         </article>
@@ -645,40 +644,40 @@
           <div class="rank">02</div>
           <div>
             <h3>DataHax — 外交官など特殊ナンバーの車番認識対応（8/4）</h3>
-            <p>DENNOU PARK の車番認識AIを更新し、フォントやレイアウトが異なる外交官ナンバー等の読み取りに対応。都心オフィス・マンションの要望に応え、逆光や汚損など現場例外への追加学習も継続しています。</p>
+            <p>DENNOU PARK の認識AIを更新し、レイアウトやフォントが異なる外交官ナンバー等の読み取りに対応。都心オフィス・マンションの要望に応え、逆光や汚損など現場例外への追加学習も継続しています。</p>
             <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000068.000069896.html" target="_blank" rel="noopener">PR TIMES（DataHax）</a><a href="https://datahax.jp/dennou-park/" target="_blank" rel="noopener">DataHax</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>シャープ RZ-P401 — ポールカメラ方式のゲートレス車番認識、9月受注</h3>
-            <p>入出庫検知と車番撮影を一体化したユニットをポールに最大2基搭載し、2車室・L字レイアウトにも対応。既存の在車センサー方式とのハイブリッド運用も可能です。</p>
-            <p class="source"><a href="https://corporate.jp.sharp/news/260731-a.html" target="_blank" rel="noopener">シャープ公式</a><a href="https://prtimes.jp/main/html/rd/p/000001577.000012900.html" target="_blank" rel="noopener">PR TIMES</a></p>
+            <h3>パーク24 — カメラ式駐車場の不正利用で略式起訴が確定（8/4）</h3>
+            <p>車両ナンバー認証カメラで管理する時間貸駐車場での未払い利用に対し、威力業務妨害で略式起訴・罰金刑が確定したと公表。AI／IoT による中央管制での監視強化と不正撲滅を強調しています。</p>
+            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000870.000008705.html" target="_blank" rel="noopener">PR TIMES（パーク24）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>セーフィー AI-App ナンバープレート認識 — バース予約連携と物効法対応</h3>
-            <p>クラウド録画上で車番を自動抽出し、MOVO Berth／トラック簿などと連携。車速60km/hまで対応し、アイテック EyeTech LPR エンジンを採用しています。</p>
-            <p class="source"><a href="https://safie.jp/ai-app/number-plate/" target="_blank" rel="noopener">Safie</a><a href="https://prtimes.jp/main/html/rd/p/000000340.000017641.html" target="_blank" rel="noopener">PR TIMES（セーフィー）</a></p>
+            <h3>シャープ RZ-P401 — ポールカメラ方式のゲートレス車番認識、9月受注</h3>
+            <p>入出庫検知と車番撮影を一体化したユニットをポールに最大2基搭載し、2車室・L字レイアウトにも対応。既存の在車センサー方式とのハイブリッド運用も可能です。</p>
+            <p class="source"><a href="https://corporate.jp.sharp/news/260731-a.html" target="_blank" rel="noopener">シャープ公式</a><a href="https://www.nikkei.com/article/DGXZQOUF318V30R30C26A7000000/" target="_blank" rel="noopener">日本経済新聞</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>アイテック EyeTech LPR／ParkingEyes — 物効法向け荷役時間計測</h3>
-            <p>外交官・自衛隊ナンバーを含む国産エンジンに加え、カメラ通過時刻から荷待ち・荷役時間を自動算出する ParkingEyes 荷役時間計測を展開。物流拠点の法対応と車番認識の接点です。</p>
-            <p class="source"><a href="https://www.eyetech.jp/product/lpr/" target="_blank" rel="noopener">アイテック</a><a href="https://prtimes.jp/main/html/rd/p/000000009.000077601.html" target="_blank" rel="noopener">PR TIMES（アイテック）</a></p>
+            <h3>セーフィー AI-App ナンバープレート認識 — クラウド×エッジ車番</h3>
+            <p>クラウド録画上で車番を抽出し、物流の入退場管理に接続。アイテック EyeTech LPR を採用し、カメラ設置中心の導入を訴求しています。</p>
+            <p class="source"><a href="https://safie.jp/ai-app/number-plate/" target="_blank" rel="noopener">Safie</a><a href="https://prtimes.jp/main/html/rd/p/000000340.000017641.html" target="_blank" rel="noopener">PR TIMES（セーフィー）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>フューチャースタンダード SCORER — ご当地ナンバー対応の車番認識 AI</h3>
-            <p>地方版図柄入りプレートを標準対応し、混雑ゲートでの複数車両同時検出を訴求。トラック簿への採用事例では入場車番と予約データのリアルタイム照合で待ち時間削減を狙います。</p>
-            <p class="source"><a href="https://www.futurestandard.co.jp/business/ai/solutions/license-plate-recognition" target="_blank" rel="noopener">フューチャースタンダード</a></p>
+            <h3>アマノ ASAS — 工場・物流向けクラウド車番入退管理</h3>
+            <p>ナンバー認識で入場可否を判定し、バース予約や来訪予約と連携可能なクラウド型入退管理。物流効率化法対応の文脈で車番認識の実務導入が進んでいます。</p>
+            <p class="source"><a href="https://www.lnews.jp/2026/07/s0724504.html" target="_blank" rel="noopener">LNEWS</a></p>
           </div>
         </article>
       </div>
@@ -694,57 +693,57 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Claude Code 2.1.222 — worktree 隔離強化と MCP 利用帰属の修正（8/4夜）</h3>
-            <p>隔離セッション／サブエージェントがメイン作業ツリーへ破壊的 git を実行できる問題を修正し、ファイル編集と Bash にも隔離を適用。PreToolUse の auto-allow がバックグラウンドで制限をすり抜ける不具合、HTTPS プロキシ下の起動ハング、/usage の MCP 過大帰属なども直し、ultraplan 機能は削除されました。</p>
-            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.222" target="_blank" rel="noopener">Claude Code Releases</a><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a></p>
+            <h3>Claude Code 2.1.223 — 権限バイパス修正と /review の統合（8/6）</h3>
+            <p>Bash 解析の抜け穴、承認ダイアログの不可視文字欺瞞、ワークフロー sandbox 脱出、組織の bypassPermissions 無効化無視を修正。マーケットプレイスの owner/* ワイルドカード、/teleport ヒント、/review を /code-review のエイリアス化する変更も含まれます。</p>
+            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.223" target="_blank" rel="noopener">Claude Code Releases</a><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>ChainDrop の余波 — IDE／エージェント永続化への警戒が拡大</h3>
-            <p>ワーム解析では Claude Code・VS Code・Copilot 系ワークフローへの潜伏が指摘され、コーディングエージェント利用者への注意喚起が各社から出ています。秘密管理と許可リスト運用が、エージェント導入の前提条件として再浮上しています。</p>
-            <p class="source"><a href="https://www.microsoft.com/en-us/security/blog/2026/08/04/chaindrop-supply-chain-compromise-anatomy-self-propagating-worm/" target="_blank" rel="noopener">Microsoft Security Blog</a><a href="https://www.stepsecurity.io/blog/chaindrop-npm-worm" target="_blank" rel="noopener">StepSecurity</a></p>
+            <h3>GitHub Copilot — Kimi K3 がモデルピッカーに登場（8/6）</h3>
+            <p>オープンウェイトの Kimi K3 を Fireworks 上でホストし、VS Code／CLI／cloud agent などへ段階展開。Business／Enterprise は管理者ポリシーで既定オフ。エディタ注記では GitHub Actions 障害対応のため一時的にロールアウトを一時停止し、再開と価格ドキュメント更新を予告しています。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-08-06-kimi-k3-is-now-available-in-github-copilot/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Cursor — Google Workspace プラグイン（Drive／Gmail／Calendar）</h3>
-            <p>8月3日 changelog。エージェントが Google Drive・Gmail・Calendar を直接読み書きでき、Marketplace または Customize から導入可能。公式アカウントの公開投稿でも告知され、IDE 内エージェントと業務 SaaS の接続が話題になっています。</p>
-            <p class="source"><a href="https://cursor.com/changelog/google-workspace-plugins" target="_blank" rel="noopener">Cursor Changelog</a><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog 一覧</a></p>
+            <h3>OpenAI Codex CLI 0.146.1 — サイバー能力モデルの自動レビュー既定を強化（8/5）</h3>
+            <p>cyber-capable モデル向けの自動レビュー既定をより安全側へ寄せ、端末 UI で権限変更を説明。セキュリティ寄りのエージェント利用が増える中での運用デフォルト調整です。</p>
+            <p class="source"><a href="https://github.com/openai/codex/releases/tag/rust-v0.146.1" target="_blank" rel="noopener">Codex Releases</a><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener">ChatGPT Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Copilot cloud agent — 推論レベルをタスク開始時に指定可能（8/3）</h3>
-            <p>対応モデルで reasoning level を選べるようになり、複雑問題向けに思考量を上げられる一方、クレジット消費も増加。有料プランの cloud agent 利用者向けです。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-08-03-customize-the-reasoning-level-for-copilot-cloud-agent/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>Gemini CLI v0.54.0 — Antigravity 連携とセッション安全性（8/6）</h3>
+            <p>PR 自動化向け Antigravity エージェント、Caretaker トリアージの強化、HTTPS 強制による平文資格情報漏えい防止、モデルフォールバック時のセッション ID ローテーションなどを投入しています。</p>
+            <p class="source"><a href="https://geminicli.com/docs/changelogs/" target="_blank" rel="noopener">Gemini CLI Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Copilot automations — Issue／PR コメントでクラウドエージェントを起動（8/3）</h3>
-            <p>特定文言のコメントをトリガーにドキュメント生成やエラー調査、フォローアップ Issue 作成などを自動化。Business／Enterprise は cloud agent ポリシー有効化が前提です。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-08-03-trigger-copilot-automations-with-comments/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>ChainDrop の余波 — エージェント／IDE 永続化への警戒が継続</h3>
+            <p>ワーム解析では Claude Code・VS Code・Copilot 系設定注入が指摘され、Elastic も AI ツール資格情報の収集を強調。秘密管理と許可リスト運用がエージェント導入の前提として再確認されています。</p>
+            <p class="source"><a href="https://www.elastic.co/security-labs/shai-hulud-chaindrop-npm-supply-chain" target="_blank" rel="noopener">Elastic Security Labs</a><a href="https://www.stepsecurity.io/blog/chaindrop-npm-worm" target="_blank" rel="noopener">StepSecurity</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>GitHub Spark 廃止予告 — Copilot 統合ワークフローへ寄せる（8/4）</h3>
-            <p>github.com 上の Spark は新規受付を停止し、既存ユーザーは 8月31日までエクスポート可能。GitHub Models 退役に伴う llm() 影響も案内され、エージェント開発の主戦場が Copilot／VS Code 側へ移る整理です。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>開発者議論 — Cursor／Claude Code／Codex の役割分担が再燃</h3>
+            <p>IDE 内の Cursor、端末エージェントの Claude Code、非同期クラウド寄りの Codex という使い分けが二次記事や公開投稿で継続。価格帯の「使い続けられる枠」競争も論点です。</p>
+            <p class="source"><a href="https://vallettasoftware.com/blog/post/codex-vs-claude-code-vs-cursor" target="_blank" rel="noopener">Valletta Software</a><a href="https://www.morphllm.com/comparisons/cursor-vs-claude-code-vs-codex" target="_blank" rel="noopener">MorphLLM</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>開発者議論 — Cursor／Claude Code／Codex の役割分担が継続</h3>
-            <p>エディタ内の Cursor、端末エージェントの Claude Code、非同期クラウド寄りの Codex という使い分けが二次記事や公開投稿で再燃。価格帯（Pro〜Ultra／Max）の「使い続けられる枠」競争も論点です。</p>
-            <p class="source"><a href="https://vallettasoftware.com/blog/post/codex-vs-claude-code-vs-cursor" target="_blank" rel="noopener">Valletta Software</a><a href="https://www.cosmicjs.com/blog/claude-code-vs-github-copilot-vs-cursor-which-ai-coding-agent-should-you-use-2026" target="_blank" rel="noopener">Cosmic</a></p>
+            <h3>Cursor — Google Workspace プラグイン（Drive／Gmail／Calendar）</h3>
+            <p>8月3日 changelog の余波が継続。エージェントが Workspace を直接操作でき、Marketplace から導入可能。IDE 内エージェントと業務 SaaS の接続として依然参照されています。</p>
+            <p class="source"><a href="https://cursor.com/changelog/google-workspace-plugins" target="_blank" rel="noopener">Cursor Changelog</a></p>
           </div>
         </article>
       </div>
@@ -760,57 +759,57 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Rust — Polonius Alpha を nightly で既定有効化（8/4）</h3>
-            <p>公式ブログで、次世代ボローチェッカー Polonius Alpha を nightly に有効化し、年内安定化に向けた実証を開始すると発表。フロー依存の outlives 解析により、従来 NLL では弾かれる合法コードが通る一方、一部でコンパイル時間の回帰も観測されています。無効化は -Zpolonius=off です。</p>
-            <p class="source"><a href="https://blog.rust-lang.org/2026/08/04/enabling-polonius-alpha-on-nightly/" target="_blank" rel="noopener">Rust Blog</a></p>
+            <h3>Python 3.14.7／3.13.15 — メンテリリース公開（8/5）</h3>
+            <p>Python Insider が 3.14.7（約499件の修正）と 3.13.15（約400件）を告知。機能追加ではなくバグ修正・ビルド・ドキュメント中心で、3.15 が RC 段階に入る中でも現行系列の安定運用向け更新です。</p>
+            <p class="source"><a href="https://blog.python.org/2026/08/python-3147-31315/" target="_blank" rel="noopener">Python Insider</a><a href="https://www.python.org/downloads/release/python-3147/" target="_blank" rel="noopener">Python.org</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Python 3.15.0rc1 — 最初のリリース候補が公開（8/4）</h3>
-            <p>Python Insider／python.org で rc1 を告知。機能は凍結済みで以降はバグ修正中心、ABI もここから固定。次は 9月1日の rc2、正式版は 10月1日想定です。サードパーティは 3.15 向け wheel 公開が呼びかけられています。</p>
-            <p class="source"><a href="https://blog.python.org/2026/08/python-3150-rc1/" target="_blank" rel="noopener">Python Insider</a><a href="https://www.python.org/downloads/release/python-3150rc1/" target="_blank" rel="noopener">Python.org</a></p>
+            <h3>Node.js 26.7.0 — Current に crypto／perfetto／ModuleHooks 強化（8/5）</h3>
+            <p>STORE ローダー経由の秘密鍵読み込み、ルート証明書の NSS 3.125 更新、perfetto サポート、ModuleHooks の Symbol.dispose、カバレッジ include-all などを含むマイナーリリース。npm 11.19.0 への更新も同梱されています。</p>
+            <p class="source"><a href="https://github.com/nodejs/node/releases/tag/v26.7.0" target="_blank" rel="noopener">Node.js Releases</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Go 1.27 — 正式前のドラフトノート（rc2 利用可）</h3>
-            <p>公式リリースノートはなおドラフトで、8月中の正式リリース見込み。ジェネリックメソッド、encoding/json/v2、goroutine leak プロファイルなどが列挙され、go1.27rc2 での互換試験が続いています。本番移行は正式タグ待ちです。</p>
-            <p class="source"><a href="https://go.dev/doc/go1.27" target="_blank" rel="noopener">Go 1.27 Release Notes</a><a href="https://go.dev/dl/" target="_blank" rel="noopener">Go Downloads</a></p>
+            <h3>TypeScript 7.0 — Go ネイティブコンパイラ安定版の解説が継続</h3>
+            <p>フル型チェックを保ったまま 8〜12倍高速化を掲げる安定版について、InfoQ などが移行整理を掲載。プログラマティック API は 7.1 待ちで、eslint／フレームワーク系は @typescript/typescript6 との併走が現実解です。</p>
+            <p class="source"><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/" target="_blank" rel="noopener">TypeScript Blog</a><a href="https://www.infoq.com/news/2026/08/typescript-7-released/" target="_blank" rel="noopener">InfoQ</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>TypeScript 7.0 — Go ネイティブコンパイラ安定版の移行整理が継続</h3>
-            <p>7月公開の安定版について、InfoQ など8月のフォローで 8〜12倍高速化と API 未完（7.1待ち）を再整理。eslint／フレームワーク系は @typescript/typescript6 との併走が現実解です。</p>
-            <p class="source"><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/" target="_blank" rel="noopener">TypeScript Blog</a><a href="https://www.infoq.com/news/2026/08/typescript-7-released/" target="_blank" rel="noopener">InfoQ</a></p>
+            <h3>Rust — Polonius Alpha を nightly で既定有効化（8/4）</h3>
+            <p>次世代ボローチェッカーを nightly に有効化し、年内安定化に向けた実証を開始。フロー依存の outlives により従来 NLL では弾かれる合法コードが通る一方、一部でコンパイル時間の回帰も。無効化は -Zpolonius=off です。</p>
+            <p class="source"><a href="https://blog.rust-lang.org/2026/08/04/enabling-polonius-alpha-on-nightly/" target="_blank" rel="noopener">Rust Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Dependabot ブランチ名カスタム — 言語横断の依存更新運用を改善（8/4）</h3>
-            <p>npm／pip／Go modules など言語横断で動く Dependabot のブランチ命名を組織規約に合わせられるように。モノレポや長さ制限のある CI での依存更新摩擦を減らす実務改善です。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-08-04-customize-dependabot-pull-request-branch-names/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>Cloudflare Workers — Python と JavaScript の相互 RPC（8/3）</h3>
+            <p>Service bindings 経由で言語横断のメソッド呼び出しが可能に。スキーマ定義や追加シリアライズなしで構造化クローン可能な型を受け渡し、例外も呼び出し元へ伝播します。</p>
+            <p class="source"><a href="https://developers.cloudflare.com/changelog/post/2026-08-03-python-javascript-rpc/" target="_blank" rel="noopener">Cloudflare Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>CodeQL 2.26.2 — Swift／Kotlin 対応更新を changelog に掲載（8/4）</h3>
-            <p>GitHub が CodeQL の言語サポート更新を改善項目として告知。セキュリティ解析パイプラインの言語バージョン追従として、モバイル系リポジトリのスキャン設定見直し材料になります。</p>
-            <p class="source"><a href="https://github.blog/changelog/" target="_blank" rel="noopener">GitHub Changelog</a><a href="https://github.com/github/codeql-cli-binaries/releases/tag/v2.26.2" target="_blank" rel="noopener">CodeQL CLI</a></p>
+            <h3>Arti 1.8.0 — Rust 製 Tor 実装の更新（Onion／prop 368）</h3>
+            <p>Tor Project が強力隔離回路の使用量ベースタイムアウト（prop 368）、実験的 tokio-console、onion サービス向けの鍵移行コマンドなどを投入。リレー／ディレクトリ権威に向けた内部開発も継続しています。</p>
+            <p class="source"><a href="https://blog.torproject.org/arti_1_8_0_released/" target="_blank" rel="noopener">Tor Project</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
             <h3>npm 供給網 — ChainDrop が JS エコシステムの信頼性議論を再加熱</h3>
-            <p>署名付き provenance でも防ぎ切れないメンテナアカウント侵害が焦点に。allowlist・integrity・OIDC Trusted Publishing への移行圧力が、Node／フロントエンド双方で強まっています。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/massive-chaindrop-npm-supply-chain-attack-infects-hundreds-of-packages/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://www.microsoft.com/en-us/security/blog/2026/08/04/chaindrop-supply-chain-compromise-anatomy-self-propagating-worm/" target="_blank" rel="noopener">Microsoft Security Blog</a></p>
+            <p>provenance 署名でも防ぎ切れないメンテナアカウント侵害が焦点に。allowlist・integrity・OIDC Trusted Publishing への移行圧力が、Node／フロントエンド双方で強まっています。</p>
+            <p class="source"><a href="https://www.elastic.co/security-labs/shai-hulud-chaindrop-npm-supply-chain" target="_blank" rel="noopener">Elastic Security Labs</a><a href="https://www.bleepingcomputer.com/news/security/massive-chaindrop-npm-supply-chain-attack-infects-hundreds-of-packages/" target="_blank" rel="noopener">BleepingComputer</a></p>
           </div>
         </article>
       </div>
@@ -826,72 +825,72 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Amazon DynamoDB — ネイティブベクトル検索が GA（8/5）</h3>
-            <p>運用データと同じテーブルに埋め込みを格納し、別ベクトル DB への複製なしで類似検索が可能に。一桁ミリ秒・リコール99%超を掲げ、最大4096次元と属性フィルタに対応。エージェント記憶のセマンティック検索や RAG／推薦への組み込みを想定した当日発表です。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-dynamodb-vector-search/" target="_blank" rel="noopener">AWS What’s New</a><a href="https://aws.amazon.com/blogs/aws/amazon-dynamodb-now-supports-real-time-vector-search-at-any-scale/" target="_blank" rel="noopener">AWS News Blog</a></p>
+            <h3>Amazon Bedrock AgentCore — 時間ポリシーとレート制限を追加（8/6）</h3>
+            <p>セッション内の先行アクションを踏まえた状態付き認可（temporal policies）と、ゲートウェイ上のユーザー／グループ単位レート制限を発表。AI エージェント向けに設計したオープンソース政策言語 Dogwood（Cedar 基盤）が時間窓・前提ステップ・エスカレーションを扱います。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/temporal-policies-agentcore/" target="_blank" rel="noopener">AWS What’s New</a><a href="https://aws.amazon.com/blogs/machine-learning/control-agent-behaviors-and-cost-beyond-a-single-action-new-capabilities-in-amazon-bedrock-agentcore/" target="_blank" rel="noopener">AWS ML Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Amazon Bedrock — Web Search が OpenAI GPT 向けに GA（8/4）</h3>
-            <p>AWS 内で完結するサーバサイド Web 検索ツールを追加し、GPT-5.4／5.5／5.6 系の回答を現行 Web 知識で接地。外部検索ベンダーのオンボーディングなしで Responses API 互換の tool-use として呼べます。提供リージョンは米東部／西部の3つです。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-bedrock-web/" target="_blank" rel="noopener">AWS What’s New</a></p>
+            <h3>Amazon DynamoDB — ネイティブベクトル検索が GA（8/5）</h3>
+            <p>運用データと同じテーブルに埋め込みを格納し、別ベクトル DB への複製なしで類似検索が可能に。一桁ミリ秒・リコール99%超、最大4096次元と属性フィルタに対応し、エージェント記憶や RAG／推薦への組み込みを想定しています。</p>
+            <p class="source"><a href="https://aws.amazon.com/blogs/aws/amazon-dynamodb-now-supports-real-time-vector-search-at-any-scale/" target="_blank" rel="noopener">AWS News Blog</a><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-dynamodb-vector-search/" target="_blank" rel="noopener">AWS What’s New</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>WhatsApp — @all／投票強化の続報、ミュート貫通が論点に（8/5）</h3>
-            <p>8月4日公式発表の @all（32人超は管理者のみ）、投票の締切／匿名化、既存グループからの分流作成に対し、TechTimes 等はミュート中でも通知が届く点を強調。Engadget／The Verge は利便性と乱用リスクを同時に指摘し、@all 個別ミュート設定も案内されています。</p>
-            <p class="source"><a href="https://blog.whatsapp.com/your-group-chats-upgraded-introducing-better-polls-all-and-more" target="_blank" rel="noopener">WhatsApp Blog</a><a href="https://about.fb.com/news/2026/08/were-upgrading-your-whatsapp-group-chats/" target="_blank" rel="noopener">Meta Newsroom</a><a href="https://www.techtimes.com/articles/323151/20260805/whatsapp-all-mention-bypasses-group-mute-sweeping-coordination-upgrade.htm" target="_blank" rel="noopener">TechTimes</a><a href="https://www.theverge.com/tech/975008/whatsapp-ping-entire-group-chat-update" target="_blank" rel="noopener">The Verge</a></p>
+            <h3>GitHub Copilot — Kimi K3 追加と課金・ポリシー整理（8/6）</h3>
+            <p>モデル選択肢の拡大と同時に、Business／Enterprise のオプトイン、利用ベース課金、Actions 障害に伴う一時停止注記が並ぶ。エージェント向けモデル供給の運用面が表に出た更新です。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-08-06-kimi-k3-is-now-available-in-github-copilot/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Google Cloud Monitoring — Telemetry API（OTLP メトリクス取込）が GA（8/5）</h3>
-            <p>OpenTelemetry Collector 経由で OTLP メトリクスを Cloud Monitoring へ取り込める Telemetry API が一般提供。観測スタックを OTel 標準に寄せる組織向けの当日リリースです。</p>
-            <p class="source"><a href="https://docs.cloud.google.com/release-notes" target="_blank" rel="noopener">Google Cloud Release Notes</a></p>
+            <h3>WhatsApp — @all／投票強化の続報、ミュート貫通が論点に</h3>
+            <p>8月4日公式発表の @all（32人超は管理者のみ）、投票の締切／匿名化、既存グループからの分流作成に対し、TechTimes 等はミュート中でも通知が届く点を強調。個別ミュート設定の案内も含め、8/5〜6 のユーザー反応が続いています。</p>
+            <p class="source"><a href="https://blog.whatsapp.com/your-group-chats-upgraded-introducing-better-polls-all-and-more" target="_blank" rel="noopener">WhatsApp Blog</a><a href="https://about.fb.com/news/2026/08/were-upgrading-your-whatsapp-group-chats/" target="_blank" rel="noopener">Meta Newsroom</a><a href="https://www.techtimes.com/articles/323151/20260805/whatsapp-all-mention-bypasses-group-mute-sweeping-coordination-upgrade.htm" target="_blank" rel="noopener">TechTimes</a><a href="https://basic-tutorials.com/news/whatsapp-all-anonymous-polls-and-subgroups-for-group-chats/" target="_blank" rel="noopener">Basic Tutorials</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Cloud CDN — エッジでのネイティブ画像最適化が Preview（8/4）</h3>
-            <p>グローバル外部 Application Load Balancer 向けに、リサイズ／クロップ／形式変換をエッジで実行。オリジン負荷と egress 削減を狙い、CDN 側でのメディア処理が拡充されています。</p>
-            <p class="source"><a href="https://docs.cloud.google.com/release-notes" target="_blank" rel="noopener">Google Cloud Release Notes</a></p>
+            <h3>Amazon Bedrock — Web Search が OpenAI GPT 向けに GA（8/4）</h3>
+            <p>AWS 内で完結するサーバサイド Web 検索ツールを追加し、GPT-5.4／5.5／5.6 系の回答を現行 Web 知識で接地。外部検索ベンダーなしで Responses API 互換の tool-use として呼べます。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-bedrock-web/" target="_blank" rel="noopener">AWS What’s New</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Google Cloud API Gateway — AI モデルルーティングが Public Preview（8/4）</h3>
-            <p>OpenAI 互換リクエストを受け、Gemini／Claude／OpenAI OSS-GPT などへ動的ルーティングするサーバレス入口を公開。ハードコードや自前プロキシなしでモデル切替ができます。</p>
-            <p class="source"><a href="https://developers.googleblog.com/en/a-unified-api-for-ai-model-routing/" target="_blank" rel="noopener">Google Developers Blog</a></p>
+            <h3>Microsoft — India South Central（Hyderabad）リージョンが GA（8/6）</h3>
+            <p>3つの AZ を持つインド4番目のクラウドリージョンを一般提供開始。国内の AI／ソブリン対応基盤強化と、Copilot 席数拡大など企業 AI 導入の文脈で発表されています。</p>
+            <p class="source"><a href="https://news.microsoft.com/source/asia/features/microsofts-newest-india-datacenter-region-goes-live-to-power-the-countrys-ai-economy-and-enable-frontier-firms/" target="_blank" rel="noopener">Microsoft Source Asia</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>GitHub Spark 廃止と Copilot Billing Preview 退役（8/4）</h3>
-            <p>Spark は新規停止・8月末までエクスポート、課金プレビューアプリは退役し AI usage／予算は標準 Billing へ集約。プラットフォーム側の製品整理が進んでいます。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/" target="_blank" rel="noopener">GitHub Spark</a><a href="https://github.blog/changelog/2026-08-04-retiring-the-copilot-billing-preview-app/" target="_blank" rel="noopener">Copilot Billing Preview</a></p>
+            <h3>Chrome／Gemini — auto browse とエージェント閲覧のセキュリティ設計</h3>
+            <p>Gemini in Chrome の auto browse が多段階 Web タスクを代行する一方、Google はオリジン制約やユーザ確認、プロンプトインジェクション対策の層化防御を解説。支払いなど機微操作は人手に戻す設計です。</p>
+            <p class="source"><a href="https://support.google.com/chrome/answer/16821166?hl=en" target="_blank" rel="noopener">Chrome Help</a><a href="https://blog.google/security/architecting-security-for-agentic/" target="_blank" rel="noopener">Google Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>AlloyDB — BM25 全文検索インデックスが Preview（8/4）</h3>
-            <p>PostgreSQL 17／18 上で pg_textsearch による BM25 インデックスをサポート。ベクトル検索ブームの中で、伝統的な全文ランキングをマネージド DB 側で強化する動きです。</p>
-            <p class="source"><a href="https://docs.cloud.google.com/release-notes" target="_blank" rel="noopener">Google Cloud Release Notes</a></p>
+            <h3>Amazon SageMaker AI — サーバレス全文ファインチューニング対応（8/3）</h3>
+            <p>gpt-oss／Gemma／Llama／Nemotron／Qwen など25超モデルで LoRA に加え全パラメータ更新が可能に。インフラ管理なしでドメイン適応を深めたい用途向けです。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-sagemaker-fft/" target="_blank" rel="noopener">AWS What’s New</a></p>
           </div>
         </article>
       </div>
     </section>
 
     <footer>
-      <p>発行: 2026-08-05（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X の反応は報道で確認できた範囲のみ追記（Cursor Google Workspace 告知、WhatsApp @all の乱用／ミュート貫通懸念、Cursor／Claude Code／Codex 比較議論）。</p>
+      <p>発行: 2026-08-06（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X の反応は報道で確認できた範囲のみ追記（WhatsApp @all のミュート貫通懸念、Cursor／Claude Code／Codex 比較議論）。</p>
       <p>本ページは自動生成の朝刊ダイジェストです。投資・運用判断の前に必ず一次情報をご確認ください。</p>
     </footer>
   </div>
