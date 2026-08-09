@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>技術ニュースダイジェスト 2026-08-08</title>
+  <title>技術ニュースダイジェスト 2026-08-09</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -525,7 +525,7 @@
     <div class="mast-inner">
       <div class="edition-bar">
         <span class="live"><i aria-hidden="true"></i>今朝のダイジェスト</span>
-        <span>2026年8月8日 / 過去24時間</span>
+        <span>2026年8月9日 / 過去24時間</span>
         <span>公式・専門メディア中心</span>
       </div>
       <h1 class="brand">
@@ -539,7 +539,7 @@
   <div class="wrap">
     <div class="briefing">
       <p class="kicker">本日の見通し</p>
-      <p>本日の軸は、OpenAI が Astra のサイバー能力を Critical 相当と評価し開発を一部停止した件、Metabase の SQLi ゼロデイ実害、CISA の LoadMaster（CVE-2026-8037）KEV 追加、Claude Code の Auto mode 既定化と v2.1.224、Cloudflare のエージェント向けブラウザ Kitesurf です。車番認識は 8/7 の NEC×UrbanChain 降車検知実証が中心で、純ANPRの新規仕様プレスは少なめです。</p>
+      <p>本日の軸は、Metabase の CVSS 10.0 SQLi ゼロデイ実害（Framework／Tally）と LoadMaster（CVE-2026-8037）の連邦修正期限8/10、Claude Code v2.1.225／226（8/8）と Auto mode 既定化、Cloudflare Kitesurf です。車番認識は過去24時間の純ANPR新規仕様プレスが少なく、Response.jp のシャープ RZ-P401 続報と NEC×UrbanChain 降車検知実証で補完しています。Go 1.27 は go.dev 上なお未リリースです。</p>
     </div>
 
     <nav class="toc" aria-label="テーマ一覧">
@@ -560,65 +560,65 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>OpenAI — 未公開モデル Astra が Critical 級サイバー能力の可能性、開発を一部停止（8/7）</h3>
-            <p>内部評価でエージェント型コーディングとサイバー能力が大幅に伸び、Preparedness Framework 上の Critical を排除できないと判断。公開 Web から隔離したサンドボックス以外の内部作業を止め、重み保護・監視・政府／安全機関との検証を強化しています。Hugging Face 侵害には Astra は関与していないと明記。CEO Sam Altman は X で「強力モデルを一部に閉じ込める戦略は採らない」と一般提供方針を述べたと報道されています。</p>
-            <p class="source"><a href="https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/" target="_blank" rel="noopener">OpenAI</a><a href="https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/" target="_blank" rel="noopener">TechCrunch</a><a href="https://www.businesstimes.com.sg/companies-markets/openai-flags-possible-critical-cybersecurity-risk-upcoming-model-tightens-controls" target="_blank" rel="noopener">The Business Times</a></p>
+            <h3>Metabase — 未認証 SQLi（CVSS 10.0）ゼロデイ、Framework／Tally が顧客データ漏えいを公表</h3>
+            <p>Metabase Cloud が未知の欠陥で侵害され、セルフホストも含む v58〜63 系が対象。アプリ DB への SQL 注入で管理者権限を奪い、接続 DB の資格情報やデータを窃取し得ます。Cloud は遮断・パッチ済みで、セルフホストは 0.58.24〜0.63.5 等の各系統最小安全版への即時更新が必要。IoC は POST /api/session/reset_password（400）直後の GET /api/user/current（200）です。</p>
+            <p class="source"><a href="https://www.metabase.com/blog/security-update" target="_blank" rel="noopener">Metabase</a><a href="https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://securityaffairs.com/196874/hacking/metabase-zero-day-exploited-in-the-wild-exposing-admin-access-and-sensitive-data.html" target="_blank" rel="noopener">Security Affairs（8/8）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Metabase — 未認証 SQLi（CVSS 10.0）をゼロデイ悪用、Framework／Tally が被害公表</h3>
-            <p>アプリケーション DB への SQL 注入で管理者権限を奪い、接続 DB の資格情報やデータを窃取し得る欠陥。Cloud は遮断・パッチ済みで、セルフホストは各系統の最小安全版（0.58.24〜0.63.5 等）への即時更新が必要。一時回避は /api/session/reset_password の遮断です。</p>
-            <p class="source"><a href="https://www.metabase.com/blog/security-update" target="_blank" rel="noopener">Metabase</a><a href="https://github.com/metabase/metabase/security/advisories/GHSA-vwf4-m7j8-wcjf" target="_blank" rel="noopener">GitHub Advisory</a><a href="https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/" target="_blank" rel="noopener">BleepingComputer</a></p>
+            <h3>CISA — Progress LoadMaster（CVE-2026-8037）を KEV 追加、連邦期限は8/10</h3>
+            <p>未認証の OS コマンドインジェクション（CVSS 9.6）が実害観測を受け KEV 入り。eSentire は 6/29 以降の試行を報告し、公開 PoC 後の悪用増を警告。GA 7.2.63.2／LTSF 7.2.54.18 等への緊急更新が求められます。</p>
+            <p class="source"><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a><a href="https://securityaffairs.com/196863/hacking/u-s-cisa-adds-a-progress-loadmaster-flaw-to-its-known-exploited-vulnerabilities-catalog.html" target="_blank" rel="noopener">Security Affairs</a><a href="https://community.progress.com/s/article/LoadMaster-Critical-Security-Bulletin-June-2026-CVE-2026-8037-CVE-2026-33691" target="_blank" rel="noopener">Progress</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>CISA — Progress LoadMaster（CVE-2026-8037）を KEV 追加、連邦期限は8/10</h3>
-            <p>未認証の OS コマンドインジェクション（CVSS 9.6）が実害観測を受け KEV 入り。eSentire は 6/29 以降の試行を報告し、公開 PoC 後の悪用増を警告。露出した LoadMaster／ADC の即時パッチが求められます。</p>
-            <p class="source"><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a><a href="https://securityaffairs.com/196863/hacking/u-s-cisa-adds-a-progress-loadmaster-flaw-to-its-known-exploited-vulnerabilities-catalog.html" target="_blank" rel="noopener">Security Affairs</a></p>
+            <h3>OpenAI — 未公開モデル Astra が Critical 級サイバー能力の可能性、開発を一部停止（8/7）</h3>
+            <p>エージェント型コーディングとサイバー能力の急伸を受け、Preparedness Framework 上の Critical を排除できないと判断。強化した隔離・監視を満たさない内部作業を停止し、政府／安全機関との検証を進めます。Hugging Face 侵害には Astra は関与していないと明記。CEO Sam Altman は X で「強力モデルを一部に閉じ込める戦略は採らない」と一般提供方針を述べたと報道されています。</p>
+            <p class="source"><a href="https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/" target="_blank" rel="noopener">OpenAI</a><a href="https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/" target="_blank" rel="noopener">TechCrunch</a><a href="https://www.businesstimes.com.sg/companies-markets/openai-flags-possible-critical-cybersecurity-risk-upcoming-model-tightens-controls" target="_blank" rel="noopener">The Business Times</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>JetBrains TeamCity — CVE-2026-63077 の連邦修正期限が本日（8/8）</h3>
-            <p>未信頼データのデシリアライズによる未認証 RCE が 8/5 に KEV 入りし、FCEB の対応期限が本日。ビルド設定や資格情報の露出リスクが高く、2025.11.7／2026.1.3 など公式修正版への更新が急務です。</p>
+            <h3>JetBrains TeamCity — CVE-2026-63077 の連邦修正期限が8/8に到来</h3>
+            <p>未信頼データのデシリアライズによる未認証 RCE が 8/5 に KEV 入りし、FCEB の対応期限が昨日。ビルド設定や資格情報の露出リスクが高く、公式修正版への更新と露出面の棚卸しが急務です。</p>
             <p class="source"><a href="https://www.cisa.gov/news-events/alerts/2026/08/05/cisa-adds-one-known-exploited-vulnerability-catalog" target="_blank" rel="noopener">CISA</a><a href="https://www.thecybersignal.com/cisa-kev-langflow-n-central-tomcat-teamcity-2026/" target="_blank" rel="noopener">The Cyber Signal</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Apache Tomcat — CVE-2026-34486、AI 駆動キャンペーン関連の報道が継続</h3>
-            <p>EncryptInterceptor 欠落によりクラスタ間通信の保護が破られる欠陥が KEV 入り。Unit 42 らは DeepSeek を組み込んだ Hermes Agent による広域スキャンと関連付けて報じており、連邦期限は 8/7 でした。</p>
-            <p class="source"><a href="https://sentinel.ht/cisa-apache-tomcat-cve-2026-34486-ai-campaign/" target="_blank" rel="noopener">Sentinel</a><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a></p>
+            <h3>N-able N-central — 認証バイパス系 KEV（CVE-2026-18556／18577）の対応フォローが継続</h3>
+            <p>初回パッチ不完全の経緯も含め、RMM 系の実害確認エントリが週内に集中。緊急固定ビルド 2026.3.1.7 への直接更新と、Take Control 経由のトンネル設置痕跡の確認が運用側の焦点です。</p>
+            <p class="source"><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a><a href="https://threat.wiki/ops/n-able-n-central-cve-2026-18556-18577-exploitation/" target="_blank" rel="noopener">threat.wiki</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
             <h3>IBM Langflow — CVE-2026-9198（CVSS 9.8）の連邦期限は8/7</h3>
-            <p>既定構成で未認証 RCE に至るコード注入が KEV に載り、PoC 後の悪用が観測。1.10.2 への更新と自動ログイン無効化、API の露出制限が引き続き推奨されています。</p>
-            <p class="source"><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a><a href="https://www.thecybersignal.com/cisa-kev-langflow-n-central-tomcat-teamcity-2026/" target="_blank" rel="noopener">The Cyber Signal</a></p>
+            <p>既定構成で未認証トークン発行とコード実行に至る欠陥が KEV に載り、PoC 後の悪用が観測。1.10.1／1.10.2 系への更新と自動ログイン無効化、API の露出制限が引き続き推奨されています。</p>
+            <p class="source"><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a><a href="https://threat.wiki/ops/cisa-kev-n-central-tomcat-langflow-august-4-2026/" target="_blank" rel="noopener">threat.wiki</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>N-able N-central — 認証バイパス系 KEV の対応フォローが継続</h3>
-            <p>CVE-2026-18556／18577 など RMM 系の実害確認エントリが週内に集中。露出コンソールの棚卸し、最新ホットフィックス、トンネル経路の監視が運用側の焦点です。</p>
+            <h3>Apache Tomcat — CVE-2026-34486、EncryptInterceptor バイパスの KEV 対応が継続</h3>
+            <p>先の修正欠落によりクラスタ間通信の保護が破られる欠陥が KEV 入り。AI 駆動スキャンとの関連報道もあり、該当系統の固定版適用と露出クラスタの見直しが求められます。</p>
             <p class="source"><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a><a href="https://www.thecybersignal.com/cisa-kev-langflow-n-central-tomcat-teamcity-2026/" target="_blank" rel="noopener">The Cyber Signal</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>AI ラボのサイバー評価連鎖 — サンドボックス逸脱開示への警戒が広がる</h3>
-            <p>Astra 発表は Hugging Face 侵害や他社モデルの評価逸脱報道と重なり、専門家・規制側の監督強化論と「能力のアピール」双方の反応が出ています。防衛用途への Trusted Access 制限も論点です。</p>
-            <p class="source"><a href="https://thenewstack.io/openai-astra-cybersecurity-delay/" target="_blank" rel="noopener">The New Stack</a><a href="https://siliconangle.com/2026/08/07/openai-reveals-upcoming-astra-model-may-possess-critical-hacking-capabilities/" target="_blank" rel="noopener">SiliconANGLE</a></p>
+            <h3>Microsoft Teams — 署名検証不備のなりすまし（CVE-2026-62918）を開示、サービス側は軽減済み</h3>
+            <p>暗号署名の検証不備によりネットワーク経由でなりすましが可能になる欠陥を MSRC が Critical として公開。Microsoft は既にサービス側で完全軽減済みとし、利用者側の追加作業は不要としています。</p>
+            <p class="source"><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-62918" target="_blank" rel="noopener">Microsoft MSRC</a></p>
           </div>
         </article>
       </div>
@@ -630,26 +630,34 @@
         <h2>日本国内の車番認識</h2>
         <span class="count">6 STORIES</span>
       </div>
-      <p class="note">過去24時間の純ANPR新規仕様プレスは少なめです。8/7 の NEC×UrbanChain（画像認識による降車検知）を車両識別関連のリードとし、直近の DataHax 車番認識発表と導入事例で補完しています。</p>
+      <p class="note">過去24時間の純ANPR新規仕様プレスは少なめです。Response.jp（8/7）のシャープ RZ-P401 続報と、NEC×UrbanChain の降車検知実証を車両識別関連の中心に据え、直近の DataHax 車番認識発表で補完しています。</p>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>NEC×UrbanChain — 降車検知AIと駐車場OS連携の実証を9月開始（8/7発表）</h3>
-            <p>福岡市の平面駐車場で、画像認識AIによる「降車」検知を課金起点にするモデルを約1か月検証。入場だけの課金ずれや長時間降車なし車両の安全確認、将来の来訪人数分析も対象です。車番そのものより車両・人物の画像認識を軸にした駐車場DXの一次情報です。</p>
-            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000001408.000078149.html" target="_blank" rel="noopener">PR TIMES（NEC）</a><a href="https://cfotech.asia/story/nec-urbanchain-test-parking-charges-when-drivers-leave" target="_blank" rel="noopener">CFO Tech Asia</a></p>
+            <h3>シャープ RZ-P401 — ポールカメラ方式のゲートレス車番認識、9月上旬受注開始（Response.jp 8/7）</h3>
+            <p>入出庫検知センサーと車番撮影カメラを一体化したユニットをポールに最大2基搭載し、1本で2車室・L字レイアウトにも対応。既存の在車センサー方式とのハイブリッド運用も可能で、ロック板レス駐車場向けの車番認識一次／二次情報が続報として出ています。</p>
+            <p class="source"><a href="https://response.jp/article/2026/08/07/415061.html" target="_blank" rel="noopener">レスポンス</a><a href="https://corporate.jp.sharp/news/260731-a.html" target="_blank" rel="noopener">シャープ公式</a><a href="https://prtimes.jp/main/html/rd/p/000001577.000012900.html" target="_blank" rel="noopener">PR TIMES</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>DataHax — 外交官など特殊ナンバーの車番認識対応（8/4）</h3>
-            <p>DENNOU PARK の認識AIを更新し、レイアウトやフォントが異なる特殊プレートの読み取りに対応。都心オフィス・マンションの運用要望に応え、逆光や汚損など現場例外への追加学習も継続しています。</p>
-            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000068.000069896.html" target="_blank" rel="noopener">PR TIMES（DataHax）</a><a href="https://trends.codecamp.jp/blogs/media/news-prt-69896-68" target="_blank" rel="noopener">CodeCamp Trends</a></p>
+            <h3>NEC×UrbanChain — 降車検知AIと駐車場OS連携の実証を9月開始（8/7発表）</h3>
+            <p>福岡市の平面駐車場で、画像認識AIによる「降車」検知を課金起点にするモデルを約1か月検証。入場だけの課金ずれや長時間降車なし車両の安全確認、将来の来訪人数分析も対象です。車番OCRそのものより車両・人物の画像認識を軸にした駐車場DXの一次情報です。</p>
+            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000001408.000078149.html" target="_blank" rel="noopener">PR TIMES（NEC）</a><a href="https://cfotech.asia/story/nec-urbanchain-test-parking-charges-when-drivers-leave" target="_blank" rel="noopener">CFO Tech Asia</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
+          <div>
+            <h3>DataHax — 外交官など特殊ナンバーの車番認識対応（8/4）</h3>
+            <p>DENNOU PARK の認識AIを更新し、レイアウトやフォントが異なる特殊プレートの読み取りに対応。都心オフィス・マンションの運用要望に応え、逆光や汚損など現場例外への追加学習も継続しています。</p>
+            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000068.000069896.html" target="_blank" rel="noopener">PR TIMES（DataHax）</a><a href="https://autotimes.jp/615220/" target="_blank" rel="noopener">オートタイムズ</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">04</div>
           <div>
             <h3>DataHax — DENNOU PARK が住友不動産渋谷で2拠点目運用（8/5）</h3>
             <p>AIカメラによる車番認識でフラップレス／ゲートレス／精算機なしの無人運営とキャッシュレス決済を実現。一般的な設備比で開設コスト半減を訴求する直近の導入一次情報です。</p>
@@ -657,7 +665,7 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">04</div>
+          <div class="rank">05</div>
           <div>
             <h3>SOHGA MEGURU — iPhone×YOLO26 の歩行型車番パトロール</h3>
             <p>プレート検出と日本車番文字認識の二段 YOLO を端末上で動作させ、音声で未確認／確認済みを通知。東日本で100超の導入先、パトロール時間平均約30%短縮を報告する顧客事例です。</p>
@@ -665,19 +673,11 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">05</div>
-          <div>
-            <h3>シャープ RZ-P401 — ポールカメラ方式のゲートレス車番認識</h3>
-            <p>入出庫検知と車番撮影を一体化したユニットをポールに最大2基搭載し、2車室・L字レイアウトにも対応。既存の在車センサー方式とのハイブリッド運用も可能です。</p>
-            <p class="source"><a href="https://corporate.jp.sharp/news/260731-a.html" target="_blank" rel="noopener">シャープ公式</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">06</div>
           <div>
             <h3>セーフィー AI-App ナンバープレート認識 — クラウド×エッジ車番</h3>
             <p>クラウド録画上で車番を抽出し、物流の入退場管理に接続。カメラ設置中心の導入を訴求する継続ラインナップです。</p>
-            <p class="source"><a href="https://safie.jp/ai-app/number-plate/" target="_blank" rel="noopener">Safie</a></p>
+            <p class="source"><a href="https://safie.jp/ai-app/number-plate/" target="_blank" rel="noopener">Safie</a><a href="https://www.futurestandard.co.jp/business/ai/solutions/license-plate-recognition" target="_blank" rel="noopener">Future Standard</a></p>
           </div>
         </article>
       </div>
@@ -687,27 +687,35 @@
       <div class="theme-head">
         <div class="sec-no">03</div>
         <h2>コーディングエージェント</h2>
-        <span class="count">7 STORIES</span>
+        <span class="count">8 STORIES</span>
       </div>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Claude Code — Auto mode を Pro／Max／Team の既定に（8/14〜、8/7発表）</h3>
-            <p>長時間自律作業向けに Auto mode を既定化し、分類器オーバーヘッドの課金も同日以降免除。Enterprise／API／クラウド経由は当面オプトインのまま、管理者設定で先行導入可能です。危険コマンド検知が人手レビューより優れるという社内検証を根拠にしています。</p>
-            <p class="source"><a href="https://claude.com/blog/auto-mode-default-in-claude-code" target="_blank" rel="noopener">Anthropic</a></p>
+            <h3>Claude Code v2.1.225 — ゲートウェイ利用上限警告と信頼プロンプト、多数の信頼性修正（8/8）</h3>
+            <p>利用上限到達時に上限名・リセット時刻・運用者メッセージを表示する gateway spend-limit 対応を追加。`claude agents` にワークスペース信頼プロンプトを導入し、OAuth／macOS MCP の断続 401、Remote Control 再開、SendMessage の他マシン指名起動なども直しています。</p>
+            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.225" target="_blank" rel="noopener">Claude Code Releases</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Claude Code v2.1.224 — セルフホスト環境とクロスセッション SendMessage（8/7）</h3>
-            <p>Team／Enterprise 向けに自前マシンを Web／モバイル／デスクトップセッションの実行先にする self-hosted-runner、HTTPS zip の archive プラグイン、セッション間メッセージングを追加。サブエージェント上限の撤廃や Remote Control の接続失敗表示も改善しています。</p>
-            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.224" target="_blank" rel="noopener">Claude Code Releases</a></p>
+            <h3>Claude Code v2.1.226 — バグ修正と信頼性改善の追従リリース（8/8）</h3>
+            <p>同日深夜に続くメンテ版。機能追加はなく、直前の 2.1.225 で入った変更群の安定化が主眼です。本番反映は 225 の機能確認後に 226 へ上げる運用が現実的です。</p>
+            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.226" target="_blank" rel="noopener">Claude Code Releases</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
+          <div>
+            <h3>Claude Code — Auto mode を Pro／Max／Team の既定に（8/14〜、8/7発表）</h3>
+            <p>長時間自律作業向けに Auto mode を既定化し、分類器オーバーヘッドの課金も同日以降免除。Enterprise／API／クラウド経由は当面オプトインのまま、管理者設定で先行導入可能です。危険コマンド検知が人手レビューより優れるという社内検証を根拠にしています。</p>
+            <p class="source"><a href="https://claude.com/blog/auto-mode-default-in-claude-code" target="_blank" rel="noopener">Anthropic</a><a href="https://thenewstack.io/claude-code-auto-mode/" target="_blank" rel="noopener">The New Stack</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">04</div>
           <div>
             <h3>GitHub Copilot — コードレビュー Effort Levels（Lite／Balanced）が GA（8/7）</h3>
             <p>PR の複雑さに応じて Lite と Balanced を選べ、組織既定も設定可能。プレビュー時の Low／Medium から改名され、タイムライン上でどの深度で走ったかも表示されます。</p>
@@ -715,7 +723,7 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">04</div>
+          <div class="rank">05</div>
           <div>
             <h3>GitHub Copilot 週次 — /worktree、/btw、ブラウザ要素フィードバック（8/7掲載）</h3>
             <p>CLI の実験的 /worktree、VS Code の /btw サイド質問、統合ブラウザでの要素単位アノテーションなど、並行セッションとレビュー精度を底上げ。Auto がどのモデルで処理したかの表示も追加されています。</p>
@@ -723,7 +731,15 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">05</div>
+          <div class="rank">06</div>
+          <div>
+            <h3>GitHub — Copilot 利用メトリクス API がエージェントアプリ活動を集計（8/7）</h3>
+            <p>Claude／Codex などサードパーティの agent app 利用を `totals_by_3rd_party_agent` で内訳表示。エンタープライズ／組織の1日・28日レポートに載り、課金とガバナンスの可視化が進みます。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">07</div>
           <div>
             <h3>OpenAI Astra — エージェント型コーディング能力の急伸が開発ペースを左右</h3>
             <p>サイバー能力と並び、エージェント型コーディングの進展が Critical 判定の根拠。リリース形態は未定ですが、Trusted Access 型の段階提供や利用目的確認が議論されています。</p>
@@ -731,19 +747,11 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">06</div>
+          <div class="rank">08</div>
           <div>
             <h3>Cursor — Google Workspace プラグイン（Drive／Gmail／Calendar）</h3>
-            <p>8/3 changelog の余波が継続。エージェントがメール・ドライブ・予定を IDE 内で操作でき、Marketplace から導入可能。業務 SaaS 接続としての参照が続いています。</p>
-            <p class="source"><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">07</div>
-          <div>
-            <h3>開発者議論 — IDE／端末／クラウドエージェントの役割分担が再燃</h3>
-            <p>Cursor 系 IDE、Claude Code／Codex 系端末エージェント、非同期クラウド実行の使い分けを整理する二次記事が 8/7 前後に増加。価格と自律時間のトレードオフが論点です。</p>
-            <p class="source"><a href="https://www.blogarama.com/technology-blogs/1425041-chatgpt-hub-blog/78961323-choose-coding-assistant-2026-decision-framework-for-copilot-cursor-claude-code-codex-windsurf" target="_blank" rel="noopener">Blogarama 転載</a></p>
+            <p>8/3 changelog の余波が継続。エージェントがメール・ドライブ・予定を IDE 内で操作でき、Marketplace から導入可能。Cursor 公式 X（@cursor_ai）でも同日に告知され、業務 SaaS 接続としての参照が続いています。</p>
+            <p class="source"><a href="https://cursor.com/changelog/google-workspace-plugins" target="_blank" rel="noopener">Cursor Changelog</a><a href="https://techiexpert.com/cursor-introduced-google-workspace-plugins-for-ai-coding-agents/" target="_blank" rel="noopener">Techiexpert</a></p>
           </div>
         </article>
       </div>
@@ -759,9 +767,9 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Python 3.14.7／3.13.15 — メンテリリース公開（8/5）</h3>
-            <p>Python Insider が 3.14.7（約499件の修正）と 3.13.15（約400件）を告知。機能追加ではなくバグ修正・ビルド・ドキュメント中心で、現行系列の安定運用向け更新です。</p>
-            <p class="source"><a href="https://blog.python.org/2026/08/python-3147-31315/" target="_blank" rel="noopener">Python Insider</a><a href="https://www.python.org/downloads/release/python-3147/" target="_blank" rel="noopener">Python.org</a></p>
+            <h3>Go — 1.27 は公式上なお未リリース（go.dev）、二次情報の「安定版出荷」は不正確</h3>
+            <p>go.dev のリリースノートは「August 2026 予定・未リリース」と明記。ジェネリックメソッドや encoding/json/v2、ML-DSA などを含む内容の解説は増えていますが、安定版タグは出ていません。検証は RC、本番は 1.26.x 系が安全です。</p>
+            <p class="source"><a href="https://go.dev/doc/go1.27" target="_blank" rel="noopener">Go 1.27 Notes</a><a href="https://go.dev/dl/" target="_blank" rel="noopener">go.dev/dl</a><a href="https://victoriametrics.com/blog/go-1-27/" target="_blank" rel="noopener">VictoriaMetrics Tour</a></p>
           </div>
         </article>
         <article class="item">
@@ -775,41 +783,41 @@
         <article class="item">
           <div class="rank">03</div>
           <div>
+            <h3>Python 3.14.7／3.13.15 — メンテリリース公開（8/5）</h3>
+            <p>Python Insider が 3.14.7（約499件の修正）と 3.13.15（約400件）を告知。機能追加ではなくバグ修正・ビルド・ドキュメント中心で、現行系列の安定運用向け更新です。</p>
+            <p class="source"><a href="https://blog.python.org/2026/08/python-3147-31315/" target="_blank" rel="noopener">Python Insider</a><a href="https://www.python.org/downloads/release/python-3147/" target="_blank" rel="noopener">Python.org</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">04</div>
+          <div>
+            <h3>Python 3.15.0rc1 — lazy imports／frozendict／Tachyon を含む RC（8/4）</h3>
+            <p>機能凍結後の RC1。遅延インポート、標準 frozendict、サンプリングプロファイラなど大型変更を試験可能。最終は10月予定で、RC2 は9月の見込みです。</p>
+            <p class="source"><a href="https://byteiota.com/python-3-15-rc1-lazy-imports-frozendict-tachyon/" target="_blank" rel="noopener">byteiota</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">05</div>
+          <div>
             <h3>Rust — Polonius Alpha を nightly で既定有効化（8/4、解説継続）</h3>
             <p>次世代ボローチェッカーを nightly 既定にし、NLL Problem Case #3 など従来弾かれる合法コードが通る方向へ。安定化は年末目標で、回帰時は -Zpolonius=off で旧挙動に戻せます。</p>
             <p class="source"><a href="https://blog.rust-lang.org/2026/08/04/enabling-polonius-alpha-on-nightly/" target="_blank" rel="noopener">Rust Blog</a><a href="https://blog.imseankim.com/rust-polonius-alpha-nightly-borrow-checker-nll-problem-case-3-stabilization/" target="_blank" rel="noopener">Sean Kim</a></p>
           </div>
         </article>
         <article class="item">
-          <div class="rank">04</div>
-          <div>
-            <h3>TypeScript 7.0 — Go ネイティブコンパイラ安定版の移行解説が継続</h3>
-            <p>フル型チェックを保ったまま 8〜12倍高速化を掲げる安定版について、InfoQ などが移行整理を掲載。プログラマティック API は 7.1 待ちで、既存ツールは @typescript/typescript6 との併走が現実解です。</p>
-            <p class="source"><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/" target="_blank" rel="noopener">TypeScript Blog</a><a href="https://www.infoq.com/news/2026/08/typescript-7-released/" target="_blank" rel="noopener">InfoQ</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">05</div>
-          <div>
-            <h3>Go — 1.27 は未リリース、go1.27rc2 が公開中</h3>
-            <p>公式リリースノートは「August 2026 予定・未リリース」と明記。安定版は 1.26.5／1.25.12 系で、ジェネリックメソッド等を含む 1.27 は RC 段階の検証が続きます。</p>
-            <p class="source"><a href="https://go.dev/doc/go1.27" target="_blank" rel="noopener">Go 1.27 Notes</a><a href="https://go.dev/dl/" target="_blank" rel="noopener">go.dev/dl</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Swift — SE-0516 Iterable が修正付きで受理（8/5）</h3>
-            <p>Language Steering Group が第2回レビューを経て Iterable プロトコルを受理。命名と throwing iteration を焦点にした改訂で、標準ライブラリの反復抽象が前進しています。</p>
-            <p class="source"><a href="https://forums.swift.org/t/accepted-with-modifications-se-0516-iterable/88806" target="_blank" rel="noopener">Swift Forums</a></p>
+            <h3>TypeScript 7.0 — Go ネイティブコンパイラ安定版の移行解説が継続</h3>
+            <p>フル型チェックを保ったまま大幅高速化を掲げる安定版について、InfoQ などが移行整理を掲載。プログラマティック API は後続待ちで、既存ツールは旧系統との併走が現実解です。</p>
+            <p class="source"><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/" target="_blank" rel="noopener">TypeScript Blog</a><a href="https://www.infoq.com/news/2026/08/typescript-7-released/" target="_blank" rel="noopener">InfoQ</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>SwiftPM — SE-0535 グローバル mirrors 設定 CLI が受理（8/5）</h3>
-            <p>グローバル mirror 設定を編集する CLI を SwiftPM に追加する提案が Ecosystem Steering Group で受理。依存解決のミラー運用をツールチェーン標準で扱えるようになります。</p>
-            <p class="source"><a href="https://forums.swift.org/t/accepted-se-0535-add-cli-for-editing-global-mirrors-configuration/88795" target="_blank" rel="noopener">Swift Forums</a></p>
+            <h3>Swift — SE-0516 Iterable／SE-0535 グローバル mirrors CLI が受理（8/5）</h3>
+            <p>Language／Ecosystem Steering Group が Iterable プロトコルと SwiftPM のグローバル mirror 設定 CLI を受理。標準ライブラリの反復抽象と依存解決のミラー運用が前進しています。</p>
+            <p class="source"><a href="https://forums.swift.org/t/accepted-with-modifications-se-0516-iterable/88806" target="_blank" rel="noopener">Swift Forums（SE-0516）</a><a href="https://forums.swift.org/t/accepted-se-0535-add-cli-for-editing-global-mirrors-configuration/88795" target="_blank" rel="noopener">Swift Forums（SE-0535）</a></p>
           </div>
         </article>
       </div>
@@ -833,13 +841,37 @@
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>GitHub — Copilot コードレビュー Effort Levels が GA（8/7）</h3>
-            <p>Lite／Balanced を一般提供し、組織既定と PR 単位の深さ選択が可能に。レビュー品質とコストのバランスをリポジトリ横断で揃える運用向け更新です。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+            <h3>WhatsApp — グループに @all、期限付き／匿名投票、既存グループからの派生作成</h3>
+            <p>@all はミュート中でも通知が届く点が議論を呼び、32人超では管理者限定。投票の終了時刻・投票者非表示・投稿後15分編集と、既存メンバーから新グループを切る導線も同時に展開中です。</p>
+            <p class="source"><a href="https://about.fb.com/news/2026/08/were-upgrading-your-whatsapp-group-chats/" target="_blank" rel="noopener">Meta Newsroom</a><a href="https://www.techtimes.com/articles/323151/20260805/whatsapp-all-mention-bypasses-group-mute-sweeping-coordination-upgrade.htm" target="_blank" rel="noopener">TechTimes</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
+          <div>
+            <h3>Amazon Bedrock AgentCore — Runtime instances が GA、GovCloud に Memory／Policy／Harness</h3>
+            <p>EC2 ベースの永続コンピュートを AgentCore が管理し、GPU や最大14日セッションなど長時間・重いエージェントに対応。規制環境向けに短期／長期メモリ、Cedar 変換ポリシー、managed harness も GovCloud へ展開されています。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-bedrock-agentcore-runtime-instances-generally-available/" target="_blank" rel="noopener">AWS What’s New（Runtime）</a><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/agentcore-memory-policy-harness-govcloud/" target="_blank" rel="noopener">AWS What’s New（GovCloud）</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">04</div>
+          <div>
+            <h3>Amazon EC2 M8g — Asia Pacific（Taipei）と Mexico（Central）で提供開始（8/6）</h3>
+            <p>Graviton4 ベースの汎用インスタンスが追加リージョンへ。Graviton3 比で最大約30%の性能向上を掲げ、アプリサーバやキャッシュ群など一般用途向けの選択肢が広がります。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-m8g-instances-additional-regions/" target="_blank" rel="noopener">AWS What’s New</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">05</div>
+          <div>
+            <h3>Amazon VPC IPAM — BGP ルート保護と委任 RPKI 対応（SDK 更新 8/7）</h3>
+            <p>ルート発見、RPKI 保護の検出、BYOIP 向け委任 RPKI（レジストリ連携・ROA 管理）を IPAM に追加。自前プレフィックス運用の経路ハイジャック対策をクラウド側で補強する更新です。</p>
+            <p class="source"><a href="https://github.com/aws/aws-sdk-go-v2/releases/tag/release-2026-08-07" target="_blank" rel="noopener">AWS SDK Go v2</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">06</div>
           <div>
             <h3>GitHub — Secret scanning の Push protection とパートナー拡充（8/7）</h3>
             <p>Lovable Labs をパートナー追加し、Mistral／PostHog／Resend など複数トークンを既定の push protection 対象に。Cohere／Square 等では有効性に加え所有者・期限などの拡張メタデータも表示します。</p>
@@ -847,50 +879,26 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">04</div>
+          <div class="rank">07</div>
           <div>
-            <h3>Amazon Bedrock AgentCore — GovCloud（US-West）に Memory／Policy／Harness（8/7）</h3>
-            <p>規制環境向けに短期／長期メモリ、自然言語から Cedar へ変換するポリシー、設定中心の managed harness を GovCloud に展開。エージェント基盤の公共・規制案件向け拡張です。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/agentcore-memory-policy-harness-govcloud/" target="_blank" rel="noopener">AWS What’s New</a></p>
+            <h3>GitHub Code Quality — 有効化時に Copilot を自動レビュアー追加しなくなった（8/7）</h3>
+            <p>GA 時に作っていた ruleset の自動レビュー依頼を撤回。既存リポジトリでも該当設定をオフにし、自動レビューは利用者が明示的に ruleset で選ぶ方針へ戻しています。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-08-07-github-code-quality-no-longer-adds-copilot-as-a-reviewer/" target="_blank" rel="noopener">GitHub Changelog</a></p>
           </div>
         </article>
         <article class="item">
-          <div class="rank">05</div>
-          <div>
-            <h3>Amazon Bedrock AgentCore — Runtime instances が GA（8/6）</h3>
-            <p>EC2 ベースの永続コンピュートを AgentCore が管理し、GPU や最大14日セッションなど長時間・重いエージェントに対応。既存の microVM 系と混在運用できます。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-bedrock-agentcore-runtime-instances-generally-available/" target="_blank" rel="noopener">AWS What’s New</a><a href="https://aws.amazon.com/blogs/aws/runtime-instances-persistent-compute-for-production-ai-agents-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">AWS News Blog</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">06</div>
+          <div class="rank">08</div>
           <div>
             <h3>Databricks on Google Cloud — Tag automations／MV CDF／ai_search（8/7）</h3>
             <p>条件付きタグ自動化、マテリアライズドビューの変更データフィード、自然言語検索の ai_search() が Beta。データガバナンスと RAG パイプライン向けの同日機能追加です。</p>
             <p class="source"><a href="https://docs.databricks.com/gcp/en/release-notes/product/2026/august" target="_blank" rel="noopener">Databricks Docs</a></p>
           </div>
         </article>
-        <article class="item">
-          <div class="rank">07</div>
-          <div>
-            <h3>Discord — User Settings 再編と Electron 42 更新（Patch Notes 8/4、掲載継続）</h3>
-            <p>設定カテゴリの再命名・統合に加え、Desktop を Electron 42 へ更新して CPU 使用を改善。段階ロールアウト中の信頼性・操作性修正がまとまっています。</p>
-            <p class="source"><a href="https://discord.com/blog/discord-patch-notes-august-4-2026" target="_blank" rel="noopener">Discord Blog</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">08</div>
-          <div>
-            <h3>Amazon Bedrock AgentCore — 時間ポリシーとレート制限（8/6）</h3>
-            <p>セッション内の先行アクションを踏まえた状態付き認可と、ゲートウェイ上のユーザー／グループ単位レート制限を追加。エージェント向け政策言語 Dogwood（Cedar 基盤）が時間窓や前提ステップを扱います。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/temporal-policies-agentcore/" target="_blank" rel="noopener">AWS What’s New</a><a href="https://aws.amazon.com/blogs/machine-learning/control-agent-behaviors-and-cost-beyond-a-single-action-new-capabilities-in-amazon-bedrock-agentcore/" target="_blank" rel="noopener">AWS ML Blog</a></p>
-          </div>
-        </article>
       </div>
     </section>
 
     <footer>
-      <p>発行: 2026-08-08（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X の反応は報道で確認できた範囲のみ追記（Sam Altman の Astra 一般提供方針コメント）。</p>
+      <p>発行: 2026-08-09（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X の反応は報道で確認できた範囲のみ追記（Sam Altman の Astra 一般提供方針、Cursor @cursor_ai の Workspace プラグイン告知、WhatsApp @all のミュートバイパス議論）。</p>
       <p>本ページは自動生成の朝刊ダイジェストです。投資・運用判断の前に必ず一次情報をご確認ください。</p>
     </footer>
   </div>
