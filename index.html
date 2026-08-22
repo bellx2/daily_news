@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>技術ニュースダイジェスト 2026-08-21</title>
+  <title>技術ニュースダイジェスト 2026-08-22</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -525,7 +525,7 @@
     <div class="mast-inner">
       <div class="edition-bar">
         <span class="live"><i aria-hidden="true"></i>今朝のダイジェスト</span>
-        <span>2026年8月21日 / 過去24時間</span>
+        <span>2026年8月22日 / 過去24時間</span>
         <span>公式・専門メディア中心</span>
       </div>
       <h1 class="brand">
@@ -539,7 +539,7 @@
   <div class="wrap">
     <div class="briefing">
       <p class="kicker">本日の見通し</p>
-      <p>本日の軸は、crates.io の arrayref 系サプライチェーン攻撃、Microsoft Entra ID（CVE-2026-69836）の実害悪用開示、Claude Code 2.1.239 の大型修正、AWS Local Zone／SageMaker 推論推奨の更新です。車番認識は過去24時間の純ANPR新規プレスが少なく、OSS公開と直近一次情報で補完しています。</p>
+      <p>本日の軸は、Microsoft Entra ID（CVE-2026-69836）の「実害悪用」表記訂正、Slack Code／GitHub Copilot in Slack、Claude Code 2.1.239〜240、Rust 1.98／TypeScript Go本家マージの続報です。車番認識は過去24時間の純ANPR新規プレスが少なく、OSS公開と直近一次情報で補完しています。</p>
     </div>
 
     <nav class="toc" aria-label="テーマ一覧">
@@ -560,41 +560,41 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>crates.io — arrayref ほか3クレートがビルド時マルウェア配送（8/20）</h3>
-            <p>メンテナアカウント侵害により arrayref 0.3.10／internment 0.8.7／append-only-vec 0.1.9 が typosquat の proc-macro1 を依存追加。Cargo の build.rs 実行で遠隔ペイロードを取得し、暴露時間はおおむね86〜107分。Rust 公式が削除・アカウントロックとクリーンビルド／秘密情報ローテーションを要請しています。</p>
-            <p class="source"><a href="https://blog.rust-lang.org/2026/08/20/supply-chain-attack-on-arrayref/" target="_blank" rel="noopener">Rust Blog</a><a href="https://www.bleepingcomputer.com/news/security/hackers-poison-arrayref-rust-crate-to-push-infostealer-malware/" target="_blank" rel="noopener">BleepingComputer</a></p>
+            <h3>Microsoft Entra ID — CVE-2026-69836（CVSS 10）の「実害悪用」表記を訂正（8/22）</h3>
+            <p>信頼できないデータのデシリアライズによる未認証RCEとして開示され、当初は実害悪用ありとされていたが、8/22にMicrosoftが誤表記と訂正。クラウド側で既に完全緩和済みで顧客パッチは不要。透明性目的の公開である点は変わらず、サインインログ等の遡及確認は引き続き有用です。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-warns-of-max-severity-entra-id-flaw-exploited-in-attacks/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://www.cybersecuritydive.com/news/microsoft-maximum-severity-flaw-entra-id-exploitation/828501/" target="_blank" rel="noopener">Cybersecurity Dive</a><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-69836" target="_blank" rel="noopener">MSRC</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Microsoft Entra ID — CVE-2026-69836（CVSS 10）を実害悪用確認（8/20〜21）</h3>
-            <p>信頼できないデータのデシリアライズによる未認証RCE。クラウド側で既に完全緩和済みで顧客パッチは不要と明記されつつ、透明性目的でCVEを公開。サインインログや特権ロールの遡及確認が推奨されています。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-warns-of-max-severity-entra-id-flaw-exploited-in-attacks/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://www.helpnetsecurity.com/2026/08/21/microsoft-entra-id-vulnerability-cve-2026-69836/" target="_blank" rel="noopener">Help Net Security</a><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-69836" target="_blank" rel="noopener">MSRC</a></p>
+            <h3>VMware vCenter — CVE-2026-59310 が361ネットワーク／47カ国で悪用（8/22）</h3>
+            <p>Syslog経路のディレクトリトラバーサル（CVSS 9.8）でRCEに至る欠陥。Broadcomは7/29に修正済みで回避策なし。Shadowserver／QUIRSO集計では独・米・トルコ等が上位。CISA KEVの連邦期限は8/21で、未パッチ公開面は依然リスクです。</p>
+            <p class="source"><a href="https://sentinel.ht/vmware-vcenter-flaw-361-networks-patch-deadline/" target="_blank" rel="noopener">Sentinel</a><a href="https://www.cisa.gov/news-events/alerts/2026/08/18/cisa-adds-four-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA Alert</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Wiz — arrayref 攻撃基盤が DPRK／Sapphire Sleet 系と重複</h3>
-            <p>C2 パスや証明書発行者、関連IPが Mastra や axios npm 侵害と重なると分析。単なるクレート汚染ではなく国家関与キャンペーンの延長線上で捉えるべき、との見方が専門メディアでも共有されています。</p>
-            <p class="source"><a href="https://www.wiz.io/blog/rust-supply-chain-attack-on-arrayref-significant-overlap-with-dprk-campaigns" target="_blank" rel="noopener">Wiz Blog</a><a href="https://research.jfrog.com/post/arrayref-proc-macro1-crates-io/" target="_blank" rel="noopener">JFrog Security</a></p>
+            <h3>crates.io — arrayref 系サプライチェーン攻撃の解析が継続（8/20〜21）</h3>
+            <p>メンテナ侵害で arrayref／internment／append-only-vec が typosquat の proc-macro1 を依存追加し、ビルド時に遠隔ペイロードを実行。暴露はおおむね86分前後。WizはC2基盤が Sapphire Sleet／DPRK系キャンペーンと重複すると指摘しています。</p>
+            <p class="source"><a href="https://blog.rust-lang.org/2026/08/20/supply-chain-attack-on-arrayref/" target="_blank" rel="noopener">Rust Blog</a><a href="https://www.wiz.io/blog/rust-supply-chain-attack-on-arrayref-significant-overlap-with-dprk-campaigns" target="_blank" rel="noopener">Wiz Blog</a><a href="https://www.securityweek.com/rust-supply-chain-attack-linked-to-north-korean-hackers/" target="_blank" rel="noopener">SecurityWeek</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Microsoft — Azure Arc／Exchange Online／Cassandra に CVSS 10 の追加修正（8/20）</h3>
-            <p>Azure Arc の権限昇格（CVE-2026-65816／69555）、Exchange Online SSRF（CVE-2026-65801）、Managed Instance for Apache Cassandra のRCE（CVE-2026-65770）など最大深刻度案件がまとめて公表。マネージド側は自動緩和、自己管理コンポーネントは在庫確認が必要です。</p>
-            <p class="source"><a href="https://www.securityweek.com/microsoft-rolls-out-22-fresh-security-patches/" target="_blank" rel="noopener">SecurityWeek</a><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-65801" target="_blank" rel="noopener">MSRC（65801）</a></p>
+            <h3>Microsoft — Azure Arc／Exchange Online／Cassandra の最大深刻度修正（8/20〜21）</h3>
+            <p>Azure Arc権限昇格（CVE-2026-65816／69555）、Exchange Online（CVE-2026-65801）、Managed Instance for Apache Cassandra のRCE（CVE-2026-65770）など。マネージド側は自動緩和、自己管理コンポーネントは在庫確認が必要です。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-warns-of-max-severity-entra-id-flaw-exploited-in-attacks/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-65801" target="_blank" rel="noopener">MSRC（65801）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>さくらインターネット — 第二報の続報が国内メディアで再拡散（8/20）</h3>
-            <p>販売管理系への不正アクセス可能性と最大約136万アカウント調査対象が、ITmedia／ZDNET 等で改めて整理。X上でも規模拡大が広く共有され、国内ホスティングのインシデント対応が継続焦点です。</p>
-            <p class="source"><a href="https://www.sakura.ad.jp/corporate/information/newsreleases/2026/08/19/1968225633/" target="_blank" rel="noopener">さくらインターネット公式</a><a href="https://www.itmedia.co.jp/enterprise/articles/2608/20/news078.html" target="_blank" rel="noopener">ITmedia</a></p>
+            <h3>CISA — Windows IKE（CVE-2026-33824）の実害悪用を確認</h3>
+            <p>Internet Key Exchange 拡張の重大RCE。アカウント不要・ユーザー操作不要で到達し得るとされ、KEV追加後は連邦機関に短期修正を指示。IKE未使用ならUDP 500／4500の制限が暫定策として案内されています。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/cisa-critical-windows-ike-extension-flaw-now-exploited-in-attacks/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://blackhatnews.tokyo/archives/132335" target="_blank" rel="noopener">TokyoBlackHatNews</a></p>
           </div>
         </article>
         <article class="item">
@@ -608,17 +608,17 @@
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>CISA KEV四件 — Windows IKE ほかの連邦修正期限が8/21前後</h3>
-            <p>8/18追加の Windows IKE／SharePoint／vCenter／macOS 系は期限が今日期限帯。公開資産の優先パッチと、IKE未認証RCEの実害観測が継続テーマです。</p>
-            <p class="source"><a href="https://www.cisa.gov/news-events/alerts/2026/08/18/cisa-adds-four-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA Alert</a><a href="https://www.bleepingcomputer.com/news/security/cisa-critical-windows-ike-extension-flaw-now-exploited-in-attacks/" target="_blank" rel="noopener">BleepingComputer</a></p>
+            <h3>Cloudflare Zero Trust — 端末ポスチャーチェック障害（8/21解決）</h3>
+            <p>一部サービスプロバイダー構成でポスチャーチェックが失敗し、WARPルール保護リソースへのアクセス遅延が発生。公式ステータスではマイナー障害として同日中に解消。CDN全体停止ではなく Zero Trust 利用者向けの事象でした。</p>
+            <p class="source"><a href="https://www.cloudflarestatus.com/history" target="_blank" rel="noopener">Cloudflare Status</a><a href="https://funshitsu.com/cloudflare-zero-trust-client-posture-warp-delay-20260822/" target="_blank" rel="noopener">超解決（整理）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>GitLab CVE-2026-19478 — 開示直後の実害悪用観測は継続監視</h3>
-            <p>未認証 GraphQL 経路のコードインジェクション（CVSS 9.4）。自己管理版は 19.2.4／19.1.6／19.0.8／18.11.11 への更新が引き続き必須で、ハニーポット観測ログの「@gl_introduced」探査も推奨されています。</p>
-            <p class="source"><a href="https://www.securityweek.com/critical-gitlab-flaw-exploited-shortly-after-disclosure/" target="_blank" rel="noopener">SecurityWeek</a><a href="https://www.csoonline.com/article/4211140/critical-gitlab-flaw-allows-attackers-to-delete-and-modify-public-repos.html" target="_blank" rel="noopener">CSO Online</a></p>
+            <h3>さくらインターネット — 第二報（販管系・最大約136万アカウント）の国内拡散が継続</h3>
+            <p>レンタルサーバ不正ログイン調査の過程で販売管理系への不正アクセス可能性が判明。会員契約情報の閲覧／取得可能性が焦点で、外部持ち出しは未確認。X上でも規模拡大が広く共有され、国内ホスティングの対応が継続論点です。</p>
+            <p class="source"><a href="https://www.sakura.ad.jp/corporate/information/newsreleases/2026/08/19/1968225633/" target="_blank" rel="noopener">さくらインターネット公式</a><a href="https://internet.watch.impress.co.jp/docs/news/2133984.html" target="_blank" rel="noopener">INTERNET Watch</a></p>
           </div>
         </article>
       </div>
@@ -687,27 +687,59 @@
       <div class="theme-head">
         <div class="sec-no">03</div>
         <h2>コーディングエージェント</h2>
-        <span class="count">7 STORIES</span>
+        <span class="count">8 STORIES</span>
       </div>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Claude Code v2.1.239 — コスト表示／API移行／クラウド同期の大型修正（8/21）</h3>
-            <p>データ居住ワークスペース向け1.1×割増のコスト見積反映、`/claude-api upgrade`（anthropic 0.x→1.x）、claude.ai同期プラグインの `name@synced` 表記、Bedrockプロキシ二重課金修正など運用面の改善が厚い一日でした。</p>
+            <h3>Claude Code v2.1.239 — コスト表示／API移行／Bedrock二重課金修正（8/21）</h3>
+            <p>データ居住ワークスペース向け1.1×割増のコスト見積反映、`/claude-api upgrade`（anthropic 0.x→1.x）、claude.ai同期プラグインの `name@synced` 表記、プロキシ越しBedrockのサイレント二重課金修正など運用面の改善が厚い一日でした。</p>
             <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.239" target="_blank" rel="noopener">Claude Code v2.1.239</a><a href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Claude Code Concise — @ClaudeDevs がXで出力スタイル追加を告知（8/20）</h3>
+            <h3>GitHub Copilot × Slack — エージェント体験がパブリックプレビュー（8/21）</h3>
+            <p>`@GitHub` でスレッドから計画・調査・実装・PR作成まで依頼可能。Slack Codeのローンチパートナーとしても参加し、専用コードチャネルでdiffやプレビューを共有できます。Business／Enterprise向けで既存Copilot枠を消費します。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/" target="_blank" rel="noopener">GitHub Changelog</a><a href="https://www.techrepublic.com/article/news-slack-code-ai-coding-agents/" target="_blank" rel="noopener">TechRepublic</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">03</div>
+          <div>
+            <h3>Slack Code — エージェント作業を共有チャネルで可視化（8/20〜21）</h3>
+            <p>Claude Code／Devin／Copilot／Vercel などを専用コードチャネルに招き、計画・diff・HTMLプレビューをチームで監督。完了後はアーカイブされ履歴が残ります。AgentsタブやエージェントDMも併せて拡充されています。</p>
+            <p class="source"><a href="https://www.techrepublic.com/article/news-slack-code-ai-coding-agents/" target="_blank" rel="noopener">TechRepublic</a><a href="https://siliconangle.com/2026/08/20/salesforce-introduces-slack-code-to-bring-agentic-team-coding-into-the-open/" target="_blank" rel="noopener">SiliconANGLE</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">04</div>
+          <div>
+            <h3>Claude Code v2.1.240 — バグ修正・信頼性改善の日次リリース（8/22）</h3>
+            <p>詳細変更点の列挙はなく、信頼性向けの修正パック。前日の大型2.1.239に続く即時フォローアップとして、安定運用向けに追従すべき版です。</p>
+            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.240" target="_blank" rel="noopener">Claude Code v2.1.240</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">05</div>
+          <div>
+            <h3>Claude Code Concise — @ClaudeDevs がXで出力スタイル追加を告知</h3>
             <p>v2.1.237で結果先行・前置き抑制の組み込みスタイルを追加。公式開発者アカウントの投稿を二次メディアが引用し、長文応答への不満解消として好意的に受け止められています。</p>
             <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.237" target="_blank" rel="noopener">Claude Code v2.1.237</a><a href="https://explainx.ai/blog/claude-code-concise-output-style-config-august-2026" target="_blank" rel="noopener">explainx.ai（X反応整理）</a></p>
           </div>
         </article>
         <article class="item">
-          <div class="rank">03</div>
+          <div class="rank">06</div>
+          <div>
+            <h3>Google Antigravity — Gemini Enterprise向けに管理・IDE拡張を拡大（8/20）</h3>
+            <p>適格サブスクリプションにAntigravityを内包し、予算・監査・サンドボックスを管理コンソールで制御。VS Code／JetBrains／Zed等のIDE拡張とCLI／デスクトップ2.0でエージェントを横断利用できます。</p>
+            <p class="source"><a href="https://cloud.google.com/blog/products/ai-machine-learning/expanding-google-antigravity-for-enterprise-customers" target="_blank" rel="noopener">Google Cloud Blog</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">07</div>
           <div>
             <h3>Claude Code v2.1.238 — keybindingFlavor／headersHelper／self-hosted強化（8/20）</h3>
             <p>readline風 Ctrl+W、カタログ取得用ヘッダヘルパー、ランナーの遅延シャットダウンやプロキシ認証を追加。長時間セッションのメモリ解放や出力スタイルのドリフト修正も含まれます。</p>
@@ -715,35 +747,11 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">04</div>
+          <div class="rank">08</div>
           <div>
-            <h3>Cursor Origin — GitHub障害と同日のホスト議論が8/20も継続</h3>
-            <p>有料ユーザー向けコードホストの早期ロールアウトが、GitHub障害直後の代替として再燃。Dataconomy 等は Guillermo Rauch 氏のX投稿（Origin＋Vercel）を引用し、エージェント時代のホスト選定として整理しています。</p>
-            <p class="source"><a href="https://dataconomy.com/2026/08/20/cursor-origin-launch-github-outage-alternative/" target="_blank" rel="noopener">Dataconomy</a><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">05</div>
-          <div>
-            <h3>Cursor — Cloud Agents の Subscriptions／Custom modes／goal（8/19）</h3>
-            <p>PRやSlack、スケジュール購読でイベント駆動起動。スキル常時ピン留めの Custom Mode、独立VM上のサブエージェント、長期目標の `/goal` など、自律運用の土台が前日から引き続き焦点です。</p>
-            <p class="source"><a href="https://cursor.com/changelog/08-19-26" target="_blank" rel="noopener">Cursor Changelog（8/19）</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">06</div>
-          <div>
-            <h3>Claude Code — LLMゲートウェイ向けプロンプトキャッシュ修正（2.1.237）</h3>
-            <p>カスタム base URL／ゲートウェイ利用時のキャッシュ不具合を解消。コストと応答速度の双方に効く修正として、Bedrockや社内ゲートウェイ利用者向けに重要です。</p>
-            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.237" target="_blank" rel="noopener">Claude Code v2.1.237</a><a href="https://www.mikegingerich.com/blog/claude-code-v21236237-prompt-cache-fix-concise-mode/" target="_blank" rel="noopener">Mike Gingerich</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">07</div>
-          <div>
-            <h3>Amazon Bedrock — Grok 4.6 をエージェント／コーディング用途で提供</h3>
-            <p>500Kコンテキストと reasoning effort を備え、長時間エージェント作業向けと位置づけ。Bedrock の監視・ログ・コスト管理のまま利用できる点が継続ポイントです。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-bedrock-grok-4-6/" target="_blank" rel="noopener">AWS What’s New</a><a href="https://x.ai/news/grok-4-6-amazon-bedrock" target="_blank" rel="noopener">SpaceXAI</a></p>
+            <h3>比較検証 — Cursor／Claude Code の併用論が8/21も継続</h3>
+            <p>「二者択一」ではなく、GUI編集と自律ターミナルエージェントの役割分担として捉えるレビューが増加。SpaceX傘下Cursorの収益規模と Claude Codeのベンチ優位を並べる整理も出ています。</p>
+            <p class="source"><a href="https://dev.to/videostance/i-tested-cursor-and-claude-code-side-by-side-heres-what-actually-happened-1e1e" target="_blank" rel="noopener">DEV Community</a><a href="https://valueaddvc.com/blog/cursor-vs-claude-code-vs-copilot-in-2026-which-ai-coding-tool-wins-for-your-workflow" target="_blank" rel="noopener">ValueAddVC</a></p>
           </div>
         </article>
       </div>
@@ -759,29 +767,37 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Rust エコシステム — crates.io 供給網インシデントが開発者向け一次対応を要請</h3>
-            <p>公式ブログが悪質版の公開／削除時刻とローカルキャッシュ確認コマンドを明示。ビルド実行ホストは侵害前提で秘密情報をローテし、クリーン環境から再ビルドする運用が推奨されています。</p>
-            <p class="source"><a href="https://blog.rust-lang.org/2026/08/20/supply-chain-attack-on-arrayref/" target="_blank" rel="noopener">Rust Blog</a><a href="https://blog.gridinsoft.com/arrayref-0-3-10-malware/" target="_blank" rel="noopener">Gridinsoft（8/21更新）</a></p>
+            <h3>Rust 1.98.0 — algebraic float／format_into／ManuallyDrop保証（8/20、8/21続報）</h3>
+            <p>公式が algebraic_add 系、整数の format_into、ManuallyDrop&lt;Box&gt; 移動の非UB保証などを安定化。専門メディアはLLVM 19やインクリメンタル改善も整理しており、`rustup update stable` で即利用できます。</p>
+            <p class="source"><a href="https://blog.rust-lang.org/2026/08/20/Rust-1.98.0/" target="_blank" rel="noopener">Rust Blog</a><a href="https://www.webpronews.com/rust-1-98-released-expanded-inline-assembly-llvm-19-and-cargo-improvements/" target="_blank" rel="noopener">WebProNews</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Go 1.27 — ジェネリックメソッド／JSON v2／ML-DSA を搭載した正式版の続報（8/20）</h3>
-            <p>8/19公開のメジャー版について、専門メディアが言語・ランタイム・標準ライブラリの要点を再整理。互換性約束は維持されつつ、型システムと観測性の強化が中心です。</p>
-            <p class="source"><a href="https://go.dev/blog/go1.27" target="_blank" rel="noopener">The Go Blog</a><a href="https://www.webpronews.com/go-1-27-lands-with-generic-methods-and-a-faster-runtime/" target="_blank" rel="noopener">WebProNews</a></p>
+            <h3>TypeScript — typescript-go が本家 microsoft/TypeScript に2,495コミットで合流（8/20）</h3>
+            <p>別リポジトリで進めてきたネイティブGo実装を履歴ごと本家へ統合。TS 7.0安定やプログラマティックAPIはなお後続だが、コンパイラ開発の主戦場が本家へ戻った構造的マイルストーンです。</p>
+            <p class="source"><a href="https://bytepith.com/article/typescripts-go-port-merges-into-main-repo-2495-commits" target="_blank" rel="noopener">BytePith</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>VictoriaMetrics — Go 1.27 インタラクティブツアーを公開</h3>
-            <p>公式リリースノートを実行例付きで噛み砕き、json/v2 の実験卒業や実験的 simd、小オブジェクト割当高速化などを体験できるようにした解説です。</p>
-            <p class="source"><a href="https://victoriametrics.com/blog/go-1-27/" target="_blank" rel="noopener">VictoriaMetrics Blog</a><a href="https://go.dev/doc/go1.27" target="_blank" rel="noopener">Go 1.27 Release Notes</a></p>
+            <h3>Rust エコシステム — crates.io 供給網インシデントへの一次対応が継続</h3>
+            <p>公式ブログが悪質版の公開／削除時刻とローカルキャッシュ確認を明示。ビルド実行ホストは侵害前提で秘密情報をローテし、クリーン環境から再ビルドする運用が推奨されています。</p>
+            <p class="source"><a href="https://blog.rust-lang.org/2026/08/20/supply-chain-attack-on-arrayref/" target="_blank" rel="noopener">Rust Blog</a><a href="https://www.csoonline.com/article/4212381/backdoored-rust-packages-hit-crates-io-exposing-developers-to-malware-at-build-time.html" target="_blank" rel="noopener">CSO Online</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
+          <div>
+            <h3>Go 1.27 — ジェネリックメソッド／型推論改善の実務解説が拡大（8/21）</h3>
+            <p>型上のジェネリックメソッドと推論強化で、従来の関数ラップや明示型引数の冗長さを削減。json/v2や耐量子暗号と並び、週次ダイジェストでも採用判断材料として再整理されています。</p>
+            <p class="source"><a href="https://go.dev/blog/go1.27" target="_blank" rel="noopener">The Go Blog</a><a href="https://dev.to/devsignal/go-127-generic-methods-silent-llm-failures-and-parallel-playwright-issue-92-277i" target="_blank" rel="noopener">DEV Signal</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">05</div>
           <div>
             <h3>Go 標準ライブラリ — encoding/json/v2 と crypto/mldsa が実務マイルストーンに</h3>
             <p>json/v2 は GOEXPERIMENT なしで利用可能になり、古典 json も裏側で v2 実装へ。耐量子署名 ML-DSA（FIPS 204）は x509／tls へ統合され、暗号移行計画を持つ組織に影響します。</p>
@@ -789,27 +805,19 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">05</div>
-          <div>
-            <h3>JFrog — arrayref／proc-macro1 の技術解析と Xray ID を公開</h3>
-            <p>人気クレート側は目立った悪意コードを持たず、依存追加だけで build.rs を走らせる手法を詳述。ロックファイル更新ウィンドウでのビルド履歴確認が実務チェックポイントです。</p>
-            <p class="source"><a href="https://research.jfrog.com/post/arrayref-proc-macro1-crates-io/" target="_blank" rel="noopener">JFrog Security Research</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Go ランタイム — サイズ特化 malloc と goroutine leak プロファイル</h3>
-            <p>80B未満の割当コスト削減や、永続ブロック検知の pprof プロファイル一般提供など、性能・観測性の基盤改善が続報でも強調されています。</p>
-            <p class="source"><a href="https://go.dev/blog/go1.27" target="_blank" rel="noopener">The Go Blog</a><a href="https://linuxiac.com/go-1-27-released-with-generic-methods-json-v2-and-faster-memory-allocation/" target="_blank" rel="noopener">Linuxiac</a></p>
+            <h3>Rust 1.98 注意点 — PartialOrd／Ord 不一致時の並び替え挙動</h3>
+            <p>derive(PartialOrd) の高速経路が、Ord と不一致な実装で並び順を変え得るとの警告が開発者向けまとめに登場。コンパイルは通るため、アップグレード時の回帰チェック対象になります。</p>
+            <p class="source"><a href="https://dev.to/akashdas/five-developer-deadlines-in-august-2026-copilot-credits-rust-198-typescript-7-1pbh" target="_blank" rel="noopener">DEV Community</a><a href="https://blog.rust-lang.org/2026/08/20/Rust-1.98.0/" target="_blank" rel="noopener">Rust Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Go ツールチェーン — go fix／go doc@version／go mod tidy の整理強化</h3>
-            <p>modernizer や特定版ドキュメント照会、require ブロックの標準2分割自動整理など、日常コマンドの使い勝手も 1.27 で更新されています。</p>
-            <p class="source"><a href="https://go.dev/blog/go1.27" target="_blank" rel="noopener">The Go Blog</a><a href="https://go.dev/doc/devel/release" target="_blank" rel="noopener">Go Release History</a></p>
+            <h3>VictoriaMetrics — Go 1.27 インタラクティブツアーを公開</h3>
+            <p>公式リリースノートを実行例付きで噛み砕き、json/v2 の実験卒業や小オブジェクト割当高速化などを体験できるようにした解説です。</p>
+            <p class="source"><a href="https://victoriametrics.com/blog/go-1-27/" target="_blank" rel="noopener">VictoriaMetrics Blog</a><a href="https://go.dev/doc/go1.27" target="_blank" rel="noopener">Go 1.27 Release Notes</a></p>
           </div>
         </article>
       </div>
@@ -819,11 +827,35 @@
       <div class="theme-head">
         <div class="sec-no">05</div>
         <h2>ネットサービス</h2>
-        <span class="count">7 STORIES</span>
+        <span class="count">8 STORIES</span>
       </div>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
+          <div>
+            <h3>GitHub Copilot in Slack — チャットからエージェント作業へ（8/21）</h3>
+            <p>組織内Slackから `@GitHub` で調査・Issue操作・実装・PR作成まで依頼できるパブリックプレビュー。Slack Codeチャネルで進捗を共有し、会議中でも後からPRで継続できる導線が公式に示されています。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/" target="_blank" rel="noopener">GitHub Changelog</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">02</div>
+          <div>
+            <h3>Slack Code — Salesforceがエージェント協働チャネルを一般展開</h3>
+            <p>エージェントをメンションすると専用コードチャネルが立ち上がり、diffやプレビューをチームで監督。Claude Code／Devin／Copilot／Vercel が初期対応で、ChatGPT連携も予告されています。</p>
+            <p class="source"><a href="https://www.techrepublic.com/article/news-slack-code-ai-coding-agents/" target="_blank" rel="noopener">TechRepublic</a><a href="https://siliconangle.com/2026/08/20/salesforce-introduces-slack-code-to-bring-agentic-team-coding-into-the-open/" target="_blank" rel="noopener">SiliconANGLE</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">03</div>
+          <div>
+            <h3>AWS Glue 6.0 — 価格約30%低減と Iceberg v3 全面対応でGA</h3>
+            <p>Spark 4.1／Python 3.13／Scala 2.13 基盤。VARIANT shredding、地理空間型、ナノ秒タイムスタンプ、宣言的パイプライン、ArrowネイティブPython UDF、ミリ秒級ストリーミングなどETL面の大型更新です。</p>
+            <p class="source"><a href="https://aws.amazon.com/blogs/aws/aws-glue-6-0-now-available-with-30-lower-price-and-full-apache-iceberg-v3-support/" target="_blank" rel="noopener">AWS News Blog</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">04</div>
           <div>
             <h3>Amazon SageMaker AI — Studio で生成AI推論推奨が利用可能に（8/20）</h3>
             <p>用途プロファイルと最適化目標（遅延／スループット／コスト）を選び、TTFT やコストでランキング比較してエンドポイントへ展開可能。ローコードで推論構成を詰める導線が Studio に乗りました。</p>
@@ -831,7 +863,7 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">02</div>
+          <div class="rank">05</div>
           <div>
             <h3>AWS Local Zone — ラスベガス（us-west-2-las-2a）が一般提供開始（8/20）</h3>
             <p>C7i／M7i／R7i／C8gn、EBS、ECS／EKS、ALB、Direct Connect などを近傍展開。低遅延やデータ居住、AI推論のエッジ配置向けに選択肢が増えています。</p>
@@ -839,50 +871,34 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">03</div>
-          <div>
-            <h3>Amazon EC2 — C8gd／M8gd／R8gd（Graviton4＋ローカルNVMe）を追加リージョン展開（8/20）</h3>
-            <p>シンガポール／メキシコ／メルボルン／チューリッヒなどで利用可能に。I/O密集DBや分析向けに帯域重み付けも使え、ローカルSSD依存ワークロードの配置自由度が上がります。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8gd-m8gd/" target="_blank" rel="noopener">AWS What’s New</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">04</div>
-          <div>
-            <h3>AWS Marketplace — カテゴリ別通知とマルチチャネル配信（8/20）</h3>
-            <p>パートナーが通知カテゴリごとに宛先と配信手段（メール／モバイル／チャット）を選べるように。ルートメール一本化から運用チーム別ルーティングへ移行できます。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-marketplace/" target="_blank" rel="noopener">AWS What’s New</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">05</div>
-          <div>
-            <h3>AWS SDK／SES — Lambda リソースポリシーJSON全面操作とSESメッセージ単位トラッキング（8/20）</h3>
-            <p>Go SDK v2 の日次リリースで、Lambda のフルJSONリソースポリシーCRUDや SES の ConfigurationOverrides による開封／クリック上書きが追加。API表面の細かい運用制御が進んでいます。</p>
-            <p class="source"><a href="https://newreleases.io/project/github/aws/aws-sdk-go-v2/release/release-2026-08-20" target="_blank" rel="noopener">aws-sdk-go-v2（8/20）</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Cursor Origin — 有料ユーザー向けコードホストのロールアウト継続</h3>
-            <p>GitHub をソース・オブ・トゥルースにしたまま Origin で閲覧・PR・エージェント操作が可能。ホスト選定が「置き場」からエージェント運用基盤の論点へ移っています。</p>
-            <p class="source"><a href="https://techcrunch.com/2026/08/18/cursor-capitalizes-on-github-frustration-launches-rival-hosting-platform/" target="_blank" rel="noopener">TechCrunch</a><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog</a></p>
+            <h3>Google Antigravity — Gemini Enterpriseに統合され管理面が強化</h3>
+            <p>別ライセンスではなく適格Gemini Enterpriseに内包。プール割当や監査ログ、IDE横断配布で、エンタープライズのFinOps／ガバナンス要件に寄せています。</p>
+            <p class="source"><a href="https://cloud.google.com/blog/products/ai-machine-learning/expanding-google-antigravity-for-enterprise-customers" target="_blank" rel="noopener">Google Cloud Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>さくらインターネット — 会員情報管理系インシデントが国内サービス運用の参照事例に</h3>
-            <p>サービス基盤そのものより販売管理系の影響拡大が焦点。段階公表と顧客通知の進め方が、国内ネットサービス運用の論点として引き続き議論されています。</p>
-            <p class="source"><a href="https://www.sakura.ad.jp/corporate/information/newsreleases/2026/08/19/1968225633/" target="_blank" rel="noopener">さくらインターネット公式</a><a href="https://japan.zdnet.com/article/35251716/" target="_blank" rel="noopener">ZDNET Japan</a></p>
+            <h3>Amazon Bedrock — GPT-5.6 系のクロスリージョン推論が25超リージョンへ拡大</h3>
+            <p>地理プロファイルと global プロファイルで容量とデータ居住を選択可能。global は約10%のトークン割引。India向け地理プロファイルも整備が進んでいます。</p>
+            <p class="source"><a href="https://dataconomy.com/2026/08/21/openai-gpt-56-models-now-available-in-over-25-aws-regions/" target="_blank" rel="noopener">Dataconomy</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">08</div>
+          <div>
+            <h3>Cloudflare — Zero Trust姿勢チェック障害とアジア網性能問題が直近で解消</h3>
+            <p>8/21の Client Posture Failures と Asia Pacific 網性能問題がステータスページ上でResolved。運用監視の参照事例として、影響範囲をコンポーネント単位で切り分ける必要性が再確認されています。</p>
+            <p class="source"><a href="https://www.cloudflarestatus.com/history" target="_blank" rel="noopener">Cloudflare Status</a></p>
           </div>
         </article>
       </div>
     </section>
 
     <footer>
-      <p>発行: 2026-08-21（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X／SNS の反応は報道で確認できた範囲のみ追記（ClaudeDevs の Concise 告知、Cursor Origin×GitHub障害に関する Rauch 氏投稿の二次引用、さくら第二報の拡散）。</p>
+      <p>発行: 2026-08-22（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X／SNS の反応は報道で確認できた範囲のみ追記（ClaudeDevs の Concise 告知、さくら第二報の拡散）。</p>
       <p>本ページは自動生成の朝刊ダイジェストです。投資・運用判断の前に必ず一次情報をご確認ください。</p>
     </footer>
   </div>
