@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>技術ニュースダイジェスト 2026-08-25</title>
+  <title>技術ニュースダイジェスト 2026-08-26</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -525,7 +525,7 @@
     <div class="mast-inner">
       <div class="edition-bar">
         <span class="live"><i aria-hidden="true"></i>今朝のダイジェスト</span>
-        <span>2026年8月25日 / 過去24時間</span>
+        <span>2026年8月26日 / 過去24時間</span>
         <span>公式・専門メディア中心</span>
       </div>
       <h1 class="brand">
@@ -539,7 +539,7 @@
   <div class="wrap">
     <div class="briefing">
       <p class="kicker">本日の見通し</p>
-      <p>本日の軸は、NVIDIA NemoClawのローカルモデル汚染（CVE-2026-65105）、全日空商事e-GIFTの不正アクセス公表、Entra ID CVSS 10の悪用表記訂正、Claude Code 2.1.245、AWS Bedrock／KiroへのGPT-5.6展開です。車番認識は過去24時間の純ANPR新規プレスが少なく、OSSと直近一次情報で補完しています。</p>
+      <p>本日の軸は、SharePoint認証回避＋BCSのRCE連鎖のハニーポット観測（8/25〜26）、NVIDIA NemoClawのローカルモデル汚染、カバー「ホロカ」公式サイトのCMS侵害公表、Claude Code 2.1.246、AWS LambdaのNode.js 26／Python 3.15プレビューです。車番認識は過去24時間の純ANPR新規プレスが少なく、OSSと直近一次情報で補完しています。</p>
     </div>
 
     <nav class="toc" aria-label="テーマ一覧">
@@ -560,73 +560,73 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
+            <h3>Microsoft SharePoint — CVE-2026-55040＋CVE-2026-63520 の未認証RCE連鎖をハニーポットで観測（8/25〜26）</h3>
+            <p>JWT認証回避とBusiness Connectivity Servicesの型解決欠陥を連鎖させ、オンプレSharePoint上で未認証RCEを狙う探査がDefusedのハニーポットで確認されました。両CVEに公開PoCがあり、CISAは55040をKEV登録済み。コード実行の実害は未確認でも、パッチ適用と公開面の縮小が急務です。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/hackers-target-microsoft-sharepoint-rce-chain-with-poc-exploit/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://decipher.sc/2026/08/25/unauthenticated-rce-chain-found-for-microsoft-sharepoint-cve-2026-55040-and-cve-2026-63520/" target="_blank" rel="noopener">Decipher</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">02</div>
+          <div>
             <h3>NVIDIA NemoClaw — CVE-2026-65105：閲覧1回でローカルLLMを永続汚染（8/25）</h3>
             <p>Oasis／Cyeraの調査で、NemoClawがOllamaを0.0.0.0にバインドする構成とDNSリバインディングにより、未認証でローカル推論APIを奪取できると判明。チャットテンプレートへの注入はエージェントのsystem promptをすり抜け、macOS／Linuxはv0.0.35で修正、Windowsは未修正と報じられています。</p>
             <p class="source"><a href="https://www.cyera.com/research/nemoclaw-one-website-visit-to-hijack-your-ai-agent" target="_blank" rel="noopener">Cyera Research</a><a href="https://siliconangle.com/2026/08/25/nvidia-nemoclaw-flaw-let-attackers-poison-the-model-behind-a-developers-ai-agent/" target="_blank" rel="noopener">SiliconANGLE</a><a href="https://www.darkreading.com/cyber-risk/nemo-claw-networking-llm-poisoning-openclaw" target="_blank" rel="noopener">Dark Reading</a></p>
           </div>
         </article>
         <article class="item">
-          <div class="rank">02</div>
-          <div>
-            <h3>全日空商事「選べるe-GIFT」— 管理系への不正アクセスとギフト不正交換（8/24公表）</h3>
-            <p>8/11〜12に法人向けデジタルギフトの運用管理が侵害され、契約企業担当者の氏名・企業名・ログインID・メール一部などが短時間閲覧された可能性。一部ギフトの不正交換も確認され、個情委報告と警察への被害申告済みです。</p>
-            <p class="source"><a href="https://rocket-boys.co.jp/security-measures-lab/ana-trading-e-gift-unauthorized-access-leak/" target="_blank" rel="noopener">セキュリティ対策Lab</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Microsoft Entra ID — CVE-2026-69836（CVSS 10）はクラウド側緩和済み、悪用表記を訂正</h3>
-            <p>未認証RCEとして8/20に開示されたが、顧客パッチは不要。当初の「悪用済み」表示は誤りと訂正され、MSRCのCSAFでは Exploited: No。ITmediaや国内速報が8/25に透明性目的の公表理由を整理しています。</p>
-            <p class="source"><a href="https://www.itmedia.co.jp/enterprise/articles/2608/25/news026.html" target="_blank" rel="noopener">ITmedia</a><a href="https://rocket-boys.co.jp/security-measures-lab/microsoft-entra-id-cve-2026-69836-exploit-correction/" target="_blank" rel="noopener">セキュリティ対策Lab</a><a href="https://thecyberexpress.com/microsoft-reverses-exploitation-cve-2026-69836/" target="_blank" rel="noopener">The Cyber Express</a></p>
+            <h3>カバー「hololive OFFICIAL CARD GAME」— CMS脆弱性による不正アクセス痕跡を公表（8/25、報道8/26）</h3>
+            <p>7/17に公表された利用CMSの脆弱性を受けた調査で、公式サイトへの不正アクセス痕跡を確認。7/4〜19の問い合わせフォーム利用者の氏名・連絡先・内容が漏えいした恐れがあり、対象者へ個別連絡済み。改ざんや持ち出し確定は未確認で、CMS更新などの対策は完了としています。</p>
+            <p class="source"><a href="https://hololive-official-cardgame.com/news_detail/news_260825/" target="_blank" rel="noopener">ホロカ公式</a><a href="https://www.itmedia.co.jp/news/article/2608/26/2000000811/" target="_blank" rel="noopener">ITmedia NEWS</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>GitLab CVE-2026-19478 — 公開直後から悪用試行を観測（8/25詳報）</h3>
-            <p>CVSS 9.4のGraphQLディレクティブ経由コードインジェクション。8/17修正後、watchTowrがハニーポットで実環境からの試行を確認。Self-Managedは修正版への即時更新が推奨で、8/24時点のKEV未掲載でも公開面の棚卸しが必要です。</p>
-            <p class="source"><a href="https://rocket-boys.co.jp/security-measures-lab/gitlab-critical-cve-2026-19478-exploit-attempts/" target="_blank" rel="noopener">セキュリティ対策Lab</a></p>
+            <h3>全日空商事「選べるe-GIFT」— 管理系への不正アクセスとギフト不正交換（8/24公表、8/26続報）</h3>
+            <p>8/11〜12に法人向けデジタルギフトの運用管理が侵害され、契約企業担当者の氏名・企業名・ログインID・メール一部などが短時間閲覧された可能性。一部ギフトの不正交換も確認され、個情委報告と警察への被害申告済みです。</p>
+            <p class="source"><a href="https://www.itmedia.co.jp/news/article/2608/26/2000000798/" target="_blank" rel="noopener">ITmedia NEWS</a><a href="https://rocket-boys.co.jp/security-measures-lab/ana-trading-e-gift-unauthorized-access-leak/" target="_blank" rel="noopener">セキュリティ対策Lab</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Windows Defender ShieldBreak — CVE-2026-69414、パッチ未提供のゼロデイ昇格（8/24）</h3>
-            <p>Malware Protection EngineのEoPで低権限からSYSTEMへ。8/12に公開PoC、8/14にCVE採番。Microsoftは更新準備中で、QualysはVMDR検出と暫定緩和を案内。Win11 25H2／Server 2025でPoC再現が報告されています。</p>
-            <p class="source"><a href="https://blog.qualys.com/product-tech/2026/08/24/shieldbreak-the-windows-defender-zero-day-with-no-patch-detect-it-mitigate-it-with-qualys" target="_blank" rel="noopener">Qualys Blog</a></p>
+            <h3>SharePoint CVE-2026-45659 — ランサムウェア攻撃での悪用をCISAが確認（8/25）</h3>
+            <p>7月から悪用が指摘されていたオンプレSharePointのRCEが、ランサムウェアキャンペーンでも使われているとCISAが更新。インターネット公開インスタンスの棚卸しとハードニングガイドの再確認が求められています。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/hackers-target-microsoft-sharepoint-rce-chain-with-poc-exploit/" target="_blank" rel="noopener">BleepingComputer</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>個人情報保護委員会 — KDDIのISP向けメール基盤漏えいで行政指導（8/24報道）</h3>
-            <p>第三者製ソフトのゼロデイ悪用により約1,223万人分のメールアドレスと平文含む約762万人分のパスワードが漏えい。技術的安全管理措置の不備を認定し、再発防止策の実施状況を10月19日までに報告するよう指導しています。</p>
-            <p class="source"><a href="https://scan.netsecurity.ne.jp/article/2026/08/24/56000.html" target="_blank" rel="noopener">ScanNetSecurity</a></p>
+            <h3>Keycloak CVE-2026-18963 — 未認証パスワードリセットでアカウント乗っ取り</h3>
+            <p>reset-credentialsフローの状態検証不備で、メール確認なしに任意ユーザーのパスワードを再設定可能。コミュニティ版も対象で26.7.2／26.6.6等への更新、または「Forgot password」無効化が当面の対策です。</p>
+            <p class="source"><a href="https://www.keycloak.org/2026/08/keycloak-2672-released" target="_blank" rel="noopener">Keycloak 26.7.2</a><a href="https://github.com/keycloak/keycloak/issues/51833" target="_blank" rel="noopener">GitHub Issue</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Keycloak CVE-2026-18963 — 未認証パスワードリセットでアカウント乗っ取り（議論継続）</h3>
-            <p>reset-credentialsフローの状態検証不備で、メール確認なしに任意ユーザーのパスワードを再設定可能。コミュニティ版も対象で26.7.2／26.6.6等へ更新。GitHub Issueは8/25も更新が続いています。</p>
-            <p class="source"><a href="https://www.keycloak.org/2026/08/keycloak-2672-released" target="_blank" rel="noopener">Keycloak 26.7.2</a><a href="https://github.com/keycloak/keycloak/issues/51833" target="_blank" rel="noopener">GitHub Issue</a></p>
+            <h3>Windows Defender ShieldBreak — CVE-2026-69414、パッチ未提供のゼロデイ昇格</h3>
+            <p>Malware Protection EngineのEoPで低権限からSYSTEMへ。公開PoCがありMicrosoftは更新準備中。QualysはVMDR検出と暫定緩和を案内し、Win11 25H2／Server 2025での再現報告が続いています。</p>
+            <p class="source"><a href="https://blog.qualys.com/product-tech/2026/08/24/shieldbreak-the-windows-defender-zero-day-with-no-patch-detect-it-mitigate-it-with-qualys" target="_blank" rel="noopener">Qualys Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>Citrix NetScaler — CVE-2026-19490（認証回避・CVSS 9.3）など緊急修正</h3>
-            <p>Gateway／AAA構成で代替パスによる認証回避が可能な重大欠陥。回避策はなく修正ビルド適用が唯一の対策。同週の周辺RCE実害と合わせ、公開エッジ機器の優先パッチが続いています。</p>
-            <p class="source"><a href="https://support.citrix.com/external/article/CTX696939/netscaler-adc-and-netscaler-gateway-secu.html" target="_blank" rel="noopener">Citrix Bulletin</a><a href="https://www.bleepingcomputer.com/news/security/citrix-urges-admins-to-patch-new-netscaler-flaws-as-soon-as-possible/" target="_blank" rel="noopener">BleepingComputer</a></p>
+            <h3>Microsoft Entra ID — CVE-2026-69836（CVSS 10）はクラウド側緩和済み、悪用表記を訂正</h3>
+            <p>未認証RCEとして開示されたが顧客パッチは不要。当初の「悪用済み」表示は誤りと訂正され、MSRCのCSAFでは Exploited: No。透明性目的の公表として国内メディアが整理しています。</p>
+            <p class="source"><a href="https://www.itmedia.co.jp/enterprise/articles/2608/25/news026.html" target="_blank" rel="noopener">ITmedia</a><a href="https://thecyberexpress.com/microsoft-reverses-exploitation-cve-2026-69836/" target="_blank" rel="noopener">The Cyber Express</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">09</div>
           <div>
-            <h3>MLflow SSRF（CVE-2026-64849）— CISA KEV登録後の実害が国内でも詳報</h3>
-            <p>未認証SSRF経由でクラウドメタデータの一時認証情報を窃取し、マイニングや永続権限作成へ進む攻撃が報告。3.15.0以降への更新と公開インスタンスの棚卸しが急務で、連邦機関の期限は9/2です。</p>
-            <p class="source"><a href="https://tkcteck-lab.com/mlflow-cve-2026-64849/" target="_blank" rel="noopener">TKC Tech Lab</a><a href="https://www.cisa.gov/news-events/alerts/2026/08/19/cisa-adds-one-known-exploited-vulnerability-catalog" target="_blank" rel="noopener">CISA Alert</a></p>
+            <h3>さくらインターネット — 第二報（販管系・最大約136万アカウント）の国内拡散が継続</h3>
+            <p>レンタルサーバ不正ログイン調査の過程で販売管理系への不正アクセス可能性が判明。会員契約情報の閲覧／取得可能性が焦点で、外部持ち出しは未確認。X上でも規模拡大が広く共有されています。</p>
+            <p class="source"><a href="https://www.sakura.ad.jp/corporate/information/newsreleases/2026/08/19/1968225633/" target="_blank" rel="noopener">さくらインターネット公式</a><a href="https://japan.zdnet.com/article/35251716/" target="_blank" rel="noopener">ZDNET Japan</a></p>
           </div>
         </article>
       </div>
@@ -709,13 +709,21 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Claude Code v2.1.245 — glibc 2.44環境の起動クラッシュ修正（約15時間前）</h3>
-            <p>Arch／CachyOS／Fedora Rawhideなど新しいglibcを持つLinuxでの起動クラッシュを修正。直前の2.1.243ではサブエージェントのprompt cache TTL設定やクラウドセッション再開の信頼性改善が入り、短周期の安定化リリースが続いています。</p>
-            <p class="source"><a href="https://newreleases.io/project/github/anthropics/claude-code/release/v2.1.245" target="_blank" rel="noopener">Claude Code v2.1.245</a><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a></p>
+            <h3>Claude Code v2.1.246 — /cd即時反映、Auto mode権限タブ、自律コードレビュー拡張（8/25）</h3>
+            <p>ディレクトリ移動後に設定・hooks・MCP・skills・agentsが即時有効化。/permissionsにAuto mode編集タブを追加し、Bedrock／Vertex／Foundryやテレメトリ無効時でもClaudeが自ら/code-reviewを開始可能に。大量の安定化修正を含む大型パッチです。</p>
+            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.246" target="_blank" rel="noopener">Claude Code v2.1.246</a><a href="https://releasebot.io/updates/anthropic/claude-code" target="_blank" rel="noopener">Releasebot</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
+          <div>
+            <h3>Claude Code v2.1.245 — glibc 2.44環境の起動クラッシュ修正</h3>
+            <p>Arch／CachyOS／Fedora Rawhideなど新しいglibcを持つLinuxでの起動クラッシュを修正。短周期の安定化リリースが続いており、前日の246と合わせて追随が推奨されます。</p>
+            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.245" target="_blank" rel="noopener">Claude Code v2.1.245</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">03</div>
           <div>
             <h3>NemoClaw／OpenClaw — ローカルコーディングエージェント基盤の推論チェーン侵害（8/25）</h3>
             <p>開発者向けエージェントのローカル推論がブラウザ経由で乗っ取られる事例として、コーディングエージェント運用の境界設計に直結。サンドボックスはホストを守っても、エージェント認可先が被害半径になる点が強調されています。</p>
@@ -723,23 +731,23 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">03</div>
-          <div>
-            <h3>GitHub Copilot — Grok 4.6 がCLI／クラウドエージェント含む8面に展開</h3>
-            <p>長時間エージェント向けモデルがVS CodeからCopilot CLI、cloud agentまでモデルピッカーに追加。Business／Enterpriseは既定オフで管理者が有効化。CLI側ではxhigh reasoning effort対応も続報されています。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot/" target="_blank" rel="noopener">GitHub Changelog</a><a href="https://x.ai/news/grok-4-6-github-copilot" target="_blank" rel="noopener">SpaceXAI</a><a href="https://newreleases.io/project/npm/@github/copilot/release/1.0.81-8" target="_blank" rel="noopener">npm @github/copilot</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Cursor — クラウドエージェントがPR／Slack／cron購読とサブエージェントVMへ</h3>
-            <p>イベント購読でエージェントが起床し、作成したPRのCI修正まで自動追従。サブエージェントは隔離VMで並列作業し、`/goal` で長期目標を保持。公式Xでも機能断片が連投され、注目が続いています。</p>
-            <p class="source"><a href="https://cursor.com/changelog/08-19-26" target="_blank" rel="noopener">Cursor Changelog</a><a href="https://aicatchup.com/news/cursor-cloud-agents-event-triggers-goals-subagents" target="_blank" rel="noopener">AI Catchup（X整理）</a></p>
+            <h3>Cursor Origin — エージェント向けコードホストが早期ベータ（続報）</h3>
+            <p>有料プラン向けにリポジトリ・PR・コード閲覧・GitHub同期を提供するagent-nativeなホスト。GitHub障害と同日のロールアウトが話題となり、X上でも「GitHub依存のヘッジ」として言及されています。</p>
+            <p class="source"><a href="https://www.infoq.com/news/2026/08/cursor-origin-alternative-github/" target="_blank" rel="noopener">InfoQ</a><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
+          <div>
+            <h3>GitHub Copilot × Microsoft Teams — 会話コンテキストで実装・PR作成（8/25報道）</h3>
+            <p>Teams上の議論をそのままコーディングエージェントの入力にし、調査・変更・PR作成まで進める公開プレビュー。リポジトリ権限とPRレビューの既存統制は維持され、チャット起点の実装フローが広がっています。</p>
+            <p class="source"><a href="https://www.techrepublic.com/article/news-github-copilot-teams-conversations-coding-agent/" target="_blank" rel="noopener">TechRepublic</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">06</div>
           <div>
             <h3>GitHub Copilot × Slack — エージェント体験がパブリックプレビュー</h3>
             <p>`@GitHub` でスレッドから計画・調査・実装・PR作成まで依頼可能。Slack Codeのローンチパートナーとしても参加し、専用コードチャネルでdiffやプレビューを共有できます。Business／Enterprise向けです。</p>
@@ -747,27 +755,19 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">06</div>
-          <div>
-            <h3>Slack Code — エージェント作業を共有チャネルで可視化</h3>
-            <p>Claude／Devin／Copilot／Vercel などを専用コードチャネルに招き、計画・diff・HTMLプレビューをチームで監督。完了後はアーカイブされ監査ログとして残ります。</p>
-            <p class="source"><a href="https://docs.slack.dev/changelog/2026/08/20/slack-code" target="_blank" rel="noopener">Slack Developer Changelog</a><a href="https://slack.com/blog/news/slack-code-channels-for-agents" target="_blank" rel="noopener">Slack Blog</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Cursor Origin — エージェント向けコードホストが早期ベータ</h3>
-            <p>有料プラン向けにリポジトリ・PR・コード閲覧・GitHub同期を提供。エージェントとコード・レビュー面を同一場所に置き、Vercel／Depot／Buildkite連携も開始しています。</p>
-            <p class="source"><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog</a></p>
+            <h3>AWS Kiro — GPT-5.6 Sol／Terra／Luna を開発環境に統合（8/24、続報）</h3>
+            <p>仕様駆動のKiro上でOpenAI旗艦ファミリーが利用可能に。共同検証ではTerminal-Bench 2.1で完了タスクコスト約82%減と報告。プロンプト反復型アシスタントへの対抗軸として位置づけられています。</p>
+            <p class="source"><a href="https://www.unite.ai/openai-brings-gpt-5-6-model-family-to-awss-kiro/" target="_blank" rel="noopener">Unite.AI</a><a href="https://www.proactiveinvestors.com.au/companies/news/1097523/tech-bytes-openai-takes-gpt-5-6-into-aws-kiro-as-ai-coding-costs-fall-1097523.html" target="_blank" rel="noopener">Proactive Investors</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>Anthropic — Claude生成テキストへ不可視透かし（コーディング出力にも波及）</h3>
-            <p>SynthID-Text系の統計的透かしをグローバル適用。Claude CodeやAPI経由の出力にも乗り、EU AI Act対応が背景。編集・翻訳用途でも痕跡が残る点への懸念がユーザー側で議論されています。</p>
-            <p class="source"><a href="https://www.anthropic.com/news/claude-text-watermark" target="_blank" rel="noopener">Anthropic</a><a href="https://thejournal.com/articles/2026/08/24/anthropic-intros-invisible-watermarks-to-claude-generated-text.aspx" target="_blank" rel="noopener">THE Journal</a></p>
+            <h3>Slack Code — エージェント作業を共有チャネルで可視化</h3>
+            <p>Claude／Devin／Copilot／Vercel などを専用コードチャネルに招き、計画・diff・HTMLプレビューをチームで監督。完了後はアーカイブされ監査ログとして残ります。</p>
+            <p class="source"><a href="https://docs.slack.dev/changelog/2026/08/20/slack-code" target="_blank" rel="noopener">Slack Developer Changelog</a><a href="https://slack.com/blog/news/slack-code-channels-for-agents" target="_blank" rel="noopener">Slack Blog</a></p>
           </div>
         </article>
       </div>
@@ -783,57 +783,57 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Rust 1.98.0 — algebraic float／format_into／ManuallyDrop保証（8/20、採用継続）</h3>
-            <p>浮動小数の代数的演算メソッドで再結合・ベクトル化を明示opt-in。整数の format_into、ManuallyDrop&lt;Box&gt; 移動の非UB保証なども安定化。`rustup update stable` で即利用でき、数値計算系の評価が続いています。</p>
-            <p class="source"><a href="https://blog.rust-lang.org/2026/08/20/Rust-1.98.0/" target="_blank" rel="noopener">Rust Blog</a><a href="https://www.phoronix.com/news/Rust-1.98-Released" target="_blank" rel="noopener">Phoronix</a></p>
+            <h3>CPython — RISC-VをTier 3として正式サポート（8/24、続報）</h3>
+            <p>Python Insiderが riscv64-unknown-linux-gnu をPEP 11のTier 3に追加したと発表。RISEプロジェクトの実機ビルドボットが支え、CI統合と将来のTier 2昇格を視野に入れています。オープンISA向けランタイムの公式マイルストーンです。</p>
+            <p class="source"><a href="https://blog.python.org/2026/08/riscv-now-officially-supported/" target="_blank" rel="noopener">Python Insider</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Rust — 次世代トレイトソルバをnightly既定に有効化（検証継続）</h3>
-            <p>約4年開発の次世代トレイトソルバをnightly既定へ。where句証明や関連型正規化を置き換える大規模変更で、数ヶ月内の安定化を想定。回帰はIssue報告、無効化は `-Znext-solver=coherence` です。</p>
-            <p class="source"><a href="https://blog.rust-lang.org/2026/08/21/enabling-next-solver-on-nightly/" target="_blank" rel="noopener">Rust Blog</a></p>
+            <h3>Rust — Box／Rc／Arc の (try_)map にカスタムアロケータ対応が合流（8/26）</h3>
+            <p>スマートポインタ変換時にアロケータ戦略を保持できるAPIがロールアップで本流へ。生産コードで感じやすい改善として注目され、コンパイラ側のレガシー属性削除やs390x CI拡充も同日の動きに含まれます。</p>
+            <p class="source"><a href="https://repojournal.com/showcase/rust-lang" target="_blank" rel="noopener">RepoJournal</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Go 1.27 — ジェネリックメソッド／json/v2／ML-DSA（8/19）</h3>
-            <p>型上のジェネリックメソッド、埋め込みフィールドのリテラル初期化、関数型推論の一般化に加え、encoding/json/v2 と耐量子署名 crypto/mldsa が標準ライブラリに入りました。小オブジェクト割当は最大約30%高速化と説明されています。</p>
-            <p class="source"><a href="https://go.dev/blog/go1.27" target="_blank" rel="noopener">The Go Blog</a><a href="https://go.dev/doc/go1.27" target="_blank" rel="noopener">Release Notes</a></p>
+            <h3>Rust 1.98.0 — algebraic float／format_into／ManuallyDrop保証（8/20）</h3>
+            <p>浮動小数の代数的演算メソッドで再結合・ベクトル化を明示opt-in。整数の format_into、ManuallyDrop&lt;Box&gt; 移動の非UB保証なども安定化。`rustup update stable` で即利用できます。</p>
+            <p class="source"><a href="https://blog.rust-lang.org/2026/08/20/Rust-1.98.0/" target="_blank" rel="noopener">Rust Blog</a><a href="https://www.phoronix.com/news/Rust-1.98-Released" target="_blank" rel="noopener">Phoronix</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>TypeScript — typescript-go が本家 microsoft/TypeScript に合流（8/20）</h3>
-            <p>別リポジトリで進めてきたネイティブGo実装を履歴ごと本家へ統合。TS 7.0安定やプログラマティックAPIはなお後続だが、コンパイラ開発の主戦場が本家へ戻った構造的マイルストーンです。</p>
-            <p class="source"><a href="https://bytepith.com/article/typescripts-go-port-merges-into-main-repo-2495-commits" target="_blank" rel="noopener">BytePith</a><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-6-0/" target="_blank" rel="noopener">TypeScript 6.0</a></p>
+            <h3>Go 1.27 — ジェネリックメソッド／json/v2／ML-DSA</h3>
+            <p>型上のジェネリックメソッド、埋め込みフィールドのリテラル初期化、関数型推論の一般化に加え、encoding/json/v2 と耐量子署名 crypto/mldsa が標準ライブラリに入りました。小オブジェクト割当は最大約30%高速化と説明されています。</p>
+            <p class="source"><a href="https://go.dev/blog/go1.27" target="_blank" rel="noopener">The Go Blog</a><a href="https://go.dev/doc/go1.27" target="_blank" rel="noopener">Release Notes</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>crates.io — arrayref系サプライチェーン攻撃の一次対応が継続</h3>
-            <p>メンテナ侵害で arrayref 等が typosquat の proc-macro1 を依存追加し、ビルド時遠隔ペイロードを実行。公式ブログが公開／削除時刻とクリーン再ビルド手順を明示しています。</p>
-            <p class="source"><a href="https://blog.rust-lang.org/2026/08/20/supply-chain-attack-on-arrayref/" target="_blank" rel="noopener">Rust Blog</a><a href="https://www.wiz.io/blog/rust-supply-chain-attack-on-arrayref-significant-overlap-with-dprk-campaigns" target="_blank" rel="noopener">Wiz Blog</a></p>
+            <h3>TypeScript — typescript-go が本家 microsoft/TypeScript に合流（8/20）</h3>
+            <p>別リポジトリで進めてきたネイティブGo実装を履歴ごと本家へ統合。TS 7.0安定やプログラマティックAPIはなお後続だが、コンパイラ開発の主戦場が本家へ戻った構造的マイルストーンです。</p>
+            <p class="source"><a href="https://bytepith.com/article/typescripts-go-port-merges-into-main-repo-2495-commits" target="_blank" rel="noopener">BytePith</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Go 標準ライブラリ — encoding/json/v2 と crypto/mldsa が実務マイルストーンに</h3>
-            <p>json/v2 は実験フラグなしで利用可能になり、古典 json も裏側で v2 実装へ。耐量子署名 ML-DSA（FIPS 204）は x509／tls へ統合され、暗号移行計画を持つ組織に影響します。</p>
-            <p class="source"><a href="https://go.dev/blog/go1.27" target="_blank" rel="noopener">The Go Blog</a><a href="https://www.webpronews.com/go-1-27-lands-with-generic-methods-and-a-faster-runtime/" target="_blank" rel="noopener">WebProNews</a></p>
+            <h3>Rust — 次世代トレイトソルバをnightly既定に有効化</h3>
+            <p>約4年開発の次世代トレイトソルバをnightly既定へ。where句証明や関連型正規化を置き換える大規模変更で、数ヶ月内の安定化を想定。回帰はIssue報告、無効化は `-Znext-solver=coherence` です。</p>
+            <p class="source"><a href="https://blog.rust-lang.org/2026/08/21/enabling-next-solver-on-nightly/" target="_blank" rel="noopener">Rust Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Python 3.14.7／3.13.15 — メンテ系リリース（8月）</h3>
-            <p>3.14系・3.13系のバグ修正とビルド／ドキュメント改善を含む定期更新。言語機能の大型変更ではないが、本番ランタイムの追随判断材料として直近の公式リリースです。</p>
-            <p class="source"><a href="https://blog.python.org/2026/08/python-3147-31315/" target="_blank" rel="noopener">Python Insider</a></p>
+            <h3>Python 3.15.0rc1 — 候補版フェーズへ（RC2は9/1予定）</h3>
+            <p>バグ修正のみが許容されるRC期に入り、サードパーティは3.15ホイール公開が推奨。AWS Lambdaのpython3.15プレビューとも連動し、本番前の互換性検証ウィンドウが広がっています。</p>
+            <p class="source"><a href="https://blog.python.org/2026/08/python-3150-rc1/" target="_blank" rel="noopener">Python Insider</a></p>
           </div>
         </article>
       </div>
@@ -849,72 +849,72 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>AWS Bedrock — OpenAI GPT-5.6 Terra／Luna が GovCloud でGA（8/24）</h3>
-            <p>US-West／US-EastのGovCloudで一般提供。Terraは性能とコストのバランス、Lunaは高速低コスト。100万トークン文脈と明示キャッシュブレークポイントにより、エージェント反復のコスト増を抑えます。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/openai-gpt-terra-luna-govcloud/" target="_blank" rel="noopener">AWS What’s New</a></p>
+            <h3>AWS Lambda — Node.js 26／Python 3.15 マネージドランタイムをパブリックプレビュー（8/25）</h3>
+            <p>GA前に破壊的変更を許容する新プレビュー枠を導入。本番SLA対象外で、nodejs26.x／python3.15識別子はGA時にそのまま昇格。全商用・GovCloud・中国リージョンで標準料金のみです。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-lambda-node-js-python-public-preview/" target="_blank" rel="noopener">AWS What’s New</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>AWS Kiro — GPT-5.6 Sol／Terra／Luna を開発環境に統合（8/24）</h3>
-            <p>仕様駆動のKiro上でOpenAI旗艦ファミリーが利用可能に。共同検証ではTerminal-Bench 2.1で完了タスクコスト約82%減と報告。プロンプト反復型アシスタントへの対抗軸として位置づけられています。</p>
-            <p class="source"><a href="https://www.unite.ai/openai-brings-gpt-5-6-model-family-to-awss-kiro/" target="_blank" rel="noopener">Unite.AI</a></p>
+            <h3>Google Cloud — Gemini Enterprise for Financial Services／Legal をプレビュー（8/25）</h3>
+            <p>資本市場・コーポレートバンキング向けと、法務実務向けの業界特化エージェントスイートを同日発表。ヘルスケア等への展開も予告し、垂直領域へのGemini Enterprise拡張が本格化しています。</p>
+            <p class="source"><a href="https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-for-financial-services/" target="_blank" rel="noopener">Google Cloud（金融）</a><a href="https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-for-legal/" target="_blank" rel="noopener">Google Cloud（法務）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>AWS Neuron 2.32 — NKI拡充、MXFP8、可変サイズcollective（8/25）</h3>
-            <p>NKI 0.6.0とMoE／sparse attention向けカーネル、Trn2／Trn3向け可変サイズ all-gather 等を追加。vLLM NeuronプラグインはvLLM 0.24.0対応で、Trainium／Inferentia系の学習・推論スタックを更新しています。</p>
-            <p class="source"><a href="https://mwpro.co.uk/blog/2026/08/25/aws-neuron-2-32-introduces-expanded-nki-programming-mxfp8-training-kernels-and-variable-size-collectives-for-trn2-and-trn/" target="_blank" rel="noopener">MWPro（AWS要約）</a></p>
+            <h3>X Ads MCP — Grok／Claude Code向けに広告運用23ツールを公開（8/24）</h3>
+            <p>ads-api.x.com/mcp 経由で読み書き可能な広告ツールを提供。自動アクティベーションは人間確認に残す設計で、Metaの書き込み全面開放とGoogle／Amazonの読み取り中心の中間に位置づけられています。</p>
+            <p class="source"><a href="https://ppc.land/x-ads-mcp-gives-grok-and-claude-code-23-tools-to-run-ad-campaigns/" target="_blank" rel="noopener">PPC Land</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>SageMaker HyperPod — Ray統合で分散学習・サービングを強化</h3>
-            <p>StudioからRayクラスタ作成、障害検知、階層チェックポイント、JumpStartからのServe投入までを一体化。既存KubeRay／Ray API互換を維持しつつ、長文脈向けKVキャッシュの階層ストレージ連携も案内されています。</p>
-            <p class="source"><a href="https://aws.amazon.com/blogs/machine-learning/introducing-new-ray-capabilities-on-sagemaker-hyperpod/" target="_blank" rel="noopener">AWS ML Blog</a></p>
+            <h3>AWS Neuron 2.32 — NKI拡充、MXFP8、可変サイズcollective（続報）</h3>
+            <p>NKI 0.6.0とMoE／sparse attention向けカーネル、Trn2／Trn3向け可変サイズ all-gather 等を追加。vLLM NeuronプラグインはvLLM 0.24.0対応で、Trainium／Inferentia系の学習・推論スタックを更新しています。</p>
+            <p class="source"><a href="https://awsdocs-neuron.readthedocs-hosted.com/en/latest/about-neuron/whats-new.html" target="_blank" rel="noopener">AWS Neuron What’s New</a><a href="https://awsdocs-neuron.readthedocs-hosted.com/en/latest/release-notes/2.32.0.html" target="_blank" rel="noopener">Release Notes 2.32.0</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Anthropic — Claude生成テキストの不可視透かしをグローバル展開（8/24報道）</h3>
-            <p>EU AI Act対応としてSynthID-Text系を採用。アプリ／API／Claude Code経由の出力に統計的痕跡が乗り、画像系はC2PAメタデータも併用。Geminiの可視透かし切替とは別軸の透明性施策です。</p>
-            <p class="source"><a href="https://www.anthropic.com/news/claude-text-watermark" target="_blank" rel="noopener">Anthropic</a><a href="https://thejournal.com/articles/2026/08/24/anthropic-intros-invisible-watermarks-to-claude-generated-text.aspx" target="_blank" rel="noopener">THE Journal</a></p>
+            <h3>AWS Kiro — GPT-5.6ファミリー統合（8/24）</h3>
+            <p>仕様・設計・タスクに落とすKiro上でSol／Terra／Lunaが利用可能。共同ベンチで完了タスクコスト約82%減とされ、コーディングエージェント市場の価格競争がサービス面にも波及しています。</p>
+            <p class="source"><a href="https://www.unite.ai/openai-brings-gpt-5-6-model-family-to-awss-kiro/" target="_blank" rel="noopener">Unite.AI</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Google Gemini — 可視透かしをオフにできる Media Watermark 設定</h3>
-            <p>画像／動画／音楽の可視マークを切替可能。不可視のSynthIDとC2PAは残る。Josh Woodward氏がXで告知し、インド／韓国／ベトナムや職場アカウント等の制限が公式ヘルプに明記されています。</p>
-            <p class="source"><a href="https://www.theverge.com/tech/980416/google-gemini-ai-watermarks-removal" target="_blank" rel="noopener">The Verge</a><a href="https://support.google.com/gemini/answer/17405358?hl=en" target="_blank" rel="noopener">Gemini Apps Help</a><a href="https://www.searchenginejournal.com/google-lets-you-turn-off-visible-watermarks-in-gemini/586145/" target="_blank" rel="noopener">Search Engine Journal</a></p>
+            <h3>Anthropic — Claude生成テキストの不可視透かしをグローバル展開</h3>
+            <p>EU AI Act対応としてSynthID-Text系を採用。アプリ／API／Claude Code経由の出力に統計的痕跡が乗り、画像系はC2PAメタデータも併用。Geminiの可視透かし切替とは別軸の透明性施策です。</p>
+            <p class="source"><a href="https://www.anthropic.com/news/claude-text-watermark" target="_blank" rel="noopener">Anthropic</a><a href="https://thejournal.com/articles/2026/08/24/anthropic-intros-invisible-watermarks-to-claude-generated-text.aspx" target="_blank" rel="noopener">THE Journal</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Slack Code — Salesforceがエージェント協働チャネルを一般展開</h3>
-            <p>エージェントをメンションすると専用コードチャネルが立ち上がり、diffやプレビューをチームで監督。Claude／Devin／Copilot／Vercel が初期対応で、ChatGPT連携も予告されています。</p>
-            <p class="source"><a href="https://docs.slack.dev/changelog/2026/08/20/slack-code" target="_blank" rel="noopener">Slack Developer Changelog</a></p>
+            <h3>Google Gemini — 可視透かしをオフにできる Media Watermark 設定</h3>
+            <p>画像／動画／音楽の可視マークを切替可能。不可視のSynthIDとC2PAは残る。Josh Woodward氏がXで告知し、地域や職場アカウント等の制限が公式ヘルプに明記されています。</p>
+            <p class="source"><a href="https://www.theverge.com/tech/980416/google-gemini-ai-watermarks-removal" target="_blank" rel="noopener">The Verge</a><a href="https://support.google.com/gemini/answer/17405358?hl=en" target="_blank" rel="noopener">Gemini Apps Help</a><a href="https://www.searchenginejournal.com/google-lets-you-turn-off-visible-watermarks-in-gemini/586145/" target="_blank" rel="noopener">Search Engine Journal</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>さくらインターネット — 第二報（販管系・最大約136万アカウント）の国内拡散が継続</h3>
-            <p>レンタルサーバ不正ログイン調査の過程で販売管理系への不正アクセス可能性が判明。会員契約情報の閲覧／取得可能性が焦点で、外部持ち出しは未確認。X上でも規模拡大が広く共有されています。</p>
-            <p class="source"><a href="https://www.sakura.ad.jp/corporate/information/newsreleases/2026/08/19/1968225633/" target="_blank" rel="noopener">さくらインターネット公式</a><a href="https://japan.zdnet.com/article/35251716/" target="_blank" rel="noopener">ZDNET Japan</a></p>
+            <h3>Slack Code — Salesforceがエージェント協働チャネルを一般展開</h3>
+            <p>エージェントをメンションすると専用コードチャネルが立ち上がり、diffやプレビューをチームで監督。Claude／Devin／Copilot／Vercel が初期対応で、チャット起点の開発運用がサービス標準になりつつあります。</p>
+            <p class="source"><a href="https://docs.slack.dev/changelog/2026/08/20/slack-code" target="_blank" rel="noopener">Slack Developer Changelog</a></p>
           </div>
         </article>
       </div>
     </section>
 
     <footer>
-      <p>発行: 2026-08-25（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X／SNS の反応は報道で確認できた範囲のみ追記（Gemini透かしの Woodward氏告知、Cursor公式のクラウドエージェント連投、さくら第二報の拡散）。</p>
+      <p>発行: 2026-08-26（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X／SNS の反応は報道で確認できた範囲のみ追記（Cursor OriginとGitHub障害の関連言及、Gemini透かしの Woodward氏告知、さくら第二報の拡散）。</p>
       <p>本ページは自動生成の朝刊ダイジェストです。投資・運用判断の前に必ず一次情報をご確認ください。</p>
     </footer>
   </div>
