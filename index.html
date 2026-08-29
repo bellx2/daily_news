@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>技術ニュースダイジェスト 2026-08-28</title>
+  <title>技術ニュースダイジェスト 2026-08-29</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -526,7 +526,7 @@
     <div class="mast-inner">
       <div class="edition-bar">
         <span class="live"><i aria-hidden="true"></i>今朝のダイジェスト</span>
-        <span>2026年8月28日 / 過去24時間</span>
+        <span>2026年8月29日 / 過去24時間</span>
         <span>公式・専門メディア中心</span>
       </div>
       <h1 class="brand">
@@ -540,7 +540,7 @@
   <div class="wrap">
     <div class="briefing">
       <p class="kicker">本日の見通し</p>
-      <p>本日の軸は、PaperCut NG/MFのゼロデイ実害（CVE-2026-81578／82078）、イエローハット最大約180万人分の顧客情報流出懸念、cPanel CVE-2026-65643、NetScaler CVE-2026-8452の連邦パッチ期限（8/29）です。車番認識はセキュア販売開始の続報が中心で、同日の新規一次発表は少なめのため関連報道で補完しています。エージェント面はOpenAI CodexのPersistent mode試験とClaude Code 2.1.248／251、サービス面はAurora MySQL 3.13 GAとX Ads MCPが目立ちます。</p>
+      <p>本日の軸は、McKessonの大規模データ侵害調査（ShinyHuntersが約2.84億件を主張）、PaperCut緊急パッチ第2弾の適用後不具合調査（8/29更新）、NetScaler CVE-2026-8452の連邦パッチ期限当日です。車番認識は同日の新規一次発表が少なく、セキュア販売開始の続報と関連製品動向で補完しています。エージェント面はClaude Code 2.1.251とCodex Persistent mode報道、サービス面はAurora MySQL 3.13 GAとMeta Muse Image API（1枚1セント）が目立ちます。</p>
     </div>
 
     <nav class="toc" aria-label="テーマ一覧">
@@ -561,65 +561,65 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>PaperCut NG/MF — 未認証RCE連鎖が実害、CVE-2026-81578／82078を割当（8/27〜28）</h3>
-            <p>印刷管理サーバの設定改ざんと危険なクラス読込を連鎖させ、未認証で任意コード実行が可能と確認。8/28に緊急パッチ第2弾がv24〜26へ届き、初回パッチは回避可能だったため再適用が必須です。公開面の遮断と大学顧客起点の再現経緯が報じられています。</p>
-            <p class="source"><a href="https://www.rapid7.com/blog/post/etr-papercut-ng-mf-critical-zero-day-exploited-in-the-wild/" target="_blank" rel="noopener">Rapid7</a><a href="https://www.huntress.com/blog/papercut-actively-exploited" target="_blank" rel="noopener">Huntress</a></p>
+            <h3>McKesson — ShinyHuntersが患者関連約2.84億件の窃取を主張、SEC提出で調査を開示（8/28〜29）</h3>
+            <p>米大手医薬品卸が第三者アプリ経由の不正アクセスとデータ持ち出しを調査中と表明。攻撃側はvishingでOktaを侵害しSalesforce／Snowflakeから約1TBを持ち出したと主張し、約5520万ドルの身代金要求に会社側は未応答と報じられています。件数はユニーク患者数ではなくレコード数である点に注意が必要です。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/mckesson-discloses-breach-after-shinyhunters-claims-patient-data-theft/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://cyberinsider.com/mckesson-data-breach-exposing-284-million-patients/" target="_blank" rel="noopener">CyberInsider</a><a href="https://insight.tmcnet.com/insight/mckesson-investigates-data-theft-as-shinyhunters-claims-284-million-records-mte31eli" target="_blank" rel="noopener">TMC Insight（8/29）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>イエローハット — 予約システム不正アクセスで最大約180万人分の顧客情報流出恐れ（8/28）</h3>
-            <p>オイル交換・車検見積もり等の予約系で8/18に検知。氏名・電話・メール・会員番号が対象で、クレジットカードや車両情報は含まれないとしています。外部接続遮断と警察相談を進め、対象顧客へ順次注意喚起する方針です。</p>
-            <p class="source"><a href="https://news.web.nhk/newsweb/na/nd-20260828de47071" target="_blank" rel="noopener">NHK</a><a href="https://www.yomiuri.co.jp/national/20260828-GYT1T00326/" target="_blank" rel="noopener">読売新聞</a></p>
+            <h3>PaperCut NG/MF — 緊急パッチ第2弾後にSAML／カード番号照合の不具合報告（8/29更新）</h3>
+            <p>CVE-2026-81578（認証バイパス）とCVE-2026-82078（危険なクラス読込）の実害対応でRelease 2がv24〜26に公開済み。8/29には外部DBのCard/ID照合とSAMLが想定どおり動かない報告を公式が受け、調査中と追記しています。公開面遮断とRelease 2適用は引き続き最優先です。</p>
+            <p class="source"><a href="https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/" target="_blank" rel="noopener">PaperCut公式掲示板</a><a href="https://www.bleepingcomputer.com/news/security/papercut-releases-second-emergency-patch-for-exploited-flaws/" target="_blank" rel="noopener">BleepingComputer</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>cPanel CVE-2026-65643 — ドメインパーキング経由でroot奪取可能な致命傷（8/27）</h3>
-            <p>認証済みアカウントがaddon／parkedドメイン追加権限だけで任意ファイル作成に至り、サーバ全体を掌握できる。全サポート版が影響し、11.110.0.141／11.134.0.53／11.136.0.37／11.138.0.2以降への緊急更新が公式に求められています。</p>
-            <p class="source"><a href="https://support.cpanel.net/hc/en-us/articles/42959571221527-Security-CVE-2026-65643-Vulnerability-in-cPanel-s-Domain-Parking-Functionality-August-27-2026" target="_blank" rel="noopener">cPanel Support</a><a href="https://cybersecuritynews.com/critical-cpanel-vulnerability/" target="_blank" rel="noopener">Cyber Security News</a></p>
+            <h3>Citrix NetScaler CVE-2026-8452 — CISA KEVの連邦パッチ期限が本日8/29</h3>
+            <p>Gateway／AAA構成で悪用が観測され、web shell設置も報告。CISAはMSSQL RCE（CVE-2019-1068）とあわせ本日を期限に設定。研究者コミュニティでもハニーポット侵害が共有されており、未パッチ機器の棚卸しが急務です。</p>
+            <p class="source"><a href="https://www.cisa.gov/news-events/alerts/2026/08/26/cisa-adds-six-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a><a href="https://securityaffairs.com/197975/hacking/u-s-cisa-adds-red-hat-linux-kernel-ajax-net-professional-microsoft-sql-server-and-citrix-netscaler-flaws-to-its-known-exploited-vulnerabilities-catalog.html" target="_blank" rel="noopener">Security Affairs</a><a href="https://www.infosectoday.io/cisa-adds-six-exploited-flaws-to-kev-including-netscaler-linux-and-sql-server-bugs/" target="_blank" rel="noopener">CiBRAI</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Citrix NetScaler CVE-2026-8452 — CISA KEV、連邦パッチ期限は8/29</h3>
-            <p>Gateway／AAA構成向けメモリ溢出が未認証RCEとして悪用され、web shell設置も観測。Citrix公式はDoS寄りの記述のままですが、CISAはKEV追加済み。研究者コミュニティでもハニーポット侵害が共有され、明日が締切です。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/cisa-hackers-now-exploiting-citrix-netscaler-rce-flaw-in-attacks/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://www.securityweek.com/recent-citrix-netscaler-vulnerability-exploited-in-the-wild/" target="_blank" rel="noopener">SecurityWeek</a><a href="https://securityaffairs.com/197975/hacking/u-s-cisa-adds-red-hat-linux-kernel-ajax-net-professional-microsoft-sql-server-and-citrix-netscaler-flaws-to-its-known-exploited-vulnerabilities-catalog.html" target="_blank" rel="noopener">Security Affairs</a></p>
+            <h3>イエローハット — 予約システム不正アクセスで最大約180万人分の顧客情報流出恐れ（8/28）</h3>
+            <p>WEB作業予約で8/18に検知。氏名・電話・メール・会員番号が対象で、クレジットカード・パスワード・車両情報は保持していないと説明。個人情報保護委員会への報告と警察相談、システム対策完了を公式に公表しています。</p>
+            <p class="source"><a href="https://www.yellowhat.jp/information/yellowhat/202608.html" target="_blank" rel="noopener">イエローハット公式</a><a href="https://news.web.nhk/newsweb/na/nd-20260828de47071" target="_blank" rel="noopener">NHK</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>チューリッヒ保険 — Z-Dash不正アクセスで最大1668件の個人情報漏えい恐れ（8/27発表）</h3>
-            <p>ドラレコデータアップロード系の脆弱性調査で、4/1と4/6の不正アクセスを確認。事案管理番号・氏名・メールが対象で、映像や決済情報は含まないと説明。システム停止と当局報告済みです。</p>
-            <p class="source"><a href="https://www.itmedia.co.jp/news/article/2608/28/2000000888/" target="_blank" rel="noopener">ITmedia NEWS</a></p>
+            <h3>ベルリン州政府 — Rhysidaが約5.79TB窃取を主張、身代金拒否（8/28掲載）</h3>
+            <p>9/20州議会選を控え行政網が標的に。漏えい主張には約1.44万ファイル・個人情報約1.2万人分が含まれますが独立検証は未了。当局は選挙関連データの持ち出しはないとし、BSIと州データ保護当局が調査を追っています。</p>
+            <p class="source"><a href="https://securityaffairs.com/198064/cyber-crime/rhysida-ransomware-group-targets-berlin-government-ahead-of-vote.html" target="_blank" rel="noopener">Security Affairs</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>CISA KEV — NetScalerに加えMSSQL／Linux／Red Hatなど計6件を追加</h3>
-            <p>CVE-2026-8452と古参のMicrosoft SQL Server RCE（CVE-2019-1068）などは8/29期限、残りは9/9。未パッチ資産の棚卸し圧が一段と高まっています。</p>
-            <p class="source"><a href="https://securityaffairs.com/197975/hacking/u-s-cisa-adds-red-hat-linux-kernel-ajax-net-professional-microsoft-sql-server-and-citrix-netscaler-flaws-to-its-known-exploited-vulnerabilities-catalog.html" target="_blank" rel="noopener">Security Affairs</a></p>
+            <h3>CISA KEV — Linux Kernel CVE-2026-53362など3件追加、期限は8/30〜9/10</h3>
+            <p>8/27にownCloud不正認証、Linux Kernel、JFrog ArtifactoryのパストラバーサルをKEVへ追加。CVE-2026-53362とownCloudは8/30期限で、BOD 26-04のフォレンジック優先方針とあわせ対応が求められます。</p>
+            <p class="source"><a href="https://www.cisa.gov/news-events/alerts/2026/08/27/cisa-adds-three-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">KEV Catalog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>KIND EC — フィッシング経由スタッフ認証情報窃取で顧客情報漏えい（8/28）</h3>
-            <p>ECプラットフォーム装いの偽サイトでスタッフアカウントが奪われ、一括エクスポート権限が悪用されたと公式説明。二段階認証必須化と権限見直し、監視強化を打ち出しています。</p>
-            <p class="source"><a href="https://shop.kind.co.jp/blogs/news/notice-20260828" target="_blank" rel="noopener">KIND公式お知らせ</a></p>
+            <h3>cPanel CVE-2026-65643 — ドメインパーキング経由でroot奪取可能な致命傷（8/27公開、対応継続）</h3>
+            <p>認証済みのparked／addonドメイン権限だけで任意ファイル作成に至り、サーバ全体を掌握できる。全サポート版が影響し、11.110.0.141／11.134.0.53／11.136.0.37／11.138.0.2以降への緊急更新が公式に求められています。</p>
+            <p class="source"><a href="https://support.cpanel.net/hc/en-us/articles/42959571221527-Security-CVE-2026-65643-Vulnerability-in-cPanel-s-Domain-Parking-Functionality-August-27-2026" target="_blank" rel="noopener">cPanel Support</a><a href="https://cybersecuritynews.com/critical-cpanel-vulnerability/" target="_blank" rel="noopener">Cyber Security News</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>Gitea CVE-2026-60004 — diffpatch経由RCEのKEV対応が継続</h3>
-            <p>書込権限でGit hookを仕込み実行ユーザー権限で任意コマンド実行。自己登録が開いた公開インスタンスは特に危険で、1.27.1以降への更新と登録制限が急務のままです。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-gitea-flaw-in-code-injection-attacks/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://www.helpnetsecurity.com/2026/08/26/gitea-cve-2026-60004-exploited-in-the-wild/" target="_blank" rel="noopener">Help Net Security</a></p>
+            <h3>Cl0p — PTC Windchill／FlexPLM（CVE-2026-12569）経由でShell・GE・Philipsなどを掲載</h3>
+            <p>暗号化せず設計データを持ち出すデータ窃取型のキャンペーンが継続。Shell約89GB、Philips約13.5GBなど漏えい主張が報じられ、インターネット公開のPLMサーバのパッチと露出点検が再確認されています。</p>
+            <p class="source"><a href="https://tech-insider.org/clop-ransomware-ptc-windchill-shell-philips-ge-2026/" target="_blank" rel="noopener">Tech Insider</a></p>
           </div>
         </article>
       </div>
@@ -631,26 +631,18 @@
         <h2>日本国内の車番認識</h2>
         <span class="count">6 STORIES</span>
       </div>
-      <p class="note">本日はセキュア販売開始の二次報道が中心で、同日付けの新規一次発表は限られます。直近の国内製品・OSS動向で補完しています。</p>
+      <p class="note">本日は同日付けの新規一次発表が限られるため、セキュア販売開始の8/28続報を軸に、直近の国内製品・市場動向で補完しています。</p>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
             <h3>セキュア — 認証率97％・導入コスト約1/3の車番認証システム販売開始（8/27、8/28続報）</h3>
-            <p>光学22倍ズームと赤外線、グローバルシャッターで遠距離・夜間・移動中プレートにも対応。ご当地／領事館／外交官／自衛隊ナンバーも対象とし、荷待ち荷役2時間ルール需要を背景に財経新聞などが8/28に続報しています。</p>
-            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000146.000052942.html" target="_blank" rel="noopener">PR TIMES（セキュア）</a><a href="https://www.zaikei.co.jp/article/20260828/867779.html" target="_blank" rel="noopener">財経新聞</a><a href="https://itbusinesstoday.com/gov-tech/secure-co-ai-powered-plate-recognition-achieves-97-authentication/" target="_blank" rel="noopener">IT Business Today</a></p>
+            <p>光学22倍ズームと赤外線、グローバルシャッターで遠距離・夜間・移動中プレートにも対応。ご当地／領事館／外交官／自衛隊ナンバーも対象とし、荷待ち荷役2時間ルール需要を背景に財経新聞・IoTNEWSなどが8/28に続報しています。</p>
+            <p class="source"><a href="https://www.zaikei.co.jp/article/20260828/867779.html" target="_blank" rel="noopener">財経新聞</a><a href="https://iotnews.jp/ai/275446/" target="_blank" rel="noopener">IoTNEWS</a><a href="https://prtimes.jp/main/html/rd/p/000000146.000052942.html" target="_blank" rel="noopener">PR TIMES（セキュア）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
-          <div>
-            <h3>DataHax — 車番認識データで「2.6％の常連が売上27.2％」と分析（8/27）</h3>
-            <p>DENNOU PARK 4事業地・3,754台の半年間実績。11回以上の高頻度車両が利用回数の31.9％、ロイヤル層は売上の約1/5。車番をキーにしたLTV分析が駐車場運営の差別化軸になると示しました。</p>
-            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000074.000069896.html" target="_blank" rel="noopener">PR TIMES（DataHax）</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">03</div>
           <div>
             <h3>DataHax DENNOU PARK — 外交官など特殊ナンバー対応の車番認識AI</h3>
             <p>レイアウトやフォントが異なる特殊プレートを追加学習し、ゲートレス／精算機レス運用の現場例外を改善。都心オフィス・商業施設からの要望への応答として位置づけられています。</p>
@@ -658,19 +650,27 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">04</div>
+          <div class="rank">03</div>
           <div>
             <h3>シャープ RZ-P401 — ポールカメラ方式のゲートレス車番認識（9月上旬受注）</h3>
-            <p>入出庫センサーと車番カメラを一体化し、ポール1本で最大2車室・L字レイアウトにも対応。ロック板レス駐車場向けの新ユニットとして、シェア拡大方針とともに報道されています。</p>
-            <p class="source"><a href="https://corporate.jp.sharp/news/260731-a.html" target="_blank" rel="noopener">シャープ公式</a><a href="https://dempa-digital.com/article/721797" target="_blank" rel="noopener">電波新聞デジタル</a></p>
+            <p>入出庫センサーと車番カメラを一体化し、ポール1本で最大2車室・L字レイアウトにも対応。ロック板レス駐車場向けの新ユニットとして、在車センサー方式とのハイブリッド運用も想定しています。</p>
+            <p class="source"><a href="https://corporate.jp.sharp/news/260731-a.html" target="_blank" rel="noopener">シャープ公式</a><a href="https://prtimes.jp/main/html/rd/p/000001577.000012900.html" target="_blank" rel="noopener">PR TIMES</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">04</div>
+          <div>
+            <h3>日本ANPR市場 — 2026〜2031年にCAGR14％超の成長予測</h3>
+            <p>国交省・警察庁による高速道路・料金所・交差点への導入や、AI OCR・エッジ・5G連携が成長要因と整理。駐車場・国境・公共安全への波及と、プライバシー・設置コスト・標準化が課題として挙げられています。</p>
+            <p class="source"><a href="https://www.marketresearch.jp/bna-mrcjp3302/" target="_blank" rel="noopener">MarketResearch.jp</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>lipla-jp v0.2.0 — 日本向けナンバー認識OSS（PyPI／Hugging Face）</h3>
-            <p>EdgeCrafter Pose＋PPOCRv6のONNXベース認識ライブラリで、MITにより商用利用可能。ベンダー発表と並ぶ開発者向けの一次情報として引き続き有力です。</p>
-            <p class="source"><a href="https://pypi.org/project/lipla-jp/" target="_blank" rel="noopener">PyPI（lipla-jp）</a><a href="https://github.com/ikeboo/Lipla-jp" target="_blank" rel="noopener">GitHub</a></p>
+            <h3>EyeTech LPR for ACAP — AXISカメラ内蔵の車番認識AI</h3>
+            <p>ARTPEC8搭載カメラ上で認識し、ネットワーク負荷とPCコストを抑制。実験環境99％超・実環境97％超を公称し、WebHookやAXIS Camera Station連携でゲート／リスト照合を構築できます。</p>
+            <p class="source"><a href="http://eyetech.jp/product/lpr-camera/" target="_blank" rel="noopener">アイテック公式</a></p>
           </div>
         </article>
         <article class="item">
@@ -694,31 +694,31 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>OpenAI Codex — Persistent modeを試験、セッション横断で自律継続（報道）</h3>
-            <p>CLIのreasoning設定に「眠らされるまで働き続ける」モードが現れ、フォローアップ生成や能動メッセージも記述。外部操作は依然ユーザー承認が必要で、Hugging Face事案を踏まえ公開時期は未定と説明されています。</p>
-            <p class="source"><a href="https://www.aichatdaily.com/ai-models/openai-builds-persistent-mode-into-codex-keep-agents" target="_blank" rel="noopener">AI Chat Daily</a><a href="https://www.marketingprofs.com/opinions/2026/55727/ai-update-august-28-2026-ai-news-and-views-from-the-past-week" target="_blank" rel="noopener">MarketingProfs（8/28）</a></p>
+            <h3>Claude Code v2.1.251 — モデル切替フック・サブエージェント可視化・多数の権限修正（8/28）</h3>
+            <p>PreModel／PostModelSwitchフック、Remote Controlへのフォアグラウンドサブエージェント可視化、プロンプトキャッシュ統計を追加。シンボリックリンク経由の権限回避など多数のセキュリティ修正も含み、サブエージェント既定モデル環境変数の優先順位も整理されています。</p>
+            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.251" target="_blank" rel="noopener">Claude Code v2.1.251</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Claude Code v2.1.248 — --restrictedとクロスセッションメッセージ（8/27）</h3>
-            <p>コマンド／コード実行系とWebFetchを外し作業ディレクトリ内のファイル操作に閉じる制限モードを追加。同一マシン上のセッション間SendMessage／ListAgentsや、prompt cache欠落の修正など運用面の強化が目立ちます。</p>
-            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.248" target="_blank" rel="noopener">Claude Code v2.1.248</a><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a></p>
+            <h3>OpenAI Codex — Persistent modeを試験、セッション横断で自律継続（報道）</h3>
+            <p>CLIのreasoning設定に「眠らされるまで働き続ける」モードが現れ、フォローアップ生成や能動メッセージも記述。WIRED系報道をTHE DECODERやJapan Timesが8/28に追従し、外部操作は依然ユーザー承認が必要で即時公開予定はないと説明されています。</p>
+            <p class="source"><a href="https://www.wired.com/story/openai-is-developing-a-persistent-ai-agent/" target="_blank" rel="noopener">WIRED</a><a href="https://the-decoder.com/always-on-and-self-starting-ai-agents-might-be-openais-next-big-play/" target="_blank" rel="noopener">THE DECODER（8/28）</a><a href="https://github.com/openai/codex/pull/40799" target="_blank" rel="noopener">codex PR #40799</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Claude Code v2.1.251 — モデル切替フックとサブエージェントのライブ可視化</h3>
-            <p>PreModel／PostModelSwitchフック、Remote Controlへのフォアグラウンドサブエージェント可視化、プロンプトキャッシュ統計を追加。シンボリックリンク経由の権限回避など多数のセキュリティ修正も含みます。</p>
-            <p class="source"><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Claude Code CHANGELOG</a></p>
+            <h3>Cursor Origin — エージェント向けコードホストの早期ベータ続報</h3>
+            <p>有料プラン向けにリポジトリ・PR・コード閲覧・GitHub同期を提供。GitHub障害と同日のロールアウトが話題となり、X上でも「GitHub依存のヘッジ」として言及されたとInfoQが整理しています。</p>
+            <p class="source"><a href="https://www.infoq.com/news/2026/08/cursor-origin-alternative-github/" target="_blank" rel="noopener">InfoQ</a><a href="https://www.digitalocean.com/resources/articles/cursor-origin-vs-github" target="_blank" rel="noopener">DigitalOcean</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Cursor — Cloud Agentsが第三者SCMなしでOriginから開始可能に（8/27）</h3>
+            <h3>Cursor — Cloud Agentsが第三者SCMなしでOriginから開始可能に</h3>
             <p>「Start from scratch」でプロンプト直後にOriginリポジトリを背後生成。気に入ったら正式repo化し、ブラウザへのポートフォワードやVercel公開も追加。エージェントとコードホストの一体化が一段進みました。</p>
             <p class="source"><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog</a></p>
           </div>
@@ -736,15 +736,15 @@
           <div>
             <h3>Slack Code — エージェント作業用コードチャネルを製品展開</h3>
             <p>Claude／Devin／GitHub Copilot／Vercelをメンションすると専用チャネルが立ち上がり、diffやHTMLプレビューをチームで監督。チャット起点のマルチプレイヤー開発がサービス標準になります。</p>
-            <p class="source"><a href="https://slack.com/blog/news/slack-code-channels-for-agents" target="_blank" rel="noopener">Slack Blog</a><a href="https://slack.dev/slack-code-a-dedicated-place-for-agent-work/" target="_blank" rel="noopener">Slack Developers</a></p>
+            <p class="source"><a href="https://slack.com/blog/news/slack-code-channels-for-agents" target="_blank" rel="noopener">Slack Blog</a><a href="https://docs.slack.dev/changelog/2026/08/20/slack-code" target="_blank" rel="noopener">Slack Developers</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Cursor Origin — エージェント向けコードホストの早期ベータ続報</h3>
-            <p>有料プラン向けにリポジトリ・PR・コード閲覧・GitHub同期を提供。GitHub障害と同日のロールアウトが話題となり、X上でも「GitHub依存のヘッジ」として言及されています。</p>
-            <p class="source"><a href="https://www.infoq.com/news/2026/08/cursor-origin-alternative-github/" target="_blank" rel="noopener">InfoQ</a><a href="https://venturebeat.com/infrastructure/cursor-launches-origin-code-hosting-platform-as-github-outage-exposes-opening-in-ai-coding-race" target="_blank" rel="noopener">VentureBeat</a></p>
+            <h3>Claude Code v2.1.248 — --restrictedとクロスセッションメッセージ（8/27）</h3>
+            <p>コマンド／コード実行系とWebFetchを外し作業ディレクトリ内のファイル操作に閉じる制限モードを追加。同一マシン上のセッション間SendMessage／ListAgentsなど運用面の強化が、翌日の2.1.251につながる土台になっています。</p>
+            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.248" target="_blank" rel="noopener">Claude Code v2.1.248</a></p>
           </div>
         </article>
       </div>
@@ -756,42 +756,49 @@
         <h2>プログラミング言語</h2>
         <span class="count">7 STORIES</span>
       </div>
-      <p class="note">過去24時間の純新規は限られるため、Node.js／Rustツールチェーンと直近の主要リリースで補完しています。</p>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Node.js 26.8.1 — --versionの誤alpha表記を緊急修正（8/26）</h3>
-            <p>26.8.0で混入した版表記バグを帯域外リリースで修正。直前のCurrent更新にはZipEntry／AES-SIV／sqlite StatementSync.closeなど多数のSEMVER-MINORが含まれています。</p>
-            <p class="source"><a href="https://nodejs.org/en/blog/release/v26.8.1" target="_blank" rel="noopener">Node.js Blog</a><a href="https://github.com/nodejs/node/releases/tag/v26.8.1" target="_blank" rel="noopener">GitHub Release</a></p>
+            <h3>PVS-Studio 8.00 — JavaScript／TypeScript／Go向け解析器とWebStorm／GoLandプラグイン（8/28）</h3>
+            <p>メジャー版でJS／TS／Goの静的解析とCLI、IDEプラグインを追加。VS Codeプラグインも新解析器に対応し、MISRA C++ 2023やコンパイラ対応の拡大が並び、ツールチェーン面の大きな更新です。</p>
+            <p class="source"><a href="https://pvs-studio.com/en/blog/posts/1406/" target="_blank" rel="noopener">PVS-Studio Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Rust — UniqueRc／UniqueArcの (try_)map にもカスタムアロケータ対応（8/27）</h3>
-            <p>Box／Rc／Arc向けに続くフォローアップPRがレビュー待ち。スマートポインタ変換時にアロケータ戦略を保持するAPI整備が進み、安定化議論と連動しています。</p>
-            <p class="source"><a href="https://github.com/rust-lang/rust/pull/161893" target="_blank" rel="noopener">rust-lang/rust#161893</a><a href="https://github.com/rust-lang/rust/pull/161617" target="_blank" rel="noopener">#161617</a></p>
+            <h3>Pulumi v3.260.0 — Go／Python SDK改善とGo 1.27対応（8/28）</h3>
+            <p>Pythonの型注釈・コンポーネント生成の修正や、各言語SDKでのtransformモック対応を含むリリース。Go SDK側の更新とあわせ、IaCツールチェーンの追随が続いています。</p>
+            <p class="source"><a href="https://github.com/pulumi/pulumi/releases/tag/v3.260.0" target="_blank" rel="noopener">Pulumi v3.260.0</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>AWS Lambda — Node.js 26／Python 3.15 マネージドランタイムをパブリックプレビュー</h3>
-            <p>GA前に破壊的変更を許容する新プレビュー枠を導入。nodejs26.x／python3.15識別子はGA時にそのまま昇格予定で、上流安定版（10月目安）後の正式化を想定しています。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-lambda-node-js-python-public-preview/" target="_blank" rel="noopener">AWS What’s New</a><a href="https://aws.amazon.com/blogs/compute/introducing-public-preview-runtimes-on-aws-lambda-starting-with-node-js-26-and-python-3-15/" target="_blank" rel="noopener">AWS Compute Blog</a></p>
+            <h3>Go 1.27 — ジェネリックメソッドと小オブジェクト割当の高速化</h3>
+            <p>型上の独立した型パラメータ付きメソッドや埋め込みフィールド初期化が言語面の目玉。サイズ特化アロケータで小割当が最大約30%速くなるとされ、encoding/json/v2やcrypto/mldsaも標準ライブラリに入ります。</p>
+            <p class="source"><a href="https://go.dev/blog/go1.27" target="_blank" rel="noopener">Go Blog</a><a href="https://go.dev/doc/go1.27" target="_blank" rel="noopener">Release Notes</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Go 1.27 — ジェネリックメソッドと小オブジェクト割当の高速化</h3>
-            <p>型上の独立した型パラメータ付きメソッドや埋め込みフィールド初期化が言語面の目玉。サイズ特化アロケータで小割当が最大約30%速くなるとされ、macOS 13以降が必須です。</p>
-            <p class="source"><a href="https://go.dev/blog/go1.27" target="_blank" rel="noopener">Go Blog</a><a href="https://go.dev/doc/go1.27" target="_blank" rel="noopener">Release Notes</a></p>
+            <h3>Node.js 26.8.0／26.8.1 — Current系の機能追加と版表記修正</h3>
+            <p>8/26のCurrent更新に続く帯域外修正で誤alpha表記を解消。ZipEntry／AES-SIV／sqlite StatementSync.closeなど多数のSEMVER-MINORが直前リリースに含まれています。</p>
+            <p class="source"><a href="https://nodejs.org/en/blog/release/v26.8.0" target="_blank" rel="noopener">Node.js 26.8.0</a><a href="https://nodejs.org/en/blog/release/v26.8.1" target="_blank" rel="noopener">Node.js 26.8.1</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
+          <div>
+            <h3>AWS Lambda — Node.js 26／Python 3.15 マネージドランタイムをパブリックプレビュー</h3>
+            <p>GA前に破壊的変更を許容する新プレビュー枠を導入。nodejs26.x／python3.15識別子はGA時にそのまま昇格予定で、上流安定版後の正式化を想定しています。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-lambda-node-js-python-public-preview/" target="_blank" rel="noopener">AWS What’s New</a><a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html" target="_blank" rel="noopener">Lambda runtimes</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">06</div>
           <div>
             <h3>Rust 1.98.0 — algebraic float／format_into など安定化（8/20）</h3>
             <p>浮動小数の代数的演算メソッドで再結合・ベクトル化を明示opt-in。整数の format_into なども安定化し、`rustup update stable` で即利用できます。</p>
@@ -799,19 +806,11 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">06</div>
+          <div class="rank">07</div>
           <div>
             <h3>Python 3.15.0rc1 — 候補版フェーズ、RC2は9/1予定</h3>
             <p>バグ修正のみが許容されるRC期に入り、サードパーティは3.15ホイール公開が推奨。Lambdaのpython3.15プレビューとも連動し、互換性検証ウィンドウが広がっています。</p>
             <p class="source"><a href="https://blog.python.org/2026/08/python-3150-rc1/" target="_blank" rel="noopener">Python Insider</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">07</div>
-          <div>
-            <h3>TypeScript 7.0 RC — Goネイティブコンパイラが本体パスに</h3>
-            <p>型検査がおおむね10倍高速とされ、`typescript@rc` の tsc がネイティブ実装。プログラマティックAPI利用者は7.1待ちの案内が続いています。</p>
-            <p class="source"><a href="https://www.digitalapplied.com/blog/typescript-7-0-rc-go-native-compiler-2026-upgrade-guide" target="_blank" rel="noopener">Digital Applied</a></p>
           </div>
         </article>
       </div>
@@ -835,56 +834,56 @@
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>X Ads MCP — Grok／Claude Code向けに広告運用23ツールを公開</h3>
-            <p>ads-api.x.com/mcp 経由で読み書き可能な広告ツールを提供。キャンペーン作成は一時停止状態で始まり、自動課金は人間確認に残す設計です。エージェントによる運用自動化の一端を示しています。</p>
-            <p class="source"><a href="https://ppc.land/x-ads-mcp-gives-grok-and-claude-code-23-tools-to-run-ad-campaigns/" target="_blank" rel="noopener">PPC Land</a><a href="https://www.explainx.ai/blog/x-ads-mcp-ai-agent-campaign-management-august-2026" target="_blank" rel="noopener">explainx.ai</a></p>
+            <h3>Meta Muse Image API — 生成1枚0.01ドルでModel APIに公開（8/28報道）</h3>
+            <p>テキスト生成・編集・複数参照の合成をOpenAI互換エンドポイントで提供。Alexandr Wang氏がXで価格を告知し、RuntimeWireなどが追報。推理強度やツール利用でも単価は固定と公式ドキュメントが説明しています。</p>
+            <p class="source"><a href="https://developer.meta.com/ai/resources/blog/build-with-muse-Image/" target="_blank" rel="noopener">Meta Developer Blog</a><a href="https://dev.meta.ai/docs/image-generation" target="_blank" rel="noopener">Meta Model API Docs</a><a href="https://runtimewire.com/article/meta-ships-muse-image-api-at-one-cent-per-image" target="_blank" rel="noopener">RuntimeWire（X反応）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Cursor Origin／Cloud Agents — SCMなし起動とブラウザプレビュー（8/27）</h3>
-            <p>新規プロジェクトをOrigin上で即起動でき、エージェント環境のライブプレビューとVercel公開まで一気通貫。コードホストとエージェント実行環境の統合サービス化が進んでいます。</p>
-            <p class="source"><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog</a></p>
+            <h3>Slack — Add to Slackで10のAI作成基盤からワンクリック配備</h3>
+            <p>LangChain／OpenAI／Vercel／n8nなどと連携し、カスタムエージェントをチャネルへ即配備。Webhookや独自認証の手間を減らし、Marketplace経由で非エンジニアでも導入しやすい経路を公式が打ち出しています。</p>
+            <p class="source"><a href="https://slack.com/intl/en-in/blog/news/add-to-slack" target="_blank" rel="noopener">Slack Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Slack Code — 人とエージェントが共に作るコードチャネル</h3>
-            <p>プロジェクトチャネルでエージェントをメンションすると一時的なコードチャネルが生成され、計画・diff・プレビューをチームで監督。Anthropic／Cognition／GitHub／Vercelが初期対応です。</p>
-            <p class="source"><a href="https://slack.com/blog/news/slack-code-channels-for-agents" target="_blank" rel="noopener">Slack Blog</a><a href="https://www.salesforce.com/ap/news/press-releases/2026/08/24/salesforce-launches-slack-code-to-make-ai-software-development-multiplayer/" target="_blank" rel="noopener">Salesforce PR</a></p>
+            <h3>X Ads MCP — Grok／Claude Code向けに広告運用23ツールを公開</h3>
+            <p>ads-api.x.com/mcp 経由で読み書き可能な広告ツールを提供。キャンペーン作成は一時停止状態で始まり、自動課金は人間確認に残す設計です。エージェントによる運用自動化の一端を示しています。</p>
+            <p class="source"><a href="https://ppc.land/x-ads-mcp-gives-ai-agents-write-access-to-live-campaigns/" target="_blank" rel="noopener">PPC Land</a><a href="https://www.explainx.ai/blog/x-ads-mcp-ai-agent-campaign-management-august-2026" target="_blank" rel="noopener">explainx.ai</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Google Cloud — Gemini Enterprise for Financial Services／Legal</h3>
-            <p>資本市場・コーポレートバンキング向けと法務実務向けの業界特化エージェントスイートをプレビュー。Deutsche Bankなどが設計パートナーとして言及され、垂直領域への拡張が報じられています。</p>
-            <p class="source"><a href="https://thenextgentechinsider.com/pulse/google-cloud-launches-specialized-gemini-enterprise-agents-for-legal-and-financial-services" target="_blank" rel="noopener">TheNextGenTechInsider</a></p>
+            <h3>Slack Code — 人とエージェントが共に作るコードチャネル</h3>
+            <p>プロジェクトチャネルでエージェントをメンションすると一時的なコードチャネルが生成され、計画・diff・プレビューをチームで監督。Anthropic／Cognition／GitHub／Vercelが初期対応です。</p>
+            <p class="source"><a href="https://slack.com/blog/news/slack-code-channels-for-agents" target="_blank" rel="noopener">Slack Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
+          <div>
+            <h3>Cursor Origin／Cloud Agents — SCMなし起動とブラウザプレビュー</h3>
+            <p>新規プロジェクトをOrigin上で即起動でき、エージェント環境のライブプレビューとVercel公開まで一気通貫。コードホストとエージェント実行環境の統合サービス化が進んでいます。</p>
+            <p class="source"><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">07</div>
           <div>
             <h3>AWS Lambda — Node.js 26／Python 3.15 プレビューランタイム</h3>
             <p>本番SLA対象外のパブリックプレビュー枠で先行検証を開放。IaC／観測ツールベンダーにも互換確認の時間を与える意図が公式に説明されています。</p>
             <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-lambda-node-js-python-public-preview/" target="_blank" rel="noopener">AWS What’s New</a></p>
           </div>
         </article>
-        <article class="item">
-          <div class="rank">07</div>
-          <div>
-            <h3>GitHub Copilot — Slack上のエージェント体験がパブリックプレビュー</h3>
-            <p>@GitHub でIssue調査からPR作成まで依頼でき、Slack Codeと連携。Business／Enterpriseの既存Copilot枠で利用でき、管理者はエージェント作成PRへの追加承認を要求できます。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/" target="_blank" rel="noopener">GitHub Changelog</a></p>
-          </div>
-        </article>
       </div>
     </section>
 
     <footer>
-      <p>発行: 2026-08-28（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X／SNSの反応は報道で確認できた範囲のみ追記（NetScaler悪用の研究者共有、Cursor OriginとGitHub障害の関連言及）。</p>
+      <p>発行: 2026-08-29（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X／SNSの反応は報道で確認できた範囲のみ追記（NetScaler悪用の研究者共有、Cursor OriginとGitHub障害の関連言及、Meta Muse ImageのAlexandr Wang氏投稿）。</p>
       <p>本ページは自動生成の朝刊ダイジェストです。投資・運用判断の前に必ず一次情報をご確認ください。</p>
     </footer>
   </div>
