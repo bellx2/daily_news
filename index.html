@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>技術ニュースダイジェスト 2026-08-30</title>
+  <title>技術ニュースダイジェスト 2026-08-31</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -526,7 +526,7 @@
     <div class="mast-inner">
       <div class="edition-bar">
         <span class="live"><i aria-hidden="true"></i>今朝のダイジェスト</span>
-        <span>2026年8月30日 / 過去24時間</span>
+        <span>2026年8月31日 / 過去24時間</span>
         <span>公式・専門メディア中心</span>
       </div>
       <h1 class="brand">
@@ -540,7 +540,7 @@
   <div class="wrap">
     <div class="briefing">
       <p class="kicker">本日の見通し</p>
-      <p>本日の軸は、マンチェスター空港グループ侵害のFulcrumSec主張（約86GB、8/30）、McKessonの影響範囲更新（腫瘍／外科領域）、CISA KEVのLinux Kernel期限当日です。エージェント面はOpenAIがCursor向けモデル提供を11/12に打ち切る方針を正式発表し、X上でTruell氏が交渉継続を表明、AnthropicがClaude計算資源の増強を表明しました。車番認識は同日の新規一次発表が少なく、セキュア続報とOSS／製品動向で補完しています。</p>
+      <p>本日の軸は、PaperCutゼロデイのCISA KEV追加と遠隔操作ツール設置の続報、McKessonの漏えい期限接近、AWSとAzureのマルチクラウド接続プレビューです。コーディングエージェントはClaude Code週次上限の「+25％／実質−17％」議論がX上で続き、言語面ではRust製Servo 0.5が同日公開。車番認識は同日の新規一次発表が乏しく、セキュア続報と直近の国内製品・実証で補完しています。</p>
     </div>
 
     <nav class="toc" aria-label="テーマ一覧">
@@ -561,65 +561,65 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Manchester Airports Group — FulcrumSecが約86GB窃取を主張、今後の渡航約20万件も（8/30）</h3>
-            <p>英最大の空港運営会社が8/27に顧客データ漏えいを開示した件で、恐喝集団が責任を主張。クライアント側JSに露出したIterable API資格情報経由と語り、駐車場・ラウンジ・Fast Track等の詳細が初期公表より広いとBleepingComputerが試料を検証しています。MAGは個別主張には答えず、今後の予約客への連絡済みと説明しています。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/fulcrumsec-claims-manchester-airports-hack-theft-of-86-gb-of-data/" target="_blank" rel="noopener">BleepingComputer（8/30）</a></p>
+            <h3>PaperCut NG/MF — CISAがKEVに追加、SimpleHelp／AnyDesk設置も判明（8/31）</h3>
+            <p>CVE-2026-81578とCVE-2026-82078が8/31にKEV入りし、連邦対応期限は9/14。攻撃者は侵入後にドメイン調査のうえ遠隔操作ソフトを二重設置しており、Help Net Securityが公式IoC更新を整理。Release 2適用と公開面のIP制限が引き続き最優先です。</p>
+            <p class="source"><a href="https://www.helpnetsecurity.com/2026/08/31/papercut-attack-remote-access-tools/" target="_blank" rel="noopener">Help Net Security（8/31）</a><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a><a href="https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/" target="_blank" rel="noopener">PaperCut公式</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>McKesson — 影響を腫瘍／外科領域に絞り込み、ShinyHuntersは約2.84億件を継続主張（8/29更新）</h3>
-            <p>8/25検知の第三者アプリ経由侵害について、会社側はOncology &amp; MultispecialtyとMedical-Surgicalの顧客サブセットが対象で、不正活動は収束したとの合理的確信を表明。攻撃側はOkta vishing→Salesforce／Snowflake経由で約1TBと主張し、件数はユニーク患者数ではない点に注意が必要です。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/mckesson-discloses-breach-after-shinyhunters-claims-patient-data-theft/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://blog.gridinsoft.com/mckesson-data-breach-2026/" target="_blank" rel="noopener">Gridinsoft（8/29更新）</a></p>
+            <h3>McKesson — ShinyHuntersが約2.84億件窃取を主張、交渉期限が9/1に接近</h3>
+            <p>8/25検知の第三者アプリ経由侵害で、会社は腫瘍／外科領域の顧客サブセットが対象と説明。攻撃側はvishingでOktaを突破しSalesforce／Snowflakeから約1TBを持ち出したと主張し、Malwarebytesが8/31に整理。件数はユニーク患者数ではない点に注意が必要です。</p>
+            <p class="source"><a href="https://www.malwarebytes.com/blog/news/2026/08/mckesson-confirms-cyber-incident-after-shinyhunters-claims-patient-data-theft" target="_blank" rel="noopener">Malwarebytes（8/31）</a><a href="https://www.bleepingcomputer.com/news/security/mckesson-discloses-breach-after-shinyhunters-claims-patient-data-theft/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://www.securityweek.com/mckesson-confirms-data-breach-as-attacker-deadline-looms/" target="_blank" rel="noopener">SecurityWeek</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>CISA KEV — Linux Kernel CVE-2026-53362などの連邦対応期限が本日8/30</h3>
-            <p>8/27追加のownCloud不正認証、Linux Kernel、JFrog Artifactoryパストラバーサルのうち、KernelとownCloudは本日が期限。NetScaler CVE-2026-8452の8/29期限も直後で、BOD 26-04に沿った棚卸しが続きます。</p>
-            <p class="source"><a href="https://www.cisa.gov/news-events/alerts/2026/08/27/cisa-adds-three-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA（8/27追加）</a><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">KEV Catalog</a></p>
+            <h3>Kaspersky Endpoint — HardBreacher PoC公開、ベンダーは自動更新で修正と回答</h3>
+            <p>Nightmare Eclipse氏がKES 14.0.0.504向けの権限昇格PoCを公開。UIプロセス支配でSystem32へDLLを書くと主張し、不安定だと本人も明記。SecurityWeek取材に対しKasperskyは該当問題を自動更新で解消済みと回答しています。</p>
+            <p class="source"><a href="https://www.securityweek.com/nightmare-eclipse-drops-hardbreacher-kaspersky-product-exploit/" target="_blank" rel="noopener">SecurityWeek</a><a href="https://cybersecuritynews.com/hardbreacher-kaspersky-zero-day/" target="_blank" rel="noopener">Cyber Security News</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>PaperCut NG/MF — 緊急パッチ第2弾後のSAML／Card-ID照合不具合を調査中</h3>
-            <p>CVE-2026-81578とCVE-2026-82078の実害対応でRelease 2がv24〜26に公開済み。8/29には外部DBのカード番号照合とSAMLが想定どおり動かない報告を公式が受け、調査中と追記。公開面遮断とRelease 2適用は引き続き最優先です。</p>
-            <p class="source"><a href="https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/" target="_blank" rel="noopener">PaperCut公式掲示板</a><a href="https://www.bleepingcomputer.com/news/security/papercut-releases-second-emergency-patch-for-exploited-flaws/" target="_blank" rel="noopener">BleepingComputer</a></p>
+            <h3>Avast — PrettyPragueゼロデイPoCが公開、パッチ未確認（8/30〜31）</h3>
+            <p>同研究者系の公開で、サンドボックス経由の権限昇格によりSAMダンプとSYSTEMシェルが主張されています。CVE未採番でベンダー公式アドバイザリも未確認。GitHub上で急速にフォークが増え、二次配布への警戒が必要です。</p>
+            <p class="source"><a href="https://www.cyberkendra.com/2026/08/prettyprague-zero-day-exploit-hits.html" target="_blank" rel="noopener">Cyber Kendra</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>ベルリン州政府 — Rhysidaが約5.79TB窃取を主張、市長は身代金拒否（8/28〜30）</h3>
-            <p>約144万ファイル規模の主張に司法・緊急対応計画などが含まれると報じられ、30 BTC要求に対し市は支払わない方針。国際メディアが8/29〜30に追従し、独立検証は未了のままカウントダウンが続いています。</p>
-            <p class="source"><a href="https://securityaffairs.com/198064/cyber-crime/rhysida-ransomware-group-targets-berlin-government-ahead-of-vote.html" target="_blank" rel="noopener">Security Affairs</a><a href="https://tech-insider.org/rhysida-berlin-government-ransomware-breach-2026/" target="_blank" rel="noopener">Tech Insider</a></p>
+            <h3>Manchester Airports Group — FulcrumSecが約86GB窃取を主張（8/30）</h3>
+            <p>英最大の空港運営会社の顧客データ漏えいで、恐喝集団が約86GBと今後の渡航約20万件分も含まれると主張。Iterable API資格情報経由と語り、BleepingComputerが試料を検証。MAGは個別主張には答えず連絡済みと説明しています。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/fulcrumsec-claims-manchester-airports-hack-theft-of-86-gb-of-data/" target="_blank" rel="noopener">BleepingComputer（8/30）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>ZBT製ルーター — SPEAKINGSTONE／DARKLANTERNが未認証root実行（CVE-2026-74232／74233）</h3>
-            <p>VulnCheckが工場仕込みインプラント2種を開示。DARKLANTERNはWAN上UDPで任意コマンド、SPEAKINGSTONEはZBTクラウドへビーコン。白ラベル機器が米欧などに流通し、8/18〜21時点で203台のインターネット露出が観測されています。</p>
-            <p class="source"><a href="https://www.vulncheck.com/blog/zbt-darklantern-speakingstone" target="_blank" rel="noopener">VulnCheck</a><a href="https://cybernoz.com/china-made-zbt-routers-ship-with-two-implants-giving-unauthenticated-attackers-root-access/" target="_blank" rel="noopener">Cybernoz</a></p>
+            <h3>AWS ASR — AI Toolkitでカスタム修復を高速化、Inspector／GuardDuty／Macieも自動対応（8/31）</h3>
+            <p>Automated Security ResponseにAI駆動の修復生成と安全ガードレールを追加。Security Hub検知のメール／Slack／Jira／ServiceNow通知も拡張され、重大度フィルタと期限設定が可能になります。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/automated-security-response-adds-AI-toolkit/" target="_blank" rel="noopener">AWS What’s New（8/31）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>イエローハット — 予約システム不正アクセスで最大約180万人分の顧客情報流出恐れ</h3>
-            <p>WEB作業予約で8/18に検知。氏名・電話・メール・会員番号が対象で、クレジットカード・パスワード・車両情報は保持していないと説明。個人情報保護委員会への報告と警察相談を公式に公表しています。</p>
-            <p class="source"><a href="https://www.yellowhat.jp/information/yellowhat/202608.html" target="_blank" rel="noopener">イエローハット公式</a><a href="https://news.web.nhk/newsweb/na/nd-20260828de47071" target="_blank" rel="noopener">NHK</a></p>
+            <h3>ベルリン州政府 — Rhysidaが約5.79TB窃取を主張、市長は身代金拒否</h3>
+            <p>約144万ファイル規模の主張に司法・緊急対応計画などが含まれると報じられ、市は支払わない方針を維持。独立検証は未了のまま国際メディアの追報が続いています。</p>
+            <p class="source"><a href="https://securityaffairs.com/198064/cyber-crime/rhysida-ransomware-group-targets-berlin-government-ahead-of-vote.html" target="_blank" rel="noopener">Security Affairs</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>Citrix NetScaler CVE-2026-8452 — 連邦パッチ期限（8/29）直後、悪用継続に注意</h3>
-            <p>Gateway／AAA構成でweb shell設置が観測され、CISAがKEVに追加。期限翌日も未パッチ機器の棚卸しとBOD 26-04に沿った対応が求められます。</p>
-            <p class="source"><a href="https://www.cisa.gov/news-events/alerts/2026/08/26/cisa-adds-six-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a><a href="https://www.bleepingcomputer.com/news/security/cisa-hackers-now-exploiting-citrix-netscaler-rce-flaw-in-attacks/" target="_blank" rel="noopener">BleepingComputer</a></p>
+            <h3>イエローハット — 予約システム不正アクセスで最大約180万人分の流出恐れ</h3>
+            <p>WEB作業予約で8/18に検知。氏名・電話・メール・会員番号が対象で、カードやパスワード・車両情報は保持していないと説明。個情委への報告と警察相談を公式に公表しています。</p>
+            <p class="source"><a href="https://www.yellowhat.jp/information/yellowhat/202608.html" target="_blank" rel="noopener">イエローハット公式</a><a href="https://news.web.nhk/newsweb/na/nd-20260828de47071" target="_blank" rel="noopener">NHK</a></p>
           </div>
         </article>
       </div>
@@ -631,12 +631,12 @@
         <h2>日本国内の車番認識</h2>
         <span class="count">7 STORIES</span>
       </div>
-      <p class="note">本日は同日付けの新規一次発表が限られるため、セキュア販売開始の続報を軸に、直近のOSS・国内製品動向で補完しています。</p>
+      <p class="note">本日は同日付けの新規一次発表が限られるため、セキュア販売開始の続報を軸に、直近の国内製品・実証・OSS動向で補完しています。</p>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>セキュア — 認証率97％・導入コスト約1/3の車番認証システム販売開始（8/27、続報継続）</h3>
+            <h3>セキュア — 認証率97％・導入コスト約1/3の車番認証システム販売開始（8/27、続報）</h3>
             <p>光学22倍ズームと赤外線、グローバルシャッターで遠距離・夜間・移動中プレートにも対応。ご当地／外交官／自衛隊ナンバーも対象とし、荷待ち荷役2時間ルール需要を背景に財経新聞・IoTNEWSなどが続報しています。</p>
             <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000146.000052942.html" target="_blank" rel="noopener">PR TIMES（セキュア）</a><a href="https://www.zaikei.co.jp/article/20260828/867779.html" target="_blank" rel="noopener">財経新聞</a><a href="https://iotnews.jp/ai/275446/" target="_blank" rel="noopener">IoTNEWS</a></p>
           </div>
@@ -644,9 +644,9 @@
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>lipla-jp — 日本向けナンバー認識のOSSライブラリ（PyPI 0.2.0）</h3>
-            <p>EdgeCrafter Pose検出とPPOCRv6 OCRをONNXで動かし、PyTorch非依存。地名・分類・かな・一連番号を構造化して返し、MITライセンスで商用利用可能。8月公開の軽量実装として駐車場PoCなどに向きやすいです。</p>
-            <p class="source"><a href="https://github.com/ikeboo/Lipla-jp" target="_blank" rel="noopener">GitHub（Lipla-jp）</a><a href="https://pypi.org/project/lipla-jp/" target="_blank" rel="noopener">PyPI</a></p>
+            <h3>NEC×UrbanChain — 画像認識AIの降車検知と駐車場OS連携の実証を9月開始</h3>
+            <p>平面駐車場で「入場」だけでなく「降車」タイミングを起点に課金・安全確認を検証。福岡での実証を予定し、自動決済と人物・車両検知を組み合わせた次世代サービスモデルを探ります。</p>
+            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000001408.000078149.html" target="_blank" rel="noopener">PR TIMES（NEC）</a></p>
           </div>
         </article>
         <article class="item">
@@ -668,25 +668,25 @@
         <article class="item">
           <div class="rank">05</div>
           <div>
+            <h3>lipla-jp — 日本向けナンバー認識のOSSライブラリ（PyPI 0.2.0）</h3>
+            <p>EdgeCrafter Pose検出とPPOCRv6 OCRをONNXで動かし、PyTorch非依存。地名・分類・かな・一連番号を構造化して返し、MITライセンスで商用利用可能です。</p>
+            <p class="source"><a href="https://github.com/ikeboo/Lipla-jp" target="_blank" rel="noopener">GitHub（Lipla-jp）</a><a href="https://pypi.org/project/lipla-jp/" target="_blank" rel="noopener">PyPI</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">06</div>
+          <div>
             <h3>EyeTech LPR for ACAP — AXISカメラ内蔵の車番認識AI</h3>
             <p>ARTPEC8搭載カメラ上で認識し、ネットワーク負荷とPCコストを抑制。実験環境99％超・実環境97％超を公称し、WebHookやAXIS Camera Station連携でゲート／リスト照合を構築できます。</p>
             <p class="source"><a href="https://www.eyetech.jp/product/lpr-camera/" target="_blank" rel="noopener">アイテック公式</a></p>
           </div>
         </article>
         <article class="item">
-          <div class="rank">06</div>
-          <div>
-            <h3>DMP — Di1搭載エッジAIカメラ向けANPRソリューション</h3>
-            <p>業界初とされるFP4実装NPU「Di1」とZIA PLATEで、クラウド依存を抑えたリアルタイム車番認識をエッジ完結。多様なプレート形式への適応も視野に入れています。</p>
-            <p class="source"><a href="https://www.dmprof.com/ja/news/20260422-anpr-ja/" target="_blank" rel="noopener">DMP公式</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>日本ANPR市場 — 2026〜2031年にCAGR14％超の成長予測</h3>
-            <p>高速道路・料金所・交差点への導入やAI OCR・エッジ・5G連携が成長要因と整理。駐車場・公共安全への波及と、プライバシー・設置コスト・標準化が課題として挙げられています。</p>
-            <p class="source"><a href="https://www.marketresearch.jp/bna-mrcjp3302/" target="_blank" rel="noopener">MarketResearch.jp</a></p>
+            <h3>DMP — Di1搭載エッジAIカメラ向けANPRソリューション</h3>
+            <p>FP4実装NPU「Di1」とZIA PLATEで、クラウド依存を抑えたリアルタイム車番認識をエッジ完結。多様なプレート形式への適応も視野に入れています。</p>
+            <p class="source"><a href="https://www.dmprof.com/ja/news/20260422-anpr-ja/" target="_blank" rel="noopener">DMP公式</a></p>
           </div>
         </article>
       </div>
@@ -702,57 +702,57 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>OpenAI — SpaceX買収後のCursor向けモデル提供を11/12に打ち切る方針（8/28〜30報道）</h3>
-            <p>公式ブログで契約解消を通知し、今後モデルも供給しないと表明。理由はSpaceX側の契約遵守への不信。CEOのTruell氏はXで「OpenAIモデルはトラフィックの約5％」とし交渉継続を投稿。Reuters／CNBCが追報しています。</p>
-            <p class="source"><a href="https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/" target="_blank" rel="noopener">OpenAI公式</a><a href="https://www.cnbc.com/2026/08/29/openai-cursor-spacex-model-access.html" target="_blank" rel="noopener">CNBC</a><a href="https://www.reuters.com/business/media-telecom/openai-end-partnership-with-spacexs-cursor-2026-08-29/" target="_blank" rel="noopener">Reuters（X反応）</a></p>
+            <h3>Claude Code — 週次上限「恒久+25％」は現行比で実質約17％減（9/14切替）</h3>
+            <p>Anthropicは標準週次上限を恒久的に25％引き上げると発表しつつ、現行の一時+50％解除後は実質約17％減になると自ら追記。ClaudeDevsのX投稿が発端となり、削除・再投稿の経緯をBleepingComputerなどが整理しています。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://www.macobserver.com/news/anthropic-raises-claude-code-weekly-limits-by-25-for-paid-plans/" target="_blank" rel="noopener">The Mac Observer（X反応）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Anthropic — Cursor向けClaude計算資源の増強を表明、週次上限も見直し報道</h3>
-            <p>共同創業者Tom Brown氏が、CursorはClaude 3.5以来の信頼パートナーだと応じ、計算資源を増やし続けると発言。Digital TrendsなどはClaude Codeの週次上限恒久+25％（9/14〜）報道も併記し、モデル供給の再編が加速しています。</p>
-            <p class="source"><a href="https://www.digitaltrends.com/computing/stung-by-openai-pulling-gpt-models-from-cursor-anthropic-offers-a-timely-lifeline-with-higher-claude-limits/" target="_blank" rel="noopener">Digital Trends</a><a href="https://wccftech.com/anthropic-pounces-as-openai-abandons-spacexs-cursor-vowing-to-increase-claude-compute-even-as-openai-cites-contract-distrust/" target="_blank" rel="noopener">Wccftech</a></p>
+            <h3>OpenAI — SpaceX買収後のCursor向けモデル提供を11/12に打ち切る方針</h3>
+            <p>公式ブログで契約解消と今後のモデル非供給を通知。CEOのTruell氏はXで「OpenAIモデルはトラフィックの約5％」とし交渉継続を投稿。Reuters／CNBCが追報し、マルチモデルIDEの供給リスクが顕在化しています。</p>
+            <p class="source"><a href="https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/" target="_blank" rel="noopener">OpenAI公式</a><a href="https://www.cnbc.com/2026/08/29/openai-cursor-spacex-model-access.html" target="_blank" rel="noopener">CNBC</a><a href="https://www.reuters.com/business/media-telecom/openai-end-partnership-with-spacexs-cursor-2026-08-29/" target="_blank" rel="noopener">Reuters（X反応）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Claude Code v2.1.251 — モデル切替フックとシンボリックリンク権限修正（8/28）</h3>
-            <p>PreModel／PostModelSwitchで切替の遮断・確認・注釈が可能に。Remote Controlへのサブエージェント可視化やプロンプトキャッシュ統計も追加し、権限チェック後のsymlink差し替え回避などセキュリティ修正が厚いリリースです。</p>
-            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.251" target="_blank" rel="noopener">Claude Code v2.1.251</a><a href="https://buttondown.com/ai-tldr/archive/aitldr-daily-digest-august-29-2026/" target="_blank" rel="noopener">AI/TLDR（8/29）</a></p>
+            <h3>Anthropic — Cursor向けClaude計算資源の増強を表明</h3>
+            <p>共同創業者Tom Brown氏が、CursorはClaude 3.5以来の信頼パートナーだと応じ、計算資源を増やし続けると発言。OpenAI供給打ち切り報道と同タイミングで、モデル供給の再編が加速しています。</p>
+            <p class="source"><a href="https://www.digitaltrends.com/computing/stung-by-openai-pulling-gpt-models-from-cursor-anthropic-offers-a-timely-lifeline-with-higher-claude-limits/" target="_blank" rel="noopener">Digital Trends</a><a href="https://wccftech.com/anthropic-pounces-as-openai-abandons-spacexs-cursor-vowing-to-increase-claude-compute-even-as-openai-cites-contract-distrust/" target="_blank" rel="noopener">Wccftech</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>OpenAI Codex — Persistent modeを試験、セッション横断で自律継続（報道）</h3>
-            <p>CLIのreasoning設定に「眠らされるまで働き続ける」モードが現れ、フォローアップ生成や能動メッセージも記述。WIRED系をTHE DECODERが追従し、外部操作は依然ユーザー承認が必要で即時公開予定はないと説明されています。</p>
-            <p class="source"><a href="https://www.wired.com/story/openai-is-developing-a-persistent-ai-agent/" target="_blank" rel="noopener">WIRED</a><a href="https://the-decoder.com/always-on-and-self-starting-ai-agents-might-be-openais-next-big-play/" target="_blank" rel="noopener">THE DECODER</a></p>
+            <h3>Claude Sonnet 5 — API導入価格$2/$10を恒久化し、9/1値上げを撤回</h3>
+            <p>当初8/31までの導入価格とされていたレートを標準価格に格上げ。プラットフォーム文書とClaude Codeのモデル表示更新が一次根拠で、トークナイザ差による実効コスト増には別途注意が必要です。</p>
+            <p class="source"><a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener">Anthropic Pricing</a><a href="https://www.getclaudeskills.com/blog/claude-sonnet-5-pricing-permanent" target="_blank" rel="noopener">Get Claude Skills</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
             <h3>Cursor Origin — エージェント向けコードホストの早期ベータ続報</h3>
-            <p>有料プラン向けにリポジトリ・PR・コード閲覧・GitHub同期を提供。GitHub障害と同日のロールアウトが話題となり、X上でも「GitHub依存のヘッジ」として言及されたとInfoQが整理しています。</p>
-            <p class="source"><a href="https://www.infoq.com/news/2026/08/cursor-origin-alternative-github/" target="_blank" rel="noopener">InfoQ</a><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog</a></p>
+            <p>有料プラン向けにリポジトリ・PR・コード閲覧・GitHub同期を提供。GitHub障害と同日ロールアウトが話題となり、X上でも「GitHub依存のヘッジ」として言及されたとInfoQが整理しています。</p>
+            <p class="source"><a href="https://www.infoq.com/news/2026/08/cursor-origin-alternative-github/" target="_blank" rel="noopener">InfoQ</a><a href="https://venturebeat.com/infrastructure/cursor-launches-origin-code-hosting-platform-as-github-outage-exposes-opening-in-ai-coding-race" target="_blank" rel="noopener">VentureBeat</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>JetBrains調査 — Claude Codeが職場採用39％で首位、Copilotは21％</h3>
-            <p>15,000人超のDeveloper Ecosystem Survey 2026で、Claude Codeが半年で18％→39％。Codexは3％→16％と急伸、Cursor採用は18％→12％と後退。エージェント週次利用は90％に達したと公式が報告しています。</p>
-            <p class="source"><a href="https://blog.jetbrains.com/research/2026/08/ai-coding-agent-adoption-2026/" target="_blank" rel="noopener">JetBrains Blog</a></p>
+            <h3>Claude Code v2.1.251 — モデル切替フックとシンボリックリンク権限修正</h3>
+            <p>PreModel／PostModelSwitchで切替の遮断・確認・注釈が可能に。Remote Controlへのサブエージェント可視化やプロンプトキャッシュ統計も追加し、権限チェック後のsymlink差し替え回避などセキュリティ修正が厚いです。</p>
+            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.251" target="_blank" rel="noopener">Claude Code v2.1.251</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Slack Code — エージェント作業用コードチャネルを製品展開</h3>
-            <p>Claude／Devin／GitHub Copilot／Vercelをメンションすると専用チャネルが立ち上がり、diffやHTMLプレビューをチームで監督。チャット起点のマルチプレイヤー開発がサービス標準になります。</p>
-            <p class="source"><a href="https://slack.com/blog/news/slack-code-channels-for-agents" target="_blank" rel="noopener">Slack Blog</a><a href="https://docs.slack.dev/changelog/2026/08/20/slack-code" target="_blank" rel="noopener">Slack Developers</a></p>
+            <h3>JetBrains調査 — Claude Codeが職場採用39％で首位、Copilotは21％</h3>
+            <p>15,000人超のDeveloper Ecosystem Survey 2026で、Claude Codeが半年で18％→39％。Codexは3％→16％と急伸、Cursor採用は18％→12％と後退。エージェント週次利用は90％に達したと公式が報告しています。</p>
+            <p class="source"><a href="https://blog.jetbrains.com/research/2026/08/ai-coding-agent-adoption-2026/" target="_blank" rel="noopener">JetBrains Blog</a></p>
           </div>
         </article>
       </div>
@@ -768,21 +768,13 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>PVS-Studio 8.00 — JavaScript／TypeScript／Go向け解析器とWebStorm／GoLandプラグイン（8/28）</h3>
-            <p>メジャー版でJS／TS／Goの静的解析とCLI、IDEプラグインを追加。VS Codeプラグインも新解析器に対応し、MISRA C++ 2023やコンパイラ対応の拡大が並び、ツールチェーン面の大きな更新です。</p>
-            <p class="source"><a href="https://pvs-studio.com/en/blog/posts/1406/" target="_blank" rel="noopener">PVS-Studio Blog</a></p>
+            <h3>Servo 0.5 — Rust製ブラウザエンジンが公開、2Dキャンバス高速化とDuckDuckGo描画修正（8/31）</h3>
+            <p>7月分488コミットを束ねた月次版。マルチスレッド2Dキャンバスと最大約10倍のテキスト描画、Linux AArch64バイナリ、Android 10+対応を追加。Phoronixと公式ブログが同日に詳細を掲載しています。</p>
+            <p class="source"><a href="https://servo.org/blog/2026/08/31/july-in-servo/" target="_blank" rel="noopener">Servo Blog（8/31）</a><a href="https://www.phoronix.com/news/Servo-0.5-Released" target="_blank" rel="noopener">Phoronix</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
-          <div>
-            <h3>Pulumi v3.260.0 — Go 1.27対応とstate promoteなど（8/28）</h3>
-            <p>Go SDKの1.27対応に加え、ステート断片をプログラムコード化する<code>pulumi state promote</code>を追加。Python型注釈・コンポーネント生成の修正も含み、IaCツールチェーンの追随が続いています。</p>
-            <p class="source"><a href="https://github.com/pulumi/pulumi/releases/tag/v3.260.0" target="_blank" rel="noopener">Pulumi v3.260.0</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">03</div>
           <div>
             <h3>Go 1.27 — ジェネリックメソッドと小オブジェクト割当の高速化</h3>
             <p>型上の独立した型パラメータ付きメソッドや埋め込みフィールド初期化が言語面の目玉。サイズ特化アロケータで小割当が最大約30%速くなるとされ、encoding/json/v2やcrypto/mldsaも標準ライブラリに入ります。</p>
@@ -790,23 +782,23 @@
           </div>
         </article>
         <article class="item">
+          <div class="rank">03</div>
+          <div>
+            <h3>Python 3.15.0rc1 — 候補版フェーズ、RC2は9/1予定</h3>
+            <p>バグ修正のみが許容されるRC期に入り、サードパーティは3.15ホイール公開が推奨。Lambdaのpython3.15プレビューとも連動し、互換性検証ウィンドウが広がっています。</p>
+            <p class="source"><a href="https://blog.python.org/2026/08/python-3150-rc1/" target="_blank" rel="noopener">Python Insider</a></p>
+          </div>
+        </article>
+        <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Node.js 26.8.0／26.8.1 — Current系の機能追加と版表記修正</h3>
-            <p>8/26のCurrent更新に続く帯域外修正で誤alpha表記を解消。ZipEntry／AES-SIV／sqlite StatementSync.closeなど多数のSEMVER-MINORが直前リリースに含まれています。</p>
-            <p class="source"><a href="https://nodejs.org/en/blog/release/v26.8.0" target="_blank" rel="noopener">Node.js 26.8.0</a><a href="https://nodejs.org/en/blog/release/v26.8.1" target="_blank" rel="noopener">Node.js 26.8.1</a></p>
+            <h3>Node.js 26.8.1／24.20.0 — Currentの版表記修正とLTS更新（8/26）</h3>
+            <p>26.8.1は誤alpha表記を解消する帯域外修正。同日の24.20.0 KryptonはLTS系列の機能取り込みで、Current／LTS双方の追随が続いています。</p>
+            <p class="source"><a href="https://nodejs.org/en/blog/release/v26.8.1" target="_blank" rel="noopener">Node.js 26.8.1</a><a href="https://nodejs.org/en/blog/release/v24.20.0" target="_blank" rel="noopener">Node.js 24.20.0</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
-          <div>
-            <h3>AWS Lambda — Node.js 26／Python 3.15 マネージドランタイムをパブリックプレビュー</h3>
-            <p>GA前に破壊的変更を許容する新プレビュー枠を導入。nodejs26.x／python3.15識別子はGA時にそのまま昇格予定で、上流安定版後の正式化を想定しています。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-lambda-node-js-python-public-preview/" target="_blank" rel="noopener">AWS What’s New</a><a href="https://aws.amazon.com/blogs/compute/introducing-public-preview-runtimes-on-aws-lambda-starting-with-node-js-26-and-python-3-15/" target="_blank" rel="noopener">AWS Compute Blog</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">06</div>
           <div>
             <h3>Rust 1.98.0 — algebraic float／format_into など安定化（8/20）</h3>
             <p>浮動小数の代数的演算メソッドで再結合・ベクトル化を明示opt-in。整数の format_into なども安定化し、<code>rustup update stable</code> で即利用できます。</p>
@@ -814,11 +806,19 @@
           </div>
         </article>
         <article class="item">
+          <div class="rank">06</div>
+          <div>
+            <h3>PVS-Studio 8.00 — JavaScript／TypeScript／Go向け解析器とIDEプラグイン（8/28）</h3>
+            <p>メジャー版でJS／TS／Goの静的解析とCLI、WebStorm／GoLandプラグインを追加。VS Codeプラグインも新解析器に対応し、ツールチェーン面の大きな更新です。</p>
+            <p class="source"><a href="https://pvs-studio.com/en/blog/posts/1406/" target="_blank" rel="noopener">PVS-Studio Blog</a></p>
+          </div>
+        </article>
+        <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Python 3.15.0rc1 — 候補版フェーズ、RC2は9/1予定</h3>
-            <p>バグ修正のみが許容されるRC期に入り、サードパーティは3.15ホイール公開が推奨。Lambdaのpython3.15プレビューとも連動し、互換性検証ウィンドウが広がっています。</p>
-            <p class="source"><a href="https://blog.python.org/2026/08/python-3150-rc1/" target="_blank" rel="noopener">Python Insider</a></p>
+            <h3>AWS Lambda — Node.js 26／Python 3.15 マネージドランタイムをパブリックプレビュー</h3>
+            <p>GA前に破壊的変更を許容する新プレビュー枠を導入。nodejs26.x／python3.15識別子はGA時にそのまま昇格予定で、上流安定版後の正式化を想定しています。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-lambda-node-js-python-public-preview/" target="_blank" rel="noopener">AWS What’s New</a><a href="https://aws.amazon.com/blogs/compute/introducing-public-preview-runtimes-on-aws-lambda-starting-with-node-js-26-and-python-3-15/" target="_blank" rel="noopener">AWS Compute Blog</a></p>
           </div>
         </article>
       </div>
@@ -834,29 +834,37 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>OpenAI×Cursor — 開発者向けモデル流通の契約打ち切りが開発基盤に波及（8/28〜30）</h3>
-            <p>エディタ経由のモデル供給が買収を契機に打ち切られる事例として、マルチモデルIDEの依存リスクが顕在化。BYOKはローカルChat／Agentに限定されるとの解説もあり、サービス選定の再点検材料になります。</p>
-            <p class="source"><a href="https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/" target="_blank" rel="noopener">OpenAI公式</a><a href="https://www.cnbc.com/2026/08/29/openai-cursor-spacex-model-access.html" target="_blank" rel="noopener">CNBC</a></p>
+            <h3>AWS×Microsoft Azure — Interconnect／Multicloud Interconnectがパブリックプレビュー（8/31）</h3>
+            <p>オープンAPI仕様に基づき、両クラウド間のプライベート高速接続をオンデマンドで構築可能に。AWS側はVirginia／N.California／Sydney／Frankfurtでプレビュー開始し、Azure／OCI／Google Cloudへの接続体験を揃える方針です。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-announces-AWS-interconnect-multicloud-microsoft-azure-preview/" target="_blank" rel="noopener">AWS What’s New（8/31）</a><a href="https://azure.microsoft.com/en-us/blog/introducing-azure-multicloud-interconnect-for-aws/" target="_blank" rel="noopener">Microsoft Azure Blog</a><a href="https://aws.amazon.com/blogs/networking-and-content-delivery/aws-and-microsoft-azure-collaborate-to-expand-multicloud-networking/" target="_blank" rel="noopener">AWS Networking Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Amazon Aurora MySQL 3.13 — MySQL 8.0.45互換が一般提供開始（8/28）</h3>
-            <p>コミュニティ修正とAurora固有改善を含むマイナー版。自動マイナーアップグレードとOrganizationsの段階ロールアウト方針で運用でき、全Aurora MySQL提供リージョンで利用可能です。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-aurora-mysql-313-available/" target="_blank" rel="noopener">AWS What’s New</a></p>
+            <h3>Instagram — AI生成人物のプロフィールに表示ラベル必須、未表示はリーチ制限（8/31）</h3>
+            <p>従来の任意「AI creator」を「AI-generated profile」に置き換え、合成人間を主役にするアカウントを対象に。未表示はReels／Exploreでの非フォロワー推奨を制限するとEngadgetなどが報じています。</p>
+            <p class="source"><a href="https://www.engadget.com/2246914/instagram-will-demote-ai-generated-influencers-if-they-dont-clearly-label-their-account/" target="_blank" rel="noopener">Engadget（8/31）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Meta Muse Image API — 生成1枚0.01ドルでModel APIに公開</h3>
-            <p>テキスト生成・編集・複数参照の合成をOpenAI互換エンドポイントで提供。Alexandr Wang氏がXで価格を告知し、RuntimeWireなどが追報。推理強度やツール利用でも単価は固定と公式ドキュメントが説明しています。</p>
-            <p class="source"><a href="https://developer.meta.com/ai/resources/blog/build-with-muse-Image/" target="_blank" rel="noopener">Meta Developer Blog</a><a href="https://runtimewire.com/article/meta-ships-muse-image-api-at-one-cent-per-image" target="_blank" rel="noopener">RuntimeWire（X反応）</a></p>
+            <h3>AWS ASR — AI Toolkitとマルチチャネル通知を追加（8/31）</h3>
+            <p>Security Hub連携の自動修復にAI生成フローを導入し、Email／Slack／Jira／ServiceNow通知も拡張。運用側のトリアージ負荷を下げつつ、IaC断片付きの是正導線を公式が打ち出しています。</p>
+            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/automated-security-response-adds-AI-toolkit/" target="_blank" rel="noopener">AWS What’s New</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
+          <div>
+            <h3>Meta Muse Image API — 生成1枚0.01ドルでModel APIに公開</h3>
+            <p>テキスト生成・編集・複数参照の合成をOpenAI互換エンドポイントで提供。Alexandr Wang氏がXで価格を告知し、RuntimeWireなどが追報。推理強度やツール利用でも単価は固定と公式が説明しています。</p>
+            <p class="source"><a href="https://developer.meta.com/ai/resources/blog/build-with-muse-Image/" target="_blank" rel="noopener">Meta Developer Blog</a><a href="https://runtimewire.com/article/meta-ships-muse-image-api-at-one-cent-per-image" target="_blank" rel="noopener">RuntimeWire（X反応）</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">05</div>
           <div>
             <h3>Slack — Add to Slackで10のAI作成基盤からワンクリック配備</h3>
             <p>LangChain／OpenAI／Vercel／n8nなどと連携し、カスタムエージェントをチャネルへ即配備。Webhookや独自認証の手間を減らし、Marketplace経由で非エンジニアでも導入しやすい経路を公式が打ち出しています。</p>
@@ -864,34 +872,26 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">05</div>
-          <div>
-            <h3>X Ads MCP — Grok／Claude Code向けに広告運用23ツールを公開</h3>
-            <p>ads-api.x.com/mcp 経由で読み書き可能な広告ツールを提供。キャンペーン作成は一時停止状態で始まり、自動課金は人間確認に残す設計です。エージェントによる運用自動化の一端を示しています。</p>
-            <p class="source"><a href="https://ppc.land/x-ads-mcp-gives-ai-agents-write-access-to-live-campaigns/" target="_blank" rel="noopener">PPC Land</a><a href="https://www.explainx.ai/blog/x-ads-mcp-ai-agent-campaign-management-august-2026" target="_blank" rel="noopener">explainx.ai</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">06</div>
           <div>
             <h3>Slack Code — 人とエージェントが共に作るコードチャネル</h3>
             <p>プロジェクトチャネルでエージェントをメンションすると一時的なコードチャネルが生成され、計画・diff・プレビューをチームで監督。Anthropic／Cognition／GitHub／Vercelが初期対応です。</p>
-            <p class="source"><a href="https://slack.com/blog/news/slack-code-channels-for-agents" target="_blank" rel="noopener">Slack Blog</a></p>
+            <p class="source"><a href="https://slack.com/blog/news/slack-code-channels-for-agents" target="_blank" rel="noopener">Slack Blog</a><a href="https://docs.slack.dev/changelog/2026/08/20/slack-code" target="_blank" rel="noopener">Slack Developers</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>AWS Lambda — Node.js 26／Python 3.15 プレビューランタイム</h3>
-            <p>本番SLA対象外のパブリックプレビュー枠で先行検証を開放。IaC／観測ツールベンダーにも互換確認の時間を与える意図が公式に説明されています。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-lambda-node-js-python-public-preview/" target="_blank" rel="noopener">AWS What’s New</a></p>
+            <h3>X Ads MCP — Grok／Claude Code向けに広告運用23ツールを公開</h3>
+            <p>ads-api.x.com/mcp 経由で読み書き可能な広告ツールを提供。キャンペーン作成は一時停止状態で始まり、自動課金は人間確認に残す設計です。</p>
+            <p class="source"><a href="https://ppc.land/x-ads-mcp-gives-ai-agents-write-access-to-live-campaigns/" target="_blank" rel="noopener">PPC Land</a><a href="https://www.explainx.ai/blog/x-ads-mcp-ai-agent-campaign-management-august-2026" target="_blank" rel="noopener">explainx.ai</a></p>
           </div>
         </article>
       </div>
     </section>
 
     <footer>
-      <p>発行: 2026-08-30（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X／SNSの反応は報道で確認できた範囲のみ追記（Cursor CEO Truell氏の投稿、Meta Muse ImageのAlexandr Wang氏投稿、Anthropic Tom Brown氏の応答）。</p>
+      <p>発行: 2026-08-31（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X／SNSの反応は報道で確認できた範囲のみ追記（ClaudeDevsの週次上限投稿、Cursor CEO Truell氏、Meta Muse ImageのAlexandr Wang氏投稿）。</p>
       <p>本ページは自動生成の朝刊ダイジェストです。投資・運用判断の前に必ず一次情報をご確認ください。</p>
     </footer>
   </div>
