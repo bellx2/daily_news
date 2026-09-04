@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>技術ニュースダイジェスト 2026-09-03</title>
+  <title>技術ニュースダイジェスト 2026-09-04</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -520,13 +520,12 @@
     }
   </style>
 </head>
-
 <body>
   <header class="masthead">
     <div class="mast-inner">
       <div class="edition-bar">
         <span class="live"><i aria-hidden="true"></i>今朝のダイジェスト</span>
-        <span>2026年9月3日 / 過去24時間</span>
+        <span>2026年9月4日 / 過去24時間</span>
         <span>公式・専門メディア中心</span>
       </div>
       <h1 class="brand">
@@ -540,7 +539,7 @@
   <div class="wrap">
     <div class="briefing">
       <p class="kicker">本日の見通し</p>
-      <p>本日の軸は、Elementor Proの実悪用（CVE-2026-32475）、CISAがSonicWall／JFrog等7件をKEV追加、Rust 1.98.1のvtable誤生成修正、Cloudflare上のCursor Cloud Agents、Gemini 3.8 FlashとMeta Muse Spark 1.3です。車番認識は同日の新規一次発表が乏しく、セキュア販売開始とセーフィー／NEC実証などで補完しています。</p>
+      <p>本日の軸は、CrowdStrike Falconの特権昇格ゼロデイ「FalconFlank」、Chrome V8の実悪用ゼロデイ（CVE-2026-85046）、PostgreSQLの長期潜伏欠陥「PostGREShell」、Google Workspaceの音声Gemini（Gmail／Docs／Keep Live）、Cloudflareの脆弱性発見・修復サービスです。車番認識は同日の新規一次発表が乏しく、シャープ受注開始・NEC実証・セーフィー／セキュアなどで補完しています。</p>
     </div>
 
     <nav class="toc" aria-label="テーマ一覧">
@@ -561,65 +560,65 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Elementor Pro — CVE-2026-32475が実環境で悪用、Webシェル投入</h3>
-            <p>未認証の任意ファイルアップロードからRCEに至る欠陥で、4.2.1以前が対象。Wordfenceは公開日（8/19）から約19万件超の攻撃を遮断し、BleepingComputerが9/3に整理。修正は4.2.2以降で、<code>/wp-content/uploads/elementor/forms/</code>内のPHPを点検する必要があります。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/" target="_blank" rel="noopener">BleepingComputer（9/3）</a><a href="https://patchstack.com/articles/critical-unauthenticated-file-upload-to-rce-in-elementor-pro-plugin/" target="_blank" rel="noopener">Patchstack</a></p>
+            <h3>CrowdStrike Falcon — 「FalconFlank」特権昇格ゼロデイが公開</h3>
+            <p>研究者Nightmare Eclipse／Chaotic Eclipseが、Office悪意マクロ除去機能を悪用してSYSTEM権限を得るPoCを公開。CVE未採番のまま、CrowdStrikeは調査中とし「Microsoft Office File Suspicious Macro Removal」ポリシーの無効化を案内しています。Cloud Anti-malware for Microsoft Office Files側の防御は継続すると説明しています。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/new-crowdstrike-falconflank-zero-day-grants-system-privileges/" target="_blank" rel="noopener">BleepingComputer（9/4）</a><a href="https://www.truesec.com/hub/blog/privilege-escalation-vulnerability-in-falcon-crowdstrike" target="_blank" rel="noopener">Truesec（9/4）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>CISA — SonicWall／JFrog／Switchvoxなど7件をKEV追加（9/2）</h3>
-            <p>CVE-2026-83548／83549（SMA1000）、CVE-2026-82329（Artifactory）、CVE-2026-9586（Switchvox）などをカタログ化。連邦機関の対応期限は多くが9/5で、悪用確認済み製品のパッチ優先度が一段上がりました。</p>
-            <p class="source"><a href="https://www.cisa.gov/news-events/alerts/2026/09/02/cisa-adds-seven-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA Alert（9/2）</a><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">KEV Catalog</a></p>
+            <h3>Google Chrome — CVE-2026-85046（V8型混乱）が実悪用、安定版を緊急更新</h3>
+            <p>2026年6本目のChrome実悪用ゼロデイ。サンドボックス内での任意コード実行につながるHigh深刻度で、152.0.7977.82/.83（Win/Mac）および152.0.7977.82（Linux）へ更新。同ビルドで計12件のセキュリティ修正が同梱されています。</p>
+            <p class="source"><a href="https://chromereleases.googleblog.com/2026/09/stable-channel-update-for-desktop_01882797386.html" target="_blank" rel="noopener">Chrome Releases（9/3）</a><a href="https://www.helpnetsecurity.com/2026/09/04/google-chrome-zero-day-cve-2026-85046/" target="_blank" rel="noopener">Help Net Security（9/4）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>SonicWall SMA1000 — SSRF＋コマンド注入チェーンが継続悪用</h3>
-            <p>未認証SSRF（CVSS 10.0）と管理コンソールのOSコマンド注入（7.8）を連鎖。修正は12.4.3-03526／12.5.0-02952以降で、ワークアラウンドなし。Network World／Cybersecurity Diveが9/2に追報しています。</p>
-            <p class="source"><a href="https://www.sonicwall.com/support/notices/product-notice-sma-1000-series-affected-by-multiple-vulnerabilities-snwlid-2026-0016/kA1VN000002AXmQ0AW" target="_blank" rel="noopener">SonicWall公式</a><a href="https://www.networkworld.com/article/4217671/sonicwall-reports-two-major-security-holes-under-active-exploit.html" target="_blank" rel="noopener">Network World（9/2）</a></p>
+            <h3>PostgreSQL — CVE-2026-6471「PostGREShell」、Replication権限からDB／サーバ乗っ取り</h3>
+            <p>論理デコードの認可欠落で、Replication権限からRCE・恒久的スーパーユーザー化・バックドア仕込みが可能。9.4〜18系が影響し、18.6／17.11／16.15／15.19／14.24で修正。Cyeraの報告をSecurityWeekが9/4に整理しています。</p>
+            <p class="source"><a href="https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/" target="_blank" rel="noopener">SecurityWeek（9/4）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Microsoft Exchange — CVE-2026-62911未パッチが約2.2万台</h3>
-            <p>Shadowserverの日次スキャンで約21,899台が残存し、米独が最多。capture-replayによる認証回避で、NCSC-NLは実用エクスプロイトの流通を警告。2016／2019はESU加入のみ修正対象で、ESU自体も2026年10月終了予定です。</p>
-            <p class="source"><a href="https://www.helpnetsecurity.com/2026/09/02/microsoft-exchange-cve-2026-62911-critical-authentication-bypass-flaw/" target="_blank" rel="noopener">Help Net Security（9/2）</a><a href="https://www.bleepingcomputer.com/news/security/nearly-22-000-microsoft-exchange-servers-vulnerable-to-hijack-attacks/" target="_blank" rel="noopener">BleepingComputer</a></p>
+            <h3>Elementor Pro — CVE-2026-32475の大規模悪用が継続（Wordfence約19万件遮断）</h3>
+            <p>未認証のファイルアップロード配列検証抜けからPHPウェブシェル投入に至る欠陥。4.2.1以前が対象で、修正は4.2.2。The Hacker NewsはSuper Forms欠陥と合わせ44万件超の試行も報じています。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/" target="_blank" rel="noopener">BleepingComputer（9/3）</a><a href="https://thehackernews.com/2026/09/over-440000-exploit-attempts-target.html" target="_blank" rel="noopener">The Hacker News</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>All-in-One WP Migration — CVE-2026-19949、未更新が約320万サイト</h3>
-            <p>アーカイブ復元まわりの二次SQLインジェクション（CVSS 8.8）。trackback経由で秘密鍵を露出し、悪意ある.wpress取り込みからRCEへ。7.110で修正済みですが、9/3時点で更新率は約35％にとどまります。</p>
-            <p class="source"><a href="https://www.securityweek.com/over-3-million-wordpress-sites-affected-by-migration-plugin-vulnerability/" target="_blank" rel="noopener">SecurityWeek</a></p>
+            <h3>CISA — SonicWall／JFrog／Switchvoxなど7件をKEV追加、期限は多くが9/5</h3>
+            <p>CVE-2026-83548／83549（SMA1000）、CVE-2026-82329（Artifactory）、CVE-2026-9586（Switchvox）などをカタログ化。BOD 26-04に基づき、Starlette／LiteLLM以外は連邦機関の対応期限が9/5です。</p>
+            <p class="source"><a href="https://www.cisa.gov/news-events/alerts/2026/09/02/cisa-adds-seven-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA Alert（9/2）</a><a href="https://thehackernews.com/2026/09/cisa-adds-seven-exploited-flaws-as.html" target="_blank" rel="noopener">The Hacker News（9/3）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Langflow — CVE-2026-0768の未認証RCEでAPI鍵窃取が継続</h3>
-            <p>カスタムコンポーネント検証不備で任意Python実行が可能。攻撃者はOPENAI／AWS鍵やSSH確認を行い、1.4.2以前が対象。SecurityAffairs（9/2）と国内メディア（9/3）が続報しています。</p>
-            <p class="source"><a href="https://securityaffairs.com/198270/hacking/hackers-target-langflow-in-cve-2026-0768-attacks.html" target="_blank" rel="noopener">SecurityAffairs（9/2）</a><a href="https://blackhatnews.tokyo/archives/136126" target="_blank" rel="noopener">TokyoBlackHatNews（9/3）</a></p>
+            <h3>SonicWall SMA1000 — SSRF（CVSS 10.0）＋OSコマンド注入が継続悪用</h3>
+            <p>未認証SSRFと管理コンソール側のコマンド注入がKEV入り。逆シェルやクリプトマイナー投入の観測も報じられており、インターネット公開ゲートウェイの優先パッチ対象です。</p>
+            <p class="source"><a href="https://www.cisa.gov/news-events/alerts/2026/09/02/cisa-adds-seven-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a><a href="https://www.thecybersignal.com/cisa-kev-7-flaws-sonicwall-cve-2026-83548-reverse-shells-crypto-miners-2026/" target="_blank" rel="noopener">The CyberSignal（9/3）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>JFrog Artifactory — CVE-2026-82329で管理者トークン偽造が悪用</h3>
-            <p>自己管理・既定構成の未認証認証回避（CVSS 9.8）。watchTowrが管理者トークン発行の悪用を観測し、CISAもKEVへ追加。修正版は7.111.21／7.117.28／7.125.20／7.133.29／7.146.38／7.161.20です。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-jfrog-artifactory-flaw-to-forge-admin-tokens/" target="_blank" rel="noopener">BleepingComputer（9/2）</a></p>
+            <h3>JFrog Artifactory／Sangoma Switchvox — 認証不備とSQLiが実戦投入</h3>
+            <p>CVE-2026-82329とCVE-2026-9586は、Horizon3.aiやwatchTowrの観測どおり逆シェルや管理者トークン発行に使われたとしてKEV入り。社内パッケージ基盤とIP-PBXの両方で即時点検が必要です。</p>
+            <p class="source"><a href="https://thehackernews.com/2026/09/cisa-adds-seven-exploited-flaws-as.html" target="_blank" rel="noopener">The Hacker News（9/3）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>さくらインターネット — 不正アクセス影響が136万アカウント規模に拡大（続報）</h3>
-            <p>レンタルサーバ一部への侵入に加え、販売管理システムへのアクセス疑いが判明。東洋経済オンラインが9/2に整理し、ハッシュ化パスワードへの到達可能性と、二事象の関連未確認を伝えています。</p>
-            <p class="source"><a href="https://news.infoseek.co.jp/article/toyokeizai_20260902_956359/" target="_blank" rel="noopener">東洋経済／Infoseek（9/2）</a></p>
+            <h3>Abstract／Truesec — FalconFlankの検出ガイダンスと暫定緩和を整理</h3>
+            <p>公開PoC検知だけでは根因修正にならない点を強調。ベンダー公式アドバイザリが出るまで、マクロ除去ポリシー無効化と検知ルール更新を並行する運用が推奨されています。</p>
+            <p class="source"><a href="https://www.abstract.security/blog/chaotic-eclipse-releases-crowdstrike-falcon-zero-day-falconflank-detection-guidance" target="_blank" rel="noopener">Abstract Security（9/3）</a><a href="https://www.truesec.com/hub/blog/privilege-escalation-vulnerability-in-falcon-crowdstrike" target="_blank" rel="noopener">Truesec</a></p>
           </div>
         </article>
       </div>
@@ -631,62 +630,62 @@
         <h2>日本国内の車番認識</h2>
         <span class="count">7 STORIES</span>
       </div>
-      <p class="note">本日は同日付けの新規一次発表が限られるため、セキュアの販売開始続報とセーフィー／NEC実証・シャープ受注開始など国内製品動向で補完しています。</p>
+      <p class="note">過去24時間の新規一次発表は乏しいため、9月タイミングの受注・実証開始と直近の製品／導入ニュースで補完しています。</p>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>セキュア — 認証率97％・導入コスト約1/3の車番認証システム（続報）</h3>
-            <p>光学22倍ズームと赤外線、グローバルシャッターで遠距離・夜間・移動中プレートに対応。ご当地／外交官／自衛隊ナンバーも対象とし、LOGI-BIZなど物流メディアでも8/27発表の続報が流通しています。</p>
-            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000146.000052942.html" target="_blank" rel="noopener">PR TIMES（セキュア）</a><a href="https://online.logi-biz.com/149391/" target="_blank" rel="noopener">LOGI-BIZ online</a></p>
+            <h3>シャープ — コインパーキング向けポールカメラ（RZ-P401）を9月上旬受注開始</h3>
+            <p>在車センサーと車番撮影カメラを一体化したユニットで、1本のポールに最大2基搭載。レーダー／赤外線／地磁気とカメラを組み合わせ、狭小区画や積雪環境向けのロックレス運用を狙います。</p>
+            <p class="source"><a href="https://corporate.jp.sharp/news/260731-a.html" target="_blank" rel="noopener">シャープ公式</a><a href="https://prtimes.jp/main/html/rd/p/000001577.000012900.html" target="_blank" rel="noopener">PR TIMES</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>セーフィー — 「AI-App ナンバープレート認識」提供開始</h3>
-            <p>アイテックのEyeTech LPR（認識率99.5％公称）を採用し、カメラ設置中心で入退場管理をクラウド化。MOVO Berth／トラック簿連携や荷待ち対策を打ち出しています。</p>
-            <p class="source"><a href="https://safie.co.jp/news/4660/" target="_blank" rel="noopener">セーフィー公式</a><a href="https://safie.jp/ai-app/number-plate/" target="_blank" rel="noopener">製品ページ</a></p>
+            <h3>NEC×UrbanChain — 降車検知AI連携の次世代駐車場実証を9月開始</h3>
+            <p>UrbanChainの駐車場OSとNECの画像認識による降車検知を接続し、「入場」ではなく「降車」起点の課金・安全運用を検証。送迎やUターン課金といった現場課題の是正が狙いです。</p>
+            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000001408.000078149.html" target="_blank" rel="noopener">NEC／PR TIMES</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>DataHax DENNOU PARK — 高頻度「常連」2.6％が売上27.2％</h3>
-            <p>車番検知式4事業地・3,754台の半年間分析で、11回以上利用の98台が利用回数31.9％・売上27.2％を占有。車番単位のLTV施策とDENNOU GO自動精算の根拠になります。</p>
-            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000074.000069896.html" target="_blank" rel="noopener">PR TIMES（DataHax）</a></p>
+            <h3>セーフィー — AI-Appナンバープレート認識（EyeTech LPR）を提供開始</h3>
+            <p>クラウド録画Safie上で車番認識を制御でき、電源投入中心の導入を訴求。アイテックのEyeTech LPRを採用し、認識率99.5％・国内7,000件超の実績を前面に出しています。</p>
+            <p class="source"><a href="https://safie.co.jp/news/4660/" target="_blank" rel="noopener">セーフィー公式</a><a href="https://prtimes.jp/main/html/rd/p/000000008.000077601.html" target="_blank" rel="noopener">アイテック PR</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>NEC×UrbanChain — 降車検知×駐車場OSの実証を9月開始</h3>
-            <p>平面駐車場で「入場」だけでなく「降車」タイミングを起点に課金・安全確認を検証。福岡での約1か月実証を予定し、自動決済と人物・車両検知を組み合わせた次世代サービスを探ります。</p>
-            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000001408.000078149.html" target="_blank" rel="noopener">PR TIMES（NEC）</a></p>
+            <h3>セキュア — 認証率97％・導入コスト約1/3のAI車番認証を販売開始</h3>
+            <p>光学22倍ズームと赤外線、グローバルシャッターで遠距離・夜間・移動車両に対応。管理ダッシュボードを無償同梱し、物流施設の荷待ち管理需要を取り込みます。</p>
+            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000146.000052942.html" target="_blank" rel="noopener">セキュア／PR TIMES（8/27）</a><a href="https://iotnews.jp/ai/275446/" target="_blank" rel="noopener">IoTNEWS</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>シャープ RZ-P401 — ポールカメラ方式を9月上旬から受注</h3>
-            <p>入出庫センサーと車番カメラを一体化し、ポール1本で最大2車室・L字レイアウトにも対応。ロック板レス駐車場向けで、在車センサー方式とのハイブリッド運用も想定されています。</p>
-            <p class="source"><a href="https://corporate.jp.sharp/news/260731-a.html" target="_blank" rel="noopener">シャープ公式</a><a href="https://response.jp/article/2026/08/07/415061.html" target="_blank" rel="noopener">レスポンス</a></p>
+            <h3>DataHax DENNOU PARK — 車番LTV分析、常連2.6％が売上27.2％</h3>
+            <p>4駐車場・3,754台の車番データを分析し、高頻度車両の顧客LTVが新規の約32倍と算出。自動精算DENNOU GOと組み合わせたデータ駆動の料金／稼働改善を提案しています。</p>
+            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000074.000069896.html" target="_blank" rel="noopener">DataHax／PR TIMES</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>DMP — Di1搭載エッジAIカメラ向けANPRを展開</h3>
-            <p>ZIA PLATEとFP4実装NPU「Di1」でエッジ完結のリアルタイム認識を訴求。低遅延・低消費電力を強みに国内および海外（インド等）への展開を加速しています。</p>
-            <p class="source"><a href="https://www.dmprof.com/ja/news/20260422-anpr-ja/" target="_blank" rel="noopener">DMP公式</a><a href="https://www.dmprof.com/ja/products-and-services/ai-products/software/zia-plate/" target="_blank" rel="noopener">ZIA Plate</a></p>
+            <h3>セーフィー×ハコベル — 車番認識と「トラック簿」連携で荷待ち短縮</h3>
+            <p>AI-Appナンバープレート認識とトラック予約／受付システムを接続。改正物流関連二法と2026年4月の特定荷主義務化を背景に、待機・作業時間の可視化を狙います。</p>
+            <p class="source"><a href="https://safie.co.jp/news/4655/" target="_blank" rel="noopener">セーフィー公式</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>lipla-jp — 日本向けナンバー認識OSS（PyPI 0.2.0）</h3>
-            <p>EdgeCrafter Pose検出とPPOCRv6 OCRをONNXで動かし、PyTorch非依存。地名・分類・かな・一連番号を構造化して返し、MITライセンスで商用利用可能です。</p>
-            <p class="source"><a href="https://github.com/ikeboo/Lipla-jp" target="_blank" rel="noopener">GitHub（Lipla-jp）</a><a href="https://pypi.org/project/lipla-jp/" target="_blank" rel="noopener">PyPI</a></p>
+            <h3>アイテック EyeTech LPR／カメラ式トラック受付 — 物流ゲート無人化の定番技術</h3>
+            <p>AXISカメラ上のエッジ認識（ACAP）でサーバレスに近い車番処理を実現。ガソリンスタンドから高速道路まで幅広い導入実績を持ち、物流受付の比較記事でも中核製品として整理されています。</p>
+            <p class="source"><a href="https://www.eyetech.jp/product/lpr/" target="_blank" rel="noopener">アイテック EyeTech LPR</a><a href="https://logishift.net/tool/%e3%82%ab%e3%83%a1%e3%83%a9%e5%bc%8f%e3%83%88%e3%83%a9%e3%83%83%e3%82%af%e5%8f%97%e4%bb%98%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0/" target="_blank" rel="noopener">LogiShift</a></p>
           </div>
         </article>
       </div>
@@ -702,65 +701,65 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Cloudflare — Cursor Cloud AgentsをSandbox／Containers上で実行可能に（9/2）</h3>
-            <p>推論・計画はCursor側、コマンド実行やリポジトリ操作は顧客管理のCloudflare環境で実施。公式テンプレートでWorker／Durable Object／R2等を配備でき、Enterprise向けセルフホスト運用が現実的になりました。</p>
-            <p class="source"><a href="https://www.cloudflare.com/press/press-releases/2026/cloudflare-expands-support-for-ai-coding-agents-with-cursor-cloud-agents-on-cloudflare-sandboxes/" target="_blank" rel="noopener">Cloudflare PR（9/2）</a><a href="https://developers.cloudflare.com/changelog/post/2026-09-02-cursor-cloud-agents/" target="_blank" rel="noopener">Cloudflare Changelog</a></p>
+            <h3>Coder Agent Relay — Cursor Cloud Agentsを自社基盤で実行（SpaceXAI提携）</h3>
+            <p>推論ループはCursor側、ツール実行はCoderワークスペース上の顧客マシンで行う構成。銀行・官公庁向けのプライベートプレビューが始まり、ベンダーホスト以外でのエージェント展開を狙います。</p>
+            <p class="source"><a href="https://aithority.com/machine-learning/coder-and-spacexai-collaborate-to-bring-agentic-coding-inside-the-worlds-most-regulated-enterprises/" target="_blank" rel="noopener">AiThority／GlobeNewswire（9/3）</a><a href="https://www.techpillow.co/blog/coder-agent-relay-cursor-enterprise-self-hosted-2026" target="_blank" rel="noopener">TechPillow</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Anthropic — Claude Fable 5.1／Mythos 5.1（続報）</h3>
-            <p>同一基盤でセーフガード強度が異なり、Fableは一般提供、Mythosはサイバー／ライフサイエンス向け信頼アクセス限定。キャッシュ読取を$0.25／MTokへ75％値下げし、エージェント作業で最大約45％安くなると主張しています。</p>
-            <p class="source"><a href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener">Anthropic公式（9/1）</a><a href="https://the-decoder.com/anthropics-claude-fable-5-1-promises-better-coding-and-research-at-up-to-45-percent-less/" target="_blank" rel="noopener">THE DECODER</a></p>
+            <h3>Cloudflare — Cursor Cloud Agents on Sandboxesを正式発表</h3>
+            <p>Self-Hosted MachinesのワーカーをCloudflare Sandboxes上で動かし、コードと秘密情報を顧客制御下に保持。Devin OutpostsやClaude Managed Agentsに続くエージェント実行レイヤ拡充です。</p>
+            <p class="source"><a href="https://www.cloudflare.com/press/press-releases/2026/cloudflare-expands-support-for-ai-coding-agents-with-cursor-cloud-agents-on-cloudflare-sandboxes/" target="_blank" rel="noopener">Cloudflare PR（9/2）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Cursor — Fable 5.1をモデルピッカーに追加、努力度は5段階</h3>
-            <p>low〜maxの推論強度を選択可能で、CursorBench 3.2ではmax時73.4％。Privacy Mode利用者はデータ保持ポリシー承認が必要。フォーラムでも即日の利用開始が報告されています。</p>
-            <p class="source"><a href="https://forum.cursor.com/t/claude-fable-5-1-out-now/170246" target="_blank" rel="noopener">Cursor Forum（9/1）</a><a href="https://superpowerdaily.com/posts/cursor-adds-claude-fable-5-1-pairing-a-73-4-coding-score-with-max-effort-costs" target="_blank" rel="noopener">Superpower Daily</a></p>
+            <h3>Claude Code 2.1.259 — managedMcpServersとヘッドレス権限制御</h3>
+            <p>管理者がHTTP／SSEのMCPサーバを組織全体へ配布可能に。CI向けには<code>--permission-prompts none</code>を追加し、無人実行のハング回避と起動高速化が進みました。</p>
+            <p class="source"><a href="https://buttondown.com/ai-tldr/archive/aitldr-daily-digest-september-03-2026/" target="_blank" rel="noopener">AI/TLDR（9/3）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>xAI／Musk氏 — Grok 4.7を9/12投入とXで表明（9/2）</h3>
-            <p>パラメータ約2.1兆規模・SpaceXデータを含む訓練を示唆。4.6から約1か月での続投となり、エージェント向け能力とトークン効率の改善を主張。メディア各社がX投稿を引用して伝えています。</p>
-            <p class="source"><a href="https://azat.tv/en/elon-musk-grok-4-7-launch-september-2026/" target="_blank" rel="noopener">Azat TV（X反応・9/2）</a><a href="https://cursor.com/grok" target="_blank" rel="noopener">Cursor／Grok 4.6</a></p>
+            <h3>Codex CLI 0.153.0 — リモートマーケットプレイスからプラグイン導入</h3>
+            <p>pluginコマンドで一覧／導入／削除が可能になり、アプリサーバ切断後のTUI再接続やGuardian履歴の永続化も強化。拡張の供給網ポリシーがエージェント実行時の論点になっています。</p>
+            <p class="source"><a href="https://dev.to/zira125/codex-cli-0153-remote-plugins-make-supply-chain-policy-part-of-your-agent-runtime-1pn2" target="_blank" rel="noopener">DEV Community（9/3）</a><a href="https://buttondown.com/ai-tldr/archive/aitldr-daily-digest-september-03-2026/" target="_blank" rel="noopener">AI/TLDR</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Claude Code — 週次上限は9/14に恒久+25％、現行比では約17％減</h3>
-            <p>一時+50％を恒久+25％に置き換えるため、現在比では約17％減。Pro／Max／Team／座席Enterpriseが対象で、チャットやCoworkと同一プールとなる点が実務上の焦点です。</p>
-            <p class="source"><a href="https://www.implicator.ai/anthropic-claude-code-weekly-limits-september-14/" target="_blank" rel="noopener">Implicator</a><a href="https://aitoolsrecap.com/Comparisons/claude-code-vs-codex-usage-limits-2026" target="_blank" rel="noopener">AI Tools Recap</a></p>
+            <h3>Armature — Claude Code／Codex／Cursorのツール選定を約1.7万セッション分析</h3>
+            <p>3エージェントが同じツールを選ぶのは42％にとどまり、CursorはWeb参照、Codexはsite:絞り込み、Claude Codeは事前知識寄りという差が顕著。エージェントの「道具選び」差異を定量化した研究です。</p>
+            <p class="source"><a href="https://armature.tech/blog/which-tools-coding-agents-install" target="_blank" rel="noopener">Armature（9/3）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Claude Code v2.1.257〜258 — Fable 5.1既定化とmacOS 12起動修正</h3>
-            <p>v2.1.257でFable 5.1を既定化し、Auto Modeのネットワーク／作業ディレクトリ外読取の境界を強化。v2.1.258はMonterey起動回帰を修正。DevelopersIOが9/2に変更点を整理しています。</p>
-            <p class="source"><a href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">Claude Code Changelog</a><a href="https://dev.classmethod.jp/articles/20260902-cc-updates-v2-1-258/" target="_blank" rel="noopener">DevelopersIO（9/2）</a></p>
+            <h3>xAI Grok 4.7 — Musk氏がXで「約10日後」と予告（9/12前後）</h3>
+            <p>Shopify CEOのGrok 4.6評価に返信する形で、Elon Musk氏がX上でリリース時期を示唆。報道では2.1TパラメータやSpaceXデータ追加学習が語られますが、公式モデルカードは未公開です。</p>
+            <p class="source"><a href="https://www.latestly.com/socially/technology/elon-musk-confirms-grok-4-7-release-in-10-days-7586082.html" target="_blank" rel="noopener">LatestLY（X反応・9/2）</a><a href="https://www.iweaver.ai/blog/grok-4-7/" target="_blank" rel="noopener">iWeaver</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>OpenAI — SpaceX傘下Cursor向けモデル提供を11/12に打ち切り（続報）</h3>
-            <p>支配権変更条項を根拠に直接供給を終了する方針。InfoWorldが「約10週間の移行猶予」と整理し、マルチモデルIDEの供給リスクが再燃しています。</p>
-            <p class="source"><a href="https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/" target="_blank" rel="noopener">OpenAI公式</a><a href="https://www.infoworld.com/article/4216503/cursor-customers-will-lose-access-to-openai-coding-models-in-november.html" target="_blank" rel="noopener">InfoWorld</a></p>
+            <h3>Claude Fable 5.1 — CursorBench 3.2で73.4％、コーディング向けSOTA継続</h3>
+            <p>Anthropic公式はagentic coding性能とキャッシュ読み取り価格75％削減を強調。Cursor側コメントでも「自検証が強く、難しいタスクを完走しやすい」と評価されています。</p>
+            <p class="source"><a href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener">Anthropic</a><a href="https://www.latent.space/p/ainews-claude-fablemythos-51-new" target="_blank" rel="noopener">Latent Space（X反応）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>Meta — Muse Spark 1.3をMuse Code／Model APIで公開（9/2）</h3>
-            <p>エージェント／コーディング性能を強化したと主張し、価格は1.2据え置き。xhighは即日、maxは安全テスト後。Facebook／Instagram／Meta AIへの順次展開も予告されています。</p>
-            <p class="source"><a href="https://research.meta.ai/blog/introducing-muse-spark-1-3" target="_blank" rel="noopener">Meta AI Research（9/2）</a><a href="https://siliconangle.com/2026/09/02/meta-says-it-has-caught-up-with-anthropic-and-openai-after-releasing-muse-spark-1-3-its-most-powerful-llm-so-far/" target="_blank" rel="noopener">SiliconANGLE</a></p>
+            <h3>Cursor Self-Hosted Machines — My Machines／Team Poolsで社内実行</h3>
+            <p>モデルはCursorクラウド、ツール呼び出しは自前マシン／共有ワーカープールで実行する二層構成。規制業種の「コードを外に出したくない」要求への回答として、Coder／Cloudflare連携とセットで広がっています。</p>
+            <p class="source"><a href="https://buttondown.com/ai-tldr/archive/aitldr-daily-digest-september-03-2026/" target="_blank" rel="noopener">AI/TLDR（9/3）</a><a href="https://www.cloudflare.com/press/press-releases/2026/cloudflare-expands-support-for-ai-coding-agents-with-cursor-cloud-agents-on-cloudflare-sandboxes/" target="_blank" rel="noopener">Cloudflare</a></p>
           </div>
         </article>
       </div>
@@ -784,48 +783,48 @@
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Go 1.27.1／1.26.8 — cgo・コンパイラ・runtimeなどの修正版（9/1）</h3>
-            <p>1.27.1はcgo、コンパイラ、runtime、<code>go fix</code>、database/sql・encoding/json・net/httpなどを修正。並行して1.26.8もcgo／コンパイラ／runtimeとdebug/elf・osを直し、両系列の追随が同日に揃いました。</p>
-            <p class="source"><a href="https://go.dev/doc/devel/release" target="_blank" rel="noopener">Go Release History</a></p>
+            <h3>TinyGo 0.42 — recover対応とGo 1.27サポート、PY32 MCU拡大（続報9/4）</h3>
+            <p>ランタイムpanicのrecover、LLVM 22、UEFIターゲットを追加。CNX SoftwareはPuya PY32系87構成とEmbedFireボード対応を詳報し、組み込みGoの選択肢が広がっています。</p>
+            <p class="source"><a href="https://tinygo.org/blog/2026/tinygo-0.42-recover-is-real/" target="_blank" rel="noopener">TinyGo Blog（9/1）</a><a href="https://www.cnx-software.com/2026/09/04/tinygo-0-42-adds-support-for-87-puya-py32-mcu-variants-and-two-embedfire-boards/" target="_blank" rel="noopener">CNX Software（9/4）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Python 3.15.0rc2 — 最終候補版、正式版は10/1予定</h3>
-            <p>rc1以降で約144件の修正を取り込み、これが最終RC。サードパーティには3.15ホイール公開が強く推奨され、本番利用はまだ非推奨です。</p>
-            <p class="source"><a href="https://blog.python.org/2026/09/python-3150-rc2/" target="_blank" rel="noopener">Python Insider</a></p>
+            <h3>Go 1.27.1／1.26.8 — cgo・コンパイラ・runtimeなどの修正版（9/1）</h3>
+            <p>1.27.1はcgo、コンパイラ、runtime、<code>go fix</code>、database/sql・encoding/json・net/httpなどを修正。並行して1.26.8もcgo／コンパイラ／runtimeとdebug/elf・osを直し、両系列の追随が同日に揃いました。</p>
+            <p class="source"><a href="https://go.dev/doc/devel/release" target="_blank" rel="noopener">Go Release History</a><a href="https://devcenter.heroku.com/changelog-items/3807" target="_blank" rel="noopener">Heroku Changelog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>openai-node v7.9.0 — Usage API更新とWebSocketリダイレクト防止（9/2）</h3>
-            <p>Responses WebSocketがリダイレクトを追わないよう修正し、ブラウザexport条件でのCommonJS読込やJest 28互換も修復。Node.jsは22／24 LTSが最小サポートです。</p>
-            <p class="source"><a href="https://github.com/openai/openai-node/releases/tag/v7.9.0" target="_blank" rel="noopener">openai-node v7.9.0</a></p>
+            <h3>Python 3.15.0rc2 — 最終候補版、正式版は10/1予定</h3>
+            <p>rc1以降で約144件の修正を取り込み、これが最終RC。サードパーティには3.15ホイール公開が強く推奨され、本番利用はまだ非推奨です。</p>
+            <p class="source"><a href="https://blog.python.org/2026/09/python-3150-rc2/" target="_blank" rel="noopener">Python Insider</a><a href="https://www.python.org/downloads/latest/python3.15/" target="_blank" rel="noopener">Python.org</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>rustup 1.29.1 — 並列更新と <code>rustup doc --serve</code>（9/1）</h3>
-            <p>update時の更新確認と複数component addを並列化。<code>rustup doc --serve</code>でローカルHTTP配信、不要な暗黙インストールは警告化。Windows向けにaarch64-pc-windows-gnullvmホストも公式サポートしました。</p>
-            <p class="source"><a href="https://blog.rust-lang.org/2026/09/01/Rustup-1.29.1/" target="_blank" rel="noopener">Rust Blog（9/1）</a></p>
+            <h3>openai-node v7.9.0 — Usage API更新とWebSocketリダイレクト防止（9/2）</h3>
+            <p>Responses WebSocketがリダイレクトを追わないよう修正し、ブラウザexport条件でのCommonJS読込やJest 28互換も修復。エージェント実装の依存更新タイミングになります。</p>
+            <p class="source"><a href="https://github.com/openai/openai-node/releases/tag/v7.9.0" target="_blank" rel="noopener">openai-node v7.9.0</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>anthropic-sdk-python v1.3.0 — Fable系に合わせたSDK更新（9/1）</h3>
-            <p>Fable 5.1公開と同日のマイナー更新。Pythonクライアント側で新モデル識別子とAPI面の追随が進み、エージェント実装の依存更新タイミングになります。</p>
-            <p class="source"><a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.3.0" target="_blank" rel="noopener">anthropic-sdk-python v1.3.0</a></p>
+            <h3>TypeScript（native／Go移植）— ツールチェーンをGo 1.27へ更新中</h3>
+            <p>microsoft/TypeScript側でGo要件を1.27に引き上げ、<code>encoding/json/v2</code>採用や構造体リテラル近代化を進めるPRが進行。typescript-goステージングリポジトリは9月アーカイブ予定と案内されています。</p>
+            <p class="source"><a href="https://github.com/microsoft/TypeScript/pull/63902" target="_blank" rel="noopener">TypeScript PR #63902</a><a href="https://github.com/microsoft/typescript-go/" target="_blank" rel="noopener">typescript-go</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Go 1.27 — encoding/json/v2とポスト量子ML-DSAの本線取り込み（続報）</h3>
-            <p>json/v2が実験フラグなしで利用可能になり、v1実装も裏側でv2化。crypto/mldsa（FIPS 204）がx509／tlsに統合され、小オブジェクト割当は最大約30％高速化とされます。</p>
+            <h3>Go 1.27本線 — encoding/json/v2とモダナイザ群の定着（続報）</h3>
+            <p>8/19公開の1.27は言語・ツールチェーン・ランタイムを広く更新。パッチ1.27.1が出た今、json/v2や<code>go doc package@version</code>など本線機能の本番追随が進む局面です。</p>
             <p class="source"><a href="https://go.dev/blog/go1.27" target="_blank" rel="noopener">Go Blog</a><a href="https://go.dev/doc/go1.27" target="_blank" rel="noopener">Release Notes</a></p>
           </div>
         </article>
@@ -836,79 +835,71 @@
       <div class="theme-head">
         <div class="sec-no">05</div>
         <h2>ネットサービス</h2>
-        <span class="count">8 STORIES</span>
+        <span class="count">7 STORIES</span>
       </div>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Google — Gemini 3.8 Flash／Flash Cyberを公開（9/2）</h3>
-            <p>3.7比でソフト工学・エージェント・多段推論を強化しつつ、導入価格は入力$0.75／出力$3.75 per MTok（〜12/31）。Flash CyberはFairwind Program経由の信頼防御者向け。Geminiアプリ、Sheets、AI Studio／APIで利用開始です。</p>
-            <p class="source"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/" target="_blank" rel="noopener">Google Blog（9/2）</a><a href="https://deepmind.google/models/model-cards/gemini-3-8-flash/" target="_blank" rel="noopener">DeepMind Model Card</a></p>
+            <h3>Google Workspace — Gmail／Docs／Keep Liveの音声Geminiを正式展開</h3>
+            <p>Gemini 3.5 Live連携で、受信箱検索、文書ドラフト、音声メモ整理を会話操作化。Gmail／KeepはAI Plus以上、Docs LiveはPro／Ultra限定。Sundar Pichai氏もXでDocs Liveを紹介しています。</p>
+            <p class="source"><a href="https://blog.google/products-and-platforms/products/workspace/voice-features-gmail-docs-keep/" target="_blank" rel="noopener">Google Blog（9/3）</a><a href="https://runtimewire.com/article/google-gemini-voice-gmail-docs-keep-live" target="_blank" rel="noopener">RuntimeWire（X反応）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Meta — Muse Spark 1.3を公開、SNS／Meta AIへ順次展開（9/2）</h3>
-            <p>Model APIとMuse Codeで提供開始し、価格は1.2据え置き。Alexandr Wang氏はClaude Fable 5.1級と主張。Facebook／Instagramへの展開も予告され、閉鎖重みのまま競争を続けます。</p>
-            <p class="source"><a href="https://research.meta.ai/blog/introducing-muse-spark-1-3" target="_blank" rel="noopener">Meta AI Research（9/2）</a><a href="https://www.axios.com/2026/09/02/meta-debuts-muse-spark-13-as-personal-agent-work-continues" target="_blank" rel="noopener">Axios</a></p>
+            <h3>Cloudflare — Vulnerability Discovery and Remediation（OpenAI Daybreak連携）</h3>
+            <p>Managed Defenseの早期アクセスで、GPT-5.6 Cyber等を使いコード調査・パッチ案生成・エッジWAF即時防御を一体提供。適用は人手承認必須で、攻撃中の脆弱性を優先トリアージします。</p>
+            <p class="source"><a href="https://www.cloudflare.com/press/press-releases/2026/cloudflare-partners-with-openai-daybreak-models-to-redefine-vulnerability-management-with-ai-powered-edge-defense/" target="_blank" rel="noopener">Cloudflare PR（9/3）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Cloudflare — Cursor Cloud Agents on Sandboxesを正式発表（9/2）</h3>
-            <p>セルフホストマシンとしてCloudflare Containers上でエージェント実行環境を提供。コードと秘密情報を顧客アカウント内に留めつつ、Cursorのワークフローを維持できます。</p>
-            <p class="source"><a href="https://www.cloudflare.com/press/press-releases/2026/cloudflare-expands-support-for-ai-coding-agents-with-cursor-cloud-agents-on-cloudflare-sandboxes/" target="_blank" rel="noopener">Cloudflare PR（9/2）</a><a href="https://developers.cloudflare.com/sandbox/tutorials/cursor-cloud-agents/" target="_blank" rel="noopener">Sandbox SDK Docs</a></p>
+            <h3>Meta — Muse Spark 1.3を公開、Instagram／Facebook／Meta AIへ順次展開</h3>
+            <p>コーディングとタスク自動化を強化し、トークン効率も改善したと主張。価格は1.2据え置きでModel API提供開始。Alexandr Wang氏は主要競合に追いついたとの見解を示しています。</p>
+            <p class="source"><a href="https://research.meta.ai/blog/introducing-muse-spark-1-3" target="_blank" rel="noopener">Meta AI Research（9/2）</a><a href="https://siliconangle.com/2026/09/02/meta-says-it-has-caught-up-with-anthropic-and-openai-after-releasing-muse-spark-1-3-its-most-powerful-llm-so-far/" target="_blank" rel="noopener">SiliconANGLE</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Google — GeminiにAgentic Video理解を投入（9/1）</h3>
-            <p>固定FPSの静的取り込みではなく、ネイティブ動画ツールで区間探索・異常検知・精密カウントを強化。コスト最大約66％・トークン最大約88％削減を主張し、API／Enterprise経由で提供開始です。</p>
-            <p class="source"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-agentic-video-in-gemini/" target="_blank" rel="noopener">Google Blog（9/1）</a></p>
+            <h3>Instagram広告 — コメントキーワードからDM自動開始のテスト</h3>
+            <p>広告コメント内の最大5キーワードをトリガーに自動DMへ誘導するReply to Keywords機能を試験中。公開反応を私信商談へつなぐ導線として、広告運用の接点設計が変わります。</p>
+            <p class="source"><a href="https://connectcx.ai/meta-tests-instagram-ad-comment-automation-to-turn-keywords-into-private-conversations/" target="_blank" rel="noopener">CONNECTCX（9/3）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Meta — Muse Voice Transcribeを公開、Zuckerberg氏がXで実演（9/1）</h3>
-            <p>リアルタイムASR、20人超の話者分離、エンドポインティングを単一モデルで提供。$3／1,000音声分でModel API／Mac版Meta AI／Muse Codeに展開。EngadgetはZuckerberg氏のX投稿を伝えています。</p>
-            <p class="source"><a href="https://research.meta.ai/blog/introducing-muse-voice-transcribe" target="_blank" rel="noopener">Meta AI Research（9/1）</a><a href="https://www.engadget.com/2249112/meta-new-ai-transcription-model-can-distinguist-between-multiple-speakers-and-languages-in-real-time/" target="_blank" rel="noopener">Engadget（X反応）</a></p>
+            <h3>Cloudflare — Cursor Cloud AgentsをSandboxes上で実行可能に</h3>
+            <p>エージェント実行環境を自社アカウント内サンドボックスへ寄せる選択肢を追加。セキュリティ境界を保ったまま既存Cursor体験を維持する、インフラ側のネットサービス拡張です。</p>
+            <p class="source"><a href="https://www.cloudflare.com/press/press-releases/2026/cloudflare-expands-support-for-ai-coding-agents-with-cursor-cloud-agents-on-cloudflare-sandboxes/" target="_blank" rel="noopener">Cloudflare PR（9/2）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Google Pics — Workspace向けAI画像作成・編集ツール（9/1）</h3>
-            <p>Nano BananaモデルでポスターやSNS向けビジュアルをプロンプト中心に生成・編集。Google AI Pro／Ultraと多くのWorkspaceビジネス顧客へ数週間で順次提供し、Docs／Slides統合は即日です。</p>
-            <p class="source"><a href="https://blog.google/products-and-platforms/products/workspace/google-pics/" target="_blank" rel="noopener">Google Blog（9/1）</a><a href="https://techcrunch.com/2026/09/01/googles-answer-to-canva-is-an-ai-tool-where-you-prompt-instead-of-design/" target="_blank" rel="noopener">TechCrunch</a></p>
+            <h3>Google Docs Live — AI Plusでは使えず、Pro以上に限定された料金設計</h3>
+            <p>TechTimesはDocs Liveが月額約$19.99のAI Pro側に閉じ、Gmail Live（Plus可）との差が約4倍になると整理。音声生成の重い機能ほど上位プランへ寄せる方針が明確です。</p>
+            <p class="source"><a href="https://www.techtimes.com/articles/326590/20260904/google-workspace-launches-voice-ai-docs-live-costs-4x-more-gmail-live.htm" target="_blank" rel="noopener">TechTimes（9/4）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>AWS — Claude Fable 5.1をBedrock／Claude Platformで一般提供（9/1）</h3>
-            <p>US／Global CRISとGovCloudでも利用可能。Covered Modelとして追加ポリシーが付き、EFS対象顧客は自クラウド側での監視データ保持オプションへ段階移行します。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/09/claude-fable-5-1-aws/" target="_blank" rel="noopener">AWS What’s New（9/1）</a><a href="https://aws.amazon.com/blogs/machine-learning/introducing-claude-fable-5-1-on-aws/" target="_blank" rel="noopener">AWS ML Blog</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">08</div>
-          <div>
-            <h3>Instagram — AI生成プロフィールの表示ラベル必須とリーチ制限（続報）</h3>
-            <p>「AI-generated profile」ラベルを必須化し、未表示はReels／Exploreでの非フォロワー推奨を制限。合成人間を主役にするアカウントが対象で、開示義務の実務適用が進みます。</p>
-            <p class="source"><a href="https://techcrunch.com/2026/08/31/instagram-puts-new-limits-on-undisclosed-ai-profiles/" target="_blank" rel="noopener">TechCrunch（8/31）</a><a href="https://www.engadget.com/2246914/instagram-will-demote-ai-generated-influencers-if-they-dont-clearly-label-their-account/" target="_blank" rel="noopener">Engadget</a></p>
+            <h3>Meta Muse Spark 1.3 — 重み公開は未定、Watermelon大型モデルも準備中</h3>
+            <p>1.2の重み公開は予定しつつ、1.3は当面クローズド提供。次の大型モデルWatermelonについても「極めて競争力がある」との発言があり、SNS基盤への順次展開と並行して開発が続きます。</p>
+            <p class="source"><a href="https://www.outlookbusiness.com/corporate/what-is-muse-spark-13-metas-new-ai-model-takes-on-openai-anthropic" target="_blank" rel="noopener">Outlook Business（9/3）</a><a href="https://www.livemint.com/ai/meta-launches-muse-spark-1-3-challenging-openai-and-anthropic-in-race-for-advanced-ai-systems-11788416225107.html" target="_blank" rel="noopener">Mint</a></p>
           </div>
         </article>
       </div>
     </section>
 
     <footer>
-      <p>発行: 2026-09-03（過去24時間・Web検索ベース）／信頼できる一次情報源を優先し、重複は統合。X／SNSの反応は報道で確認できた範囲のみ追記（Musk氏のGrok 4.7投入表明、Zuckerberg氏のMuse Voice Transcribe実演）。</p>
-      <p>本ページは自動生成の朝刊ダイジェストです。投資・運用判断の前に必ず一次情報をご確認ください。</p>
+      <p>収集対象: おおむね2026-09-03 21:00 UTC 〜 2026-09-04 21:00 UTC（cron起動基準）。一次情報と専門メディアを優先し、重複は統合しています。</p>
+      <p>Edition 2026-09-04 / daily_news</p>
     </footer>
   </div>
 </body>
