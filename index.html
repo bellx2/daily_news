@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>技術ニュースダイジェスト 2026-09-05</title>
+  <title>技術ニュースダイジェスト 2026-09-06</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -526,7 +526,7 @@
     <div class="mast-inner">
       <div class="edition-bar">
         <span class="live"><i aria-hidden="true"></i>今朝のダイジェスト</span>
-        <span>2026年9月5日 / 過去24時間</span>
+        <span>2026年9月6日 / 過去24時間</span>
         <span>公式・専門メディア中心</span>
       </div>
       <h1 class="brand">
@@ -540,7 +540,7 @@
   <div class="wrap">
     <div class="briefing">
       <p class="kicker">本日の見通し</p>
-      <p>本日の軸は、CrowdStrike Falconの特権昇格ゼロデイ「FalconFlank」、Chrome V8ゼロデイのCISA KEV登録（CVE-2026-85046）、PostgreSQL「PostGREShell」、GitHub CopilotのGPT-6 Astra一般提供、AWS MCP ServerのLambda診断機能です。車番認識は同日の新規一次発表が少なく、丸紅ネットワークの相模湖実証（9/3）やシャープ受注・NEC実証などで補完しています。</p>
+      <p>本日の軸は、Magento／Adobe Commerceの未修正ゼロデイ「StyleSmuggler」、Chrome V8ゼロデイ（CVE-2026-85046）のKEV対応継続、Elementor Pro悪用、GitHub CopilotのGPT-6 Astra一般提供、WhatsAppのLiquid Glass対応です。車番認識は同日の新規一次発表が乏しく、丸紅ネットワークの相模湖実証（9/3）やシャープ受注・NEC実証などで補完しています。</p>
     </div>
 
     <nav class="toc" aria-label="テーマ一覧">
@@ -561,9 +561,9 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>CrowdStrike Falcon — 「FalconFlank」特権昇格ゼロデイが公開</h3>
-            <p>研究者Nightmare Eclipse（Chaotic Eclipse）が、Office悪意マクロ除去機能を悪用してSYSTEM権限を得るPoCを公開。Kevin Beaumont氏も動作を確認しています。CrowdStrikeは調査中とし、Microsoft Office File Suspicious Macro Removalポリシーの無効化とサポートポータルのTech Alert参照を案内しています。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/new-crowdstrike-falconflank-zero-day-grants-system-privileges/" target="_blank" rel="noopener">BleepingComputer（9/4）</a><a href="https://www.theregister.com/2026/09/03/prolific_microsoft_0day_hunter_drops_crowdstrike_falcon_exploit_poc/" target="_blank" rel="noopener">The Register</a></p>
+            <h3>Magento／Adobe Commerce — 「StyleSmuggler」未修正RCEが実戦悪用中</h3>
+            <p>Sansecが9/5に公開したゼロデイで、認証なしにGraphQL経由でテンプレートへコードを仕込み、失敗決済メール描画時に実行させる二段構え。2.4.9含む現行版が対象で、Rust製バックドアを<code>[kworker/u:8:0]</code>に偽装。Adobe公式パッチは未公開で、次回セキュリティ更新は9/8予定ですが対象かは未確定です。</p>
+            <p class="source"><a href="https://sansec.io/research/stylesmuggler" target="_blank" rel="noopener">Sansec（9/5）</a><a href="https://cybersecuritynews.com/magento-and-adobe-commerce-0-day-rce/" target="_blank" rel="noopener">Cyber Security News（9/6）</a></p>
           </div>
         </article>
         <article class="item">
@@ -577,9 +577,9 @@
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>PostgreSQL — CVE-2026-6471「PostGREShell」、Replication権限からサーバ乗っ取り</h3>
-            <p>論理デコード経路の認可欠落で、Replication属性から任意ライブラリ読込・RCE・恒久スーパーユーザー化が可能。9.4〜18系が影響し、18.6／17.11／16.15／15.19／14.24で修正。Cyera報告をSecurityWeekが9/4に詳報しています。</p>
-            <p class="source"><a href="https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/" target="_blank" rel="noopener">SecurityWeek（9/4）</a></p>
+            <h3>Elementor Pro — CVE-2026-32475の大規模悪用が継続（Wordfence約19万件）</h3>
+            <p>フォームのファイルアップロード配列検証抜けから未認証でPHPウェブシェルを投入可能。4.2.1以前が対象で修正は4.2.2。SecurityWeekは9/5付でDefiantの警告を再掲し、uploads配下のPHP有無確認を促しています。</p>
+            <p class="source"><a href="https://www.securityweek.com/elementor-pro-wordpress-plugin-vulnerability-exploited-to-hack-sites/" target="_blank" rel="noopener">SecurityWeek（9/5）</a><a href="https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/" target="_blank" rel="noopener">BleepingComputer（9/3）</a></p>
           </div>
         </article>
         <article class="item">
@@ -593,33 +593,33 @@
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Elementor Pro — CVE-2026-32475の大規模悪用が継続（Wordfence約19万件）</h3>
-            <p>フォームのファイルアップロード配列検証抜けから未認証でPHPウェブシェルを投入可能。4.2.1以前が対象で修正は4.2.2。SecurityWeekは9/5付でDefiantの警告を再掲し、uploads配下のPHP有無確認を促しています。</p>
-            <p class="source"><a href="https://www.securityweek.com/elementor-pro-wordpress-plugin-vulnerability-exploited-to-hack-sites/" target="_blank" rel="noopener">SecurityWeek（9/5）</a><a href="https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/" target="_blank" rel="noopener">BleepingComputer（9/3）</a></p>
+            <h3>CrowdStrike Falcon — 「FalconFlank」特権昇格ゼロデイが公開</h3>
+            <p>研究者Nightmare Eclipse（Chaotic Eclipse）が、Office悪意マクロ除去機能を悪用してSYSTEM権限を得るPoCを公開。Kevin Beaumont氏も動作を確認しています。CrowdStrikeは調査中とし、Microsoft Office File Suspicious Macro Removalポリシーの無効化とサポートポータルのTech Alert参照を案内しています。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/new-crowdstrike-falconflank-zero-day-grants-system-privileges/" target="_blank" rel="noopener">BleepingComputer（9/4）</a><a href="https://www.theregister.com/2026/09/03/prolific_microsoft_0day_hunter_drops_crowdstrike_falcon_exploit_poc/" target="_blank" rel="noopener">The Register</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Rhysida — ベルリン州ネットワークから約5.8TBを公開（身代金拒否後）</h3>
-            <p>約30BTC要求を州側が拒否したのち、人事・医療・認証情報や重要インフラ関連資料を含むデータセットがリークサイトへ。行政ネットワークの二次被害と資格情報ローテーションが急務です。</p>
-            <p class="source"><a href="https://thecybersecguru.com/news/rhysida-berlin-government-data-leak-5-8-tb/" target="_blank" rel="noopener">The CyberSec Guru</a></p>
+            <h3>PostgreSQL — CVE-2026-6471「PostGREShell」、Replication権限からサーバ乗っ取り</h3>
+            <p>論理デコード経路の認可欠落で、Replication属性から任意ライブラリ読込・RCE・恒久スーパーユーザー化が可能。9.4〜18系が影響し、18.6／17.11／16.15／15.19／14.24で修正。Cyera報告をSecurityWeekが9/4に詳報しています。</p>
+            <p class="source"><a href="https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/" target="_blank" rel="noopener">SecurityWeek（9/4）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Direwolf — Wolfram Researchへの攻撃を主張（9/4掲載）</h3>
-            <p>ランサムウェア集団Direwolfがwolfram.comを標的としたとリークサイトに投稿。交渉開始を求めつつ全データ公開を予告しており、研究・技術企業への二重脅迫の一例として監視対象です。</p>
-            <p class="source"><a href="https://www.dexpose.io/direwolf-ransomware-attack-on-wolfram-research/" target="_blank" rel="noopener">DeXpose（9/5）</a></p>
+            <h3>EU CRA — 積極悪用脆弱性の通報義務が9/11に本格適用、ENISA SRP準備</h3>
+            <p>製品メーカーは能動悪用の脆弱性・重大インシデントをENISAのSingle Reporting Platformへ段階通報（24時間／72時間／最終報告）する義務が始まります。Moxaなど産業機器ベンダーがPSIRT・SBOM整備を公表し、施行直前の対応ラッシュが続いています。</p>
+            <p class="source"><a href="https://www.enisa.europa.eu/topics/product-security-and-certification/single-reporting-platform-srp" target="_blank" rel="noopener">ENISA SRP</a><a href="https://www.conectronica.com/en/present/companies/moxa-law-cyber-resilience-ue-vulnerability-notification" target="_blank" rel="noopener">Conectrónica／Moxa（9/4）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>Abstract Security — FalconFlank向け検出ガイダンスを公開</h3>
-            <p>特権ディレクトリへの書き込みとDLLロード連鎖をテレメトリで追う方針を整理。公開PoCの検知だけでは根因未修正の可能性を強調し、ベンダーTech Alertとポリシー緩和の併用を勧めています。</p>
-            <p class="source"><a href="https://www.abstract.security/blog/chaotic-eclipse-releases-crowdstrike-falcon-zero-day-falconflank-detection-guidance" target="_blank" rel="noopener">Abstract Security（9/3）</a></p>
+            <h3>ホスティング各社 — StyleSmuggler向けエッジ緩和とGraphQL無効化を案内</h3>
+            <p>Create HostingなどMagento系ホストが9/6付で顧客通知を出し、サポート契約向けにCDN／WAF層で既知攻撃を遮断。それ以外はGraphQL一時停止とバックドア指標スキャンを推奨しています。</p>
+            <p class="source"><a href="https://www.createhosting.co.nz/support/announcements/111/Critical-Security-Vulnerability-StyleSmuggler---Adobe-Commerce-or-Magento-Open-Source.html" target="_blank" rel="noopener">Create Hosting（9/6）</a></p>
           </div>
         </article>
       </div>
@@ -718,13 +718,21 @@
         <article class="item">
           <div class="rank">03</div>
           <div>
+            <h3>Microsoft Foundry — GPT-6 Astraをエンタープライズ向けに一般提供</h3>
+            <p>Azure上でStandard／Provisioned ThroughputをGlobalおよびUS Data Zoneで提供。エージェント実行や業務横断ワークフロー向けに、Entra・プライベートネット・セーフティ評価を一体で使える点が強調されています（9/3発表、続報）。</p>
+            <p class="source"><a href="https://azure.microsoft.com/en-us/blog/gpt-6-astra-frontier-intelligence-for-work-now-generally-available-in-microsoft-foundry/" target="_blank" rel="noopener">Microsoft Azure Blog</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">04</div>
+          <div>
             <h3>GitHub Copilot週次 — Claude Fable 5.1／Gemini 3.8 FlashとAgent Merge</h3>
             <p>モデル選択肢を拡充しつつ、Copilot app／CLIがコンテンツ除外を尊重。VS Code 1.136ではAgent Merge（PRのレビュー指摘・失敗チェック・コンフリクト解消）がパブリックプレビューです。</p>
             <p class="source"><a href="https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31/" target="_blank" rel="noopener">GitHub Changelog（9/4）</a></p>
           </div>
         </article>
         <article class="item">
-          <div class="rank">04</div>
+          <div class="rank">05</div>
           <div>
             <h3>GitHub Copilot — Gemini 3.5／3.6 FlashやOpus 4.7など廃止予告（10/2）</h3>
             <p>複数モデルを2026-10-02に廃止し、Gemini 3.8 FlashやClaude Opus 5などへ移行を案内。Business／Enterpriseはモデルポリシーでの代替有効化が必要になるケースがあります（9/3）。</p>
@@ -732,7 +740,7 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">05</div>
+          <div class="rank">06</div>
           <div>
             <h3>Coder Agent Relay — Cursor Cloud Agentsを自社基盤で実行（SpaceXAI提携）</h3>
             <p>推論ループはCursor側、ツール実行はCoderワークスペース上の顧客マシンで行う構成。規制業種向けプライベートプレビューとして、ベンダーホスト以外でのエージェント展開を狙います。</p>
@@ -740,19 +748,11 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">06</div>
-          <div>
-            <h3>Cloudflare — Cursor Cloud Agents on Sandboxesを正式発表</h3>
-            <p>Self-Hosted MachinesのワーカーをCloudflare Sandboxes上で動かし、コードと秘密情報を顧客制御下に保持。エージェント実行レイヤをエッジ側へ寄せる動きです。</p>
-            <p class="source"><a href="https://www.cloudflare.com/press/press-releases/2026/cloudflare-expands-support-for-ai-coding-agents-with-cursor-cloud-agents-on-cloudflare-sandboxes/" target="_blank" rel="noopener">Cloudflare PR（9/2）</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">07</div>
           <div>
             <h3>Claude Code 2.1.259 — managedMcpServersとヘッドレス権限制御</h3>
             <p>管理者がHTTP／SSEのMCPサーバを組織全体へ配布可能に。CI向けには権限プロンプト抑制オプションを追加し、無人実行のハング回避と起動高速化が進みました。</p>
-            <p class="source"><a href="https://buttondown.com/ai-tldr/archive/aitldr-daily-digest-september-03-2026/" target="_blank" rel="noopener">AI/TLDR（9/3）</a></p>
+            <p class="source"><a href="https://github.com/anthropics/claude-code/blob/HEAD/CHANGELOG.md" target="_blank" rel="noopener">Claude Code CHANGELOG</a></p>
           </div>
         </article>
         <article class="item">
@@ -784,13 +784,21 @@
         <article class="item">
           <div class="rank">02</div>
           <div>
+            <h3>TypeScript 7.1 — Beta Prep完了、正式Betaは9/9予定</h3>
+            <p>Iteration Planでは9/4がBeta Prep、9/9が7.1 Beta。Import Attributesの<code>type</code>、es2026ターゲット、Iterator／Promise系のlib更新などが候補で、native TypeScript 7系の次サイクルに入ります。</p>
+            <p class="source"><a href="https://github.com/microsoft/TypeScript/issues/63703" target="_blank" rel="noopener">TypeScript #63703</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">03</div>
+          <div>
             <h3>TinyGo 0.42 — recover対応とGo 1.27サポート、PY32 MCU拡大（続報9/4）</h3>
             <p>ランタイムpanicのrecover、LLVM 22、UEFIターゲットを追加。CNX SoftwareはPuya PY32系87構成とEmbedFireボード対応を詳報し、組み込みGoの選択肢が広がっています。</p>
             <p class="source"><a href="https://tinygo.org/blog/2026/tinygo-0.42-recover-is-real/" target="_blank" rel="noopener">TinyGo Blog（9/1）</a><a href="https://www.cnx-software.com/2026/09/04/tinygo-0-42-adds-support-for-87-puya-py32-mcu-variants-and-two-embedfire-boards/" target="_blank" rel="noopener">CNX Software（9/4）</a></p>
           </div>
         </article>
         <article class="item">
-          <div class="rank">03</div>
+          <div class="rank">04</div>
           <div>
             <h3>Go 1.27.1／1.26.8 — 修正版とMicrosoftビルド追随</h3>
             <p>上流の1.27.1／1.26.8に合わせ、Microsoft build of Goもv1.27.1-1／v1.26.8-1を9/2に公開。cgo・コンパイラ・runtime周りの修正を両系列で取り込み済みです。</p>
@@ -798,7 +806,7 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">04</div>
+          <div class="rank">05</div>
           <div>
             <h3>Python 3.15.0rc2 — 最終候補版、正式版は10/1予定</h3>
             <p>rc1以降で約144件の修正を取り込み、これが最終RC。サードパーティには3.15ホイール公開が強く推奨され、本番利用はまだ非推奨です。</p>
@@ -806,7 +814,7 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">05</div>
+          <div class="rank">06</div>
           <div>
             <h3>AWS Lambda — Node.js 26／Python 3.15のパブリックプレビューランタイム</h3>
             <p>GA前に実ワークロードで検証できる新方式。ランタイムIDは将来のGAと共通で自動昇格し、本番利用は非推奨。言語側の10月安定版リリースを見据えた早期試用枠です。</p>
@@ -814,19 +822,11 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">06</div>
-          <div>
-            <h3>openai-node v7.9.0 — Usage API更新とWebSocketリダイレクト防止（9/2）</h3>
-            <p>Responses WebSocketがリダイレクトを追わないよう修正し、ブラウザexport条件でのCommonJS読込やJest 28互換も修復。エージェント実装の依存更新タイミングになります。</p>
-            <p class="source"><a href="https://github.com/openai/openai-node/releases/tag/v7.9.0" target="_blank" rel="noopener">openai-node v7.9.0</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>TypeScript（native／Go移植）— ツールチェーンをGo 1.27へ更新中</h3>
-            <p>microsoft/TypeScript側でGo要件を1.27に引き上げ、<code>encoding/json/v2</code>採用や構造体リテラル近代化を進めるPRが進行。ステージング用typescript-goは9月アーカイブ予定と案内されています。</p>
-            <p class="source"><a href="https://github.com/microsoft/TypeScript/pull/63902" target="_blank" rel="noopener">TypeScript PR #63902</a><a href="https://github.com/microsoft/typescript-go/" target="_blank" rel="noopener">typescript-go</a></p>
+            <h3>Node.js — 27系から年1回メジャーへ移行する新スケジュール</h3>
+            <p>奇数／偶数の区別をやめ、Alpha（10月〜）→Current（4月〜）→LTSの年次サイクルに再編。27は2026年10月にAlpha開始、2027年4月にCurrent、同年10月にLTS予定です。</p>
+            <p class="source"><a href="https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule" target="_blank" rel="noopener">Node.js Blog</a></p>
           </div>
         </article>
       </div>
@@ -842,13 +842,37 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
+            <h3>WhatsApp — iOSの反応トレイ／コンテキストメニューがLiquid Glass対応</h3>
+            <p>チャットバーと同系統の半透明表現へ反応UIと長押しメニューを刷新。描画エディタや動画プレイヤーへのLiquid Glass展開も進行中とWABetaInfoが9/6に報じています。</p>
+            <p class="source"><a href="https://wabetainfo.com/whatsapp-launches-message-menu-compatible-with-liquid-glass/" target="_blank" rel="noopener">WABetaInfo（9/6）</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">02</div>
+          <div>
+            <h3>WhatsApp — Android 5.0／5.1サポートを9/8終了、iOSは11/30に15.5以上へ</h3>
+            <p>ヘルプページの注記に基づき、Lollipop端末は月曜以降メッセンジャー利用不可。iPhoneは15.1から15.5へ最低要件を引き上げ、古い端末の切り捨てが続きます。</p>
+            <p class="source"><a href="https://giznewsdaily.com/whatsapp-ends-android-5-support-monday-iphone-cutoff-set-for-november/" target="_blank" rel="noopener">giznewsdaily（9/6）</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">03</div>
+          <div>
+            <h3>Instagram — 9/5にタイムライン障害と「アカウント無効」報告が急増</h3>
+            <p>Downdetector上でフィード／Webアクセス障害がスパイク。公式コメントは乏しく、一部ユーザーはアカウント停止表示も報告しています（サービス側の一時障害として監視）。</p>
+            <p class="source"><a href="https://jang.com.pk/en/72582-instagram-down-users-report-account-disabled-issues-as-outage-hits-hundreds-news" target="_blank" rel="noopener">Jang（9/5）</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">04</div>
+          <div>
             <h3>AWS MCP Server — コーディングエージェント向けLambda診断を無償提供</h3>
             <p>Agent Toolkit／スタンドアロンMCP経由で、実行中Lambdaと周辺サービスのエラー傾向・設定・変更履歴を一括取得。US East／Frankfurtでホストされ、商用リージョンのサービスを参照できます（9/4）。</p>
             <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/09/aws-mcp-server-serverless/" target="_blank" rel="noopener">AWS What’s New（9/4）</a></p>
           </div>
         </article>
         <article class="item">
-          <div class="rank">02</div>
+          <div class="rank">05</div>
           <div>
             <h3>Amazon EC2 — AMIに互換インスタンスタイプを指定可能に</h3>
             <p>AMI所有者が対応／非対応インスタンスタイプを定義でき、許可外での起動を自動ブロック。既定は制限なしで既存ワークフローを維持しつつ、失敗しやすい組合せを防げます（9/4）。</p>
@@ -856,15 +880,7 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">03</div>
-          <div>
-            <h3>Instagram — 「AI Content」誤ラベル問題が再燃（The Verge 9/4）</h3>
-            <p>生成AI未使用の写真にAIラベルが付き、逆にC2PA等を持つ合成画像が未ラベルになる事例が報告。Canvaの補助AI編集なども誤検知要因とされ、Metaの検出信号は依然不透明です。</p>
-            <p class="source"><a href="https://www.theverge.com/ai-artificial-intelligence/989617/instagram-ai-content-label-confusion" target="_blank" rel="noopener">The Verge（9/4）</a><a href="https://www.newsbytesapp.com/news/science/instagram-s-ai-tag-misidentifies-content-flags-real-images-as-synthetic/story" target="_blank" rel="noopener">NewsBytes（9/5）</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">04</div>
+          <div class="rank">06</div>
           <div>
             <h3>Cloudflare — Vulnerability Discovery and Remediation（OpenAI Daybreak連携）</h3>
             <p>Managed Defenseの早期アクセスで、GPT-5.6 Cyber等を使いコード調査・パッチ案生成・エッジWAF即時防御を一体提供。適用は人手承認必須です（9/3、続報）。</p>
@@ -872,43 +888,27 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">05</div>
-          <div>
-            <h3>Amazon SageMaker — Batch TransformがG6eインスタンスに対応</h3>
-            <p>NVIDIA L40S搭載のG6eをオフライン推論ジョブで選択可能に。大規模LLMや画像・動画・音声生成のバッチ処理向けで、複数リージョンで利用開始です（9/4）。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/09/sagemaker-batch-transform-g6e-instances/" target="_blank" rel="noopener">AWS What’s New（9/4）</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">06</div>
-          <div>
-            <h3>Google Workspace — Gmail／Docs／Keep Liveの音声Geminiを正式展開</h3>
-            <p>Gemini連携で受信箱検索、文書ドラフト、音声メモ整理を会話操作化。Gmail／KeepはAI Plus以上、Docs LiveはPro／Ultra限定。Sundar Pichai氏もXでDocs Liveを紹介しています。</p>
-            <p class="source"><a href="https://blog.google/products-and-platforms/products/workspace/voice-features-gmail-docs-keep/" target="_blank" rel="noopener">Google Blog（9/3）</a><a href="https://runtimewire.com/article/google-gemini-voice-gmail-docs-keep-live" target="_blank" rel="noopener">RuntimeWire（X反応）</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Amazon EC2 C8g — 台北・NZ・GovCloudなど追加リージョンで提供</h3>
-            <p>Graviton4ベースの演算最適化インスタンスが追加リージョンへ。HPCやバッチ、動画エンコード向けに、最大50Gbpsネットワークと大規模サイズを展開しています（9/4）。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ec2-c8g-instances-additional-regions/" target="_blank" rel="noopener">AWS What’s New（9/4）</a></p>
+            <h3>Instagram — 「AI Content」誤ラベル問題が再燃（The Verge 9/4）</h3>
+            <p>生成AI未使用の写真にAIラベルが付き、逆にC2PA等を持つ合成画像が未ラベルになる事例が報告。Canvaの補助AI編集なども誤検知要因とされ、Metaの検出信号は依然不透明です。</p>
+            <p class="source"><a href="https://www.theverge.com/ai-artificial-intelligence/989617/instagram-ai-content-label-confusion" target="_blank" rel="noopener">The Verge（9/4）</a><a href="https://www.newsbytesapp.com/news/science/instagram-s-ai-tag-misidentifies-content-flags-real-images-as-synthetic/story" target="_blank" rel="noopener">NewsBytes（9/5）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>Google Docs Live — AI Plusでは使えず、Pro以上に限定された料金設計</h3>
-            <p>TechTimesはDocs Liveが月額約$19.99のAI Pro側に閉じ、Gmail Live（Plus可）との差が約4倍になると整理。音声生成の重い機能ほど上位プランへ寄せる方針が明確です。</p>
-            <p class="source"><a href="https://www.techtimes.com/articles/326590/20260904/google-workspace-launches-voice-ai-docs-live-costs-4x-more-gmail-live.htm" target="_blank" rel="noopener">TechTimes（9/4）</a></p>
+            <h3>Meta — ZippyDB前面にZGatewayプロキシ、AI運用向け制御を強化</h3>
+            <p>KVストア前面で入場制御・負荷分散・リージョン耐性を担うステートレス層。約10億ops/s規模でZippyDBトラフィックの約40％を処理し、エージェント運用のヒューリスティックにも接続できる設計です（9/3）。</p>
+            <p class="source"><a href="https://engineering.fb.com/2026/09/03/core-infra/zgateway-proxy-zippydb-meta/" target="_blank" rel="noopener">Meta Engineering（9/3）</a></p>
           </div>
         </article>
       </div>
     </section>
 
     <footer>
-      <p>収集対象: おおむね2026-09-04 21:00 UTC 〜 2026-09-05 21:00 UTC（cron起動基準）。一次情報と専門メディアを優先し、重複は統合しています。</p>
-      <p>Edition 2026-09-05 / daily_news</p>
+      <p>収集対象: おおむね2026-09-05 21:00 UTC 〜 2026-09-06 21:00 UTC（cron起動基準）。一次情報と専門メディアを優先し、重複は統合しています。</p>
+      <p>Edition 2026-09-06 / daily_news</p>
     </footer>
   </div>
 </body>
