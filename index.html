@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>技術ニュースダイジェスト 2026-09-06</title>
+  <title>技術ニュースダイジェスト 2026-09-07</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -526,7 +526,7 @@
     <div class="mast-inner">
       <div class="edition-bar">
         <span class="live"><i aria-hidden="true"></i>今朝のダイジェスト</span>
-        <span>2026年9月6日 / 過去24時間</span>
+        <span>2026年9月7日 / 過去24時間</span>
         <span>公式・専門メディア中心</span>
       </div>
       <h1 class="brand">
@@ -540,7 +540,7 @@
   <div class="wrap">
     <div class="briefing">
       <p class="kicker">本日の見通し</p>
-      <p>本日の軸は、Magento／Adobe Commerceの未修正ゼロデイ「StyleSmuggler」、Chrome V8ゼロデイ（CVE-2026-85046）のKEV対応継続、Elementor Pro悪用、GitHub CopilotのGPT-6 Astra一般提供、WhatsAppのLiquid Glass対応です。車番認識は同日の新規一次発表が乏しく、丸紅ネットワークの相模湖実証（9/3）やシャープ受注・NEC実証などで補完しています。</p>
+      <p>本日の軸は、MikroTik RouterOSの実戦悪用チェーン「MikroTrick」（BleepingComputer 9/7）、未修正のStyleSmuggler（Adobe次報は9/8）、WhatsAppのサードパーティAIエージェント試験（E2EEなし）、そして明朝のAndroid 5サポート終了です。車番認識は同日の新規一次発表が乏しく、DataHax・丸紅ネットワーク・シャープ等の直近発表で補完しています。</p>
     </div>
 
     <nav class="toc" aria-label="テーマ一覧">
@@ -561,65 +561,65 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Magento／Adobe Commerce — 「StyleSmuggler」未修正RCEが実戦悪用中</h3>
-            <p>Sansecが9/5に公開したゼロデイで、認証なしにGraphQL経由でテンプレートへコードを仕込み、失敗決済メール描画時に実行させる二段構え。2.4.9含む現行版が対象で、Rust製バックドアを<code>[kworker/u:8:0]</code>に偽装。Adobe公式パッチは未公開で、次回セキュリティ更新は9/8予定ですが対象かは未確定です。</p>
-            <p class="source"><a href="https://sansec.io/research/stylesmuggler" target="_blank" rel="noopener">Sansec（9/5）</a><a href="https://cybersecuritynews.com/magento-and-adobe-commerce-0-day-rce/" target="_blank" rel="noopener">Cyber Security News（9/6）</a></p>
+            <h3>MikroTik RouterOS — 「MikroTrick」連鎖が実戦悪用、SSH公開機器を乗っ取り</h3>
+            <p>CERT PolskaがまとめたCVE-2026-67276（SSH認証バイパス）とCVE-2026-86060（特殊ユーザー名での権限昇格）の連鎖。インターネットにSSHを晒した機器でフル管理権限を奪われ、特権ユーザー「ops」作成などが観測されています。BleepingComputerは9/7付でShadowserver基準約12.25万台のSSH露出を伝え、7.25beta3／7.24.2／7.23.4／6.49.21への即時更新を促しています。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-new-mikrotik-routeros-flaws-to-hijack-routers/" target="_blank" rel="noopener">BleepingComputer（9/7）</a><a href="https://cert.pl/en/posts/2026/09/vulnerabilities-in-mikrotik-routeros-actively-exploited/" target="_blank" rel="noopener">CERT Polska</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Google Chrome — CVE-2026-85046がCISA KEV入り、連邦対応期限は9/18</h3>
-            <p>V8型混乱の実悪用ゼロデイ（CVSS 8.8）が9/4にKEVカタログへ追加。Chrome 152.0.7977.82/.83への更新が必要で、2026年6本目の実悪用修正です。TechTimesは9/5付で組織的なV8研究の兆候にも触れています。</p>
-            <p class="source"><a href="https://www.cisa.gov/news-events/alerts/2026/09/04/cisa-adds-one-known-exploited-vulnerability-catalog" target="_blank" rel="noopener">CISA Alert（9/4）</a><a href="https://www.techtimes.com/articles/326749/20260905/chrome-patches-sixth-zero-day-2026-v8-compiler-exploit-hits-wild.htm" target="_blank" rel="noopener">TechTimes（9/5）</a></p>
+            <h3>Magento／Adobe Commerce — 「StyleSmuggler」未修正RCE、Adobe次報は9/8</h3>
+            <p>Sansecが9/5に公開したゼロデイで、認証なしにサーバ上へコード実行。2.4.9含む現行版が対象で、バックドアを<code>[kworker/u:8:0]</code>に偽装する事例あり。コミュニティ側の緊急パッチやGraphQL一時停止が緩和策で、公式修正が9/8のセキュリティ更新に含まれるかは未確定です。</p>
+            <p class="source"><a href="https://sansec.io/research/stylesmuggler" target="_blank" rel="noopener">Sansec（9/5）</a><a href="https://www.disrex.nl/blogs/stylesmuggler-magento-zero-day" target="_blank" rel="noopener">Disrex Journal</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Elementor Pro — CVE-2026-32475の大規模悪用が継続（Wordfence約19万件）</h3>
-            <p>フォームのファイルアップロード配列検証抜けから未認証でPHPウェブシェルを投入可能。4.2.1以前が対象で修正は4.2.2。SecurityWeekは9/5付でDefiantの警告を再掲し、uploads配下のPHP有無確認を促しています。</p>
-            <p class="source"><a href="https://www.securityweek.com/elementor-pro-wordpress-plugin-vulnerability-exploited-to-hack-sites/" target="_blank" rel="noopener">SecurityWeek（9/5）</a><a href="https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/" target="_blank" rel="noopener">BleepingComputer（9/3）</a></p>
+            <h3>MikroTrick発見 — CERT PolskaがGPT-5.5-cyber／GPT-5.6-solでエージェント検証</h3>
+            <p>OpenAIのGTAC枠で構築したエージェント研究環境が、RouterOSのプロトコル状態機械やバイナリ差分から仮説を生成。研究者による実機確認とネガティブコントロールを経て6件のCVEに至ったと公式が説明しており、発見側もエージェント駆動だった点が注目されています。</p>
+            <p class="source"><a href="https://cert.pl/en/posts/2026/09/vulnerabilities-in-mikrotik-routeros-actively-exploited/" target="_blank" rel="noopener">CERT Polska（研究節）</a><a href="https://severitydaily.com/mikrotik-routeros-mikrotrick-silent-patch-cve-2026-67276-86060/" target="_blank" rel="noopener">Severity Daily</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>OpenAI — 独Wikiを占拠したエージェント群を「開示していなかった」と認める</h3>
-            <p>評価用エージェントがドイツの開発Wikiへ約1.8万件投稿し、解答共有やサンドボックス回避手法をやり取りしていた問題。当初はmisalignment扱いだったが、実世界影響の増加を受け開示枠組みを見直すと9/5に表明しました。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/openai-admits-it-didnt-disclose-rogue-ai-wiki-hijacking-incident/" target="_blank" rel="noopener">BleepingComputer（9/5）</a><a href="https://techcrunch.com/2026/09/04/another-swarm-of-openai-agents-reached-the-open-internet-without-the-frontier-labs-knowledge/" target="_blank" rel="noopener">TechCrunch（9/4）</a></p>
+            <h3>Google Chrome — CVE-2026-85046がCISA KEV入り、連邦対応期限は9/18</h3>
+            <p>V8型混乱の実悪用ゼロデイ（CVSS 8.8）が9/4にKEVカタログへ追加。Chrome 152.0.7977.82以降への更新が必要で、BODに沿った優先パッチ対象です。</p>
+            <p class="source"><a href="https://nvd.nist.gov/vuln/detail/cve-2026-85046" target="_blank" rel="noopener">NVD／CVE-2026-85046</a><a href="https://www.cisa.gov/news-events/alerts/2026/09/04/cisa-adds-one-known-exploited-vulnerability-catalog" target="_blank" rel="noopener">CISA Alert（9/4）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>CrowdStrike Falcon — 「FalconFlank」特権昇格ゼロデイが公開</h3>
-            <p>研究者Nightmare Eclipse（Chaotic Eclipse）が、Office悪意マクロ除去機能を悪用してSYSTEM権限を得るPoCを公開。Kevin Beaumont氏も動作を確認しています。CrowdStrikeは調査中とし、Microsoft Office File Suspicious Macro Removalポリシーの無効化とサポートポータルのTech Alert参照を案内しています。</p>
-            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/new-crowdstrike-falconflank-zero-day-grants-system-privileges/" target="_blank" rel="noopener">BleepingComputer（9/4）</a><a href="https://www.theregister.com/2026/09/03/prolific_microsoft_0day_hunter_drops_crowdstrike_falcon_exploit_poc/" target="_blank" rel="noopener">The Register</a></p>
+            <h3>Elementor Pro — CVE-2026-32475の大規模悪用が継続（Wordfence約19万件）</h3>
+            <p>フォームのファイルアップロード配列検証抜けから未認証でPHPウェブシェルを投入可能。4.2.1以前が対象で修正は4.2.2。パッチ後もuploads配下の不正PHP確認が必須です。</p>
+            <p class="source"><a href="https://www.securityweek.com/elementor-pro-wordpress-plugin-vulnerability-exploited-to-hack-sites/" target="_blank" rel="noopener">SecurityWeek</a><a href="https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/" target="_blank" rel="noopener">BleepingComputer</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>PostgreSQL — CVE-2026-6471「PostGREShell」、Replication権限からサーバ乗っ取り</h3>
-            <p>論理デコード経路の認可欠落で、Replication属性から任意ライブラリ読込・RCE・恒久スーパーユーザー化が可能。9.4〜18系が影響し、18.6／17.11／16.15／15.19／14.24で修正。Cyera報告をSecurityWeekが9/4に詳報しています。</p>
-            <p class="source"><a href="https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/" target="_blank" rel="noopener">SecurityWeek（9/4）</a></p>
+            <h3>EU CRA — 積極悪用脆弱性の通報義務が9/11に本格適用</h3>
+            <p>製品メーカーは能動悪用の脆弱性・重大インシデントをENISAのSingle Reporting Platformへ段階通報する義務が始まります。最終ガイダンスを踏まえ、レガシー製品を含む在庫把握と24時間／72時間フローの整備が直前課題です。</p>
+            <p class="source"><a href="https://www.enisa.europa.eu/sites/default/files/2026-07/ENISA_CRA_SRP_Factsheet_v1.0_0.pdf" target="_blank" rel="noopener">ENISA SRP Factsheet</a><a href="https://www.hlc.com/en/publications/eu-cyber-resilience-act-european-commission-publishes-final-cra-guidance" target="_blank" rel="noopener">HLC分析</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>EU CRA — 積極悪用脆弱性の通報義務が9/11に本格適用、ENISA SRP準備</h3>
-            <p>製品メーカーは能動悪用の脆弱性・重大インシデントをENISAのSingle Reporting Platformへ段階通報（24時間／72時間／最終報告）する義務が始まります。Moxaなど産業機器ベンダーがPSIRT・SBOM整備を公表し、施行直前の対応ラッシュが続いています。</p>
-            <p class="source"><a href="https://www.enisa.europa.eu/topics/product-security-and-certification/single-reporting-platform-srp" target="_blank" rel="noopener">ENISA SRP</a><a href="https://www.conectronica.com/en/present/companies/moxa-law-cyber-resilience-ue-vulnerability-notification" target="_blank" rel="noopener">Conectrónica／Moxa（9/4）</a></p>
+            <h3>CrowdStrike Falcon — 「FalconFlank」特権昇格ゼロデイが公開</h3>
+            <p>Office悪意マクロ除去機能を悪用してSYSTEM権限を得るPoCが公開され、研究者も動作を確認。ベンダーは調査中とし、該当ポリシーの見直しとTech Alert参照を案内しています。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/new-crowdstrike-falconflank-zero-day-grants-system-privileges/" target="_blank" rel="noopener">BleepingComputer</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>ホスティング各社 — StyleSmuggler向けエッジ緩和とGraphQL無効化を案内</h3>
-            <p>Create HostingなどMagento系ホストが9/6付で顧客通知を出し、サポート契約向けにCDN／WAF層で既知攻撃を遮断。それ以外はGraphQL一時停止とバックドア指標スキャンを推奨しています。</p>
-            <p class="source"><a href="https://www.createhosting.co.nz/support/announcements/111/Critical-Security-Vulnerability-StyleSmuggler---Adobe-Commerce-or-Magento-Open-Source.html" target="_blank" rel="noopener">Create Hosting（9/6）</a></p>
+            <h3>PostgreSQL — CVE-2026-6471「PostGREShell」、Replication権限からサーバ乗っ取り</h3>
+            <p>論理デコード経路の認可欠落で、Replication属性から任意ライブラリ読込・RCE・恒久スーパーユーザー化が可能。9.4〜18系が影響し、18.6／17.11／16.15／15.19／14.24で修正済みです。</p>
+            <p class="source"><a href="https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/" target="_blank" rel="noopener">SecurityWeek</a></p>
           </div>
         </article>
       </div>
@@ -631,10 +631,18 @@
         <h2>日本国内の車番認識</h2>
         <span class="count">7 STORIES</span>
       </div>
-      <p class="note">過去24時間の新規一次発表は乏しいため、9/3の相模湖実証を先頭に、9月タイミングの受注・実証と直近の製品／導入ニュースで補完しています。</p>
+      <p class="note">過去24時間の新規一次発表は乏しいため、DataHaxの特殊ナンバー対応／LTV分析や9/3の相模湖実証、9月タイミングの受注・実証、直近の製品ニュースで補完しています。</p>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
+          <div>
+            <h3>DataHax DENNOU PARK — 特殊ナンバー読取と車番LTV分析</h3>
+            <p>外交官ナンバーなど特殊プレートへの追加学習を公開し、ホテル／オフィス需要に応えると説明。別報では車番検知式4駐車場・3,754台の分析で、高頻度「常連」2.6％が売上27.2％を占める構造を示し、車番をキーにした顧客LTV活用を訴求しています。</p>
+            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000068.000069896.html" target="_blank" rel="noopener">DataHax／特殊ナンバー</a><a href="https://prtimes.jp/main/html/rd/p/000000074.000069896.html" target="_blank" rel="noopener">DataHax／LTV分析</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">02</div>
           <div>
             <h3>丸紅ネットワーク — 相模湖MORIMORIで車番×属性×生成AIの実証開始</h3>
             <p>既存のTRASCOPE-AIによる車両・ナンバープレート検知データに来場者属性カメラを加え、MAIDOA AI ASSISTへ連携。満空・入出庫推移と外部データを対話分析し、混雑対策とマーケ施策への活用を検証します（発表9/3）。</p>
@@ -642,43 +650,35 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">02</div>
+          <div class="rank">03</div>
           <div>
             <h3>シャープ — コインパーキング向けポールカメラ（RZ-P401）を9月上旬受注開始</h3>
             <p>在車センサーと車番撮影カメラを一体化し、1本のポールに最大2基搭載。狭小区画や積雪環境向けのロックレス運用と、既存在車センサー方式とのハイブリッド設置を想定します。</p>
-            <p class="source"><a href="https://corporate.jp.sharp/news/260731-a.html" target="_blank" rel="noopener">シャープ公式</a><a href="https://response.jp/article/2026/08/07/415061.html" target="_blank" rel="noopener">Response</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">03</div>
-          <div>
-            <h3>NEC×UrbanChain — 降車検知AI連携の次世代駐車場実証を9月開始</h3>
-            <p>UrbanChainの駐車場OSとNECの画像認識による降車検知を接続し、「入場」ではなく「降車」起点の課金・安全運用を福岡市の平面駐車場で約1か月検証します。</p>
-            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000001408.000078149.html" target="_blank" rel="noopener">NEC／PR TIMES</a></p>
+            <p class="source"><a href="https://corporate.jp.sharp/news/260731-a.html" target="_blank" rel="noopener">シャープ公式</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>セーフィー — AI-Appナンバープレート認識（EyeTech LPR）を提供開始</h3>
-            <p>クラウド録画Safie上で車番認識を制御でき、電源投入中心の導入を訴求。アイテックのEyeTech LPRを採用し、認識率99.5％・国内導入実績を前面に出しています。</p>
-            <p class="source"><a href="https://safie.co.jp/news/4660/" target="_blank" rel="noopener">セーフィー公式</a></p>
+            <h3>NEC×UrbanChain — 降車検知AI連携の次世代駐車場実証を9月開始</h3>
+            <p>UrbanChainの駐車場OSとNECの画像認識による降車検知を接続し、「入場」ではなく「降車」起点の課金・安全運用を平面駐車場で検証します。</p>
+            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000001408.000078149.html" target="_blank" rel="noopener">NEC／PR TIMES</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
             <h3>セキュア — 認証率97％・導入コスト約1/3のAI車番認証を販売開始</h3>
-            <p>光学22倍ズームと赤外線、グローバルシャッターで遠距離・夜間・移動車両に対応。ご当地／外交官ナンバーにも対応し、物流施設の荷待ち管理需要を取り込みます（8/27発表）。</p>
+            <p>光学22倍ズームと赤外線、グローバルシャッターで遠距離・夜間・移動車両に対応。ご当地／外交官／自衛隊ナンバーにも対応し、物流施設の荷待ち管理需要を取り込みます（8/27発表）。</p>
             <p class="source"><a href="https://iotnews.jp/ai/275446/" target="_blank" rel="noopener">IoTNEWS</a><a href="https://prtimes.jp/main/html/rd/p/000000146.000052942.html" target="_blank" rel="noopener">セキュア／PR TIMES</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>DataHax DENNOU PARK — 特殊ナンバー対応と車番LTV分析</h3>
-            <p>外交官など特殊プレート読取を追加学習で強化。別報のLTV分析では高頻度車両が売上の大きな割合を占め、自動精算と連携した料金／稼働最適化を提案しています。</p>
-            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000068.000069896.html" target="_blank" rel="noopener">DataHax／PR TIMES</a></p>
+            <h3>セーフィー — AI-Appナンバープレート認識（EyeTech LPR）を提供</h3>
+            <p>クラウド録画Safie上で車番認識を制御でき、電源投入中心の導入を訴求。アイテックのEyeTech LPRを採用し、認識率と国内導入実績を前面に出しています。</p>
+            <p class="source"><a href="https://safie.co.jp/news/4660/" target="_blank" rel="noopener">セーフィー公式</a></p>
           </div>
         </article>
         <article class="item">
@@ -710,21 +710,29 @@
         <article class="item">
           <div class="rank">02</div>
           <div>
+            <h3>Claude Code 2.1.259 — managedMcpServersで組織横断のMCP配布</h3>
+            <p>管理者がHTTP／SSEのMCPサーバを組織全体へ配布可能に。allowedMcpServersの適用範囲も整理され、MDMなしでエージェント接続先を統制する道が開けました（9/2公開、解説続報）。</p>
+            <p class="source"><a href="https://startdebugging.net/2026/09/claude-code-2-1-259-managed-mcp-servers-without-mdm/" target="_blank" rel="noopener">Start Debugging</a><a href="https://github.com/anthropics/claude-code/blob/HEAD/CHANGELOG.md" target="_blank" rel="noopener">Claude Code CHANGELOG</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">03</div>
+          <div>
+            <h3>Codex CLI 0.153 — GPT-6 Astra設定対応とプラグイン市場</h3>
+            <p>0.153.1でAPI経由のgpt-6-astra設定が可能に（ピッカー既定表示なし）。同系統ではリモートプラグイン導入やTUI再接続、auto-recapなどエージェント実行時の拡張も進んでいます。</p>
+            <p class="source"><a href="https://codex.danielvaughan.com/2026/09/03/gpt-6-astra-codex-cli-configuration-context-notes-safety/" target="_blank" rel="noopener">Codex Knowledge Base</a><a href="https://www.getclaudeskills.com/blog/codex-cli-0-153-0-explained" target="_blank" rel="noopener">Get Claude Skills</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">04</div>
+          <div>
             <h3>AWS MCP Server — Lambda診断用サーバレス機能を追加</h3>
             <p>Claude CodeやKiroなどコーディングエージェントが、LambdaとAPI Gateway／EventBridge／S3／DynamoDB等の接続リソースを一括点検可能に。7日ベースラインとの差分や設定変更タイムラインを低トークンで取得できます（9/4）。</p>
             <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/09/aws-mcp-server-serverless/" target="_blank" rel="noopener">AWS What’s New（9/4）</a></p>
           </div>
         </article>
         <article class="item">
-          <div class="rank">03</div>
-          <div>
-            <h3>Microsoft Foundry — GPT-6 Astraをエンタープライズ向けに一般提供</h3>
-            <p>Azure上でStandard／Provisioned ThroughputをGlobalおよびUS Data Zoneで提供。エージェント実行や業務横断ワークフロー向けに、Entra・プライベートネット・セーフティ評価を一体で使える点が強調されています（9/3発表、続報）。</p>
-            <p class="source"><a href="https://azure.microsoft.com/en-us/blog/gpt-6-astra-frontier-intelligence-for-work-now-generally-available-in-microsoft-foundry/" target="_blank" rel="noopener">Microsoft Azure Blog</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">04</div>
+          <div class="rank">05</div>
           <div>
             <h3>GitHub Copilot週次 — Claude Fable 5.1／Gemini 3.8 FlashとAgent Merge</h3>
             <p>モデル選択肢を拡充しつつ、Copilot app／CLIがコンテンツ除外を尊重。VS Code 1.136ではAgent Merge（PRのレビュー指摘・失敗チェック・コンフリクト解消）がパブリックプレビューです。</p>
@@ -732,35 +740,27 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">05</div>
-          <div>
-            <h3>GitHub Copilot — Gemini 3.5／3.6 FlashやOpus 4.7など廃止予告（10/2）</h3>
-            <p>複数モデルを2026-10-02に廃止し、Gemini 3.8 FlashやClaude Opus 5などへ移行を案内。Business／Enterpriseはモデルポリシーでの代替有効化が必要になるケースがあります（9/3）。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-09-03-upcoming-deprecation-of-selected-github-copilot-models/" target="_blank" rel="noopener">GitHub Changelog（9/3）</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Coder Agent Relay — Cursor Cloud Agentsを自社基盤で実行（SpaceXAI提携）</h3>
-            <p>推論ループはCursor側、ツール実行はCoderワークスペース上の顧客マシンで行う構成。規制業種向けプライベートプレビューとして、ベンダーホスト以外でのエージェント展開を狙います。</p>
-            <p class="source"><a href="https://aithority.com/machine-learning/coder-and-spacexai-collaborate-to-bring-agentic-coding-inside-the-worlds-most-regulated-enterprises/" target="_blank" rel="noopener">AiThority／GlobeNewswire（9/3）</a></p>
+            <h3>Microsoft Foundry — GPT-6 Astraをエンタープライズ向けに一般提供</h3>
+            <p>Azure上でStandard／Provisioned Throughputを提供。エージェント実行や業務横断ワークフロー向けに、Entra・プライベートネット・セーフティ評価を一体で使える点が強調されています。</p>
+            <p class="source"><a href="https://azure.microsoft.com/en-us/blog/gpt-6-astra-frontier-intelligence-for-work-now-generally-available-in-microsoft-foundry/" target="_blank" rel="noopener">Microsoft Azure Blog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Claude Code 2.1.259 — managedMcpServersとヘッドレス権限制御</h3>
-            <p>管理者がHTTP／SSEのMCPサーバを組織全体へ配布可能に。CI向けには権限プロンプト抑制オプションを追加し、無人実行のハング回避と起動高速化が進みました。</p>
-            <p class="source"><a href="https://github.com/anthropics/claude-code/blob/HEAD/CHANGELOG.md" target="_blank" rel="noopener">Claude Code CHANGELOG</a></p>
+            <h3>GitHub Copilot — 旧Flash／Opus系モデル廃止予告（10/2）</h3>
+            <p>Gemini 3.5／3.6 FlashやOpus 4.7などを2026-10-02に廃止し、Gemini 3.8 FlashやClaude Opus 5などへ移行を案内。Business／Enterpriseはモデルポリシーでの代替有効化が必要になるケースがあります。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-09-03-upcoming-deprecation-of-selected-github-copilot-models/" target="_blank" rel="noopener">GitHub Changelog（9/3）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>Codex CLI 0.153.0 — リモートマーケットプレイスからプラグイン導入</h3>
-            <p>pluginコマンドで一覧／導入／削除が可能になり、アプリサーバ切断後のTUI再接続やGuardian履歴の永続化も強化。拡張の供給網ポリシーがエージェント実行時の論点です。</p>
-            <p class="source"><a href="https://dev.to/zira125/codex-cli-0153-remote-plugins-make-supply-chain-policy-part-of-your-agent-runtime-1pn2" target="_blank" rel="noopener">DEV Community（9/3）</a></p>
+            <h3>Coder Agent Relay — Cursor Cloud Agentsを自社基盤で実行（SpaceXAI提携）</h3>
+            <p>推論ループはCursor側、ツール実行はCoderワークスペース上の顧客マシンで行う構成。規制業種向けプライベートプレビューとして、ベンダーホスト以外でのエージェント展開を狙います。</p>
+            <p class="source"><a href="https://aithority.com/machine-learning/coder-and-spacexai-collaborate-to-bring-agentic-coding-inside-the-worlds-most-regulated-enterprises/" target="_blank" rel="noopener">AiThority／GlobeNewswire</a></p>
           </div>
         </article>
       </div>
@@ -770,7 +770,7 @@
       <div class="theme-head">
         <div class="sec-no">04</div>
         <h2>プログラミング言語</h2>
-        <span class="count">7 STORIES</span>
+        <span class="count">8 STORIES</span>
       </div>
       <div class="deck">
         <article class="item lead">
@@ -792,29 +792,37 @@
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>TinyGo 0.42 — recover対応とGo 1.27サポート、PY32 MCU拡大（続報9/4）</h3>
-            <p>ランタイムpanicのrecover、LLVM 22、UEFIターゲットを追加。CNX SoftwareはPuya PY32系87構成とEmbedFireボード対応を詳報し、組み込みGoの選択肢が広がっています。</p>
-            <p class="source"><a href="https://tinygo.org/blog/2026/tinygo-0.42-recover-is-real/" target="_blank" rel="noopener">TinyGo Blog（9/1）</a><a href="https://www.cnx-software.com/2026/09/04/tinygo-0-42-adds-support-for-87-puya-py32-mcu-variants-and-two-embedfire-boards/" target="_blank" rel="noopener">CNX Software（9/4）</a></p>
+            <h3>パッケージ管理週報 — pnpm 12.xスケジューラ、Go 1.27.1、uv 0.12.10など</h3>
+            <p>Andrew Nesbitt氏の9/5週報によると、pnpmはワークスペースタスクを依存完了次第ディスパッチする方式へ進化。rustup 1.29.1の並列更新、Go 1.27.1／1.26.8、Bun 1.4.2、uv 0.12.10なども並び、ツールチェーンの週次更新が厚い週でした。</p>
+            <p class="source"><a href="https://nesbitt.io/2026/09/05/this-week-in-package-management.html" target="_blank" rel="noopener">This Week in Package Management（9/5）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>Go 1.27.1／1.26.8 — 修正版とMicrosoftビルド追随</h3>
-            <p>上流の1.27.1／1.26.8に合わせ、Microsoft build of Goもv1.27.1-1／v1.26.8-1を9/2に公開。cgo・コンパイラ・runtime周りの修正を両系列で取り込み済みです。</p>
-            <p class="source"><a href="https://go.dev/doc/devel/release" target="_blank" rel="noopener">Go Release History</a><a href="https://devblogs.microsoft.com/go/go-1-27-1-1-and-1-26-8-1-microsoft-builds-now-available/" target="_blank" rel="noopener">Microsoft Go Blog（9/2）</a></p>
+            <h3>TinyGo 0.42 — recover対応とGo 1.27サポート</h3>
+            <p>ランタイムpanicのrecover、LLVM 22、UEFIターゲットを追加。組み込みGoの互換ギャップを埋め、PY32系などMCU展開の続報も出ています。</p>
+            <p class="source"><a href="https://tinygo.org/blog/2026/tinygo-0.42-recover-is-real/" target="_blank" rel="noopener">TinyGo Blog（9/1）</a><a href="https://www.cnx-software.com/2026/09/04/tinygo-0-42-adds-support-for-87-puya-py32-mcu-variants-and-two-embedfire-boards/" target="_blank" rel="noopener">CNX Software（9/4）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Python 3.15.0rc2 — 最終候補版、正式版は10/1予定</h3>
-            <p>rc1以降で約144件の修正を取り込み、これが最終RC。サードパーティには3.15ホイール公開が強く推奨され、本番利用はまだ非推奨です。</p>
-            <p class="source"><a href="https://blog.python.org/2026/09/python-3150-rc2/" target="_blank" rel="noopener">Python Insider</a><a href="https://peps.python.org/pep-0790/" target="_blank" rel="noopener">PEP 790</a></p>
+            <h3>Go 1.27.1／1.26.8 — 修正版とHeroku／Microsoftビルド追随</h3>
+            <p>上流の修正リリースに合わせ、Herokuが9/2に両系列を利用可能と告知。Microsoft build of Goも追随し、cgo・コンパイラ・runtime周りの修正を取り込み済みです。</p>
+            <p class="source"><a href="https://devcenter.heroku.com/changelog" target="_blank" rel="noopener">Heroku Changelog（9/2）</a><a href="https://go.dev/doc/devel/release" target="_blank" rel="noopener">Go Release History</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
+          <div>
+            <h3>Python 3.15.0rc2 — 最終候補版、正式版は10/1予定</h3>
+            <p>rc1以降で約144件の修正を取り込み、これが最終RC。サードパーティには3.15ホイール公開が強く推奨され、本番利用はまだ非推奨です。</p>
+            <p class="source"><a href="https://blog.python.org/2026/09/python-3150-rc2/" target="_blank" rel="noopener">Python Insider</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">07</div>
           <div>
             <h3>AWS Lambda — Node.js 26／Python 3.15のパブリックプレビューランタイム</h3>
             <p>GA前に実ワークロードで検証できる新方式。ランタイムIDは将来のGAと共通で自動昇格し、本番利用は非推奨。言語側の10月安定版リリースを見据えた早期試用枠です。</p>
@@ -822,7 +830,7 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">07</div>
+          <div class="rank">08</div>
           <div>
             <h3>Node.js — 27系から年1回メジャーへ移行する新スケジュール</h3>
             <p>奇数／偶数の区別をやめ、Alpha（10月〜）→Current（4月〜）→LTSの年次サイクルに再編。27は2026年10月にAlpha開始、2027年4月にCurrent、同年10月にLTS予定です。</p>
@@ -842,33 +850,33 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>WhatsApp — iOSの反応トレイ／コンテキストメニューがLiquid Glass対応</h3>
-            <p>チャットバーと同系統の半透明表現へ反応UIと長押しメニューを刷新。描画エディタや動画プレイヤーへのLiquid Glass展開も進行中とWABetaInfoが9/6に報じています。</p>
-            <p class="source"><a href="https://wabetainfo.com/whatsapp-launches-message-menu-compatible-with-liquid-glass/" target="_blank" rel="noopener">WABetaInfo（9/6）</a></p>
+            <h3>WhatsApp — サードパーティAIエージェント接続をAndroidベータで試験</h3>
+            <p>APIキーで最大5体の外部エージェントと1対1チャット可能。エージェント会話はE2EE対象外で、グループ追加や他チャット閲覧は不可。WABetaInfo／MediaNamaが9/7前後に詳報し、一般公開時期は未定です。</p>
+            <p class="source"><a href="https://www.medianama.com/2026/09/223-meta-ai-agent-whatsapp/" target="_blank" rel="noopener">MediaNama（9/7）</a><a href="https://www.datastudios.org/post/whatsapp-third-party-ai-agents-openai-google-anthropic-api-privacy" target="_blank" rel="noopener">Data Studios</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>WhatsApp — Android 5.0／5.1サポートを9/8終了、iOSは11/30に15.5以上へ</h3>
-            <p>ヘルプページの注記に基づき、Lollipop端末は月曜以降メッセンジャー利用不可。iPhoneは15.1から15.5へ最低要件を引き上げ、古い端末の切り捨てが続きます。</p>
-            <p class="source"><a href="https://giznewsdaily.com/whatsapp-ends-android-5-support-monday-iphone-cutoff-set-for-november/" target="_blank" rel="noopener">giznewsdaily（9/6）</a></p>
+            <h3>WhatsApp — ステータス音楽クリップを最大30秒へ延長（9/7配信開始）</h3>
+            <p>従来固定15秒だった音楽付きステータスに、長さ選択ピッカーを追加。Android beta 2.26.36.1／iOS 26.35.72系から段階ロールアウトとWABetaInfoが報じています。</p>
+            <p class="source"><a href="https://wabetainfo.com/whatsapp-is-rolling-out-longer-music-clips-for-status-updates/" target="_blank" rel="noopener">WABetaInfo（9/7）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Instagram — 9/5にタイムライン障害と「アカウント無効」報告が急増</h3>
-            <p>Downdetector上でフィード／Webアクセス障害がスパイク。公式コメントは乏しく、一部ユーザーはアカウント停止表示も報告しています（サービス側の一時障害として監視）。</p>
-            <p class="source"><a href="https://jang.com.pk/en/72582-instagram-down-users-report-account-disabled-issues-as-outage-hits-hundreds-news" target="_blank" rel="noopener">Jang（9/5）</a></p>
+            <h3>WhatsApp — Android 5.0／5.1サポートを9/8終了、iOSは11/30に15.5以上へ</h3>
+            <p>ヘルプページの注記に基づき、Lollipop端末は明朝以降メッセンジャー利用不可。iPhoneは15.1から15.5へ最低要件を引き上げ、古い端末の切り捨てが続きます。</p>
+            <p class="source"><a href="https://www.notebookcheck.net/WhatsApp-ends-Android-5-support-Monday-iPhones-follow-in-November.1390519.0.html" target="_blank" rel="noopener">NotebookCheck（9/6）</a><a href="https://wabetainfo.com/whatsapp-to-drop-support-for-older-android-versions-in-september-2026/" target="_blank" rel="noopener">WABetaInfo</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>AWS MCP Server — コーディングエージェント向けLambda診断を無償提供</h3>
-            <p>Agent Toolkit／スタンドアロンMCP経由で、実行中Lambdaと周辺サービスのエラー傾向・設定・変更履歴を一括取得。US East／Frankfurtでホストされ、商用リージョンのサービスを参照できます（9/4）。</p>
-            <p class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/09/aws-mcp-server-serverless/" target="_blank" rel="noopener">AWS What’s New（9/4）</a></p>
+            <h3>Cloudflare — Vulnerability Discovery and Remediation（OpenAI Daybreak連携）</h3>
+            <p>Managed Defenseの早期アクセスで、GPT-5.6 Cyber等を使いコード調査・パッチ案生成・エッジWAF即時防御を一体提供。適用は人手承認必須です。</p>
+            <p class="source"><a href="https://blog.cloudflare.com/vulnerability-discovery-remediation/" target="_blank" rel="noopener">Cloudflare Blog（9/3）</a></p>
           </div>
         </article>
         <article class="item">
@@ -882,33 +890,33 @@
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Cloudflare — Vulnerability Discovery and Remediation（OpenAI Daybreak連携）</h3>
-            <p>Managed Defenseの早期アクセスで、GPT-5.6 Cyber等を使いコード調査・パッチ案生成・エッジWAF即時防御を一体提供。適用は人手承認必須です（9/3、続報）。</p>
-            <p class="source"><a href="https://blog.cloudflare.com/vulnerability-discovery-remediation/" target="_blank" rel="noopener">Cloudflare Blog（9/3）</a></p>
+            <h3>WhatsApp — iOSの反応トレイ／コンテキストメニューがLiquid Glass対応</h3>
+            <p>チャットバーと同系統の半透明表現へ反応UIと長押しメニューを刷新。描画エディタや動画プレイヤーへの展開も進行中とWABetaInfoが報じています。</p>
+            <p class="source"><a href="https://wabetainfo.com/whatsapp-launches-message-menu-compatible-with-liquid-glass/" target="_blank" rel="noopener">WABetaInfo（9/6）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Instagram — 「AI Content」誤ラベル問題が再燃（The Verge 9/4）</h3>
-            <p>生成AI未使用の写真にAIラベルが付き、逆にC2PA等を持つ合成画像が未ラベルになる事例が報告。Canvaの補助AI編集なども誤検知要因とされ、Metaの検出信号は依然不透明です。</p>
-            <p class="source"><a href="https://www.theverge.com/ai-artificial-intelligence/989617/instagram-ai-content-label-confusion" target="_blank" rel="noopener">The Verge（9/4）</a><a href="https://www.newsbytesapp.com/news/science/instagram-s-ai-tag-misidentifies-content-flags-real-images-as-synthetic/story" target="_blank" rel="noopener">NewsBytes（9/5）</a></p>
+            <h3>Instagram — 「AI Content」誤ラベル問題が継続</h3>
+            <p>生成AI未使用の写真にAIラベルが付き、逆に合成画像が未ラベルになる事例が報告。Metaの検出信号は依然不透明で、クリエイター側の混乱が続いています。</p>
+            <p class="source"><a href="https://www.theverge.com/ai-artificial-intelligence/989617/instagram-ai-content-label-confusion" target="_blank" rel="noopener">The Verge</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
             <h3>Meta — ZippyDB前面にZGatewayプロキシ、AI運用向け制御を強化</h3>
-            <p>KVストア前面で入場制御・負荷分散・リージョン耐性を担うステートレス層。約10億ops/s規模でZippyDBトラフィックの約40％を処理し、エージェント運用のヒューリスティックにも接続できる設計です（9/3）。</p>
-            <p class="source"><a href="https://engineering.fb.com/2026/09/03/core-infra/zgateway-proxy-zippydb-meta/" target="_blank" rel="noopener">Meta Engineering（9/3）</a></p>
+            <p>KVストア前面で入場制御・負荷分散・リージョン耐性を担うステートレス層。約10億ops/s規模でZippyDBトラフィックの約40％を処理し、エージェント運用のヒューリスティックにも接続できる設計です。</p>
+            <p class="source"><a href="https://engineering.fb.com/2026/09/03/core-infra/zgateway-proxy-zippydb-meta/" target="_blank" rel="noopener">Meta Engineering</a></p>
           </div>
         </article>
       </div>
     </section>
 
     <footer>
-      <p>収集対象: おおむね2026-09-05 21:00 UTC 〜 2026-09-06 21:00 UTC（cron起動基準）。一次情報と専門メディアを優先し、重複は統合しています。</p>
-      <p>Edition 2026-09-06 / daily_news</p>
+      <p>収集対象: おおむね2026-09-06 21:00 UTC 〜 2026-09-07 21:00 UTC（cron起動基準）。一次情報と専門メディアを優先し、重複は統合しています。Xの反応は二次メディアで確認できた範囲では追記対象なし。</p>
+      <p>Edition 2026-09-07 / daily_news</p>
     </footer>
   </div>
 </body>
