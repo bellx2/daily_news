@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>技術ニュースダイジェスト 2026-09-11</title>
+  <title>技術ニュースダイジェスト 2026-09-12</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -526,7 +526,7 @@
     <div class="mast-inner">
       <div class="edition-bar">
         <span class="live"><i aria-hidden="true"></i>今朝のダイジェスト</span>
-        <span>2026年9月11日 / 過去24時間</span>
+        <span>2026年9月12日 / 過去24時間</span>
         <span>公式・専門メディア中心</span>
       </div>
       <h1 class="brand">
@@ -540,7 +540,7 @@
   <div class="wrap">
     <div class="briefing">
       <p class="kicker">本日の見通し</p>
-      <p>本日の軸は、デジタル庁GSSの不正アクセス（最大約24.6万件の漏えい可能性）、EU CRA通報義務の本格適用開始（ENISA SRP稼働）、Cisco FMC悪用の詳細（国家支援／Qilin系）、GitLab CVSS 10の経路探索プローブ、Cursor Projectsのβ公開です。車番認識は同日の国内製品プレスが乏しく、国際物流総合展最終日の古野電気FLOWVIS出展と9/8のHIKVISION AcuSeekを軸に補完します。TypeScript 7.1 Betaの公式発表は依然未確認です。</p>
+      <p>本日の軸は、CISAがArtifactory／ScreenConnect／RouterOSの5件をKEV追加（9/12）、Cisco FMC認証バイパスの連邦対応期限当日、Citrix NetScaler悪用の継続警戒、デジタル庁GSSのQ&amp;A更新とSNS反応、Claude Code 2.1.269のプラグイン評価機能です。車番認識は同日の国内製品プレスが乏しく、物流展終了直後の古野電気FLOWVISと9/8のHIKVISION AcuSeekで補完します。TypeScript 7.1 Betaの公式発表は依然未確認です。</p>
     </div>
 
     <nav class="toc" aria-label="テーマ一覧">
@@ -561,65 +561,65 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>デジタル庁 — GSSへの不正アクセスで個人情報最大約24.6万件の漏えい可能性</h3>
-            <p>9/11、政府共通業務基盤「ガバメントソリューションサービス（GSS）」で、既知のVPN機器脆弱性を突いた侵入により、氏名・メール・電話番号など最大約24.6万件が漏えいした可能性があると公表しました。対象は利用府省職員ら約18.9万件と関係事業者ら約5.7万件で、マイナンバーや口座情報は含まないと説明。松本大臣はパッチ適用の合間に悪用されたと述べ、二次被害は現時点で確認されていないとしています。</p>
-            <p class="source"><a href="https://www.digital.go.jp/news/2026-0911-01" target="_blank" rel="noopener">デジタル庁（9/11）</a><a href="https://xtech.nikkei.com/atcl/nxt/news/24/03383/" target="_blank" rel="noopener">日経クロステック</a></p>
+            <h3>CISA — Artifactory／ScreenConnect／RouterOSの5件をKEV追加（9/12）</h3>
+            <p>JFrog ArtifactoryのCVE-2026-42016／42018、ConnectWise ScreenConnectのCVE-2026-84869、MikroTik RouterOSのCVE-2026-67277／86060を既知悪用カタログへ追加。Artifactoryは管理者奪取の連鎖悪用、ScreenConnectは未承認のファイル転送・実行、RouterOSは認証なし制御（MikroTrick）が報告されています。連邦機関の期限はRouterOSが9/13、ScreenConnectが9/14、Artifactoryが9/25です。</p>
+            <p class="source"><a href="https://thehackernews.com/2026/09/cisa-adds-5-actively-exploited.html" target="_blank" rel="noopener">The Hacker News（9/12）</a><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV Catalog</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>EU CRA — 積極悪用脆弱性・重大インシデントの通報義務が本日発効、ENISA SRP稼働</h3>
-            <p>9/11から製造者は、デジタル要素を持つ製品の積極悪用脆弱性と重大インシデントを、24時間以内の早期警告・72時間以内の詳細・是正後14日以内（インシデントは1か月以内）の最終報告という段階で届け出る義務が始まります。提出窓口はENISAのSingle Reporting Platform（SRP）で、欧州委も同日ガイダンスを更新。CEマーク本則は2027年12月11日適用です。</p>
-            <p class="source"><a href="https://commission.europa.eu/news-and-media/news/safer-and-more-secure-digital-products-2026-09-11_en" target="_blank" rel="noopener">European Commission（9/11）</a><a href="https://www.enisa.europa.eu/news/the-cra-single-reporting-platform-is-launched" target="_blank" rel="noopener">ENISA</a></p>
+            <h3>Cisco FMC — CVE-2026-20079の連邦パッチ期限が本日9/12</h3>
+            <p>CVSS 10.0の認証バイパスは、2026年にFMCで3件目のKEV入り。TalosはSandworm系のCyclops Blink展開やQilin系ランサムなど複数クラスタを確認。ホットフィックスは将来の侵入防止のみで、既存侵害はlicense.tmp等のIOC確認とTAC連携が必要です。オンプレFMCが対象で、クラウド配信FMCは非該当とされます。</p>
+            <p class="source"><a href="https://tech.yahoo.com/cybersecurity/articles/three-strikes-firewall-management-plane-102019538.html" target="_blank" rel="noopener">Yahoo Tech（9/12）</a><a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-onprem-fmc-authbypass-5JPp45V2" target="_blank" rel="noopener">Cisco Advisory</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Cisco FMC — 認証バイパス等が実害化、国家支援クラスタとQilin系ランサムをTalosが詳報</h3>
-            <p>CVE-2026-20079（CVSS 10.0）とCVE-2026-20316を悪用する3クラスタを確認。資格情報窃取やCyclops Blink系インプラント、LotL経由のQilin展開が含まれると報じられました。CISAはCVE-2026-20079をKEVに追加済みで、連邦機関のパッチ期限は9/12です。</p>
-            <p class="source"><a href="https://thehackernews.com/2026/09/cisco-fmc-flaws-exploited-to-steal.html" target="_blank" rel="noopener">The Hacker News（9/11）</a><a href="https://www.helpnetsecurity.com/2026/09/10/cisco-fmc-exploited-cve-2026-20079-cve-2026-20316/" target="_blank" rel="noopener">Help Net Security（9/10）</a></p>
+            <h3>Citrix NetScaler — CVE-2026-19490（CVSS 9.3）が実害化、ゲートウェイ／AAA構成が標的</h3>
+            <p>8/19修正済みの認証バイパスが野外悪用され、CISAは9/9にKEV追加、連邦期限は9/12。GatewayまたはAAA仮想サーバ構成が条件で、PoC公開後の9/3以降に攻撃が観測されたと報じられます。Citrixは14.1-73.32／13.1-63.21以降への即時更新を強く求めています。</p>
+            <p class="source"><a href="https://www.securityweek.com/critical-netscaler-vulnerability-exploited-in-attacks/" target="_blank" rel="noopener">SecurityWeek</a><a href="https://support.citrix.com/external/article/CTX696939/netscaler-adc-and-netscaler-gateway-security-bulletin" target="_blank" rel="noopener">Citrix Bulletin</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>GitLab — CVSS 10の任意ファイル読取（CVE-2026-85706）、開示直後から野外プローブ</h3>
-            <p>リポジトリcommits APIのパストラバーサルで、条件次第では未認証の任意ファイル読取が可能。watchTowrは9/11 06:00 UTC以降に実害プローブを観測したと伝え、19.3.2／19.2.6／19.1.8への更新を促しています。あわせてEEの危険なデシリアライズ CVE-2026-87719（CVSS 9.9）も修正済みです。</p>
-            <p class="source"><a href="https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html" target="_blank" rel="noopener">The Hacker News（9/11）</a><a href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-3-2-released/" target="_blank" rel="noopener">GitLab Docs</a></p>
+            <h3>デジタル庁 — GSS漏えい事案のQ&amp;Aを9/12更新、SNSでは厳しい反応</h3>
+            <p>政府共通基盤GSSへのVPN既知脆弱性悪用で、職員・関係者の個人情報最大約24.6万件の漏えい可能性を公表。9/12更新のQ&amp;Aでは、個情委への7/15報告や公表タイミング、再発防止の方向性を補足。FNN等は「メンツ丸潰れ」などX上の批判的反応を伝えています。</p>
+            <p class="source"><a href="https://www.digital.go.jp/news/2026-0911-01" target="_blank" rel="noopener">デジタル庁（9/11）</a><a href="https://www.digital.go.jp/press/5fc99139-a4e2-4b7b-8b0c-d475e926143f" target="_blank" rel="noopener">デジタル庁 Q&amp;A（更新）</a><a href="https://www.fnn.jp/articles/-/1112450" target="_blank" rel="noopener">FNN（X反応）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>JFrog Artifactory — 認証回避の連鎖悪用、未パッチ自己ホストで管理者奪取</h3>
-            <p>WizはCVE-2026-42018とCVE-2026-42016の連鎖、および単独でも管理者権限を取れるCVE-2026-82329の実害を報告。8/15〜9/8に観測され、パッチ後も攻撃者が作った管理者アカウントは残るため、トークン監査と資格情報ローテが必要です。</p>
-            <p class="source"><a href="https://thehackernews.com/2026/09/attackers-chain-jfrog-artifactory-flaws.html" target="_blank" rel="noopener">The Hacker News（9/11）</a><a href="https://www.fastly.com/blog/cve-2026-82329-jfrog-artifactory-authentication-bypass-exploitation-activity" target="_blank" rel="noopener">Fastly（関連分析）</a></p>
+            <h3>Adobe Commerce／Magento — StyleSmuggler（CVE-2026-75650）はパッチ後も侵害調査が必須</h3>
+            <p>CVSS 10.0の未認証RCEは9/4から悪用され、9/7のホットフィックスVULN-39341後もRust製バックドアやPHPウェブシェルの残存が報じられます。CISAの連邦期限は9/11で、暗号化鍵・トークン・決済資格情報のローテまで含む多段対応が求められます。</p>
+            <p class="source"><a href="https://www.bleepingcomputer.com/news/security/adobe-fixes-critical-magento-zero-day-exploited-to-backdoor-servers/" target="_blank" rel="noopener">BleepingComputer</a><a href="https://www.tenable.com/blog/stylesmuggler-cve-2026-75650-frequently-asked-questions-about-adobe-commerce-and-magento-zero" target="_blank" rel="noopener">Tenable</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>N-able N-central — CVE-2026-86218（CVSS 10.0）のKEV期限が本日9/11</h3>
-            <p>未認証の静的コードインジェクションによるRCE。Hotfix 4（build 2026.3.1.14）が必須で、Hotfix 3だけでは閉じません。MSP基盤への波及が大きいため、パッチ適用と侵害痕跡の確認が急務です。</p>
-            <p class="source"><a href="https://thehackernews.com/2026/09/n-able-n-central-pre-auth-rce-flaw.html" target="_blank" rel="noopener">The Hacker News</a><a href="https://www.cve.org/CVERecord?id=CVE-2026-86218" target="_blank" rel="noopener">CVE Record</a></p>
+            <h3>GitLab — CVE-2026-85706（CVSS 10）の野外プローブが開示直後から継続</h3>
+            <p>commits APIのパストラバーサルで条件次第では未認証の任意ファイル読取が可能。watchTowrは9/11以降のプローブを観測したと伝え、19.3.2／19.2.6／19.1.8への更新を促しています。EE向けの危険なデシリアライズCVE-2026-87719も同系統の緊急修正に含まれます。</p>
+            <p class="source"><a href="https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html" target="_blank" rel="noopener">The Hacker News（9/11）</a><a href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-3-2-released/" target="_blank" rel="noopener">GitLab Docs</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Chromium V8 — CVE-2026-87491がKEV入り、連邦期限は明日9/12</h3>
-            <p>範囲外書き込みとしてCISA KEVに追加されたV8脆弱性。ブラウザおよびElectron系製品への迅速な更新が求められ、境界機器と並ぶ短期パッチ優先案件です。</p>
-            <p class="source"><a href="https://www.cisa.gov/news-events/alerts/2026/09/09/cisa-adds-four-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA Alert（9/9）</a><a href="https://thehackernews.com/2026/09/cisa-flags-exploited-cisco-citrix.html" target="_blank" rel="noopener">The Hacker News（9/10）</a></p>
+            <h3>Chromium V8 — CVE-2026-87491のKEV対応が本日期限帯に到達</h3>
+            <p>範囲外書き込みのゼロデイで、Chrome 153.0.8010.36／.37以降へ更新が必要。CISAは9/9にKEV追加し、連邦期限を9/12前後に設定した報道もあります。Edge／Opera／Electron系もChromium追随が論点です。</p>
+            <p class="source"><a href="https://www.helpnetsecurity.com/2026/09/09/google-chrome-cve-2026-87491-zero-day-flaw/" target="_blank" rel="noopener">Help Net Security</a><a href="https://www.cve.org/CVERecord?id=CVE-2026-87491" target="_blank" rel="noopener">CVE Record</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">08</div>
           <div>
-            <h3>ShieldCrash — Defender向けShieldBreak修正後もSYSTEM読取が可能とPoC主張</h3>
-            <p>研究者がCVE-2026-69414修正後の抜け道としてShieldCrash PoCを公開したとSecurityWeek／THNが詳報。Patch Tuesday直後の連続バイパスとして、追加緩和とベンダー対応の動向が注目されています。</p>
-            <p class="source"><a href="https://www.securityweek.com/new-shieldcrash-zero-day-exploit-targets-microsoft-defender/" target="_blank" rel="noopener">SecurityWeek</a><a href="https://thehackernews.com/2026/09/researcher-drops-new-microsoft-defender.html" target="_blank" rel="noopener">The Hacker News</a></p>
+            <h3>EU CRA — 積極悪用脆弱性・重大インシデント通報義務が9/11から本格適用</h3>
+            <p>製造者はENISAのSingle Reporting Platform経由で、24時間以内の早期警告など段階報告が義務化。CEマーク本則は2027年12月11日適用ですが、通報ルートは先行稼働しています。日本企業のEU向け製品でも運用設計の見直し材料です。</p>
+            <p class="source"><a href="https://commission.europa.eu/news-and-media/news/safer-and-more-secure-digital-products-2026-09-11_en" target="_blank" rel="noopener">European Commission（9/11）</a><a href="https://www.enisa.europa.eu/news/the-cra-single-reporting-platform-is-launched" target="_blank" rel="noopener">ENISA</a></p>
           </div>
         </article>
       </div>
@@ -631,14 +631,14 @@
         <h2>日本国内の車番認識</h2>
         <span class="count">6 STORIES</span>
       </div>
-      <p class="note">過去24時間に新規の国内製品プレスは見当たらず。本日最終日の国際物流総合展でのFLOWVIS訴求と、9/8のHIKVISION正式展開を軸に、直近の販売・導入事例で補完しています。</p>
+      <p class="note">過去24時間に新規の国内製品プレスは見当たらず。国際物流総合展（〜9/11）終了直後の古野電気FLOWVIS訴求と、9/8のHIKVISION AcuSeekを軸に、直近の販売・導入事例で補完しています。</p>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>古野電気 — 国際物流総合展でETC×車番のFLOWVISを展示（〜本日9/11）</h3>
-            <p>東京ビッグサイトで開催中の国際物流総合展2026（9/8〜11）に、車両入退管理サービス「FLOWVIS」を出展。ETC認証とナンバープレート読取を組み合わせ、改正物流効率化法で求められる入退場・滞在時間の正確把握を訴求しています。API連携やゲートレス運用、多木化学など導入事例のデモを実施中です。</p>
-            <p class="source"><a href="https://www.furuno.co.jp/news/general/general_category.html?dispmid=1017&itemid=1863" target="_blank" rel="noopener">古野電気（出展案内）</a></p>
+            <h3>古野電気 — 国際物流総合展でETC×車番のFLOWVISを展示（〜9/11）</h3>
+            <p>東京ビッグサイトの国際物流総合展2026（9/8〜11）に、車両入退管理サービス「FLOWVIS」を出展。ETC認証とナンバープレート読取を組み合わせ、改正物流効率化法で求められる入退場・滞在時間の正確把握を訴求しました。展示最終日を終え、導入相談のフォローが続く局面です。</p>
+            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000144.000089783.html" target="_blank" rel="noopener">古野電気／PR TIMES</a><a href="https://www.furuno.co.jp/news/general/general_category.html?dispmid=1017&amp;itemid=1863" target="_blank" rel="noopener">古野電気ニュース</a></p>
           </div>
         </article>
         <article class="item">
@@ -654,7 +654,7 @@
           <div>
             <h3>セキュア — 認証率97％・導入コスト約1/3のAI車番認証を販売開始</h3>
             <p>光学ズームと赤外線、高速移動対応のカメラ技術に、滞在車両表示やログ検索ダッシュボードを無償同梱。ご当地／外交官／自衛隊ナンバーにも対応し、工場・物流・商業施設向けに展開しています（8/27発表）。</p>
-            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000146.000052942.html" target="_blank" rel="noopener">セキュア／PR TIMES</a><a href="https://iotnews.jp/ai/275446/" target="_blank" rel="noopener">IoTNEWS</a></p>
+            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000146.000052942.html" target="_blank" rel="noopener">セキュア／PR TIMES</a><a href="https://www.rbbtoday.com/release/prtimes2-today/20260827/1345143.html" target="_blank" rel="noopener">RBB TODAY</a></p>
           </div>
         </article>
         <article class="item">
@@ -662,23 +662,23 @@
           <div>
             <h3>シャープ — ポールカメラ方式（RZ-P401）で狭小コインパーキング向け車番認識</h3>
             <p>センサーと車番撮影カメラを一体化したポールカメラを受注展開。在車センサー方式・ゲートレス車番認識に続く構成で、L字車室やカメラ死角へのハイブリッド設置も想定しています。</p>
-            <p class="source"><a href="https://corporate.jp.sharp/news/260731-a.html" target="_blank" rel="noopener">シャープ公式</a></p>
+            <p class="source"><a href="https://corporate.jp.sharp/system/files/2026-07/260731-a.pdf" target="_blank" rel="noopener">シャープ公式PDF</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>セーフィー×アイテック — AI-Appナンバープレート認識を共同リリース</h3>
-            <p>クラウド録画Safie上でエッジAI車番認識を制御。アイテックのLPR技術を採用し、電源投入中心の導入で小売・物流・施設監視へ車番ユースケースを広げます。</p>
-            <p class="source"><a href="https://safie.co.jp/news/4660/" target="_blank" rel="noopener">セーフィー公式</a></p>
+            <h3>セーフィー×アイテック — AI-Appナンバープレート認識</h3>
+            <p>クラウド録画Safie上でエッジAI車番認識を制御。アイテックのEyeTech LPR（認識率99.5%訴求）を採用し、電源投入中心の導入で物流バース予約や駐車場入退場へ車番ユースケースを広げます。</p>
+            <p class="source"><a href="https://safie.co.jp/news/4660/" target="_blank" rel="noopener">セーフィー公式</a><a href="https://safie.jp/ai-app/number-plate/" target="_blank" rel="noopener">製品ページ</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>丸紅ネットワーク — 相模湖MORIMORIで車番×属性×生成AIの実証</h3>
-            <p>TRASCOPE-AIの車両・ナンバー検知に来場者属性カメラを加え、生成AIアシストへ連携。満空・入出庫推移の対話分析を検証します（発表9/3）。</p>
-            <p class="source"><a href="https://prtimes.jp/main/html/rd/p/000000077.000145332.html" target="_blank" rel="noopener">丸紅I-DIGIO／PR TIMES（9/3）</a></p>
+            <h3>丸紅I-DIGIO — TRASCOPE-AIの車番検知で物流の「待ち」を可視化</h3>
+            <p>カメラ映像からナンバーをAI認識し、予約と実車の突合や荷待ち時間の把握に使う解説記事が公開。手作業の受付簿ではばらつきやすい入退場時刻を、データ起点で改善する現場ニーズを整理しています。</p>
+            <p class="source"><a href="https://www.marubeni-idigio.com/insight-hub/trascope-ai-logistics/" target="_blank" rel="noopener">丸紅I-DIGIO INSIGHT HUB</a></p>
           </div>
         </article>
       </div>
@@ -694,57 +694,57 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Cursor — Projects β公開、長期文脈を持つコーディネータがサブエージェント群を指揮</h3>
-            <p>9/10、機能・移行・運用など単一チャットを超える仕事向けにProjectsをβ展開。コーディネータ自身はコードを書かず、計画と委任を担い、クラウド既定で多数のサブエージェントを並列実行します。Slack監視やPR／CI、スケジュール起動などの「subscriptions」も備え、共同創業者らがXで発表したと二次メディアが伝えています。</p>
-            <p class="source"><a href="https://cursor.com/blog/projects" target="_blank" rel="noopener">Cursor Blog（9/10）</a><a href="https://cursor.com/changelog/projects" target="_blank" rel="noopener">Cursor Changelog</a><a href="https://runtimewire.com/article/cursor-projects-persistent-coordinator-coding-agents" target="_blank" rel="noopener">RuntimeWire（X反応）</a></p>
+            <h3>Claude Code 2.1.269 — <code>claude plugin eval</code>と並行エージェント上限を追加（9/11）</h3>
+            <p>プラグインの評価スイートを走らせ、JSON／HTMLの再現可能なスコアを取得できるコマンドを追加。あわせて<code>CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS</code>（1〜256）でWorkflowの同時エージェント上限を引き上げ可能に。9/12の2.1.270はBashの読み取りgit権限回帰を即日修正しています。</p>
+            <p class="source"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.269" target="_blank" rel="noopener">GitHub Releases（2.1.269）</a><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.270" target="_blank" rel="noopener">2.1.270</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
           <div>
-            <h3>Claude Code 2.1.267 — maxEffortLevelで組織横断のeffort上限を強制</h3>
-            <p>9/9公開。グローバルまたはモデル別に推論effortの上限を課せ、Bedrock／Vertex／Foundry含む全プロバイダに適用。あわせて<code>--system-prompt-snapshot off</code>やmarketplace経路のパストラバーサル修正、managed-settingsのfail-open修正など約60件を投入しました。</p>
-            <p class="source"><a href="https://claude-news.today/en/briefings/briefing-2026-09-10/" target="_blank" rel="noopener">Claude Code Briefing（9/10）</a><a href="https://clauding.de/en/posts/claude-code-2-1-267/" target="_blank" rel="noopener">Clauding</a></p>
+            <h3>Cursor — Projects β公開、長期文脈を持つコーディネータがサブエージェント群を指揮</h3>
+            <p>9/10、機能・移行・運用など単一チャットを超える仕事向けにProjectsをβ展開。コーディネータ自身はコードを書かず、計画と委任を担い、クラウド既定で多数のサブエージェントを並列実行します。Slack監視やPR／CI、スケジュール起動などのsubscriptionsも備え、共同創業者らがXで発表したと二次メディアが伝えています。</p>
+            <p class="source"><a href="https://cursor.com/blog/projects" target="_blank" rel="noopener">Cursor Blog（9/10）</a><a href="https://cursor.com/changelog/projects" target="_blank" rel="noopener">Cursor Changelog</a><a href="https://runtimewire.com/article/cursor-projects-persistent-coordinator-coding-agents" target="_blank" rel="noopener">RuntimeWire（X反応）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">03</div>
           <div>
-            <h3>Claude Agent SDK TypeScript 0.3.267 — SSE輸送とsystemPrompt記録を強化</h3>
-            <p>ブラウザSDKにSSEイベント取得・シーケンス追従を追加し、カスタムsystemPromptのセッション途中変更を既定で記録するよう変更。Claude Code 2.1.267とのパリティ更新です（9/9）。</p>
-            <p class="source"><a href="https://freedom.tech/posts/2026-09-09-claude-agent-sdk-typescript-0-3-267/" target="_blank" rel="noopener">Freedom.Tech（9/9）</a></p>
+            <h3>GitHub Copilot code review — 指摘の自動解決とLiteのアンサンブル強化（9/11）</h3>
+            <p>対応済みコメントを再レビュー時に自動解決し、提案適用時にはスマートなコミットメッセージを生成。Copilot SDKのシェルツール群でビルド／テスト検証を広げ、Lite努力度では複数エージェントの合議でレビュー品質を上げつつコストも約8%削減したと説明しています。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review/" target="_blank" rel="noopener">GitHub Changelog（9/11）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">04</div>
           <div>
-            <h3>GitHub Copilot for JetBrains — 企業管理サンドボックスがパブリックプレビュー（9/8）</h3>
-            <p>管理者がサンドボックスの有効化やFS／ネットワーク／プロキシを中央制御可能に。次編集提案のファイル横断ジャンプやCLIの<code>/ide</code>接続も入り、「個人設定から組織ガバナンスへ」との評価が続いています。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/" target="_blank" rel="noopener">GitHub Changelog（9/8）</a></p>
+            <h3>Google Antigravity CLI 1.2.1 — カスタムエージェントの既定コンポーネント除外など（9/11）</h3>
+            <p>Markdown frontmatterの<code>excludeDefaultComponents</code>で既定プロンプト／ツールを外しつつフックは維持可能に。一時的なAPI障害のインプロセス再試行、MCPスキーマのopen object許容、大規模会話のメモリ削減、`--continue`の再開ロジック修正などが入りました。</p>
+            <p class="source"><a href="https://github.com/google-antigravity/antigravity-cli/releases" target="_blank" rel="noopener">Antigravity CLI Releases</a><a href="https://www.havoptic.com/r/antigravity-cli-1.2.1" target="_blank" rel="noopener">Havoptic（1.2.1）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">05</div>
           <div>
-            <h3>Claude Code 2.1.265／266 — フォルダプラグインとゲートウェイ回帰の当日修正</h3>
-            <p>2.1.265で<code>--plugin-dir</code>のフォルダ指定とツール結果1GB上限などを追加した直後、ゲートウェイ強制サインイン回帰が発生。2.1.266が同日中に<code>CLAUDE_CODE_USE_GATEWAY</code>の扱いを復元しました。</p>
-            <p class="source"><a href="https://ccleaks.com/news/claude-code-2-1-265-sep-2026" target="_blank" rel="noopener">ccleaks</a><a href="https://claude-news.today/en/briefings/briefing-2026-09-09/" target="_blank" rel="noopener">Briefing（9/9）</a></p>
+            <h3>OpenAI Codex CLI python-v0.154.0 — reasoning強度とExternalMessageを拡張（9/10）</h3>
+            <p><code>max</code>／<code>ultra</code>のreasoning-effort、同期／非同期のrun／turnへのExternalMessage投入、resume／fork時の履歴選択オプションなどを追加。プロトコルモデル刷新に伴う破壊的変更（HookMetadataの<code>.root</code>化など）にも注意が必要です。</p>
+            <p class="source"><a href="https://www.havoptic.com/r/openai-codex-python-v0.154.0" target="_blank" rel="noopener">Havoptic（0.154.0）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>Copilot — Claude Fable 5.1が一般提供、Agent MergeはVS Codeでプレビュー</h3>
-            <p>長時間自律コーディング向けMythos系モデルがPro+／Business／Enterpriseのモデルピッカーへ。VS Code側ではレビュー指摘や失敗チェック、コンフリクトを片付けてマージ準備するAgent Mergeがパブリックプレビューです。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-09-01-claude-fable-5-1-generally-available-in-github-copilot/" target="_blank" rel="noopener">GitHub Changelog（Fable 5.1）</a><a href="https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31/" target="_blank" rel="noopener">Weekly releases</a></p>
+            <h3>Claude Code 2.1.268 — WebFetch期限とpluginのJSON出力（9/10）</h3>
+            <p>WebFetchに300秒デッドラインを設定し、全<code>claude plugin</code>サブコマンドへ<code>--json</code>を追加。翌日の2.1.269の評価機能・並行制御強化の直前リリースとして、ヘッドレス運用の観測性を底上げしています。</p>
+            <p class="source"><a href="https://claude-news.today/en/briefings/briefing-2026-09-12/" target="_blank" rel="noopener">Claude Code Daily Briefing（9/12）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Claude Code vs Copilot vs Cursor — 役割分担論が再燃</h3>
-            <p>IDE内補完のCopilot、AIネイティブ編集のCursor、ターミナルエージェントのClaude Codeを「哲学の違い」として整理する比較が拡散。置き換えより用途別併用を勧める論調が二次メディアでも続いています。</p>
-            <p class="source"><a href="https://www.geekygoo.com/blog/claude-code-vs-github-copilot-vs-cursor/" target="_blank" rel="noopener">GeekyGoo</a><a href="https://dev.to/terminalblog/what-developers-actually-say-about-claude-code-vs-cursor-18cc" target="_blank" rel="noopener">DEV（開発者の声）</a></p>
+            <h3>GitHub Copilot for JetBrains — 企業管理サンドボックスがパブリックプレビュー（9/8）</h3>
+            <p>管理者がサンドボックスの有効化やFS／ネットワーク／プロキシを中央制御可能に。次編集提案のファイル横断ジャンプやCLIの<code>/ide</code>接続も入り、「個人設定から組織ガバナンスへ」との評価が続いています。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/" target="_blank" rel="noopener">GitHub Changelog（9/8）</a></p>
           </div>
         </article>
       </div>
@@ -756,18 +756,34 @@
         <h2>プログラミング言語</h2>
         <span class="count">7 STORIES</span>
       </div>
-      <p class="note">同日の大型言語リリースは限定的で、CPythonのRISC-V公式化続報と直近ツールチェーン動向を中心に構成しています。TypeScript 7.1 Betaの公式発表は未確認です。</p>
+      <p class="note">同日の大型言語リリースは限定的で、Julia 1.13とTinyGo 0.42の続報、および直近ツールチェーン動向を中心に構成しています。TypeScript 7.1 Betaの公式発表は未確認です。</p>
       <div class="deck">
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>CPython — RISC-VをPEP 11のTier 3プラットフォームへ正式追加</h3>
-            <p>実機ビルドボット整備を経てRISC-Vが公式サポート対象に。InfoQはHacker News／Redditでも「CIに載せやすくなる成熟信号」として歓迎されたと伝え、将来のTier 2化とアーキテクチャ最適化が次の論点です（InfoQ 9/10）。</p>
-            <p class="source"><a href="https://www.infoq.com/news/2026/09/riscv-cpython/" target="_blank" rel="noopener">InfoQ（9/10・HN/Reddit反応）</a><a href="https://blog.python.org/2026/08/riscv-now-officially-supported/" target="_blank" rel="noopener">Python Insider</a></p>
+            <h3>Julia 1.13 — プリコンパイル高速化、REPL強化、Juliaup GUIを投入（9/10）</h3>
+            <p>パッケージプリコンパイルは1.12比で約30%短縮、起動も約20%高速化と説明。REPLのシンタックスハイライトとfzf風履歴検索、イメージオブジェクトを走査しないGC、Pkgの既定圧縮zstd化、juliaup GUIなどがハイライトです。LWNも同日にリリースを伝えています。</p>
+            <p class="source"><a href="https://julialang.org/blog/2026/09/julia-1.13-highlights/" target="_blank" rel="noopener">Julia Blog（9/10）</a><a href="https://lwn.net/Articles/1093567/" target="_blank" rel="noopener">LWN.net</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
+          <div>
+            <h3>TinyGo 0.42 — recoverable panicと公式スターターキット（InfoQ 9/11）</h3>
+            <p>標準Goに近づくrecover対応に加え、Go 1.27／LLVM 22、UEFIターゲットを投入。Seeed Studio XIAO同梱の公式ハードウェアキットも発表され、r/golangやHacker Newsでは「Recover Is Real」として成熟度の節目と受け止められたとInfoQが伝えています。</p>
+            <p class="source"><a href="https://www.infoq.com/news/2026/09/tinygo-devkit/" target="_blank" rel="noopener">InfoQ（9/11・HN/Reddit反応）</a><a href="https://tinygo.org/blog/2026/tinygo-0.42-recover-is-real/" target="_blank" rel="noopener">TinyGo Blog（9/1）</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">03</div>
+          <div>
+            <h3>.NET 11 RC1 — go-liveライセンス付きで本番利用可能に（9/8）</h3>
+            <p>最初のRCとしてVisual Studio 2026 InsidersとC# Dev Kit対応を表明。C# 15のunion安定化、ASP.NET CoreのSignalR認証刷新API最終化、MAUI／WinFormsのキオスク体験などが含まれ、11月の安定版に向けた最終調整局面です。</p>
+            <p class="source"><a href="https://devblogs.microsoft.com/dotnet/dotnet-11-rc-1/" target="_blank" rel="noopener">.NET Blog（9/8）</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">04</div>
           <div>
             <h3>TypeScript 7.1 — Iteration Plan上は9/9 Beta、公式発表は依然未確認</h3>
             <p>GitHub Issue #63703では2026-09-09が7.1 Beta予定日。ただし執筆時点でdevblogsの正式アナウンスは見当たらず、焦点は7.0で欠けたプログラマティックAPI補完と見られます。</p>
@@ -775,7 +791,7 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">03</div>
+          <div class="rank">05</div>
           <div>
             <h3>WebStorm — TypeScript 7エンジンをAngular／React向けに安定サポート</h3>
             <p>JetBrainsが9月のブログで、プロジェクト側のTSバージョンを変えずにGoベース言語エンジンへ切替できると説明。大規模コードベースでのコーディング支援高速化を訴求しています。</p>
@@ -783,35 +799,19 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">04</div>
-          <div>
-            <h3>Node.js v24.21.0／v26.8.2 — OpenSSL 3.5.8などへ更新</h3>
-            <p>LTSの24.21.0はSTOREローダによる秘密鍵読込やNSSルート更新、Undici更新を含む。Currentの26.8.2も同系統の依存更新で、本番は24系の追随が推奨されています（9/8〜9前後）。</p>
-            <p class="source"><a href="https://nodejs.org/en/blog/release/v24.21.0" target="_blank" rel="noopener">Node.js 24.21.0</a><a href="https://www.linuxcompatible.org/story/nodejs-releases-v2682-and-v24210-lts-with-openssl-358-and-crypto-upgrades/" target="_blank" rel="noopener">Linux Compatible</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">05</div>
-          <div>
-            <h3>Selenium 4.49 — 全言語バインディングとGridを更新（9/9）</h3>
-            <p>CDP v151〜v153対応、BiDiの型導出改善、Selenium Managerのarm64／WOW64修正などを含む横断リリース。Python側はmypy厳格化とruffルール採用も進みました。</p>
-            <p class="source"><a href="https://www.selenium.dev/blog/2026/selenium-4-49-released/" target="_blank" rel="noopener">Selenium Blog（9/9）</a></p>
-          </div>
-        </article>
-        <article class="item">
           <div class="rank">06</div>
           <div>
-            <h3>PHP 8.6.0 Beta 3 — クロージャ最適化と同梱Oniguruma EOL</h3>
-            <p>ステートレスクロージャのキャッシュ等で性能改善。<code>clamp()</code>や定数への<code>#[\Override]</code>、ストリーム誤り処理の厳格化に加え、同梱OnigurumaのEOLが明示されました（9/8報道）。</p>
-            <p class="source"><a href="https://www.warp2search.net/story/php-860-beta-3-ships-with-automatic-closure-optimizations-and-oniguruma-eol/" target="_blank" rel="noopener">Warp2Search（9/8）</a></p>
+            <h3>Rust 1.98.1 — trait objectのvtable誤生成を修正（9/3）</h3>
+            <p>1.98.0で一部条件において関数ポインタがnullになる誤生成があり、未定義動作の温床になっていました。<code>rustup update stable</code>での即時更新が推奨され、二次解説も9月中旬まで続いています。</p>
+            <p class="source"><a href="https://blog.rust-lang.org/2026/09/03/Rust-1.98.1/" target="_blank" rel="noopener">Rust Blog（9/3）</a><a href="https://www.infoworld.com/article/4218383/rust-1-98-1-fixes-miscompilation-bug.html" target="_blank" rel="noopener">InfoWorld</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">07</div>
           <div>
-            <h3>Rust 1.98.1 — trait objectのvtable誤生成を修正（9/3）</h3>
-            <p>1.98.0で一部条件において関数ポインタがnullになる誤生成があり、未定義動作の温床になっていました。<code>rustup update stable</code>での即時更新が推奨されます。</p>
-            <p class="source"><a href="https://blog.rust-lang.org/2026/09/03/Rust-1.98.1/" target="_blank" rel="noopener">Rust Blog（9/3）</a></p>
+            <h3>CPython — RISC-VをPEP 11のTier 3プラットフォームへ正式追加</h3>
+            <p>実機ビルドボット整備を経てRISC-Vが公式サポート対象に。InfoQはHacker News／Redditでも「CIに載せやすくなる成熟信号」として歓迎されたと伝え、将来のTier 2化とアーキテクチャ最適化が次の論点です。</p>
+            <p class="source"><a href="https://www.infoq.com/news/2026/09/riscv-cpython/" target="_blank" rel="noopener">InfoQ（HN/Reddit反応）</a><a href="https://blog.python.org/2026/08/riscv-now-officially-supported/" target="_blank" rel="noopener">Python Insider</a></p>
           </div>
         </article>
       </div>
@@ -827,13 +827,37 @@
         <article class="item lead">
           <div class="rank">01<small>TOP</small></div>
           <div>
-            <h3>Cloudflare CASB — 自動修復ポリシーを導入、危険な共有をイベント駆動で取消</h3>
-            <p>9/11、検出した所見に対しMicrosoft／Google Workspaceのファイル共有取消やWebhook送信を自動実行できるポリシー機能を発表。検出から修復までの目標を5分以内とし、Slack／Jira／ServiceNow等へも転送できます。</p>
-            <p class="source"><a href="https://blog.cloudflare.com/casb-policies/" target="_blank" rel="noopener">Cloudflare Blog（9/11）</a></p>
+            <h3>GitHub Copilot code review — 自動解決・スマートコミット・検証強化（9/11）</h3>
+            <p>修正反映後のコメント自動クローズと、提案適用時のスマートコミットメッセージ生成を追加。レビューエージェントはファイアウォール内で広範なシェルツールを使い、Liteでは複数エージェント合議で高精度化。PRレビュー運用の摩擦低減が狙いです。</p>
+            <p class="source"><a href="https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review/" target="_blank" rel="noopener">GitHub Changelog（9/11）</a></p>
           </div>
         </article>
         <article class="item">
           <div class="rank">02</div>
+          <div>
+            <h3>Cloudflare Voice — ターン単位のレイテンシと終了理由を計測（9/11）</h3>
+            <p><code>@cloudflare/voice</code> v0.4.0で、各ターンのSTT／モデル／TTS段階の所要時間と<code>completed</code>／<code>no_output</code>／<code>tts_error</code>などの終了結果を型付きメトリクスとして取得可能に。音声エージェントの「無音」原因切り分けが容易になります。</p>
+            <p class="source"><a href="https://developers.cloudflare.com/changelog/" target="_blank" rel="noopener">Cloudflare Changelog（9/11）</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">03</div>
+          <div>
+            <h3>Cloudflare AI Search — 拡張子なしR2オブジェクトをContent-Typeで索引（9/11）</h3>
+            <p>ファイル名拡張子がなくても、対応するContent-TypeメタデータがあればR2オブジェクトを索引対象に。キー設計が拡張子非依存のオブジェクトストアでも、ファイル種別検証を維持したまま検索対象へ載せられます。</p>
+            <p class="source"><a href="https://developers.cloudflare.com/changelog/" target="_blank" rel="noopener">Cloudflare Changelog（9/11）</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">04</div>
+          <div>
+            <h3>Cloudflare CASB — 危険な共有をイベント駆動で自動取消（9/11）</h3>
+            <p>検出した所見に対しMicrosoft／Google Workspaceのファイル共有取消やWebhook送信を自動実行できるポリシーを発表。検出から修復までの目標を5分以内とし、Slack／Jira／ServiceNow等へも転送できます。</p>
+            <p class="source"><a href="https://blog.cloudflare.com/casb-policies/" target="_blank" rel="noopener">Cloudflare Blog（9/11）</a></p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="rank">05</div>
           <div>
             <h3>Cloudflare — 1.1.1.1が耐量子DNSSEC（ML-DSA-44）検証を開始</h3>
             <p>9/10、署名サイズ2,420バイトのML-DSA-44検証をリゾルバ側で有効化。UDP制限を超える応答はTCP再試行が前提で、利用者側の設定変更は不要です。次段階は権威DNS側の署名対応と説明しています。</p>
@@ -841,35 +865,11 @@
           </div>
         </article>
         <article class="item">
-          <div class="rank">03</div>
-          <div>
-            <h3>GitHub Actions — cache-modeでキャッシュ権限を最小権限化（GA）</h3>
-            <p>9/10、ワークフロー／ジョブ単位で<code>read</code>／<code>write</code>／<code>write-only</code>／<code>none</code>を指定可能に。低信頼イベントの既定はreadで、明示的なwriteはキャッシュ汚染リスク警告付き。全プランで一般提供です。</p>
-            <p class="source"><a href="https://github.blog/changelog/2026-09-10-control-github-actions-cache-access-with-cache-mode/" target="_blank" rel="noopener">GitHub Changelog（9/10）</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">04</div>
+          <div class="rank">06</div>
           <div>
             <h3>GitHub — AI Scan for pull requestsのREST APIがパブリックプレビュー</h3>
             <p>組織／リポジトリ単位でAI脆弱性スキャンの有効状態を取得・更新できるAPIを9/10公開。Advanced Security顧客向けで、Enterprise Serverは非対応。大規模リポジトリ群への段階展開が容易になります。</p>
             <p class="source"><a href="https://github.blog/changelog/2026-09-10-ai-scan-for-pull-request-apis-in-public-preview/" target="_blank" rel="noopener">GitHub Changelog（9/10）</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">05</div>
-          <div>
-            <h3>AWS CloudWatch Network Monitor — TGWリージョン間ピアリングへNHI拡張</h3>
-            <p>9/10、Transit Gatewayのリージョン間ピアリング経路でもネットワークヘルス指標（NHI）を提供。従来Direct Connect中心だった切り分けを、ハイブリッド構成のピアリング経路へ広げます。</p>
-            <p class="source"><a href="https://mwpro.co.uk/blog/2026/09/10/cloudwatch-network-monitor-now-provides-nhi-for-transit-gateway-peering/" target="_blank" rel="noopener">Modern Workspace Pro（AWS発表転載・9/10）</a></p>
-          </div>
-        </article>
-        <article class="item">
-          <div class="rank">06</div>
-          <div>
-            <h3>WhatsApp — Restricted ChatをAndroidで開発中、リンク端末から会話を隔離</h3>
-            <p>Advanced Chat Privacyの発展形として、指定チャットをプライマリ端末のみに限定し、WhatsApp Web等のリンク端末へ同期しない方向。ベータ2.26.36.5で痕跡が確認されましたが、一般公開時期は未定です（9/10）。</p>
-            <p class="source"><a href="https://wabetainfo.com/whatsapp-is-testing-a-new-restricted-chat-feature-on-android/" target="_blank" rel="noopener">WABetaInfo（9/10）</a></p>
           </div>
         </article>
         <article class="item">
@@ -884,8 +884,8 @@
     </section>
 
     <footer>
-      <p>収集対象: おおむね2026-09-10 21:00 UTC 〜 2026-09-11 21:00 UTC（cron起動基準）。一次情報と専門メディアを優先し、重複は統合しています。X／SNS反応は、Cursor Projects発表をRuntimeWireがX上の創業者スレッドとして伝えた範囲、およびCPython RISC-V公式化をInfoQがHacker News／Redditの議論として伝えた範囲で追記しています。</p>
-      <p>Edition 2026-09-11 / daily_news</p>
+      <p>収集対象: おおむね2026-09-11 21:00 UTC 〜 2026-09-12 21:00 UTC（cron起動基準）。一次情報と専門メディアを優先し、重複は統合しています。X／SNS反応は、デジタル庁GSS事案をFNNがX上の批判投稿として伝えた範囲、Cursor ProjectsをRuntimeWireがX上の創業者スレッドとして伝えた範囲、TinyGo 0.42をInfoQがHacker News／Redditの議論として伝えた範囲で追記しています。</p>
+      <p>Edition 2026-09-12 / daily_news</p>
     </footer>
   </div>
 </body>
